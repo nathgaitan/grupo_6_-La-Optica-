@@ -1,6 +1,6 @@
 <img src="public/images/logo optica final.jpg" alt="">
 
-<h1>La Optica</h1>
+
 
 
 <h2>Tematica del Sitio:</h2>
