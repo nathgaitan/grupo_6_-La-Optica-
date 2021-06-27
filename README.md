@@ -1,4 +1,4 @@
-<img src="public/images/logo optica final.jpg" alt="">
+<img src="extra/images/logo optica final.jpg" alt="">
 
 
 
