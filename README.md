@@ -1,3 +1,9 @@
+<h1 align="center">La Óptica</h1>
+
+
+<h2>Logo</h2>
+
+
 <img src="extra/images/logo optica final.jpg" alt="">
 
 
