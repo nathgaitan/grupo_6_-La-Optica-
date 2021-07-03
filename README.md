@@ -38,7 +38,7 @@ esto nos permite una reducción de los costes por venta y mayor integración del
   
   <li>Kevin Sarli: 21 años, técnico electromecánico y estudiante de programación,reside en Ciudad Evita y su pasatiempo es pasear a sus perros</li>
   
-  <li>Jimena withencamps: 23 años,estudiante de programacion, reside en la ciudad de la plata y su pasatiempo es salir a caminar</li>
+  <li>Uno de los miembros del grupo es Jimena Rocio Witencamps. A comienzos de 2021 empezó a interesarse e invertir su tiempo en adentrarse en el mundo del diseño y el back end de las páginas web. Asi fue que desde Marzo del 2021 lleva estudiando en Digital House gracias a una beca de Fundación Formar y se ve entusiasmada con las cosas nuevas que aprende cada día.</li>
   
   <li>Nathalia gaitan: 30 años,estudiante de programacion,reside en la ciudad de san miguel y su pasatiempo es el diseño de indumentaria unisex</li>
     </ul></h3>
