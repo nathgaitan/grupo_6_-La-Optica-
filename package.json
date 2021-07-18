@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_-la-optica-",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">La Óptica</h1>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathgaitan/grupo_6_-La-Optica-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathgaitan/grupo_6_-La-Optica-/issues"
+  },
+  "homepage": "https://github.com/nathgaitan/grupo_6_-La-Optica-#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
