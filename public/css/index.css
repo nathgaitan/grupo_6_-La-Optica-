@@ -1,0 +1,32 @@
+* {
+    background-color: var(--color-background);
+    text-align: center;
+}
+h2 {
+    color: var(--color-title);
+    font-size: var(--font-title);
+}
+div {
+    text-align: center;
+    background-color: var(--color-cuadros);
+    height: 350px;
+    width: 320px;
+}
+h4 {
+    color: var(--color-subtitle);
+    font-size: var(--font-subtitle);
+}
+p {
+    color: var(--color-price);
+    font-size: var(--font-price);
+}
+a {
+    color: var(--color-discount);
+    font-size: var(--font-discount);
+}
+span {
+    color: var(--color-body)
+}
+button {
+    color: var(--color-button)
+}
