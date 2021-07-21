@@ -17,11 +17,11 @@ font-family: 'Playfair Display', serif;
     --font-subtitle: 16px;
 
     /* paleta de colores */
-    --color-background: ;
+    --color-background: #f2f2f2;
     --color-title: #252440;
     --color-body: #2D3540;
     --color-cuadros: ;
-    --color-button: ;
+    --color-bg-button: ;
     --color-link: ;
     --color-price: ;
     --color-discount: #2826bc ;
