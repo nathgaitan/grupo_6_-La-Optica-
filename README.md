@@ -61,5 +61,24 @@ esto nos permite una reducción de los costes por venta y mayor integración del
    <li>"https://opticalutzferrando.com/"</li>
    <li>"https://optica-optima.com/" // Nos gusto la forma en que muestra el producto, lo fácil que es acceder a ello y la forma de buscar un producto, la paleta de colores de la pagina es muy suave, la barra de menú brinda gran detalle de lo que uno puede buscar, separando marcas con graduación y marcas de gafas de sol tanto como para mujeres hombres o niños, la información que brinda cada producto, la facilidad e información que te da y la opción de dejar un comentario al realizar una compra y por ultimo el footer, los enlaces de información, los enlaces de paginas sociales y las diferentes marcas de tarjetas en las cual pueden comerciar me pareció muy cómodo.</li>
     </ul>
+    <h3>Retrospectiva</h3>
+    <ul>
+    <li>
+1	¿Cómo fue el sprint pasado?
+Fue una experiencia buena, aprendimos cosas nuevas como usar figma, estresante en algunos puntos, también aprendimos a trabajar en equipo.
+
+2	¿Qué problemas tuvimos?
+Falta de comunicación, falta de entendimiento de las consignas, empezamos tarde el inicio del sprint, tardamos en dividirnos las tareas.
+
+3	¿Qué hicimos bien?
+Trabajamos en equipo, pudimos resolver los problemas que surgían, pudimos cumplir todas las consignas.
+
+4	¿Qué queremos mejorar?
+Debemos mejorar la comunicación y empezar el sprint lo más rápido posible.
+
+5	¿Qué vamos a hacer para conseguirlo?
+Ya hablamos de cómo mejorar la comunicación, nos comunicaremos por Slack y WhatsApp, también nos repartimos el trabajo entre el grupo y decidimos ayudarnos entre nosotros cuando surja algún problema.
+</li>
+    </ul>
  
  
