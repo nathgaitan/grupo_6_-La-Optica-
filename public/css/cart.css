@@ -1,69 +1,98 @@
-body{
-    background-color:rgb(197, 197, 197);
+body {
+  background-color: rgb(197, 197, 197);
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+body main button {
+  padding: 3%;
+  margin: 5%;
+  border: black solid 1px;
+  border-radius: 10px;
+  color: white;
 }
 
 body main div {
-    display: flex;
-    border:gray solid 2px;
-    background-color: rgb(197, 197, 197);
-    border-radius: 10px;
-    flex-direction:column;
-    margin: 10px;
-    padding: 10px;
-
+  display: flex;
+  border: gray solid 2px;
+  background-color: rgb(197, 197, 197);
+  border-radius: 10px;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
 }
 body main div ol {
-    display: flex;
-    justify-content: center;
-    width: 70%;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  align-self: center;
 }
-body main div ol li{
-    margin: 5%;
+body main div ol li {
+  margin: 5%;
 }
-body main div ol li button{
-    border: black solid 1px;
-    border-radius: 10px;
-    ;
+body main div ol li button {
+  border: black solid 1px;
+  border-radius: 10px;
+  width: 20%;
+  margin-left: 0px;
 }
-
-
-body main div article h4{
-    align-content: center;
+body main div article nav {
+  display: flex;
 }
-body main div article img{
-    width: 150px;
-    border: black solid 1px;
-    margin :10px
-}
-
-body main div.boxform{
-display: flex;
-flex-direction: column;
-
-
+body main div article nav ul li {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  text-decoration: none;
 }
 
-body main div.boxform textarea{
-    border:black solid 2px;
-    border-radius: 10px;
+body main div article h4 {
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+body main div article nav .imagendetallada {
+  flex-direction: row;
+}
+body main div article nav img {
+  width: 50%;
+  height: 50%;
+  border: black solid 1px;
+  margin: 10px;
+}
+body main div article nav ul {
+  margin: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+body main div article nav ul li {
+  text-decoration: none;
+}
+body main div article nav ol li {
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
 }
 
-body main div.boxform button.reset{
-    color: gray ;
-    margin-top: 3px;
-    
-
+body main textarea {
+  border: black solid 2px;
+  border-radius: 10px;
 }
-body main div button.submit{
-color :red
-
+body main nav {
+  flex-direction: row;
 }
 
-
-
-body main div h4{
-    font-family: 'Playfair Display', serif;
-    color: #252440;
-    font-size: 18px;
+body main button.reset {
+  color: gray;
+  margin-top: 3px;
+}
+body main button.submit {
+  color: red;
 }
 
+body main h4 {
+  font-family: "Playfair Display", serif;
+  color: #252440;
+  font-size: 18px;
+}
