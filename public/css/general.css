@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,700;1,100;1,300;1,500;1,600&display=swap');
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+*/
+
+:root {
+    /* tamaño de letra */
+    --font-body: 14px;
+    --font-price: 16px;
+    --font-discount: 15px;
+    --font-detail: 16px;
+    --font-title: 18px;
+    --font-subtitle: 16px;
+
+    /* paleta de colores */
+    --color-background: #f2f2f2;
+    --color-title: #252440;
+    --color-body: #2D3540;
+    --color-cuadros: ;
+    --color-bg-button: ;
+    --color-link: ;
+    --color-price: ;
+    --color-discount: #2826bc ;
+    --color-subtitle: #252440;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--font-body);
+    color: var(--color-body);
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
