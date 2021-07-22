@@ -1,0 +1,9 @@
+.register main{
+    width: 350px;
+    margin: 0 auto;
+    border: 2px;
+}
+
+.register main article div img{
+    width: 180px;
+}
