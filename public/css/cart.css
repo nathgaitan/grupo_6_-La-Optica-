@@ -96,3 +96,51 @@ body main h4 {
   color: #252440;
   font-size: 18px;
 }
+
+
+/*-------------------------------------------------*/
+
+body footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #d6feff;
+  margin: 0%;
+
+}
+body footer div img{
+  width: 60%;
+
+}
+body footer nav h4{
+  font-family: "Playfair Display", serif;
+  color: #0046c7;
+  font-size: 18px;
+
+}
+
+body footer nav ul{
+  font-family: "Playfair Display", serif;
+  color: #0046c7;
+  font-size: 14px;
+  text-decoration:none;
+}
+
+body footer section nav ul li{
+  font-family: "Playfair Display", serif;
+  color: #0046c7;
+  font-size: 14px;
+  
+}
+body footer section p{
+  font-family: "Playfair Display", serif;
+  color: #0046c7;
+  font-size: 12px;
+  display: inline
+
+}
+
+
+
+
+
+
