@@ -1,3 +1,80 @@
-.home h1 {
-    background-color: red;
+/* ------------------ Marcas ------------------ */
+.home section.marcas{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
 }
+.home section.marcas div {
+    display: none;
+}
+
+/* ------------------ Products ------------------ */
+.home section.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* products > article */
+.home .products article.item {
+    width: 43%;
+    margin: 10px 10px;
+    box-shadow: 0 0 5px rgb(100 100 100 / 27%);
+    border-radius: 2px;
+}
+/* container-image-item */ /* height 76.50px mobile */
+.home .products .item div.container-image-item {
+    width: 90%;
+    height: 76.5px;
+    margin: 0 auto;
+}
+.home .products .item div.image-item {
+    margin: 0 auto;
+}
+.home .products .item .image-item img {
+    width: 100%;
+}
+
+/* products - article - detail-item */
+.home .products .item .detail-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3%;
+}
+.home .products .item .detail-item p.title-item {
+    width: 100%;
+}
+
+/* products - article - detail-items - container-price */
+.home .products .item .detail-item .container-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.home .products .item .detail-item .container-price p.price-item, 
+.home .products .item .detail-item .container-price span.discount-item {
+    width: 50%;
+}
+
+.home .products .item .detail-item .tag-item {
+    color: gray;
+    display: none;
+}
+.home .products .item .detail-item .stars {
+    display: none;
+}
+
+
+
+
+/* products
+
+clases =>
+section.products > article.item > div.image-item (> img) ~ div.detail-item 
+(> container-price ~ stars)
+*/
