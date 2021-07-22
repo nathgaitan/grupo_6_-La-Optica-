@@ -1,0 +1,69 @@
+body{
+    background-color:rgb(197, 197, 197);
+}
+
+body main div {
+    display: flex;
+    border:gray solid 2px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    flex-direction:column;
+    margin: 10px;
+    padding: 10px;
+
+}
+body main div ol {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+body main div ol li{
+    margin: 5%;
+}
+body main div ol li button{
+    border: black solid 1px;
+    border-radius: 10px;
+    ;
+}
+
+
+body main div article h4{
+    align-content: center;
+}
+body main div article img{
+    width: 150px;
+    border: black solid 1px;
+    margin :10px
+}
+
+body main div.boxform{
+display: flex;
+flex-direction: column;
+
+
+}
+
+body main div.boxform textarea{
+    border:black solid 2px;
+    border-radius: 10px;
+}
+
+body main div.boxform button.reset{
+    color: gray ;
+    margin-top: 3px;
+    
+
+}
+body main div button.submit{
+color :red
+
+}
+
+
+
+body main div h4{
+    font-family: 'Playfair Display', serif;
+    color: #252440;
+    font-size: 18px;
+}
+
