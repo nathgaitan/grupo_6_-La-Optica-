@@ -1,3 +1,8 @@
+.home {
+    margin: 0 auto;
+    width: 100%
+}
+
 /* ------------------ Marcas ------------------ */
 .home section.marcas{
     display: flex;
@@ -16,7 +21,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     width: 95%;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 /* products > article */
@@ -29,21 +34,36 @@
 /* container-image-item */ /* height 76.50px mobile */
 .home .products .item div.container-image-item {
     width: 90%;
-    height: 76.5px;
     margin: 0 auto;
 }
-.home .products .item div.image-item {
+.home .products .item div.container-image-item div.image-item {
     margin: 0 auto;
+    
 }
-.home .products .item .image-item img {
+.home .products .item div.container-image-item div.image-item img {
     width: 100%;
+}
+
+/* ---------------------- Imagen descuadrada por tamaño de alto --------------- */
+.home > section.products > article:nth-child(5) > div.container-image-item > div {
+    background-image: url('/images/anteojo-plastico (5).jpg');
+    background-size: cover;
+    background-position: center;
+}
+.home > section.products > article:nth-child(7) > div.container-image-item > div {
+    background-image: url('/images/anteojo-plastico (4).jpg');
+    background-size: cover;
+    background-position: center;
+}
+.home > section.products > article:nth-child(5) > div.container-image-item > div > img,
+.home > section.products > article:nth-child(7) > div.container-image-item > div > img {
+    display: none;
 }
 
 /* products - article - detail-item */
 .home .products .item .detail-item {
     display: flex;
     flex-wrap: wrap;
-    padding: 3%;
 }
 .home .products .item .detail-item p.title-item {
     width: 100%;
@@ -69,12 +89,112 @@
     display: none;
 }
 
+/* container-galeria-redes - icono-galeria-redes */
+.home section.container-galeria-redes {
+    margin: 20px 0;
+}
+.home section.container-galeria-redes div.icono-galeria-redes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* circulo redes */
+.home section.container-galeria-redes div.icono-galeria-redes .container-icono {
+    background: radial-gradient(
+        circle at 33% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d9237f 62%,
+        #9b36b7 85%,
+        #515ecf
+        );
+    border-radius: 30%;
+    height: 1.3rem;
+    width: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+
+.home section.container-galeria-redes i {
+    color: white;
+}
+    
+.home section.container-galeria-redes div.icono-galeria-redes h4 {
+    padding-left: 4px;
+}
 
 
+/* galeria-redes */
+.home section.galeria-redes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 95%;
+    margin: 0 auto;
+    background-color: gray;
+    /* background-color: var(--color-cuadros); */
+    border-radius: 45px;
+    position: relative;
+}
 
-/* products
+/* galeria redes - flechas */
+.icono-flecha-der {
+    position: absolute;
+    right: 10%
+}
+.icono-flecha-izq {
+    position: absolute;
+    left: 10%
+}
 
-clases =>
-section.products > article.item > div.image-item (> img) ~ div.detail-item 
-(> container-price ~ stars)
-*/
+/* galeria-redes - article */
+.home section.galeria-redes article {
+    width: 55%;
+    border-radius: 45px;
+    text-align: center;
+}
+.home section.galeria-redes article img {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 45px;
+}
+
+
+/* Vista Mobile */
+@media (min-width: 320px) {
+    /* --------- max-width vista ---------  */
+    .home {
+        max-width: 435px;
+        margin: 0 auto;
+    }
+    /* --------- products --------- */
+    .home > section.products > article:nth-child(5) > div.container-image-item > div,
+    .home > section.products > article:nth-child(7) > div.container-image-item > div {
+        height: 76.5px;
+    }
+    .home .products .item .detail-item {
+        padding: 5%;
+    }
+    .home .products .item div.container-image-item { 
+        height: 76.5px;
+    }
+
+    /* --------- galeria redes ---------  */
+    .home section.galeria-redes article.anteultimo-post,
+    .home section.galeria-redes article.resto-post {
+        display: none;
+    }
+    .home section.galeria-redes {
+        height: 248px;
+        justify-content: center;
+    }
+    .home section.galeria-redes img {
+        max-width: 220px;
+    }
+    
+}
