@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body.product{
+    background-image: url("/images/banner\ \(1\).jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 123px;
+    
+}
+
+body.product header{
+    background-color: rgba(0, 0, 0, 0.0);
+    padding-bottom: 88px;
+}
+
+body.product header nav h1{
+    display: flex;
+    font-size: var(--font-title);
+    color: var(--color-title);
+    margin: 0 auto;
+    background-color: transparent;
+    justify-content: center;
+    font-family:  'Dancing Script', cursive;;
+}
+
+body.product header nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding-top: 10px;
+}
+
+body.product header nav ul {
+    background-color: transparent;
+    display: flex;
+    padding-top: 5px;
+}
+
+
+
+body.product header nav ul li {
+    display: inline-block;
+    background-color: transparent;
+    
+}
+
+body.product header nav ul li a{
+    display: inline-block;
+    padding: 0 5px;
+    background-color: transparent;
+    
+}
+
+.product header nav ul li a i{
+    font-size: 15px;
+    padding-top: 2px;
+}
