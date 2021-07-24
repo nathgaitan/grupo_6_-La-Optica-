@@ -8,21 +8,30 @@
     <title>Home | La Óptica</title>
     <script src="https://kit.fontawesome.com/9e833b5184.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<style>
+    .home h1.titulo{
+        font-family: 'Dancing Script', cursive;
+    }
+</style>
 </head>
 
 <body>
     <main class="home">
+        <h1 class="titulo">La Óptica</h1>
         <section class="marcas">
-            <div><img src="https://i.pinimg.com/originals/eb/90/19/eb9019d277b62a38c64797897220df08.jpg" width="255px"
+            <div class="logo-marca dos"><img src="https://opticaariel.com.uy/wp-content/uploads/2017/05/guess-logo.png" width="255px"
                     alt=""></div>
-            <div><img src="https://www.optical-center.es/workspace/medias/images/logo_HD/boss.jpg" alt=""></div>
-            <div><img src="https://1000logos.net/wp-content/uploads/2018/09/Ray-Ban-logo.png" width="255px" alt="">
+            <div class="logo-marca dos"><img src="https://www.optical-center.es/workspace/medias/images/logo_HD/boss.jpg" alt=""></div>
+            <div class="logo-marca tres"><img src="https://1000logos.net/wp-content/uploads/2018/09/Ray-Ban-logo.png" width="255px" alt="">
             </div>
-            <div class="icono-flecha-der"><i class="fas fa-chevron-right"></i></div>
-            <div class="icono-flecha-izq"><i class="fas fa-chevron-left"></i></div>
+            <div class="icono-flecha-der flecha"><button><i class="fas fa-chevron-right"></i></button></div>
+            <div class="icono-flecha-izq flecha"><button><i class="fas fa-chevron-left"></i></button></div>
         </section>
         <section class="products">
-            <article class="item">
+            <article class="item cuatro">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-madera (1).jpg" alt="">
@@ -48,7 +57,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item cuatro">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-madera (3).jpg" alt="">
@@ -74,7 +83,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item cuatro">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-madera (7).jpg" alt="">
@@ -100,7 +109,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item cuatro">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-plastico (1).jpg" alt="">
@@ -126,7 +135,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item seis">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-plastico (5).jpg" alt="">
@@ -152,7 +161,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item seis">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-plastico (7).jpg" alt="">
@@ -178,7 +187,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item ocho">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-plastico (4).jpg" alt="">
@@ -204,7 +213,7 @@
                     </div>
                 </div>
             </article>
-            <article class="item">
+            <article class="item ocho">
                 <div class="container-image-item">
                     <div class="image-item">
                         <img src="/images/anteojo-plastico (2).jpg" alt="">
@@ -239,35 +248,45 @@
                 <h4>@LaOptica | Instagram</h4>
             </div>
             <section class="galeria-redes">
-                <div class="icono-flecha-der"><i class="fas fa-chevron-right"></i></div>
-                <div class="icono-flecha-izq"><i class="fas fa-chevron-left"></i></div>
-                <article class="ultimo-post">
-                    <img src="/images/anteojo-madera.jpg" alt="">
-                </article>
-                <article class="anteultimo-post">
-                    <img src="/images/anteojo-plastico.jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/anteojo-madera (4).jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/anteojo-madera (6).jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/banner (2).jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/banner (3).jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/banner (4).jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/banner.jpg" alt="">
-                </article>
-                <article class="resto-post">
-                    <img src="/images/anteojo-madera (5).jpg" alt="">
-                </article>
+                <div class="icono-flecha-der galeria-flechas"><button><i class="fas fa-chevron-right"></i></button></div>
+                <div class="icono-flecha-izq galeria-flechas"><button><i class="fas fa-chevron-left"></i></button></div>
+               <section class=" container-post post-pesado">
+                    <section class="post-fila">
+                        <article class="ultimo-post">
+                            <img src="/images/anteojo-madera.jpg" alt="">
+                        </article>
+                        <article class="anteultimo-post">
+                            <img src="/images/anteojo-plastico.jpg" alt="">
+                        </article>
+                    </section>
+                    <article class="resto-post post-grande">
+                        <img src="/images/anteojo-madera (4).jpg" alt="">
+                    </article>
+               </section>
+                <section class=" container-post post-pesado">
+                    <article class="resto-post post-grande">
+                        <img src="/images/anteojo-madera (6).jpg" alt="">
+                    </article>
+                    <section class="post-fila">
+                        <article class="resto-post">
+                            <img src="/images/banner (2).jpg" alt="">
+                        </article>
+                        <article class="resto-post">
+                            <img src="/images/banner (3).jpg" alt="">
+                        </article>
+                    </section>
+                </section>
+                <section class=" container-post post-columna">
+                    <article class="resto-post">
+                        <img src="/images/banner (4).jpg" alt="">
+                    </article>
+                    <article class="resto-post">
+                        <img src="/images/banner.jpg" alt="">
+                    </article>
+                    <article class="resto-post">
+                        <img src="/images/anteojo-madera (5).jpg" alt="">
+                    </article>
+                </section>
             </section>
         </section>
     </main>

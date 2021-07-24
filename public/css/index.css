@@ -10,11 +10,21 @@
     justify-content: space-around;
     width: 80%;
     margin: 0 auto;
+    position: relative;
+    background-color: hsl(0, 0%, 50%, 0.1);
+    border-radius: 45px;
 }
-.home section.marcas div {
-    display: none;
+.marcas .icono-flecha-izq {
+    position: absolute;
+    left: 3%;
 }
-
+.marcas .icono-flecha-der {
+    position: absolute;
+    right: 3%;
+}
+.home section.marcas div img {
+    width: 100%;
+}
 /* ------------------ Products ------------------ */
 .home section.products {
     display: flex;
@@ -26,12 +36,11 @@
 
 /* products > article */
 .home .products article.item {
-    width: 43%;
     margin: 10px 10px;
     box-shadow: 0 0 5px rgb(100 100 100 / 27%);
     border-radius: 2px;
 }
-/* container-image-item */ /* height 76.50px mobile */
+/* container-image-item */
 .home .products .item div.container-image-item {
     width: 90%;
     margin: 0 auto;
@@ -119,7 +128,7 @@
     
     }
 
-.home section.container-galeria-redes i {
+.home section.container-galeria-redes div.container-icono i {
     color: white;
 }
     
@@ -131,37 +140,46 @@
 /* galeria-redes */
 .home section.galeria-redes {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    /* justify-content: space-between; */
     width: 95%;
     margin: 0 auto;
-    background-color: gray;
+    background-color: hsl(0, 0%, 50%, 0.1);
     /* background-color: var(--color-cuadros); */
     border-radius: 45px;
     position: relative;
 }
 
 /* galeria redes - flechas */
-.icono-flecha-der {
+.galeria-redes .icono-flecha-der {
     position: absolute;
     right: 10%
 }
-.icono-flecha-izq {
+.galeria-redes  .icono-flecha-izq {
     position: absolute;
     left: 10%
 }
 
 /* galeria-redes - article */
 .home section.galeria-redes article {
-    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
     border-radius: 45px;
     text-align: center;
+    margin: 10px;
 }
 .home section.galeria-redes article img {
     width: 100%;
     margin: 0 auto;
     border-radius: 45px;
+}
+
+/*  galeria redes // marca - botones */
+.home .galeria-redes button,
+.home .marcas button {
+    border:none;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
 }
 
 
@@ -172,7 +190,22 @@
         max-width: 435px;
         margin: 0 auto;
     }
+    /* marcas */
+    .home section.marcas div {
+        display: none;
+    }
     /* --------- products --------- */
+    .home .products article.item {
+        width: 43%;
+    }
+    .home .products article.seis,
+    .home .products article.ocho {
+        display: none;
+    }
+    .home .products .item div.container-image-item {
+        width: 90%;
+    }
+
     .home > section.products > article:nth-child(5) > div.container-image-item > div,
     .home > section.products > article:nth-child(7) > div.container-image-item > div {
         height: 76.5px;
@@ -185,6 +218,9 @@
     }
 
     /* --------- galeria redes ---------  */
+    .home section.galeria-redes article {
+        width: 55%;
+    }
     .home section.galeria-redes article.anteultimo-post,
     .home section.galeria-redes article.resto-post {
         display: none;
@@ -194,7 +230,93 @@
         justify-content: center;
     }
     .home section.galeria-redes img {
-        max-width: 220px;
+        max-width: 215px;
     }
     
+}
+
+@media (min-width: 768px) {
+    
+    .home {
+        max-width: 930px;
+    }
+    /* marcas */
+    .home section.marcas div.flecha {
+        display: flex;
+    }
+    .home section.marcas div.dos {
+        display: flex;
+        width: 33%
+    }
+    /* products */
+    .home .products article.seis {
+        display: block;
+    }
+    .home .products article.item {
+        width: 30%;
+    }
+    /* galeria redes */
+    .home section.galeria-redes article {
+        width: 35%;
+    }
+    .home section.galeria-redes article.anteultimo-post {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home {
+        max-width: 1100px;
+    }
+    /* galeria redes */
+    .home section.container-galeria-redes {
+        background-color: hsl(0, 0%, 50%, 0.1);
+        border-radius: 45px;
+        height: inherit;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .home section.galeria-redes {
+        background-color: transparent;
+        height: max-content;
+    }
+    /* sacando flechas */
+    .home section.galeria-redes .galeria-flechas {
+        display: none;
+    }
+    .home section.galeria-redes article {
+        margin: 0;
+    }
+    .home section.galeria-redes .container-post {
+        height: 350px;
+    }
+    .home section.galeria-redes article.resto-post {
+        display: block;
+    }
+    .home section.galeria-redes section.post-pesado {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 40%;
+    }
+    .home section.galeria-redes article img {
+        max-width: 132px;
+    }
+    .home section.galeria-redes article.post-grande {
+        width: 100%;
+    }
+    .home section.galeria-redes article.post-grande img {
+        max-width: 230.5px;
+    }
+    .home section.galeria-redes section.post-fila {
+        display: flex;
+        justify-content: space-around;
+    }
+    .home section.galeria-redes section.post-columna {
+        width: 20%;
+    }
+    .home section.galeria-redes section.post-columna article {
+        width: 71%;
+        margin: 0 auto;
+    }
 }
