@@ -67,7 +67,7 @@ body main div article nav ul {
   font-size: 16px;
   font-family: "Playfair Display", serif;
 }
-body main div article nav ul li {
+body main div article nav ul li{
   text-decoration: none;
 }
 body main div article nav ol li {
@@ -98,12 +98,12 @@ body main h4 {
 }
 
 
-/*-------------------------------------------------*/
+/*-----------------------footer--------------------------*/
 
 body footer {
   display: flex;
   flex-direction: row;
-  background-color: #d6feff;
+  background-color: #d6feff;   
   margin: 0%;
 
 }
