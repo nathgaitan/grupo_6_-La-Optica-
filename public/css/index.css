@@ -87,7 +87,7 @@
     width: 100%;
     height: 40px;
     margin: 2px 0;
-    font-size: var(--font-title);
+    font-size: var(--font-subtitle);
 }
 
 /* products - article - detail-items - container-price */
@@ -309,6 +309,9 @@
     }
     .home .products .item div.container-image-item { 
         height: 105px;
+    }
+    .home .products .item .detail-item p.title-item {
+        font-size: var(--font-title);
     }
     /* galeria redes */
     .home .galeria-redes img.dos,
