@@ -5,37 +5,163 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lugar de prueba de código</title>
     <style>
-        .tamaño {
-            width: 690px;
+        .contenedor {
+            width:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .post-column {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 350px;
-        }
-        .post-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 230.5px
+        figure {
+            position: relative;
+            height: 550px;
+            width: 550px;
+            overflow: hidden;
+            border-radius: 3px;
+            
         }
         img {
-            max-width: 92.4px;
-            border-radius: 45px;
+            width: 100%;
+            height: 100%;
+            transition: all .5s ease-out;
         }
-        .grande {
-            max-width: 230.5px;
+        .capa {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.384);
+            transition: all 0.5s step-start;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+
         }
+        .barra {
+            width: 100%;
+            background-color: rgba(245, 245, 245, 0.59);
+        }
+        a {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 8px;
+            color: black;
+        }
+        figure:hover > .capa {
+            opacity: 1;
+            visibility: visible;
+            
+            
+        }
+        figure:hover > .capa a {
+            font-size: 2rem;
+            transition: all 0.7s linear;
+        }
+        figure:hover > img {
+            position: absolute;
+            transform: scale(1.3);
+            transition: all 0.5s linear;
+        } 
+        /* 
+        Laptop
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 600px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .uno {
+            background-image: url('/public/images/banner (4).jpg');
+            background-size: 713px;
+            background-position-x: 5%;
+            width: 480px;
+            height: 382px;
+        }
+        
+        .dos {
+            background-image: url('/public/images/anteojo-madera.jpg');
+            background-size: 600px;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+        }
+        .tres {
+            background-image: url('/public/images/banner (3).jpg');
+            background-size: 555px;
+            background-position-x: 100%;
+            background-position-y: 25%;
+            height: 218px;
+        }
+ */
+
+
+        /* 
+        ------------------- tablet diseño -------------------
+        .contenedor{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 358px;
+            width: 700px;
+            margin: 0 auto;
+        }
+        .uno {
+            background-image: url('/public/images/banner (4).jpg');
+            background-size: 299px;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 168px;
+        }
+        .dos {
+            background-image: url('/public/images/anteojo-madera.jpg');
+            background-size: 401px;
+            background-repeat: no-repeat;
+            background-position-y: 72%;
+            width: 400px;
+            height: 358px;
+        }
+        .tres {
+            background-image: url('/public/images/banner (3).jpg');
+            background-size: 386px;
+            background-position-x: 98%;
+            background-position-y: 10%;
+            height: 190px;
+            background-repeat: no-repeat;
+
+            <div class="contenedor">
+                <div class="imagen dos">
+                    <div class="hover"><a>COLECCIÓN MADERA</a></div>
+                </div>
+                <div class="imagen uno"></div>
+                <div class="imagen tres"></div>
+            </div)
+        } */
     </style>
 </head>
 
 <body>
+    <div class="contenedor">
+        <figure>
+            <img src="/public/images/anteojo-madera.jpg" alt="">
+            <div class="capa">
+                <div class="barra">
+                   <a href="/public/images/anteojo-madera.jpg">COLECCIÓN MADERA</a> 
+                </div>
+                
+            </div>
+        </figure>
 
-    
+    </div>
+
 
 </body>
 
