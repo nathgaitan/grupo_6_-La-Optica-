@@ -39,11 +39,11 @@ body main div ol li {
   color: #252440;
   font-size: 16px;
   margin: 5%;
-  list-style: none
+  list-style:none
   ;
   
 }
-body main div ol li a{
+body main div ol li {
   
   font-size: 12px;
   flex-direction: column;
@@ -81,9 +81,10 @@ body main div article nav .imagendetallada {
 body main div article nav img {
   width: 50%;
   height: 100%;
-  border: black solid 1px;
+  border: black solid 2px;
   margin: 10px;
   margin-top: 30px;
+  border-radius: 10%;
 }
 body main div article nav ul {
   margin: 5px;
@@ -110,13 +111,13 @@ body main textarea {
 body main nav {
   flex-direction: row;
 }
-
-body main button.reset {
-  color: gray;
-  margin-top: 3px;
+body main nav a{
+  color:rgb(0, 68, 255);
 }
-body main button.submit {
-  color: rgb(170, 10, 10);
+
+
+body main button a{
+color:white;
 }
 
 body main h4 {
