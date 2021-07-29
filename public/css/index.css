@@ -1,32 +1,499 @@
-* {
-    background-color: var(--color-background);
-    text-align: center;
+body.home {
+    background-color:#f2f2f2;
 }
-h2 {
-    color: var(--color-title);
+body.home main {
+    margin: 0 auto;
+    width: 100%;
+}
+body.home main p, body.home main h3 {
+    cursor: default;
+}
+
+/* ------------------ Marcas ------------------ */
+body.home main section.container-marcas {
+    width: 80%;
+    margin: 15px auto;
+    position: relative;
+    display: none;
+}
+body.home main section.container-marcas .icono-flecha-izq {
+    position: absolute;
+    left: 2%;
+}
+body.home main section.container-marcas .icono-flecha-der {
+    position: absolute;
+    right: 2%;
+}
+body.home main section.container-marcas article.marcas{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: hsl(0, 0%, 50%, 0.1);
+    border-radius: 45px;
+}
+body.home main section.container-marcas article.marcas img {
+    width: 100%;
+}
+
+/* ---------------- Productos ---------------- */
+body.home main section.productos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 97%;
+}
+body.home main section.productos article {
+    height: max-content;
+    margin: 20px auto;
+    border-radius: 15px;
+    position: relative;
+    background-color: #fff;
+}
+
+body.home main section.productos article h3 {
+    width:100%;
+    font-family: 'Crimson Text', serif;
+    font-weight: 900;
+    font-size: 150px;
+    text-align: center;
+    color: #f5ebe2;
+    position: absolute;
+    z-index: 1;
+}
+body.home main section.productos article figure {
+    width: 90%;
+    height: max-content;
+    margin: auto;
+}
+body.home main section.productos img {
+    position:relative;
+    z-index: 20;
+    margin-top: 70px;
+    width: 100%;
+}
+body.home main section.productos article .box-detalle {
+    text-align: center;
+    padding: 20px;
+    padding-top:0;
+    height: 126.4px;
+}
+body.home main section.productos article .box-detalle p {
+    line-height: 1.9;
+    margin: 0;
+}
+body.home main section.productos article .box-detalle p a {
+    color: var(--font-body);
+    text-decoration: none;
+    font-size:var(--font-subtitle);
+}
+body.home main section.productos article .box-detalle p.discount {
+    text-decoration: line-through;
     font-size: var(--font-title);
-}
-div {
-    text-align: center;
-    background-color: var(--color-cuadros);
-    height: 350px;
-    width: 320px;
-}
-h4 {
-    color: var(--color-subtitle);
-    font-size: var(--font-subtitle);
-}
-p {
-    color: var(--color-price);
-    font-size: var(--font-price);
-}
-a {
+    font-family: 'Crimson Text', serif;
     color: var(--color-discount);
-    font-size: var(--font-discount);
+    height: 30.4px;
 }
-span {
-    color: var(--color-body)
+body.home main section.productos article .box-detalle p.price{
+    font-family: 'Crimson Text', serif;
+    font-size: 1.7rem;
+    margin-top: 2px;
 }
-button {
-    color: var(--color-bg-button)
+
+body.home main section.productos article .check-like {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+}
+body.home main section.productos article .check-like input,
+body.home main section.productos article .check-buy input,
+body.home main section.productos article .check-buy label.plus {
+    display:none;
+}
+body.home main section.productos article .check-buy {
+    position:relative;
+    width: 36px;
+}
+body.home main section.productos article .check-like i,
+body.home main section.productos article .check-buy i {
+    padding:7px;
+    font-size: 1.3rem;
+}
+body.home main section.productos article .check-buy label.plus i {
+    font-size: 10px;
+}
+body.home main section.productos article .check-buy label.plus {
+    position:absolute;
+    bottom: -5px;
+    right: -7px;
+}
+body.home main section.productos article .check-like input:checked ~ label i {
+    font-weight: 900;
+}
+
+body.home main section.productos article .check-buy input:checked ~ label.plus {
+    display: block;
+}
+
+/* ------------------ Fin products ------------------ */
+
+/* ------------------  Coleccion ------------------  */
+body.home main section.coleccion {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 551px;
+    width: 950px;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    display:none;
+}
+body.home main section.coleccion .contenedor {
+    display:flex;
+}
+body.home main section.coleccion figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+body.home main section.coleccion figure.uno {
+    height: 550px;
+    width: 550px;
+}
+body.home main section.coleccion figure.dos {
+    width: 400px;
+    height: 300px;
+}
+body.home main section.coleccion figure.tres {
+    height: 250px;
+    width: 400px;
+}
+body.home main section.coleccion img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-out;
+}
+body.home main section.coleccion a {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 8px;
+    font-size: larger;
+    opacity: 0;
+    visibility: hidden;
+}
+body.home main section.coleccion figure:hover > a {
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.5rem;
+    transition: all 0.5s linear;
+}
+body.home main section.coleccion figure:hover > img {
+    position: absolute;
+    transform: scale(1.3);
+    transition: all 0.5s linear;
+}
+
+/* container-galeria - icono-instagram */
+body.home main section.container-galeria {
+    margin: 50px auto;
+}
+body.home main section.container-galeria div.icono-instagram {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* circulo instagram */
+body.home main section.container-galeria div.icono-instagram .background-icono {
+    background: radial-gradient(
+        circle at 33% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d9237f 62%,
+        #9b36b7 85%,
+        #515ecf
+        );
+    border-radius: 30%;
+    height: 1.3rem;
+    width: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+    
+body.home main section.container-galeria div.icono-instagram h4 {
+    padding-left: 4px;
+}
+body.home main section.container-galeria div.background-icono i {
+    color: white;
+}
+    
+
+
+/* galeria-redes */
+body.home main section.galeria-redes {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 50%, 0.1);
+    /* background-color: var(--color-cuadros); */
+    border-radius: 45px;
+    position: relative;
+    padding: 20px;
+}
+
+/* galeria redes - flechas */
+body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+    position: absolute;
+    right: 7%;
+}
+body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+    position: absolute;
+    left: 7%;
+}
+body.home main section.container-galeria .galeria-redes .post-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+body.home main section.container-galeria .galeria-redes .post-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+body.home main section.container-galeria .galeria-redes img {
+    border-radius: 45px;
+    display: none;
+}
+body.home main section.container-galeria .galeria-redes .grande {
+    max-width: 230.5px;
+}
+body.home main section.container-galeria .galeria-redes .last-column {
+    width: max-content;
+}
+
+/*  galeria redes // marca - botones */
+body.home main section.container-galeria .galeria-redes button,
+body.home main .container-marcas button {
+    border:none;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+}
+
+
+/* Botón flotante Whats App */
+body.home main section.whatsapp .contenedor {
+    position: fixed;
+    bottom: 15px;
+    left: 10px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+}
+body.home main section.whatsapp .contenedor i {
+    padding: 13px;
+    font-size: 2.5rem;
+    color: #fff;
+}
+body.home main .contenedor nav ul,
+body.home main section.whatsapp .contenedor nav input{
+    display: none;
+}
+body.home main section.whatsapp .contenedor nav ul {
+    position:absolute;
+    left: 70px;
+    bottom: 9%;   
+    padding: 0;
+}
+body.home main section.whatsapp .contenedor nav li {
+    list-style: none;
+}
+body.home main section.whatsapp .contenedor nav li a {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--font-body);
+    border: 1px solid #ccc;
+    font-size: var(--font-title)
+}
+body.home main section.whatsapp .contenedor nav input:checked ~ ul{
+    display: block;    
+}
+body.home main section.whatsapp .contenedor nav {
+    position: relative;
+}
+/* Fin botón flotante Whats App */
+
+/* Vista Mobile */
+@media (min-width: 320px) {
+    /* --------- max-width vista ---------  */
+    body.home main {
+        max-width: 435px;
+        margin: 0 auto;
+    }
+
+    /* --------- productos --------- */
+    body.home main section.productos article {
+        width: 100%;
+    }
+    body.home main section.productos article h3 {
+        margin-top: 5px;
+        font-size: 170px;
+    }
+    body.home main section.productos img {
+        margin-top: 77px;
+    }
+    body.home main section.productos article .check-like {
+        bottom: 28.2px;
+    }
+
+    /* --------- galeria redes ---------  */
+    body.home main section.container-galeria .galeria-redes {
+        align-items: center;
+    }
+
+    body.home main section.container-galeria .galeria-redes img.uno {
+        display: block;
+        width: 210px;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+        right: 5%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+        left: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    body.home main {
+        max-width: 930px;
+    }
+
+    /* --------- marcas --------- */
+    body.home main section.container-marcas {
+        display: flex;
+        align-items: center;
+    }
+    body.home main section.container-marcas article.marcas div {
+        display: flex;
+        width: 33%
+    }
+    body.home main section.container-marcas article.marcas div.tres {
+        display: none;
+    }
+
+    /* --------- products --------- */
+        body.home main section.productos article {
+        width: 46%;
+    }
+    body.home main section.productos img {
+        margin-top: 70px;
+    }
+
+    /* --------- galeria redes --------- */
+    body.home main section.container-galeria .galeria-redes img.dos,
+    body.home main section.container-galeria .galeria-redes img.uno {
+        display: block;
+        width: 246px;
+    }
+    body.home main section.container-galeria .galeria-redes .post-row {
+        justify-content: space-between;
+        width: 526px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body.home main {
+        max-width: 1100px;
+    }
+
+    /* marcas */
+    body.home main section.container-marcas article.marcas div {
+        width: 22%;
+    }
+    body.home main section.container-marcas article.marcas div.tres {
+        display: flex;
+    }
+
+    /* products */
+    body.home main section.productos {
+        margin: 90px auto 110px;
+    }
+    body.home main section.productos article {
+        width: 23%;
+    }
+    
+    body.home main section.productos img {
+        margin-top: 85px;
+    }
+    body.home main section.productos article .check-like {
+        bottom: 160px;
+        background-color: rgba(245, 235, 226, 0.45);
+        z-index: 30;
+        opacity: 0;
+    }
+    body.home main section.productos article figure:hover ~ .check-like,
+    body.home main section.productos article .check-like:hover  {
+        opacity: 1;
+    }
+    body.home main section.productos article .box-detalle p a:hover {
+        color: var(--color-discount);
+        text-decoration: underline;
+    }
+    
+    /* --------- coleccion --------- */
+    body.home main section.coleccion {
+        display: flex;
+    }
+
+    /* --------- galeria redes --------- */
+    /* sacando flechas */
+    body.home main section.galeria-redes .galeria-flechas {
+        display: none;
+    }
+    body.home main section.container-galeria {
+        background-color: hsl(0, 0%, 50%, 0.1);
+        border-radius: 45px;
+        width: 80%; 
+        margin: 125px auto;
+    }
+    body.home main section.container-galeria section.galeria-redes {
+        background-color: transparent;
+    }
+    body.home main section.container-galeria .galeria-redes img.uno {
+        width: 120px;
+    }
+    body.home main section.container-galeria .galeria-redes img {
+        display: block;
+        max-width: 92.4px;
+    }
+    body.home main section.container-galeria .galeria-redes .post {
+        width: 643px;
+    }
+    body.home main section.container-galeria .galeria-redes .post-column {
+        height: 350px;
+    }
+    body.home main section.container-galeria .galeria-redes .post-row {
+        width: 230.5px;
+    }
 }

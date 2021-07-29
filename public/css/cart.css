@@ -1,0 +1,132 @@
+body.cart {
+  background-color: rgb(221, 221, 221);
+  margin: 2%;
+  
+}
+body.cart main {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+body.cart main button{
+  padding: 3%;
+  margin: 5%;
+  border: black solid 1px;
+  border-radius: 10px;
+  color: white;
+  
+}
+
+body.cart main div {
+  display: flex;
+  border: gray solid 2px;
+  background-color: rgb(197, 197, 197);
+  border-radius: 10px;
+  flex-direction: column;
+  margin: 5%;
+  padding: 5px;
+}
+body.cart main div ol {
+  display: flex;
+  justify-content:space-around;
+  width: 60%;
+  padding: 2px;
+  margin: 5px;
+  padding-left: 40px;
+}
+body.cart main div ol li {
+  font-family: "Playfair Display", serif;
+  color: #252440;
+  font-size: 16px;
+  margin: 5%;
+  list-style:none
+  ;
+  
+}
+body.cart main div ol li {
+  
+  font-size: 12px;
+  flex-direction: column;
+  text-align:justify;
+}
+body.cart main div ul li button {
+  border: black solid 1px;
+  border-radius: 10px;
+  width: 20%;
+  margin-left: 0px;
+
+  
+}
+body.cart main div article nav {
+  display: flex;
+}
+body.cart main div article nav ul li {
+
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px;
+  
+}
+
+body.cart main div article h4 {
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+body.cart main div article nav .imagendetallada {
+  flex-direction: row;
+  height: 30%;
+}
+body.cart main div article nav img {
+  width: 50%;
+  height: 100%;
+  border: black solid 2px;
+  margin: 10px;
+  margin-top: 30px;
+  border-radius: 10%;
+}
+body.cart main div article nav ul {
+  margin: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  color: #252440;
+}
+body.cart main div article nav ul li {
+  padding-left: 0px;
+  margin-top: 10%;
+  list-style: none;
+
+}
+body.cart main div article nav ol li {
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+body.cart main textarea {
+  margin: 5%;
+  border: black solid 2px;
+  border-radius: 10px;
+}
+body.cart main nav {
+  margin: 3%;
+  flex-direction: row;
+}
+body.cart main nav a{
+  color:rgb(0, 68, 255);
+}
+
+
+body.cart main button a{
+color:white;
+}
+
+body.cart main h4 {
+  font-family: "Playfair Display", serif;
+  color: #252440;
+  font-size: 18px;
+  margin:5%
+}
+
+
