@@ -1,28 +1,30 @@
-.home {
-    margin: 0 auto;
-    width: 100%;
+body.home {
     background-color:#f2f2f2;
 }
-.home p, .home h3 {
+body.home main {
+    margin: 0 auto;
+    width: 100%;
+}
+body.home main p, body.home main h3 {
     cursor: default;
 }
 
 /* ------------------ Marcas ------------------ */
-.home section.container-marcas {
+body.home main section.container-marcas {
     width: 80%;
     margin: 15px auto;
     position: relative;
     display: none;
 }
-.home section.container-marcas .icono-flecha-izq {
+body.home main section.container-marcas .icono-flecha-izq {
     position: absolute;
     left: 2%;
 }
-.home section.container-marcas .icono-flecha-der {
+body.home main section.container-marcas .icono-flecha-der {
     position: absolute;
     right: 2%;
 }
-.home section.container-marcas article.marcas{
+body.home main section.container-marcas article.marcas{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -30,17 +32,17 @@
     background-color: hsl(0, 0%, 50%, 0.1);
     border-radius: 45px;
 }
-.home section.container-marcas article.marcas img {
+body.home main section.container-marcas article.marcas img {
     width: 100%;
 }
 
 /* ---------------- Productos ---------------- */
-.home section.productos {
+body.home main section.productos {
     display: flex;
     flex-wrap: wrap;
     margin: 50px auto;
 }
-.home section.productos article {
+body.home main section.productos article {
     height: max-content;
     margin: 20px auto;
     border-radius: 15px;
@@ -48,7 +50,7 @@
     background-color: #fff;
 }
 
-.home section.productos article h3 {
+body.home main section.productos article h3 {
     width:100%;
     font-family: 'Crimson Text', serif;
     font-weight: 900;
@@ -58,86 +60,86 @@
     position: absolute;
     z-index: 1;
 }
-.home section.productos article figure {
+body.home main section.productos article figure {
     width: 90%;
     height: max-content;
     margin: auto;
 }
-.home section.productos img {
+body.home main section.productos img {
     position:relative;
     z-index: 20;
     margin-top: 70px;
     width: 100%;
 }
-.home section.productos article .box-detalle {
+body.home main section.productos article .box-detalle {
     text-align: center;
     padding: 20px;
     padding-top:0;
     height: 126.4px;
 }
-.home section.productos article .box-detalle p {
+body.home main section.productos article .box-detalle p {
     line-height: 1.9;
     margin: 0;
 }
-.home section.productos article .box-detalle p a {
+body.home main section.productos article .box-detalle p a {
     color: var(--font-body);
     text-decoration: none;
     font-size:var(--font-subtitle);
 }
-.home section.productos article .box-detalle p.discount {
+body.home main section.productos article .box-detalle p.discount {
     text-decoration: line-through;
     font-size: var(--font-title);
     font-family: 'Crimson Text', serif;
     color: var(--color-discount);
     height: 30.4px;
 }
-.home section.productos article .box-detalle p.price{
+body.home main section.productos article .box-detalle p.price{
     font-family: 'Crimson Text', serif;
     font-size: 1.7rem;
     margin-top: 2px;
 }
 
-.home section.productos article .check-like {
+body.home main section.productos article .check-like {
     position: absolute;
     display: flex;
     justify-content: space-around;
     align-content: center;
     width: 100%;
 }
-.home section.productos article .check-like input,
-.home section.productos article .check-buy input,
-.home section.productos article .check-buy label.plus {
+body.home main section.productos article .check-like input,
+body.home main section.productos article .check-buy input,
+body.home main section.productos article .check-buy label.plus {
     display:none;
 }
-.home section.productos article .check-buy {
+body.home main section.productos article .check-buy {
     position:relative;
     width: 36px;
 }
-.home section.productos article .check-like i,
-.home section.productos article .check-buy i {
+body.home main section.productos article .check-like i,
+body.home main section.productos article .check-buy i {
     padding:7px;
     font-size: 1.3rem;
 }
-.home section.productos article .check-buy label.plus i {
+body.home main section.productos article .check-buy label.plus i {
     font-size: 10px;
 }
-.home section.productos article .check-buy label.plus {
+body.home main section.productos article .check-buy label.plus {
     position:absolute;
     bottom: -5px;
     right: -7px;
 }
-.home section.productos article .check-like input:checked ~ label i {
+body.home main section.productos article .check-like input:checked ~ label i {
     font-weight: 900;
 }
 
-.home section.productos article .check-buy input:checked ~ label.plus {
+body.home main section.productos article .check-buy input:checked ~ label.plus {
     display: block;
 }
 
 /* ------------------ Fin products ------------------ */
 
 /* ------------------  Coleccion ------------------  */
-.home section.coleccion {
+body.home main section.coleccion {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -148,32 +150,32 @@
     overflow: hidden;
     display:none;
 }
-.home section.coleccion .contenedor {
+body.home main section.coleccion .contenedor {
     display:flex;
 }
-.home section.coleccion figure {
+body.home main section.coleccion figure {
     position: relative;
     overflow: hidden;
     margin: 0;
 }
-.home section.coleccion figure.uno {
+body.home main section.coleccion figure.uno {
     height: 550px;
     width: 550px;
 }
-.home section.coleccion figure.dos {
+body.home main section.coleccion figure.dos {
     width: 400px;
     height: 300px;
 }
-.home section.coleccion figure.tres {
+body.home main section.coleccion figure.tres {
     height: 250px;
     width: 400px;
 }
-.home section.coleccion img {
+body.home main section.coleccion img {
     width: 100%;
     height: 100%;
     transition: all .5s ease-out;
 }
-.home section.coleccion a {
+body.home main section.coleccion a {
     width: 100%;
     position: absolute;
     top: 45%;
@@ -188,23 +190,23 @@
     opacity: 0;
     visibility: hidden;
 }
-.home section.coleccion figure:hover > a {
+body.home main section.coleccion figure:hover > a {
     opacity: 1;
     visibility: visible;
     font-size: 1.5rem;
     transition: all 0.5s linear;
 }
-.home section.coleccion figure:hover > img {
+body.home main section.coleccion figure:hover > img {
     position: absolute;
     transform: scale(1.3);
     transition: all 0.5s linear;
 }
 
 /* container-galeria - icono-instagram */
-.home section.container-galeria {
+body.home main section.container-galeria {
     margin: 50px auto;
 }
-.home section.container-galeria div.icono-instagram {
+body.home main section.container-galeria div.icono-instagram {
     width: 100%;
     display: flex;
     align-items: center;
@@ -212,7 +214,7 @@
 }
 
 /* circulo instagram */
-.home section.container-galeria div.icono-instagram .background-icono {
+body.home main section.container-galeria div.icono-instagram .background-icono {
     background: radial-gradient(
         circle at 33% 100%,
         #fed373 4%,
@@ -230,17 +232,17 @@
     
     }
     
-.home section.container-galeria div.icono-instagram h4 {
+body.home main section.container-galeria div.icono-instagram h4 {
     padding-left: 4px;
 }
-.home section.container-galeria div.background-icono i {
+body.home main section.container-galeria div.background-icono i {
     color: white;
 }
     
 
 
 /* galeria-redes */
-.home section.galeria-redes {
+body.home main section.galeria-redes {
     display: flex;
     justify-content: center;
     width: 90%;
@@ -253,40 +255,40 @@
 }
 
 /* galeria redes - flechas */
-.home section.container-galeria .galeria-redes .icono-flecha-der {
+body.home main section.container-galeria .galeria-redes .icono-flecha-der {
     position: absolute;
     right: 7%;
 }
-.home section.container-galeria .galeria-redes .icono-flecha-izq {
+body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
     position: absolute;
     left: 7%;
 }
-.home section.container-galeria .galeria-redes .post-column {
+body.home main section.container-galeria .galeria-redes .post-column {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     align-content: space-between;
 }
-.home section.container-galeria .galeria-redes .post-row {
+body.home main section.container-galeria .galeria-redes .post-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.home section.container-galeria .galeria-redes img {
+body.home main section.container-galeria .galeria-redes img {
     border-radius: 45px;
     display: none;
 }
-.home section.container-galeria .galeria-redes .grande {
+body.home main section.container-galeria .galeria-redes .grande {
     max-width: 230.5px;
 }
-.home section.container-galeria .galeria-redes .last-column {
+body.home main section.container-galeria .galeria-redes .last-column {
     width: max-content;
 }
 
 /*  galeria redes // marca - botones */
-.home section.container-galeria .galeria-redes button,
-.home .container-marcas button {
+body.home main section.container-galeria .galeria-redes button,
+body.home main .container-marcas button {
     border:none;
     background-color: transparent;
     color: black;
@@ -295,7 +297,7 @@
 
 
 /* Botón flotante Whats App */
-.home section.whatsapp .contenedor {
+body.home main section.whatsapp .contenedor {
     position: fixed;
     bottom: 15px;
     left: 10px;
@@ -306,25 +308,25 @@
     font-size:30px;
     z-index:100;
 }
-.home section.whatsapp .contenedor i {
+body.home main section.whatsapp .contenedor i {
     padding: 13px;
     font-size: 2.5rem;
     color: #fff;
 }
-.home .contenedor nav ul,
-.home section.whatsapp .contenedor nav input{
+body.home main .contenedor nav ul,
+body.home main section.whatsapp .contenedor nav input{
     display: none;
 }
-.home section.whatsapp .contenedor nav ul {
+body.home main section.whatsapp .contenedor nav ul {
     position:absolute;
     left: 70px;
     bottom: 9%;   
     padding: 0;
 }
-.home section.whatsapp .contenedor nav li {
+body.home main section.whatsapp .contenedor nav li {
     list-style: none;
 }
-.home section.whatsapp .contenedor nav li a {
+body.home main section.whatsapp .contenedor nav li a {
     background-color: #fff;
     padding: 10px;
     border-radius: 20px;
@@ -333,10 +335,10 @@
     border: 1px solid #ccc;
     font-size: var(--font-title)
 }
-.home section.whatsapp .contenedor nav input:checked ~ ul{
+body.home main section.whatsapp .contenedor nav input:checked ~ ul{
     display: block;    
 }
-.home section.whatsapp .contenedor nav {
+body.home main section.whatsapp .contenedor nav {
     position: relative;
 }
 /* Fin botón flotante Whats App */
@@ -344,153 +346,153 @@
 /* Vista Mobile */
 @media (min-width: 320px) {
     /* --------- max-width vista ---------  */
-    .home {
+    body.home main {
         max-width: 435px;
         margin: 0 auto;
     }
 
     /* --------- productos --------- */
-    .home section.productos article {
+    body.home main section.productos article {
         width: 100%;
     }
-    .home section.productos article h3 {
+    body.home main section.productos article h3 {
         margin-top: 5px;
         font-size: 170px;
     }
-    .home section.productos img {
+    body.home main section.productos img {
         margin-top: 77px;
     }
-    .home section.productos article .check-like {
+    body.home main section.productos article .check-like {
         bottom: 28.2px;
     }
 
     /* --------- galeria redes ---------  */
-    .home section.container-galeria .galeria-redes {
+    body.home main section.container-galeria .galeria-redes {
         align-items: center;
     }
 
-    .home section.container-galeria .galeria-redes img.uno {
+    body.home main section.container-galeria .galeria-redes img.uno {
         display: block;
         width: 210px;
     }
-    .home section.container-galeria .galeria-redes .icono-flecha-der {
+    body.home main section.container-galeria .galeria-redes .icono-flecha-der {
         right: 5%;
     }
-    .home section.container-galeria .galeria-redes .icono-flecha-izq {
+    body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
         left: 5%;
     }
 }
 
 @media (min-width: 768px) {
-    .home {
+    body.home main {
         max-width: 930px;
     }
 
     /* --------- marcas --------- */
-    .home section.container-marcas {
+    body.home main section.container-marcas {
         display: flex;
         align-items: center;
     }
-    .home section.container-marcas article.marcas div {
+    body.home main section.container-marcas article.marcas div {
         display: flex;
         width: 33%
     }
-    .home section.container-marcas article.marcas div.tres {
+    body.home main section.container-marcas article.marcas div.tres {
         display: none;
     }
 
     /* --------- products --------- */
-        .home section.productos article {
+        body.home main section.productos article {
         width: 46%;
     }
-    .home section.productos img {
+    body.home main section.productos img {
         margin-top: 70px;
     }
 
     /* --------- galeria redes --------- */
-    .home section.container-galeria .galeria-redes img.dos,
-    .home section.container-galeria .galeria-redes img.uno {
+    body.home main section.container-galeria .galeria-redes img.dos,
+    body.home main section.container-galeria .galeria-redes img.uno {
         display: block;
         width: 246px;
     }
-    .home section.container-galeria .galeria-redes .post-row {
+    body.home main section.container-galeria .galeria-redes .post-row {
         justify-content: space-between;
         width: 526px;
     }
 }
 
 @media (min-width: 1024px) {
-    .home {
+    body.home main {
         max-width: 1100px;
     }
 
     /* marcas */
-    .home section.container-marcas article.marcas div {
+    body.home main section.container-marcas article.marcas div {
         width: 22%;
     }
-    .home section.container-marcas article.marcas div.tres {
+    body.home main section.container-marcas article.marcas div.tres {
         display: flex;
     }
 
     /* products */
-    .home section.productos {
+    body.home main section.productos {
         margin: 90px auto 110px;
     }
-    .home section.productos article {
+    body.home main section.productos article {
         width: 23%;
     }
     
-    .home section.productos img {
+    body.home main section.productos img {
         margin-top: 85px;
     }
-    .home section.productos article .check-like {
+    body.home main section.productos article .check-like {
         bottom: 160px;
         background-color: rgba(245, 235, 226, 0.45);
         z-index: 30;
         opacity: 0;
     }
-    .home section.productos article figure:hover ~ .check-like,
-    .home section.productos article .check-like:hover  {
+    body.home main section.productos article figure:hover ~ .check-like,
+    body.home main section.productos article .check-like:hover  {
         opacity: 1;
     }
-    .home section.productos article .box-detalle p a:hover {
+    body.home main section.productos article .box-detalle p a:hover {
         color: var(--color-discount);
         text-decoration: underline;
     }
     
     /* --------- coleccion --------- */
-    .home section.coleccion {
+    body.home main section.coleccion {
         display: flex;
     }
 
     /* --------- galeria redes --------- */
     /* sacando flechas */
-    .home section.galeria-redes .galeria-flechas {
+    body.home main section.galeria-redes .galeria-flechas {
         display: none;
     }
-    .home section.container-galeria {
+    body.home main section.container-galeria {
         background-color: hsl(0, 0%, 50%, 0.1);
         border-radius: 45px;
         width: 80%; 
         margin: 125px auto;
     }
-    .home section.container-galeria section.galeria-redes {
+    body.home main section.container-galeria section.galeria-redes {
         background-color: transparent;
     }
-    .home section.container-galeria .galeria-redes img.uno {
+    body.home main section.container-galeria .galeria-redes img.uno {
         width: 120px;
     }
-    .home section.container-galeria .galeria-redes img {
+    body.home main section.container-galeria .galeria-redes img {
         display: block;
         max-width: 92.4px;
     }
-    .home section.container-galeria .galeria-redes .post {
+    body.home main section.container-galeria .galeria-redes .post {
         width: 643px;
     }
-    .home section.container-galeria .galeria-redes .post-column {
+    body.home main section.container-galeria .galeria-redes .post-column {
         height: 350px;
     }
-    .home section.container-galeria .galeria-redes .post-row {
+    body.home main section.container-galeria .galeria-redes .post-row {
         width: 230.5px;
     }
 }
