@@ -1,0 +1,202 @@
+/*-----------------------footer mobile--------------------------*/
+
+body footer{
+    display: flex;
+    background-color: rgb(217, 248, 255);
+  }
+  
+  body footer div img{
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 80px;
+  }
+  body footer section .lista{
+    display: flex;
+    
+  }
+  body footer section .lista nav h4{
+    margin: 2px;
+    color: rgb(0, 68, 255);
+    font-size: 16px;
+    font-family: "Playfair Display", serif;
+  }
+  body footer section .lista nav ul{
+    display:none
+  }
+  body footer section .lista nav ul li{
+    color: rgb(0, 68, 255);
+    font-size: 16px;
+}
+  body footer section .marca .iconos{
+  padding-left: 20px;
+  }
+  body footer section .marca .iconos i{
+    color: rgb(0, 68, 255);
+    padding: 5%;
+    align-content: space-between;
+  }
+  body footer section .marca .registrada{
+    color: rgb(0, 68, 255);
+    font-size: 12px;
+    text-align:center
+    
+  }
+  body footer section .marca .registrada p{
+    color: rgb(0, 68, 255);
+    font-size: 12px;
+}
+  
+  
+  
+  
+  
+  
+  /*-------------------footer tablet..........................*/
+  
+  
+  
+  
+  
+  @media(min-width:430px){
+    body footer{
+      display: flex;
+      background-color: rgb(217, 248, 255);
+    }
+    
+    body footer div img{
+      margin-top: 20px;
+      width: 150px;
+      margin-left: 15px;
+    }
+    
+    body footer section .lista{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 650px;
+      
+    }
+    body footer section .lista nav h4{
+      margin: 2px;
+      color: rgb(0, 68, 255);
+      font-size: 16px;
+      font-family: "Playfair Display", serif;
+    }
+    body footer section .lista nav ul{
+      display:flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 10px;
+      color: rgb(0, 68, 255);
+      font-size: 16px;
+    }
+    body footer section .lista nav ul li{
+        color: rgb(0, 68, 255);
+        font-size: 16px;
+    }
+    body footer section .marca .iconos{
+      
+    padding-left: 30%;
+    }
+    body footer section .marca .iconos i{
+      color: rgb(0, 68, 255);
+      padding: 5%;
+      align-content: space-between;
+      
+    }
+    body footer section .marca .registrada{
+      display: flex;
+      color: rgb(0, 68, 255);
+      font-size: 12px;
+      
+      text-align:start
+      
+    }
+    body footer section .marca .registrada p{
+        color: rgb(0, 68, 255);
+        font-size: 12px;
+    }
+    
+    body footer section .redes{
+      display: none;
+    }
+    
+    
+  }
+  
+  
+  
+  /*-----------------footer laptop------------*/
+  
+   
+  @media(min-width:1024px){
+    body footer{
+      
+      display: flex;
+      background-color: rgb(217, 248, 255);
+    }
+    
+    body footer div img{
+      margin-top: 20px;
+      width: 200px;
+      margin-left: 40px;
+    }
+    
+    body footer section .lista{
+      display: flex;
+      justify-content:space-around;
+      align-items:flex-start;
+      width: 650px;
+      
+    }
+    body footer section .lista nav h4{
+      margin: 2px;
+      color: rgb(0, 68, 255);
+      font-size: 16px;
+      font-family: "Playfair Display", serif;
+    }
+    body footer section .lista nav ul{
+      display:flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 10px;
+      color: rgb(0, 68, 255);
+      font-size: 16px;
+    }
+    body footer section .lista nav ul li{
+        color: rgb(0, 68, 255);
+        font-size: 16px;
+    }
+    body footer section .marca .iconos{
+      background-color: rgba(138, 228, 255, 0.384);
+    padding-left: 65%;
+    }
+    body footer section .marca .iconos i{
+      
+      color: rgb(0, 68, 255);
+      padding: 5%;
+      align-content: space-between;
+      
+    }
+    body footer section .marca .registrada{
+      display: flex;
+      color: rgb(0, 68, 255);
+      font-size: 12px;
+      justify-content:space-evenly;
+      text-align:start
+      
+    }
+    
+    body footer section .redes{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    body footer section .marca .registrada p{
+        color: rgb(0, 68, 255);
+        font-size: 12px;
+    }
+    
+  }
