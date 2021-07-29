@@ -1,14 +1,14 @@
-body {
+body.cart {
   background-color: rgb(221, 221, 221);
   margin: 2%;
   
 }
-body main {
+body.cart main {
   display: flex;
   flex-direction: column;
   margin: 5%;
 }
-body main button{
+body.cart main button{
   padding: 3%;
   margin: 5%;
   border: black solid 1px;
@@ -17,7 +17,7 @@ body main button{
   
 }
 
-body main div {
+body.cart main div {
   display: flex;
   border: gray solid 2px;
   background-color: rgb(197, 197, 197);
@@ -26,7 +26,7 @@ body main div {
   margin: 5%;
   padding: 5px;
 }
-body main div ol {
+body.cart main div ol {
   display: flex;
   justify-content:space-around;
   width: 60%;
@@ -34,7 +34,7 @@ body main div ol {
   margin: 5px;
   padding-left: 40px;
 }
-body main div ol li {
+body.cart main div ol li {
   font-family: "Playfair Display", serif;
   color: #252440;
   font-size: 16px;
@@ -43,13 +43,13 @@ body main div ol li {
   ;
   
 }
-body main div ol li {
+body.cart main div ol li {
   
   font-size: 12px;
   flex-direction: column;
   text-align:justify;
 }
-body main div ul li button {
+body.cart main div ul li button {
   border: black solid 1px;
   border-radius: 10px;
   width: 20%;
@@ -57,10 +57,10 @@ body main div ul li button {
 
   
 }
-body main div article nav {
+body.cart main div article nav {
   display: flex;
 }
-body main div article nav ul li {
+body.cart main div article nav ul li {
 
   font-family: "Playfair Display", serif;
   font-size: 16px;
@@ -69,16 +69,16 @@ body main div article nav ul li {
   
 }
 
-body main div article h4 {
+body.cart main div article h4 {
   align-content: center;
   flex-direction: column;
   text-align: center;
 }
-body main div article nav .imagendetallada {
+body.cart main div article nav .imagendetallada {
   flex-direction: row;
   height: 30%;
 }
-body main div article nav img {
+body.cart main div article nav img {
   width: 50%;
   height: 100%;
   border: black solid 2px;
@@ -86,225 +86,48 @@ body main div article nav img {
   margin-top: 30px;
   border-radius: 10%;
 }
-body main div article nav ul {
+body.cart main div article nav ul {
   margin: 5px;
   padding-left: 5px;
   font-size: 16px;
   font-family: "Playfair Display", serif;
   color: #252440;
 }
-body main div article nav ul li {
+body.cart main div article nav ul li {
   padding-left: 0px;
   margin-top: 10%;
   list-style: none;
 
 }
-body main div article nav ol li {
+body.cart main div article nav ol li {
   font-size: 16px;
   font-family: "Playfair Display", serif;
 }
 
-body main textarea {
+body.cart main textarea {
   margin: 5%;
   border: black solid 2px;
   border-radius: 10px;
 }
-body main nav {
+body.cart main nav {
   margin: 3%;
   flex-direction: row;
 }
-body main nav a{
+body.cart main nav a{
   color:rgb(0, 68, 255);
 }
 
 
-body main button a{
+body.cart main button a{
 color:white;
 }
 
-body main h4 {
+body.cart main h4 {
   font-family: "Playfair Display", serif;
   color: #252440;
   font-size: 18px;
   margin:5%
 }
 
-/*-----------------------footer mobile--------------------------*/
 
-body footer{
-  display: flex;
-  background-color: rgb(217, 248, 255);
-}
-
-body footer div img{
-  margin-left: 15px;
-  margin-top: 20px;
-  width: 80px;
-}
-body footer section .lista{
-  display: flex;
-  
-}
-body footer section .lista nav h4{
-  margin: 2px;
-  color: rgb(0, 68, 255);
-  font-size: 16px;
-  font-family: "Playfair Display", serif;
-}
-body footer section .lista nav ul{
-  display:none
-}
-body footer section .marca .iconos{
-padding-left: 20px;
-}
-body footer section .marca .iconos i{
-  color: rgb(0, 68, 255);
-  padding: 5%;
-  align-content: space-between;
-}
-body footer section .marca .registrada{
-  color: rgb(0, 68, 255);
-  font-size: 12px;
-  text-align:center
-  
-}
-
-
-
-
-
-
-/*-------------------footer tablet..........................*/
-
-
-
-
-
-@media(min-width:430px){
-  body footer{
-    display: flex;
-    background-color: rgb(217, 248, 255);
-  }
-  
-  body footer div img{
-    margin-top: 20px;
-    width: 150px;
-    margin-left: 15px;
-  }
-  
-  body footer section .lista{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 650px;
-    
-  }
-  body footer section .lista nav h4{
-    margin: 2px;
-    color: rgb(0, 68, 255);
-    font-size: 16px;
-    font-family: "Playfair Display", serif;
-  }
-  body footer section .lista nav ul{
-    display:flex;
-    flex-direction: column;
-    list-style: none;
-    padding-left: 10px;
-    color: rgb(0, 68, 255);
-    font-size: 16px;
-  }
-  body footer section .marca .iconos{
-    
-  padding-left: 30%;
-  }
-  body footer section .marca .iconos i{
-    color: rgb(0, 68, 255);
-    padding: 5%;
-    align-content: space-between;
-    
-  }
-  body footer section .marca .registrada{
-    display: flex;
-    color: rgb(0, 68, 255);
-    font-size: 12px;
-    
-    text-align:start
-    
-  }
-  
-  body footer section .redes{
-    display: none;
-  }
-  
-  
-}
-
-
-
-/*-----------------footer laptop------------*/
-
- 
-@media(min-width:1024px){
-  body footer{
-    
-    display: flex;
-    background-color: rgb(217, 248, 255);
-  }
-  
-  body footer div img{
-    margin-top: 20px;
-    width: 200px;
-    margin-left: 40px;
-  }
-  
-  body footer section .lista{
-    display: flex;
-    justify-content:space-around;
-    align-items:flex-start;
-    width: 650px;
-    
-  }
-  body footer section .lista nav h4{
-    margin: 2px;
-    color: rgb(0, 68, 255);
-    font-size: 16px;
-    font-family: "Playfair Display", serif;
-  }
-  body footer section .lista nav ul{
-    display:flex;
-    flex-direction: column;
-    list-style: none;
-    padding-left: 10px;
-    color: rgb(0, 68, 255);
-    font-size: 16px;
-  }
-  body footer section .marca .iconos{
-    background-color: rgba(138, 228, 255, 0.384);
-  padding-left: 65%;
-  }
-  body footer section .marca .iconos i{
-    
-    color: rgb(0, 68, 255);
-    padding: 5%;
-    align-content: space-between;
-    
-  }
-  body footer section .marca .registrada{
-    display: flex;
-    color: rgb(0, 68, 255);
-    font-size: 12px;
-    justify-content:space-evenly;
-    text-align:start
-    
-  }
-  
-  body footer section .redes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-}
  
