@@ -1,21 +1,28 @@
+/*header*/
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
 *{
     padding: 0;
     margin: 0;
 }
-
 body.product{
-    background-image: url("/images/banner\ \(1\).jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 123px;
+    width: 100%;
+}
+.product header section{
+    position: relative;
+}
+
+body.product header section img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
     
 }
 
 body.product header{
     background-color: rgba(0, 0, 0, 0.0);
-    padding-bottom: 88px;
+    
 }
 
 body.product header nav h1{
@@ -29,34 +36,185 @@ body.product header nav h1{
 }
 
 body.product header nav{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: transparent;
-    padding-top: 10px;
 }
-
 body.product header nav ul {
     background-color: transparent;
     display: flex;
+    justify-content: center;
     padding-top: 5px;
 }
 
+
+body.product header nav ul.primero{
+    position: absolute;
+    top: 10px;
+    left: 5%;
+}
+
+body.product header nav ul.medio{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 9px;
+    right: 37.5%;
+}
+
+.product header nav ul.ultimo{
+    position: absolute;
+    top: 10px;
+    right: 5%;
+}
+
+body.product header nav ul li:hover{
+    background-color: #f2f2f2;
+}
 
 
 body.product header nav ul li {
     display: inline-block;
     background-color: transparent;
-    
+    transition: all .5s;
 }
 
 body.product header nav ul li a{
     display: inline-block;
     padding: 0 5px;
     background-color: transparent;
-    
 }
+
+
 
 .product header nav ul li a i{
     font-size: 15px;
     padding-top: 2px;
+    
+}
+
+.product header nav ul.headerlaptop{
+    display: none;
+}
+
+.product header nav ul button.izq{
+    position: absolute;
+    top: 35%;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    height: 40px;
+    width: 25px;
+    
+}
+
+.product header nav ul button.der{
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    height: 40px;
+    width: 25px;
+    
+}
+
+.product header nav ul button.der i,.product header nav ul button.izq i{
+    font-size: 30px;
+    color: var(--color-background);
+}
+
+@media (min-width:768px){
+
+    /*header*/
+    body.product header nav h1{
+        
+        font-size: 28px;
+        
+    }
+    
+    body.product header nav ul {
+        padding: 10px;
+    }
+    
+    body.product header nav ul.primero{
+        top: 20px;
+        left: 20px;
+    }
+    
+    body.product header nav ul.medio{
+        top: 19px;
+        right: 37.5%;
+    }
+    
+    .product header nav ul.ultimo{
+        top: 20px;
+        right: 20px;
+    }
+    
+    
+    
+    
+    body.product header nav ul li a{
+        padding: 0 5px;
+    }
+    
+    
+    
+    .product header nav ul li a i{
+        font-size: 24px;
+    }
+    
+    .product header nav ul button.izq{
+        
+        top: 40%;
+        left: 30px;
+        height: 50px;
+        width: 30px;
+        
+    }
+    
+    .product header nav ul button.der{
+        top: 40%;
+        right: 30px;
+        height: 50px;
+        width: 30px;
+        
+    }
+    
+    .product header nav ul button.der i,.product header nav ul button.izq i{
+        font-size: 45px;
+        color: var(--color-background);
+    }
+}
+
+@media (min-width:1024px){
+
+    body.product header nav ul.primero, .product header nav ul.ultimo{
+        display: none;
+    }
+
+    body.product header nav ul.medio{
+        top: 0;
+        right: 42%;
+    }
+
+
+    .product header nav ul.headerlaptop{
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 45px;
+    }
+
+    .product header nav ul.headerlaptop li a{
+        font-size: 22px;
+    }
+
+    .product header nav ul.headerlaptop li a i.acompañante{
+        padding-left: 10px;
+    }
 }
