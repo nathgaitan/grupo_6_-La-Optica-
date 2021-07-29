@@ -5,14 +5,14 @@
     padding: 0;
     margin: 0;
 }
-body.product{
+body {
     width: 100%;
 }
-.product header section{
+  header section{
     position: relative;
 }
 
-body.product header section img{
+body  header section img{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,12 +20,12 @@ body.product header section img{
     
 }
 
-body.product header{
+body  header{
     background-color: rgba(0, 0, 0, 0.0);
     
 }
 
-body.product header nav h1{
+body  header nav h1{
     display: flex;
     font-size: var(--font-title);
     color: var(--color-title);
@@ -35,13 +35,13 @@ body.product header nav h1{
     font-family:  'Dancing Script', cursive;;
 }
 
-body.product header nav{
+body  header nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: transparent;
 }
-body.product header nav ul {
+body  header nav ul {
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -49,13 +49,13 @@ body.product header nav ul {
 }
 
 
-body.product header nav ul.primero{
+body  header nav ul.primero{
     position: absolute;
     top: 10px;
     left: 5%;
 }
 
-body.product header nav ul.medio{
+body  header nav ul.medio{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -63,24 +63,24 @@ body.product header nav ul.medio{
     right: 37.5%;
 }
 
-.product header nav ul.ultimo{
+  header nav ul.ultimo{
     position: absolute;
     top: 10px;
     right: 5%;
 }
 
-body.product header nav ul li:hover{
+body  header nav ul li:hover{
     background-color: #f2f2f2;
 }
 
 
-body.product header nav ul li {
+body  header nav ul li {
     display: inline-block;
     background-color: transparent;
     transition: all .5s;
 }
 
-body.product header nav ul li a{
+body  header nav ul li a{
     display: inline-block;
     padding: 0 5px;
     background-color: transparent;
@@ -88,17 +88,17 @@ body.product header nav ul li a{
 
 
 
-.product header nav ul li a i{
+  header nav ul li a i{
     font-size: 15px;
     padding-top: 2px;
     
 }
 
-.product header nav ul.headerlaptop{
+  header nav ul.headerlaptop{
     display: none;
 }
 
-.product header nav ul button.izq{
+  header nav ul button.izq{
     position: absolute;
     top: 35%;
     left: 20px;
@@ -109,7 +109,7 @@ body.product header nav ul li a{
     
 }
 
-.product header nav ul button.der{
+  header nav ul button.der{
     position: absolute;
     top: 35%;
     right: 20px;
@@ -120,7 +120,7 @@ body.product header nav ul li a{
     
 }
 
-.product header nav ul button.der i,.product header nav ul button.izq i{
+  header nav ul button.der i,  header nav ul button.izq i{
     font-size: 30px;
     color: var(--color-background);
 }
@@ -128,27 +128,27 @@ body.product header nav ul li a{
 @media (min-width:768px){
 
     /*header*/
-    body.product header nav h1{
+    body  header nav h1{
         
         font-size: 28px;
         
     }
     
-    body.product header nav ul {
+    body  header nav ul {
         padding: 10px;
     }
     
-    body.product header nav ul.primero{
+    body  header nav ul.primero{
         top: 20px;
         left: 20px;
     }
     
-    body.product header nav ul.medio{
+    body  header nav ul.medio{
         top: 19px;
         right: 37.5%;
     }
     
-    .product header nav ul.ultimo{
+      header nav ul.ultimo{
         top: 20px;
         right: 20px;
     }
@@ -156,17 +156,17 @@ body.product header nav ul li a{
     
     
     
-    body.product header nav ul li a{
+    body  header nav ul li a{
         padding: 0 5px;
     }
     
     
     
-    .product header nav ul li a i{
+      header nav ul li a i{
         font-size: 24px;
     }
     
-    .product header nav ul button.izq{
+      header nav ul button.izq{
         
         top: 40%;
         left: 30px;
@@ -175,7 +175,7 @@ body.product header nav ul li a{
         
     }
     
-    .product header nav ul button.der{
+      header nav ul button.der{
         top: 40%;
         right: 30px;
         height: 50px;
@@ -183,7 +183,7 @@ body.product header nav ul li a{
         
     }
     
-    .product header nav ul button.der i,.product header nav ul button.izq i{
+      header nav ul button.der i,  header nav ul button.izq i{
         font-size: 45px;
         color: var(--color-background);
     }
@@ -191,17 +191,17 @@ body.product header nav ul li a{
 
 @media (min-width:1024px){
 
-    body.product header nav ul.primero, .product header nav ul.ultimo{
+    body  header nav ul.primero,   header nav ul.ultimo{
         display: none;
     }
 
-    body.product header nav ul.medio{
+    body  header nav ul.medio{
         top: 0;
         right: 42%;
     }
 
 
-    .product header nav ul.headerlaptop{
+      header nav ul.headerlaptop{
         width: 100%;
         padding: 15px;
         display: flex;
@@ -210,11 +210,11 @@ body.product header nav ul li a{
         top: 45px;
     }
 
-    .product header nav ul.headerlaptop li a{
+      header nav ul.headerlaptop li a{
         font-size: 22px;
     }
 
-    .product header nav ul.headerlaptop li a i.acompañante{
+      header nav ul.headerlaptop li a i.acompañante{
         padding-left: 10px;
     }
 }
