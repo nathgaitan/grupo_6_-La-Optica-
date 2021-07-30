@@ -9,7 +9,6 @@
 .product main{
     width: 100%;
     padding-bottom: 35px;
-    
 }
 .product main section{
     width: 90%;
@@ -88,7 +87,7 @@
 }
 
 .product main section.container button.comprarya{
-    
+    display: block;
     position: fixed;
     bottom: 0;
     width: 90%;
@@ -108,69 +107,9 @@
 
 
 
-@media (min-width:768px){
+@media (min-width:481px){
 
-    /*main
-
-    .product main{
-        padding-bottom: 55px;
-        
-    }
-    
-    .product main section span.marca{
-        font-size: 22px;
-    }
-    
-    .product main section div div.nye h2{
-        font-size: 22px;
-    }
-    
-    .product main section span.precio{
-        font-size: 24px;
-        padding: 10px;
-    }
-    .product main section button.agregar{
-        padding: 15px 0;
-        
-    }
-
-    .product main section button.agregar h4{
-        font-size: 22px;
-    }
-
-    .product main section button.agregar span i{
-        padding-top: 8px;
-    }
-    
-    .product main section div.receta span{
-        font-size: 22px;
-        padding-right: 10px;
-    }
-
-    .product main section div.receta button{
-        font-size: 20px;
-    }
-    
-    .product main section h3{
-        width: 90%;
-        display: inline-block;
-        margin: auto;
-        font-size: 22px;
-        padding: 15px 0;
-    }
-    
-    .product main section button.vermas{
-        width: 100%;
-        font-size: 22px;
-        padding: 15px ;
-        
-    }
-    
-    
-    .product main button.comprarya{
-        height: 60px;
-        font-size: 22px;
-    }*/
+    /*main */
 
     .product main{
         padding-bottom: 55px;
@@ -309,7 +248,7 @@
     }
 }
 
-@media (min-width:1024px){
+@media (min-width:769px){
 
     
 
