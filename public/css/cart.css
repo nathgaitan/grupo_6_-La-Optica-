@@ -20,7 +20,7 @@ body.cart main button{
 body.cart main div {
   display: flex;
   border: gray solid 2px;
-  background-color: rgb(197, 197, 197);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   flex-direction: column;
   margin: 5%;

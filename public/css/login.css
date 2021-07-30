@@ -26,6 +26,8 @@
 
 .login main article .log-img{
     text-align: center;
+    padding-bottom: 20px;
+    
 }
 
 .login main article div .img1{
@@ -42,8 +44,12 @@
     display: none;
 }
 
-.login main article .inicio{
+.login main article .inicio1{
     text-align: center;
+}
+
+.login main article .inicio2{
+    display: none;
 }
 
 .login main article h2{
@@ -64,6 +70,7 @@
 .login main article input{
     display: block;
     padding-right: 120px;
+    border-radius: 5px;
 }
 
 .login main article .radio-box{
@@ -154,6 +161,7 @@
     .login main article .log-img2{
         display: block;
         text-align: center;
+        padding-bottom: 20pxgit ;
     }
 
     .login main article .img2{
@@ -221,6 +229,15 @@
         width: 750px;
         margin: 0 auto;
         background-color: white;
+    }
+
+    .login main article .inicio1{
+        display: none;
+    }
+    
+    .login main article .inicio2{
+        display: inline-block;
+        padding-left: 80px;
     }
 
     .login main article .img2{
