@@ -306,11 +306,11 @@ body.home main section.whatsapp .contenedor {
     color:#FFF;
     border-radius:50px;
     text-align:center;
-    font-size:30px;
+    border: 1px solid #ccc;
     z-index:100;
 }
 body.home main section.whatsapp .contenedor i {
-    padding: 13px;
+    padding: 12px;
     font-size: 2.5rem;
     color: #fff;
 }
@@ -321,8 +321,9 @@ body.home main section.whatsapp .contenedor nav input{
 body.home main section.whatsapp .contenedor nav ul {
     position:absolute;
     left: 70px;
-    bottom: 9%;   
+    bottom: 17.5px;   
     padding: 0;
+    width: max-content;
 }
 body.home main section.whatsapp .contenedor nav li {
     list-style: none;
@@ -333,6 +334,7 @@ body.home main section.whatsapp .contenedor nav li a {
     border-radius: 20px;
     text-decoration: none;
     color: var(--font-body);
+    box-shadow: 2px 2px #ccc;
     border: 1px solid #ccc;
     font-size: var(--font-title)
 }
@@ -358,10 +360,10 @@ body.home main section.whatsapp .contenedor nav {
     }
     body.home main section.productos article h3 {
         margin-top: 5px;
-        font-size: 170px;
+        font-size: 115px;
     }
     body.home main section.productos img {
-        margin-top: 77px;
+        margin-top: 114px;
     }
     body.home main section.productos article .check-like {
         bottom: 28.2px;
@@ -407,7 +409,7 @@ body.home main section.whatsapp .contenedor nav {
         width: 46%;
     }
     body.home main section.productos img {
-        margin-top: 70px;
+        margin-top: 108px;
     }
 
     /* --------- galeria redes --------- */
@@ -444,10 +446,11 @@ body.home main section.whatsapp .contenedor nav {
     }
     
     body.home main section.productos img {
-        margin-top: 85px;
+        margin-top: 65px;
+        padding: 20px;
     }
     body.home main section.productos article .check-like {
-        bottom: 160px;
+        bottom: 131px;
         background-color: rgba(245, 235, 226, 0.45);
         z-index: 30;
         opacity: 0;
