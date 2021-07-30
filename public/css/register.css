@@ -2,6 +2,8 @@
     width: 350px;
     margin: 0 auto;
     background-color: white;
+    padding: 50px 0;
+    
 }
 .register article{
     border: gray solid 1px;
@@ -16,7 +18,12 @@
 .register main article .registrate{
     display: flex;
     width: 100%;
-    
+    padding: 30px 0;
+    text-align: center;
+}
+
+.register main article .titulo{
+    text-align: center;
 }
 
 
@@ -29,9 +36,9 @@
 
 .register main article div .ingresa{
     font-size: 12px;
-    font-weight: bold;
-    padding: 12px 0 0 40px;
-    width: 30%;   
+    font-weight: bold;    
+    width: 50%;
+    padding: 0 0 7px 50px;
 }
 
 .register main article div .logo{
@@ -63,6 +70,7 @@
     width: 100%;
     justify-content: center;
     border-radius: 5px;
+    padding-left: 5px;
 }
 
 .register main article .quehacer{
@@ -111,15 +119,14 @@
     .register main h4{
         font-size: 15px;
         padding-left: 20px;
-        width: 70%;
+        width: 50%;
         
     }
     
     .register main article div .ingresa{
         font-size: 15px;
         font-weight: bold;
-        padding: 22px 0 0 40px;
-        width: 30%;   
+        width: 50%;   
     }
 
 
@@ -247,8 +254,7 @@
     .register main article div .ingresa{
         font-size: 15px;
         font-weight: bold;
-        padding: 22px 0 0 80px;
-        width: 30%;   
+        width: 40%;   
     }
 
 
@@ -302,7 +308,7 @@
         display: flex;
         width: 100%;
         justify-content: center;
-        
+        text-align: center;
     }
       
  
