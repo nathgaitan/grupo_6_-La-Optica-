@@ -41,7 +41,7 @@ body.home main section.productos {
     display: flex;
     flex-wrap: wrap;
     margin: 50px auto;
-    width: 97%;
+    width: 95%;
 }
 body.home main section.productos article {
     height: max-content;
@@ -49,6 +49,7 @@ body.home main section.productos article {
     border-radius: 15px;
     position: relative;
     background-color: #fff;
+    display: none;
 }
 
 body.home main section.productos article h3 {
@@ -176,6 +177,11 @@ body.home main section.coleccion img {
     height: 100%;
     transition: all .5s ease-out;
 }
+body.home main section.coleccion img.lente-coleccion {
+    position: absolute;
+    left: -51px;
+    width: 113%;
+}
 body.home main section.coleccion a {
     width: 100%;
     position: absolute;
@@ -212,6 +218,7 @@ body.home main section.container-galeria div.icono-instagram {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 15px;
 }
 
 /* circulo instagram */
@@ -358,12 +365,15 @@ body.home main section.whatsapp .contenedor nav {
     body.home main section.productos article {
         width: 100%;
     }
+    body.home main section.productos article.cuatro {
+        display: block;
+    }
     body.home main section.productos article h3 {
         margin-top: 5px;
         font-size: 115px;
     }
     body.home main section.productos img {
-        margin-top: 114px;
+        margin-top: 75px;
     }
     body.home main section.productos article .check-like {
         bottom: 28.2px;
@@ -408,8 +418,11 @@ body.home main section.whatsapp .contenedor nav {
         body.home main section.productos article {
         width: 46%;
     }
+    body.home main section.productos article.seis {
+        display: block;
+    }
     body.home main section.productos img {
-        margin-top: 108px;
+        margin-top: 67px;
     }
 
     /* --------- galeria redes --------- */
@@ -443,6 +456,7 @@ body.home main section.whatsapp .contenedor nav {
     }
     body.home main section.productos article {
         width: 23%;
+        display: block;
     }
     
     body.home main section.productos img {
@@ -478,7 +492,7 @@ body.home main section.whatsapp .contenedor nav {
         background-color: hsl(0, 0%, 50%, 0.1);
         border-radius: 45px;
         width: 80%; 
-        margin: 125px auto;
+        margin: 110px auto;
     }
     body.home main section.container-galeria section.galeria-redes {
         background-color: transparent;
