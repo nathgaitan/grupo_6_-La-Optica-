@@ -75,9 +75,7 @@ body.home main section.productos img {
 }
 body.home main section.productos article .box-detalle {
     text-align: center;
-    padding: 20px;
-    padding-top:0;
-    height: 126.4px;
+    padding-bottom: 20px;
 }
 body.home main section.productos article .box-detalle p {
     line-height: 1.9;
@@ -145,8 +143,8 @@ body.home main section.coleccion {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 551px;
-    width: 950px;
+    height: 450px;
+    width: 752px;
     margin: 20px auto;
     border-radius: 5px;
     overflow: hidden;
@@ -161,16 +159,16 @@ body.home main section.coleccion figure {
     margin: 0;
 }
 body.home main section.coleccion figure.uno {
-    height: 550px;
-    width: 550px;
+    height: 450px;
+    width: 450px;
 }
 body.home main section.coleccion figure.dos {
-    width: 400px;
-    height: 300px;
+    width: 313px;
+    height: 241px;
 }
 body.home main section.coleccion figure.tres {
-    height: 250px;
-    width: 400px;
+    height: 209px;
+    width: 303px;
 }
 body.home main section.coleccion img {
     width: 100%;
@@ -260,16 +258,15 @@ body.home main section.galeria-redes {
     border-radius: 45px;
     position: relative;
     padding: 20px;
+    padding-bottom: 35px;
 }
 
 /* galeria redes - flechas */
 body.home main section.container-galeria .galeria-redes .icono-flecha-der {
     position: absolute;
-    right: 7%;
 }
 body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
     position: absolute;
-    left: 7%;
 }
 body.home main section.container-galeria .galeria-redes .post-column {
     display: flex;
@@ -357,7 +354,6 @@ body.home main section.whatsapp .contenedor nav {
 @media (min-width: 320px) {
     /* --------- max-width vista ---------  */
     body.home main {
-        max-width: 435px;
         margin: 0 auto;
     }
 
@@ -396,11 +392,7 @@ body.home main section.whatsapp .contenedor nav {
     }
 }
 
-@media (min-width: 768px) {
-    body.home main {
-        max-width: 930px;
-    }
-
+@media (min-width: 425px) {
     /* --------- marcas --------- */
     body.home main section.container-marcas {
         display: flex;
@@ -429,15 +421,22 @@ body.home main section.whatsapp .contenedor nav {
     body.home main section.container-galeria .galeria-redes img.dos,
     body.home main section.container-galeria .galeria-redes img.uno {
         display: block;
-        width: 246px;
+        width: 44%;
+        max-width: 246px;
     }
     body.home main section.container-galeria .galeria-redes .post-row {
-        justify-content: space-between;
-        width: 526px;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+        right: 3.2%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+        left: 3.2%;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     body.home main {
         max-width: 1100px;
     }
@@ -473,6 +472,9 @@ body.home main section.whatsapp .contenedor nav {
     body.home main section.productos article .check-like:hover  {
         opacity: 1;
     }
+    body.home main section.productos article .box-detalle p a {
+        font-size: 12.5px;
+    }
     body.home main section.productos article .box-detalle p a:hover {
         color: var(--color-discount);
         text-decoration: underline;
@@ -491,26 +493,28 @@ body.home main section.whatsapp .contenedor nav {
     body.home main section.container-galeria {
         background-color: hsl(0, 0%, 50%, 0.1);
         border-radius: 45px;
-        width: 80%; 
+        width: 730px; 
         margin: 110px auto;
     }
     body.home main section.container-galeria section.galeria-redes {
         background-color: transparent;
     }
+    body.home main section.container-galeria .galeria-redes img.dos,
     body.home main section.container-galeria .galeria-redes img.uno {
-        width: 120px;
+        width: 100px;
     }
     body.home main section.container-galeria .galeria-redes img {
         display: block;
         max-width: 92.4px;
     }
     body.home main section.container-galeria .galeria-redes .post {
-        width: 643px;
+        width: 100%;
     }
     body.home main section.container-galeria .galeria-redes .post-column {
         height: 350px;
     }
     body.home main section.container-galeria .galeria-redes .post-row {
         width: 230.5px;
+        justify-content: space-between;
     }
 }
