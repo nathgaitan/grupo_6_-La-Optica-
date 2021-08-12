@@ -185,6 +185,8 @@
         
     }
 
+    
+
     .product main section button.agregar h4{
         font-size: 22px;
     }
@@ -263,6 +265,10 @@
     }
     .product main section.container{
         display: flex;
+        
+    }
+    .product main section.info {
+        width: 60%;
         
     }
     
