@@ -1,7 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const products = JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','products.json'),'utf-8'));
-
+const { products }  = require('../data/products_db');
 
 module.exports = {
     detail: (req,res)=>{
@@ -11,5 +8,19 @@ module.exports = {
             product,
         })
     },
+    list : (req, res) => { 
+        return res.render('products/productsList', {
+            title : "Listado de Productos",
+            products,
+            priceMayor,
+            priceMenor,
+            titleAsc,
+            titleDesc,
+            marcaAsc,
+            marcaDesc,
+            priceFinal,
+            toThousand
+        });
+    }
     
 }

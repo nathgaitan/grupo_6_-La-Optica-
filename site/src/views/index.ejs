@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', { title = <%= products.name %> <%= prodcuts.color %> }) %> 
+<body class="home">
+    <%- include('./partials/header') %> 
+    <main>
+        <section class="container-marcas">
+            <article class="marcas">
+                <div class="logo-marca dos"><img
+                        src="https://opticaariel.com.uy/wp-content/uploads/2017/05/guess-logo.png" width="255px" alt="">
+                </div>
+                <div class="logo-marca dos"><img
+                        src="https://www.optical-center.es/workspace/medias/images/logo_HD/boss.jpg" alt=""></div>
+                <div class="logo-marca tres"><img
+                        src="https://1000logos.net/wp-content/uploads/2018/09/Ray-Ban-logo.png" width="255px" alt="">
+                </div>
+            </article>
+            <div class="icono-flecha-der flecha"><button><i class="fas fa-chevron-right"></i></button></div>
+            <div class="icono-flecha-izq flecha"><button><i class="fas fa-chevron-left"></i></button></div>
+        </section>
+        <section class="productos">
+            <% products.forEach(product => { %>
+                <article>
+                    <a href="/detalle-de-producto/<%= product.id %>">
+                        <h3><%= product.codigo %></h3>
+                        <figure>
+                            <img src="/images/products/<%= product.image %>" alt="">
+                        </figure>
+                        <div class="box-detalle">
+                            <p class="title"><%= product.title %> "<%= product.color.toUpperCase() %>"</p>
+                            <% if (product.discount> 0) { %>
+                                <p class="discount"><%= toThousand(product.price) %></p>
+                                <p class="price"><%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
+                                <% } else { %>
+                                <p class="discount"></p>
+                                <p class="price"><%= toThousand(product.price.toFixed(0)) %></p>
+                                 <% } %>
+                        </div>
+                    </a>
+                    <div class="check-like">
+                        <input type="checkbox" id="<%= product.id %>">
+                        <label for="<%= product.id %>"><i class="far fa-heart"></i></label>
+                        <div class="check-buy">
+                            <input type="checkbox" class="buy" id="buy<%= product.id %>">
+                            <label for="buy<%= product.id %>"><i class="fas fa-shopping-basket"></i></label>
+                            <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
+                        </div>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+                
+
+        <section class="coleccion">
+            <div class="contenedor">
+                <figure class="uno">
+                    <img src="/images/anteojo-madera.jpg" alt="">
+                    <a href="/images/anteojo-madera.jpg">COLECCIÓN MADERA</a>
+                </figure>
+            </div>
+            <div class="contenedor">
+                <figure class="tres">
+                    <img src="/images/lente-plastico.jpg" alt="">
+                    <a href="/images/lente-plastico.jpg">COLECCIÓN ACRILICO</a>
+                </figure>
+            </div>
+            <div class="contenedor">
+                <figure class="dos">
+                    <img class="lente-coleccion" src="/images/lente metalico(1).jpg" alt="">
+                    <a href="/images/lente metalico(1).jpg">COLECCIÓN METÁLICO</a>
+                </figure>
+            </div>
+        </section>
+
+
+        <section class="container-galeria">
+            <div class="icono-instagram">
+                <div class="background-icono">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h4>@LaOptica | Instagram</h4>
+            </div>
+            <section class="galeria-redes">
+                <div class="icono-flecha-der galeria-flechas"><button><i class="fas fa-chevron-right"></i></button></div>
+                <div class="icono-flecha-izq galeria-flechas"><button><i class="fas fa-chevron-left"></i></button></div>
+
+                <section class="post">
+                    <section class="post-column">
+                        <div class="post-row">
+                            <img class="uno" src="/images/anteojo-madera.jpg" alt="">
+                            <img class="dos" src="/images/anteojo-plastico.jpg" alt="">
+                        </div>
+
+                        <img class="grande" src="/images/anteojo-madera (4).jpg" alt="">
+                        <img class="grande" src="/images/anteojo-madera (6).jpg" alt="">
+                        <div class="post-row">
+                            <img src="/images/banner (2).jpg" alt="">
+                            <img src="/images/banner (3).jpg" alt="">
+                        </div>
+                        <div class="post-column last-column">
+                            <img src="/images/banner (4).jpg" alt="">
+                            <img src="/images/banner.jpg" alt="">
+                            <img src="/images/anteojo-madera (5).jpg" alt="">
+                        </div>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+
+        <section class="whatsapp">
+            <div class="contenedor">
+                <nav>
+                    <input type="checkbox" id="whatsapp">
+                    <label for="whatsapp"><i class="fab fa-whatsapp"></i></label>
+                    <ul>
+                        <li><a href="">Escribinos por Whats App!</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+
+</html>
