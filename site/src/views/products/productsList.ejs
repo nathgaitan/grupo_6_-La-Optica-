@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %> 
+<body class="home list">
+    <%- include('../partials/header') %> 
+    <main>
+        
+        <section class="productos">
+            <% products.forEach(product => { %>
+                <article>
+                    <a href="/detalle-de-producto/<%= product.id %>">
+                        <h3><%= product.codigo %></h3>
+                        <figure>
+                            <img src="/images/products/<%= product.image %>" alt="">
+                        </figure>
+                        <div class="box-detalle">
+                            <p class="title"><%= product.title %> "<%= product.color.toUpperCase() %>"</p>
+                            <% if (product.discount> 0) { %>
+                                <p class="discount"><%= toThousand(product.price) %></p>
+                                <p class="price"><%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
+                                <% } else { %>
+                                <p class="discount"></p>
+                                <p class="price"><%= toThousand(product.price.toFixed(0)) %></p>
+                                <% } %>
+                        </div>
+                    </a>
+                    <div class="check-like">
+                        <input type="checkbox" id="<%= product.id %>">
+                        <label for="<%= product.id %>"><i class="far fa-heart"></i></label>
+                        <div class="check-buy">
+                            <input type="checkbox" class="buy" id="buy<%= product.id %>">
+                            <label for="buy<%= product.id %>"><i class="fas fa-shopping-basket"></i></label>
+                            <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
+                        </div>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+        <section class="category">
+                <ul><a href="">Colección</a>
+                    <li><a href="">Madera</a></li>
+                    <li><a href="">Acrílico</a></li>
+                    <li><a href="">Metálico</a></li>
+                </ul>
+                <ul><a href="">Color</a>
+                    <li><a href="">Marrón</a></li>
+                    <li><a href="">Cerezo</a></li>
+                    <li><a href="">Negro</a></li>
+                    <li><a href="">Floral</a></li>
+                    <li><a href="">Castaño</a></li>
+                    <li><a href="">Fucsia</a></li>
+                </ul>
+        </section>
+        <section class="filter">
+            <form action="/products" method="post">
+                <select name="filtro" id="filtro">
+                    <option value="none" selected disabled hidden> Filtro </option>
+                    <option value="az"> Nombre : descendente </option>
+                    <option value="za"> Nombre: ascendente </option>
+                    <option value="pmen"> Precio : mayor a menor </option>
+                    <option value="pmay"> Precio : menor a mayor </option>
+                    <option value="masc"> Marca : ascendente </option>
+                    <option value="mdesc"> Marca : descendente </option>
+                </select>
+                <input type="submit" value="Filtrar">
+            </form>
+        </section>
+        <section class="whatsapp">
+            <div class="contenedor">
+                <nav>
+                    <input type="checkbox" id="whatsapp">
+                    <label for="whatsapp"><i class="fab fa-whatsapp"></i></label>
+                    <ul>
+                        <li><a href="">Escribinos por Whats App!</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+    <%- include('../partials/footer') %> 
+</body>
+</html>

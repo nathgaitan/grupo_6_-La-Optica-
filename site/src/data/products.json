@@ -1,7 +1,7 @@
 [
     {
         "id" : 1,
-        "name" : "name1",
+        "name" : "RAY-BAN 97",
         "marca" : "RAY-BAN",
         "image" : "lentes.png",
         "price" : 4500,
@@ -12,7 +12,7 @@
     },
     {
         "id" : 2,
-        "name" : "name2",
+        "name" : "RAY-BAN 91",
         "marca" : "RAY-BAN",
         "image" : "lentes(1).png",
         "price" : 4500,
@@ -23,7 +23,7 @@
     },
     {
         "id" : 3,
-        "name" : "name3",
+        "name" : "GUESS 52",
         "marca" : "GUESS",
         "image" : "lentes(3).png",
         "price" : 4500,
@@ -34,7 +34,7 @@
     },
     {
         "id" : 4,
-        "name" : "name4",
+        "name" : "DAKLEY 36",
         "marca" : "DAKLEY",
         "image" : "lentes(2).png",
         "price" : 4299,
@@ -45,7 +45,7 @@
     },
     {
         "id" : 5,
-        "name" : "name5",
+        "name" : "ROXY 47",
         "marca" : "ROXY",
         "image" : "lentes(4).png",
         "price" : 2100,
@@ -56,7 +56,7 @@
     },
     {
         "id" : 6,
-        "name" : "name6",
+        "name" : "RAY-BAN 98",
         "marca" : "RAY-BAN",
         "image" : "lentes(7).png",
         "price" : 4500,
@@ -67,7 +67,7 @@
     },
     {
         "id" : 7,
-        "name" : "name7",
+        "name" : "RAY-BAN 92",
         "marca" : "RAY-BAN",
         "image" : "lentes(6).png",
         "price" : 4500,
@@ -78,7 +78,7 @@
     },
     {
         "id" : 8,
-        "name" : "name8",
+        "name" : "GUESS 58",
         "marca" : "GUESS",
         "image" : "lentes(5).png",
         "price" : 2950,
