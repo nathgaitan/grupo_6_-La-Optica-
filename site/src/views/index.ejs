@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head', { title = <%= products.name %> <%= prodcuts.color %> }) %> 
+<%- include('./partials/head') %> 
 <body class="home">
     <%- include('./partials/header') %> 
     <main>
@@ -27,7 +27,7 @@
                             <img src="/images/products/<%= product.image %>" alt="">
                         </figure>
                         <div class="box-detalle">
-                            <p class="title"><%= product.title %> "<%= product.color.toUpperCase() %>"</p>
+                            <p class="title"><%= product.name %> "<%= product.color.toUpperCase() %>"</p>
                             <% if (product.discount> 0) { %>
                                 <p class="discount"><%= toThousand(product.price) %></p>
                                 <p class="price"><%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
