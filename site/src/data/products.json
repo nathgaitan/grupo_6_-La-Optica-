@@ -1,0 +1,91 @@
+[
+    {
+        "id" : 1,
+        "name" : "name1",
+        "marca" : "RAY-BAN",
+        "image" : "lentes.png",
+        "price" : 4500,
+        "discount" : 7,
+        "color" : "cerezo",
+        "detail" : "lorem",
+        "codigo" : 97
+    },
+    {
+        "id" : 2,
+        "name" : "name2",
+        "marca" : "RAY-BAN",
+        "image" : "lentes(1).png",
+        "price" : 4500,
+        "discount" : 0,
+        "color" : "marrón",
+        "detail" : "lorem",
+        "codigo" : 91
+    },
+    {
+        "id" : 3,
+        "name" : "name3",
+        "marca" : "GUESS",
+        "image" : "lentes(3).png",
+        "price" : 4500,
+        "discount" : 7,
+        "color" : "marrón",
+        "detail" : "lorem",
+        "codigo" : 52
+    },
+    {
+        "id" : 4,
+        "name" : "name4",
+        "marca" : "DAKLEY",
+        "image" : "lentes(2).png",
+        "price" : 4299,
+        "discount" : 7,
+        "color" : "negro",
+        "detail" : "lorem",
+        "codigo" : 36
+    },
+    {
+        "id" : 5,
+        "name" : "name5",
+        "marca" : "ROXY",
+        "image" : "lentes(4).png",
+        "price" : 2100,
+        "discount" : 5,
+        "color" : "floral",
+        "detail" : "lorem",
+        "codigo" : 47
+    },
+    {
+        "id" : 6,
+        "name" : "name6",
+        "marca" : "RAY-BAN",
+        "image" : "lentes(7).png",
+        "price" : 4500,
+        "discount" : 7,
+        "color" : "marrón",
+        "detail" : "lorem",
+        "codigo" : 98
+    },
+    {
+        "id" : 7,
+        "name" : "name7",
+        "marca" : "RAY-BAN",
+        "image" : "lentes(6).png",
+        "price" : 4500,
+        "discount" : 0,
+        "color" : "castaño",
+        "detail" : "lorem",
+        "codigo" : 92
+    },
+    {
+        "id" : 8,
+        "name" : "name8",
+        "marca" : "GUESS",
+        "image" : "lentes(5).png",
+        "price" : 2950,
+        "discount" : 10,
+        "color" : "fucsia",
+        "detail" : "lorem",
+        "codigo" : 58
+    }
+    
+]
