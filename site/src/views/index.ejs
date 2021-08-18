@@ -21,7 +21,7 @@
         <section class="productos">
             <% products.forEach(product => { %>
                 <article>
-                    <a href="/detalle-de-producto/<%= product.id %>">
+                    <a href="/products/detalle-de-producto/<%= product.id %>">
                         <h3><%= product.codigo %></h3>
                         <figure>
                             <img src="/images/products/<%= product.image %>" alt="">
