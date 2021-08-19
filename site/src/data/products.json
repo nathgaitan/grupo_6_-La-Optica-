@@ -8,7 +8,9 @@
         "discount" : 7,
         "color" : "cerezo",
         "detail" : "lorem",
-        "codigo" : 97
+        "codigo" : 97,
+        "lente" : "sol",
+        "marco" : "madera"
     },
     {
         "id" : 2,
@@ -19,7 +21,9 @@
         "discount" : 0,
         "color" : "marrón",
         "detail" : "lorem",
-        "codigo" : 91
+        "codigo" : 91,
+        "lente" : "sol",
+        "marco" : "madera"
     },
     {
         "id" : 3,
@@ -30,7 +34,9 @@
         "discount" : 7,
         "color" : "marrón",
         "detail" : "lorem",
-        "codigo" : 52
+        "codigo" : 52,
+        "lente" : "sol",
+        "marco" : "acrílico"
     },
     {
         "id" : 4,
@@ -41,7 +47,9 @@
         "discount" : 7,
         "color" : "negro",
         "detail" : "lorem",
-        "codigo" : 36
+        "codigo" : 36,
+        "lente" : "recetado",
+        "marco" : "acrílico"
     },
     {
         "id" : 5,
@@ -52,7 +60,9 @@
         "discount" : 5,
         "color" : "floral",
         "detail" : "lorem",
-        "codigo" : 47
+        "codigo" : 47,
+        "lente" : "recetado",
+        "marco" : "metálico"
     },
     {
         "id" : 6,
@@ -63,7 +73,9 @@
         "discount" : 7,
         "color" : "marrón",
         "detail" : "lorem",
-        "codigo" : 98
+        "codigo" : 98,
+        "lente" : "sol",
+        "marco" : "madera"
     },
     {
         "id" : 7,
@@ -74,7 +86,9 @@
         "discount" : 0,
         "color" : "castaño",
         "detail" : "lorem",
-        "codigo" : 92
+        "codigo" : 92,
+        "lente" : "sol",
+        "marco" : "madera"
     },
     {
         "id" : 8,
@@ -85,7 +99,9 @@
         "discount" : 10,
         "color" : "fucsia",
         "detail" : "lorem",
-        "codigo" : 58
+        "codigo" : 58,
+        "lente" : "recetado",
+        "marco" : "metálico"
     }
     
 ]
