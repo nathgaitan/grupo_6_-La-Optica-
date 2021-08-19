@@ -1,7 +1,7 @@
 <h3>Retrospectiva</h3>
 <br>
 
-<img src="/extra/images/retro2.png">
+<img src="/site/extra/images/retro2.png">
 <br>
 <br>
 <br>
