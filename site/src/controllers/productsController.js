@@ -1,4 +1,4 @@
-const { products }  = require('../data/products_db');
+const { products }  = require('../data/lentes_db');
 
 /* utils */
 let toThousand = require('../utils/toThousand');
@@ -14,7 +14,7 @@ module.exports = {
             product,
         })
     },
-    list : (req, res) => { 
+    list : (req, res) => {
         return res.render('products/productsList', {
             title : "Listado de Productos",
             products,
