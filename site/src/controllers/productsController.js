@@ -9,7 +9,7 @@ let { priceMayor, priceMenor, titleDesc, titleAsc, marcaAsc, marcaDesc } = requi
 module.exports = {
     detail: (req,res)=>{
         const product = products.find(product => product.id ===+req.params.id)
-        res.render("productDetail",{
+        res.render("products/productDetail",{
             products,
             product,
         })
