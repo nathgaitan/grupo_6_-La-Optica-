@@ -1,6 +1,8 @@
 
 
 body .menu{
+  
+  padding-top: 30px;
   text-align: center;
   width: 100%;
   background-color: #a0c5f7;
@@ -95,11 +97,11 @@ body .menu textarea{
   border-radius: 5%;
   background-color: #c1dbfd;
   width: 80%;
-  margin: 10%;
+  margin: 5%;
 }
  body .menu button{
-   margin: 10%;
-   padding: 5%;
+   
+   margin: 5%;
    width: 70%;
    height: 45px;
    font-size: 16px;
