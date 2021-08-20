@@ -1,0 +1,13 @@
+<div class="glider-contain">
+    <div class="glider">
+        <% galeria.forEach(post=> { %>
+            <div class="a" style="background-image: url('/images/galeria/<%= post %>')">
+            </div>
+            <% }) %>
+    </div>
+    <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
+    <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
+
+</div>
+
+<div role="tablist" class="dots"></div>
