@@ -28,5 +28,15 @@ module.exports = {
         products.push(product)
         guardar(products)
         return res.redirect('/products')
-    } 
+    } ,
+    edit : (req,res) => {
+        return res.render('admin/product_edit-form', {
+            title: "editar"
+        })
+    },
+    create : (req,res) => {
+        return res.render('admin/product_create-form', {
+            title: "crear"
+        })
+    }
 }

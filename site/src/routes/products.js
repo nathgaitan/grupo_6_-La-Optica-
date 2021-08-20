@@ -7,7 +7,6 @@ var router = express.Router();
 router.get('/', list);
 router.get('/detalle-de-producto/:id', detail);
 router.get('/cart', cart);
-router.get('/crear-producto',create);
-router.get('/editar-producto',edit);
+
 
 module.exports = router;
