@@ -23,9 +23,10 @@ body.home main .dots {
 body.home main div.glider-contain div.glider {
     overflow-x: hidden;        
 }
+body.home main div.glider-contain div.glider-track {
+    height: 220px;
+}
 body.home main div.glider-contain div.glider div div {
-    height: 220px!important;
-    width: 100%!important;
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: center;
