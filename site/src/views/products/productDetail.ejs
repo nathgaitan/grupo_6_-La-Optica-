@@ -62,54 +62,50 @@
     </div>
         <div class="interes">
             
-            <section>
-                
-                <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
-                
-                    <div class="combo">
-                        <span class="marca">Marca</span>
-                        <div class="nye">
-                            <h2>Nombre del producto</h2>
-                            <div>
-                                
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="far fa-star"></i></span>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <span class="precio precio3">$$$</span>
-                    
-                </section>
+            
                 <section class="segundoart">
-                    <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
                     
-                        <div class="combo">
-                            <span class="marca">Marca</span>
-                            <div class="nye">
-                                <h2>Nombre del producto</h2>
-                                <div>
-                                    
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <span class="precio precio3">$$$</span>
+                    
                     </section>
         </div>
         <div class="botontablet">
             <button class="fijo comprarya">Comprar Ahora</button>
         </div>
+
+
+        <div class="glider-contain">
+            <div class="glider">
+                <% products.forEach(product => { %>
+                    <article>
+                        <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
+                        
+                            <div class="combo">
+                                <span class="marca"><%= product.marca %> </span>
+                                <div class="nye">
+                                    <h2><%= product.price %> </h2>
+                                    <div>
+                                        
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="precio precio3">$<%= product.price %> </span>
+                    </article>
+                <% }) %>
+            </div>
+          
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" class="dots"></div>
+          </div>
 </main>
 <%- include("../partials/footer") %> 
-
+<%- include("../partials/scripts") %> 
+<script src="/javascripts/detail.js"></script>
 </body>
 </html>
