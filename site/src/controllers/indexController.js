@@ -1,4 +1,4 @@
-const { products } = require('../data/products_db');
+const {products} = require('../data/products_db');
 
 let toThousand = require('../utils/toThousand');
 let priceFinal = require('../utils/priceFinal');
@@ -10,6 +10,7 @@ module.exports = {
             products,
             priceFinal,
             toThousand
+
         });
     }
 }
