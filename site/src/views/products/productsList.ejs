@@ -17,17 +17,17 @@
                         </figure>
                         <div class="box-detalle">
                             <% if (products.codigo != null && products.color != null) { %>
-                            <p class="title"><%= product.name %> "<%= product.color.toUpperCase() %>"</p>
+                                <p class="title"><%= product.name %> "<%= product.color.toUpperCase() %>"</p>
                             <% } else { %>
                                 <p class="title"><%= product.name %></p>
                             <% } %>
                             <% if (product.discount> 0) { %>
                                 <p class="discount"><%= toThousand(product.price) %></p>
                                 <p class="price"><%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
-                                <% } else { %>
+                            <% } else { %>
                                 <p class="discount"></p>
                                 <p class="price"><%= toThousand(product.price.toFixed(0)) %></p>
-                                <% } %>
+                            <% } %>
                         </div>
                     </a>
                     <div class="check-like">
