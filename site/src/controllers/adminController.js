@@ -11,19 +11,19 @@ module.exports = {
         })
     },
     solOftalStore: (req, res) => {
-        const { name , marca, price, discount, detail } = req.body;
+        const { name , marca, price, discount,codigo,lente,marco } = req.body;
         let product = {
             id: products[products.length - 1].id + 1,
             name,
             marca,
-            image : null,
+            image:null,
             price: +price,
             discount: +discount,
-            color : null,
+            color:null,
             detail,
-            codigo : null,
-            lente : null,
-            marco : null,
+            codigo:null,
+            lente:null,
+            marco:null,
         }
         products.push(product)
         guardar(products)
@@ -38,5 +38,25 @@ module.exports = {
         return res.render('admin/product_create-form', {
             title: "crear"
         })
-    }
+    },
+
+    addProduct: (req, res) => {
+        const { name , marca, price, discount, detail } = req.body;
+        let product = {
+            id: products[products.length-1].id+1,
+            name:+name,
+            marca:+marca,
+            image,
+            price: +price,
+            discount: +discount,
+            color :+color,
+            detail:+detail,
+            codigo :+codigo,
+            lente : +lente,
+            marco : +marco,
+        }
+        products.push(product)
+        guardar(products)
+        return res.redirect('/products')
+    } ,
 }
