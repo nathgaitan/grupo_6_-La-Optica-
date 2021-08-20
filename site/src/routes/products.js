@@ -6,6 +6,6 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', list);
 router.get('/detalle-de-producto/:id', detail);
-
+router.get('/cart')
 
 module.exports = router;

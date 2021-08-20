@@ -27,6 +27,9 @@ module.exports = {
             priceFinal,
             toThousand
         });
-    }
+    },
     
-}
+    cart : (req,res) => {
+        return res.render('products/cart')
+    }
+ }
