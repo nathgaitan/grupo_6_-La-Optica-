@@ -468,7 +468,7 @@ body.home main section.whatsapp .contenedor nav {
         z-index: 30;
         opacity: 0;
     }
-    body.home main section.productos article figure:hover ~ .check-like,
+    body.home main section.productos article a:hover ~ .check-like,
     body.home main section.productos article .check-like:hover  {
         opacity: 1;
     }

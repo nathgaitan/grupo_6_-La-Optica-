@@ -14,7 +14,7 @@ module.exports = {
             product,
         })
     },
-    list : (req, res) => { 
+    list : (req, res) => {
         return res.render('products/productsList', {
             title : "Listado de Productos",
             products,
