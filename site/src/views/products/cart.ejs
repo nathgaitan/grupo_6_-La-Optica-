@@ -3,41 +3,97 @@
     <%- include('../partials/head') %> 
 <body class="cart">
     <%- include('../partials/header') %> 
-    <main>
-        <div class="menu">
+    <main class="menu">
+
+        <div class="inicio">
+
             <h4>¡Registrate o inicia sesion para ver tus compras,favoritos y disfrutar beneficios!</h4>
             <ol>
                 <li>CARRITO</li>
                 <li>PAGO SEGURO</li>
                 <li>ORDEN COMPLETADA</li>
             </ol>
-            <button type="submit" style="background-color: rgb(17, 189, 69);"> <a href="/login">INGRESAR</a></button> 
+            <button type="submit" style="background-color: rgb(94, 155, 235);"> <a href="/login">INGRESAR</a></button>
+
 
         </div>
+
         <div class="articulo">
             <article>
 
-                <h4>Articulo</42>
+                <h4>Articulo</h4>
                     <h4>Nombre del articulo</h4>
+
                     <nav class="imagendetallada">
-                        <img src="/images/anteojo-madera (1).jpg" alt="">
+                        
+                        <div>
+                            <img src="/images/anteojo-madera (1).jpg" alt="">
+                        </div>
+                           
+                        
+
+
                         <ul>
-                            <li>Color del armazon</li>
-                            <li>Color del lente</li>
-                            <li>Tamaño</li>
+
+                            <div class="marco">
+
+                                <label>tipo de marco:
+                                    <select class="marco" name="marco">
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="metalico">metalico</option>
+                                        <option value="acrilico">acrilico</option>
+                                        <option value="madera">madera</option>
+                                        
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="lente">
+                                <label>color de lente:
+                                    <select class="lente" name="lente">
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="de sol">de sol</option>
+                                        <option value="fotocromaticas">fotocromaticas</option>
+                                        <option value="blue ligth">blue ligth</option>
+                                        <option value="transition">transition</option>
+                                    </select>
+                                </label>
+
+
+
+                                
+                                  
+                            </div>
+
                         </ul>
+
                     </nav>
+
                     <ol>
 
-                        <li>Precio unitario</li>
-                        <li>Total</li>
-                        <li>Cantidad</li>
+
+
+                        <label for="price">Precio unitario</label>
+                        <input type="number" id="price" name="price">
+
+                        <label for="price">Precio del producto</label>
+                        <input type="number" id="price" name="price">
+                        
+
+                        <label for="price">total</label>
+                        <input type="number" id="price" name="price">
+                        
+
+                        <label for="cantidad">cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad"
+                               min="10" max="100">
+                        
+                        
+
+                        
+                        
+
                     </ol>
-
-
-
-
-
 
             </article>
 

@@ -36,7 +36,7 @@ module.exports = {
     },
     create : (req,res) => {
         return res.render('admin/product_create-form', {
-            title: "crear"
+            title: "Crear producto"
         })
     },
 
