@@ -33,5 +33,20 @@ module.exports = {
         return res.render('products/cart', {
             title: "algo"
         })
+    },
+    edit : (req,res) => {
+        return res.render('admin/product_edit-form', {
+            title: "editar"
+        })
+    },
+    create : (req,res) => {
+        return res.render('admin/product_create-form', {
+            title: "crear"
+        })
     }
+
+
+
+
+
  }
