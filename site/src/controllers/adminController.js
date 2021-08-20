@@ -11,7 +11,7 @@ module.exports = {
         })
     },
     solOftalStore: (req, res) => {
-        const { name , marca, price, discount,codigo,lente,marco } = req.body;
+        const { name , marca, price, discount } = req.body;
         let product = {
             id: products[products.length - 1].id + 1,
             name,
@@ -28,7 +28,7 @@ module.exports = {
         products.push(product)
         guardar(products)
         return res.redirect('/products')
-    } ,
+    },
     edit : (req,res) => {
         return res.render('admin/product_edit-form', {
             title: "editar"
@@ -58,5 +58,5 @@ module.exports = {
         products.push(product)
         guardar(products)
         return res.redirect('/products')
-    } ,
+    }
 }
