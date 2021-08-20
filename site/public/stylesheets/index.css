@@ -10,32 +10,33 @@ body.home main p, body.home main h3 {
 }
 
 /* ------------------ Marcas ------------------ */
-body.home main section.container-marcas {
+body.home main .glider-contain {
     width: 80%;
     margin: 15px auto;
-    position: relative;
-    display: none;
-}
-body.home main section.container-marcas .icono-flecha-izq {
-    position: absolute;
-    left: 2%;
-}
-body.home main section.container-marcas .icono-flecha-der {
-    position: absolute;
-    right: 2%;
-}
-body.home main section.container-marcas article.marcas{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    background-color: hsl(0, 0%, 50%, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
     border-radius: 45px;
 }
-body.home main section.container-marcas article.marcas img {
-    width: 100%;
+body.home main .glider-contain,
+body.home main .dots {
+    display: none;
 }
-
+body.home main div.glider-contain div.glider {
+    overflow-x: hidden;        
+}
+body.home main div.glider-contain div.glider div div {
+    height: 220px!important;
+    width: 100%!important;
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-position: center;
+}
+body.home main div.glider-contain button.glider-next,
+body.home main div.glider-contain button.glider-prev {
+    top: 38%;
+}
+body.home main div.glider-contain button i {
+    font-size: 1.3rem;
+}
 /* ---------------- Productos ---------------- */
 body.home main section.productos {
     display: flex;
@@ -292,8 +293,7 @@ body.home main section.container-galeria .galeria-redes .last-column {
 }
 
 /*  galeria redes // marca - botones */
-body.home main section.container-galeria .galeria-redes button,
-body.home main .container-marcas button {
+body.home main section.container-galeria .galeria-redes button {
     border:none;
     background-color: transparent;
     color: black;
@@ -394,18 +394,10 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 425px) {
     /* --------- marcas --------- */
-    body.home main section.container-marcas {
+    body.home main .glider-contain,
+    body.home main .dots {
         display: flex;
-        align-items: center;
     }
-    body.home main section.container-marcas article.marcas div {
-        display: flex;
-        width: 33%
-    }
-    body.home main section.container-marcas article.marcas div.tres {
-        display: none;
-    }
-
     /* --------- products --------- */
         body.home main section.productos article {
         width: 46%;
@@ -439,14 +431,6 @@ body.home main section.whatsapp .contenedor nav {
 @media (min-width: 768px) {
     body.home main {
         max-width: 1100px;
-    }
-
-    /* marcas */
-    body.home main section.container-marcas article.marcas div {
-        width: 22%;
-    }
-    body.home main section.container-marcas article.marcas div.tres {
-        display: flex;
     }
 
     /* products */
@@ -491,7 +475,7 @@ body.home main section.whatsapp .contenedor nav {
         display: none;
     }
     body.home main section.container-galeria {
-        background-color: hsl(0, 0%, 50%, 0.1);
+        background-color: rgba(128, 128, 128, 0.1);
         border-radius: 45px;
         width: 730px; 
         margin: 110px auto;
