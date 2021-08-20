@@ -9,12 +9,18 @@
             <% products.forEach(product => { %>
                 <article>
                     <a href="/products/detalle-de-producto/<%= product.id %>">
-                        <h3><%= product.codigo %></h3>
+                        <% if (products.codigo != null) { %>
+                         <h3><%= product.codigo %></h3>
+                        <% } %>
                         <figure>
                             <img src="/images/products/<%= product.image %>" alt="">
                         </figure>
                         <div class="box-detalle">
+                            <% if (products.codigo != null && products.color != null) { %>
                             <p class="title"><%= product.name %> "<%= product.color.toUpperCase() %>"</p>
+                            <% } else { %>
+                                <p class="title"><%= product.name %></p>
+                            <% } %>
                             <% if (product.discount> 0) { %>
                                 <p class="discount"><%= toThousand(product.price) %></p>
                                 <p class="price"><%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
