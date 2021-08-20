@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*main*/
+  .cuerpo .edit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  .cuerpo .edit section.imagen {
+    text-align: center;
+    width: 100%;
+  }
+  .cuerpo .edit section.imagen div button {
+    margin: 10px;
+    width: 90%;
+    height: 40px;
+    background-color: #4e86cf;
+    color: #252440;
+    border: black solid 1px;
+  }
+  
+  .cuerpo .edit img {
+    border: #a0c5f7 solid 1px;
+    border-radius: 5%;
+    width: 80%;
+  }
+  
+  .cuerpo .edit .formulario {
+    background-color: #a0c5f7;
+    border: black solid 1px;
+    border-radius: 2%;
+    width: 100%;
+  }
+  
+  .cuerpo .edit .formulario .container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+  .cuerpo .edit .formulario .container textarea {
+    width: 100%;
+  }
+  
+  .cuerpo .edit button {
+    margin: 10px;
+    width: 90%;
+    height: 40px;
+    background-color: #4e86cf;
+    color: #252440;
+    border: black solid 1px;
+  }
+  
+  @media (min-width: 481px) {
+    .cuerpo .edit .formulario .container textarea {
+      width: 90%;
+    }
+  
+    .cuerpo .edit button {
+      margin: 20px;
+  
+      margin-left: 5%;
+    }
+  }
+  @media (min-width: 768px) {
+    .cuerpo .edit .formulario .container textarea {
+      width: 80%;
+    }
+  
+    .cuerpo .edit button {
+      margin: 30px;
+  
+      margin-left: 5%;
+    }
+  }
+  

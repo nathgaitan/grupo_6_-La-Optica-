@@ -33,5 +33,11 @@ module.exports = {
         return res.render('products/cart', {
             title: "algo"
         })
-    }
+    },
+   
+
+
+
+
+
  }
