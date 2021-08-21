@@ -58,5 +58,19 @@ module.exports = {
         products.push(product)
         guardar(products)
         return res.redirect('/products')
-    }
+    },
+    products : (req, res) => {
+        return res.render('admin/productsTable', {
+            title : "Listado de Productos",
+            products,
+            priceMayor,
+            priceMenor,
+            titleAsc,
+            titleDesc,
+            marcaAsc,
+            marcaDesc,
+            priceFinal,
+            toThousand
+        });
+    },
 }

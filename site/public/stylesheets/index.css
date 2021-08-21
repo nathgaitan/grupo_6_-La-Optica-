@@ -71,7 +71,7 @@ body.home main section.productos article figure {
 body.home main section.productos img {
     position:relative;
     z-index: 20;
-    margin-top: 70px;
+    margin-top: 40px;
     width: 100%;
 }
 body.home main section.productos article .box-detalle {
