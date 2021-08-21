@@ -83,6 +83,15 @@ addProduct: (req, res) => {
 /*update -method to update*/
 
 
+
+
+
+
+
+
+
+
+
 products : (req, res) => {
     return res.render('admin/productsTable', {
         title : "Listado de Productos",

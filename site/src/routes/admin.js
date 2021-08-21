@@ -9,18 +9,16 @@ router.post('/add-solucion-oftalmologica', solOftalStore);
 
 /*crear*/
 router.get('/crear-producto',create);
-router.get('/editar-producto',edit);
-
-router.get('/admin/products',products)
 router.post('/crear-producto',addProduct);
+
+/*tabla*/
+router.get('/admin/products',products);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
 router.put('/editar-producto/:id',update);
 
-/*borrar producto*/
 
-router.get('/delete',destroy);
 
 
 
