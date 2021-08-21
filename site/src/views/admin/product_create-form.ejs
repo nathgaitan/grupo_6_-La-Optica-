@@ -1,119 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
     <body>
-    <%- include('../partials/header') %> 
+        <%- include('../partials/header') %>
 
 
 
 
-    <main class="edit">
+            <main class="edit">
 
-        <section class="imagen">
-            
-            <div class='anteojo'>
-                <img src="/images/anteojo-madera (1).jpg" alt="">
-               </div>
-            
-            
+                <section class="imagen">
 
-
-
-            <div>
-                <button>
-                    <a href="">Cargar imagen</a>
-                </button>
-            </div>
-
-            <div>
-                <label for="">JPG</label>
-                <input type="checkbox">
-                <label for="">PNG</label>
-                <input type="checkbox">
-                <label for="">TIFF</label>
-                <input type="checkbox">
-                <label for="">BMP</label>
-                <input type="checkbox">
-            </div>
-
-
-
-        </section>
-
-
-
-
-        <section class="formulario">
-            <form action="GET">
-
-
-
-
-                <div class="container">
-                   
-                    <label for="brand">Marca del producto</label>
-                    <input type="text" id="brand" name="brand">
-                    
-                   
-                            
-                </div>
-
-                <div class="container">
-                   
-                    <label for="price">Precio del producto</label>
-                    <input type="number" id="price" name="price">
-                    
-                            
-                </div>
-                <div class="container">
-                   
-                    <label for="framework">Tipo de marco del producto</label>
-                    <input type="text" id="framework" name="framework">
-                   
-                   
-                            
-                </div>
-
-                <div class="container">
-                  
-                    <label for="lens">Tipo de lente del producto</label>
-                    <input type="text" id="lens" name="lens">
-                    
-                    
-                           
-                </div>
-                <div class="container">
-                  
-                        <label for="discount">Descuento del producto</label>
-                        <input type="text" id="discount" name="discount">
-                       
-                      
-                   
-                </div>
-
-                <div class="container">
-                
-                        <label for="code">Codigo del producto</label>
-                        <input type="text" id="code" name="code">
-                       
-                        
-                  
-                </div>
-
-
-
-
-
-                <div class="container">
-                    <div>
-                        <label for="desctription">detalle del producto</label>
-                    </div>
-                    <div>
-                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    <div class='anteojo'>
+                        <img src="/images/anteojo-madera (1).jpg" alt="">
                     </div>
 
-                </div>
+
+
+
+
+                    <div>
+                        <button>
+                            <a href="">Cargar imagen</a>
+                        </button>
+                    </div>
+
+                    <div>
+                        <label for="">JPG</label>
+                        <input type="checkbox">
+                        <label for="">PNG</label>
+                        <input type="checkbox">
+                        <label for="">TIFF</label>
+                        <input type="checkbox">
+                        <label for="">BMP</label>
+                        <input type="checkbox">
+                    </div>
+
+
+
+                </section>
+
+
+
+
+                <section class="formulario">
+                    <form action="POST">
+
+
+                        <div class="container">
+
+                            <label for="name">Nombre del producto</label>
+                            <input type="text" id="name" name="name">
+
+
+
+                        </div>
+
+                        <div class="container">
+
+                            <label for="Marca">Marca del producto</label>
+                            <input type="text" id="brand" name="Marca">
+
+
+
+                        </div>
+
+                        <div class="container">
+
+                            <label for="price">Precio del producto</label>
+                            <input type="number" id="price" name="price">
+
+
+                        </div>
+                        <div class="container">
+
+                            <label for="Descuento">Descuento del producto</label>
+                            <input type="text" id="Descuento" name="Descuento">
+
+
+
+                        </div>
+                        <div class="container">
+
+                            <label for="color">color del producto</label>
+                            <input type="color" id="color" name="color">
+
+
+
+                        </div>
+
+                        <div class="container">
+                            <div>
+                                <label for="descripcion">detalle del producto</label>
+                            </div>
+                            <div>
+                                <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="container">
+
+                            <label for="Codigo">Codigo del producto</label>
+                            <input type="text" id="Codigo" name="Codigo">
+
+
+
+                        </div>
+                        <div class="container">
+
+                            <label for="lente">Tipo de lente del producto</label>
+                            <input type="text" id="lente" name="lente">
+
+
+
+                        </div>
+
+                        <div class="container">
+                            <div class="container">
+
+                                <label for="marco">Tipo de marco del producto</label>
+                                <input type="text" id="marco" name="marco">
+
+
+
+                            </div>
 
 
 
@@ -121,27 +136,27 @@
 
 
 
-            </form>
-            <div>
-                
 
-                <button>
-                    <a href="">Subir archivo</a>
-                </button>
-            </div>
-        </section>
 
-    </main>
+
+                            <button>
+                                <input type="submit" value="Cargar">
+                            </button>
 
 
 
 
-    <%- include('../partials/footer') %> 
+                    </form>
 
-</body>
+                </section>
+
+            </main>
+
+
+
+
+            <%- include('../partials/footer') %>
+
+    </body>
 
 </html>
-
-
-
-
