@@ -29,18 +29,23 @@ module.exports = {
         guardar(products)
         return res.redirect('/products')
     },
-    edit : (req,res) => {
-        return res.render('admin/product_edit-form', {
-            title: "editar"
-        })
-    },
+
+
+
+/* method to create*/ 
+
+
+
+ 
     create : (req,res) => {
         return res.render('admin/product_create-form', {
             title: "Crear producto"
         })
     },
 
-    addProduct: (req, res) => {
+/*method to addProduct*/
+
+addProduct: (req, res) => {
     const{name,marca,price,discount,color,detail,codigo,lente,marco}=req.body;
 
     let product ={
@@ -62,6 +67,31 @@ module.exports = {
      guardar(products)
      return res.redirect('/products')
     }, 
+
+    /*update -form to edit*/
+
+
+
+    edit : (req,res) => {
+        let product =products.find(product => product.id === +req.params.id)
+        return res.render('admin/product_edit-form',{
+            product ,title: "editar"
+        })
+    },
+
+ 
+/*update -method to update*/
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
