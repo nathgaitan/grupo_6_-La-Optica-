@@ -16,7 +16,7 @@ router.get('/admin/products',products);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
-router.put('/editar-producto/:id',update);
+
 
 
 

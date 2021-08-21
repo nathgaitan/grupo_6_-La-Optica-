@@ -46,20 +46,22 @@ module.exports = {
 /*method to addProduct*/
 
 addProduct: (req, res) => {
-    const{name,marca,price,discount,color,detail,codigo,lente,marco}=req.body;
+    const{name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category}=req.body;
 
     let product ={
         id: products[products.length - 1].id + 1,
         name,
         marca,
-        image:null,
-        price: +price,
-        discount: +discount,
+        price,
+        discount,
         color,
         detail,
-        codigo,
-        lente,
-        marco,
+        codigo, 
+        lens,
+        frame, 
+        duration, 
+        graduation, 
+        category, 
     }
   
 
@@ -82,7 +84,31 @@ addProduct: (req, res) => {
  
 /*update -method to update*/
 
+update:(req,res) =>{
 
+    const{name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category}=req.body;
+    products.forEach(product => {
+        if(product.id === +req.params.id){
+            product.name = name;
+            product.marca = marca;
+            product.price = price;
+            product.discount = discount;
+            product.color = color;
+            product.detail = detail;
+            product.codigo = codigo;
+            product.lens = lens;
+            product.frame = frame;
+            product.duration = duration;
+            product.graduation = graduation;
+            product.category = category;
+        }
+        
+    });
+
+    
+    guardar(products)
+     return res.redirect('/products')
+},
 
 
 
