@@ -41,22 +41,29 @@ module.exports = {
     },
 
     addProduct: (req, res) => {
-        const { name , marca, price, discount, detail } = req.body;
-        let product = {
-            id: products[products.length-1].id+1,
-            name:name,
-            marca:marca,
-            image,
-            price: +price,
-            discount: +discount,
-            color :color,
-            detail:detail,
-            codigo :codigo,
-            lente : lente,
-            marco : marco,
-        }
-        products.push(product)
-        guardar(products)
-        return res.redirect('/products')
+    const{name,marca,price,discount,color,detail,codigo,lente,marco}=req.body;
+
+    let product ={
+        id: products[products.length - 1].id + 1,
+        name,
+        marca,
+        image:null,
+        price: +price,
+        discount: +discount,
+        color,
+        detail,
+        codigo,
+        lente,
+        marco,
     }
+  
+
+     products.push(product)
+     guardar(products)
+     return res.redirect('/products')
+    }, 
+
 }
+
+      
+    

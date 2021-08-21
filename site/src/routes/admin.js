@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/add-solucion-oftalmologica', solOftalAdd);
 router.post('/add-solucion-oftalmologica', solOftalStore);
-router.get('/crear-producto',create);
+router.post('/crear-producto',create);
 router.get('/editar-producto',edit);
 
 module.exports = router;
