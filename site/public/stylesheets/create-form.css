@@ -26,10 +26,11 @@ body .edit section.imagen div button {
   border: black solid 1px;
 }
 
-body .edit img {
-  border: #a0c5f7 solid 1px;
-  border-radius: 5%;
-  width: 80%;
+body .edit section.imagen .anteojo {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: center;
 }
 
 body .edit .formulario {
@@ -37,18 +38,28 @@ body .edit .formulario {
   border: black solid 1px;
   border-radius: 2%;
   width: 100%;
+  
+}
+body .edit .formulario h3{
+  text-align: center;
+  color: #252440;
+  font-size: 18px;
+  padding: 10%;
 }
 
-body .edit .formulario .container {
+body .edit .formulario form .container {
   text-align: center;
   padding: 20px;
   width: 100%;
 }
-body .edit .formulario .container textarea {
+body .edit .formulario form.container textarea {
   width: 100%;
 }
 
-body .edit button {
+
+
+
+body .edit div .cargar input{
   margin: 10px;
   width: 90%;
   height: 40px;
@@ -56,6 +67,10 @@ body .edit button {
   color: #252440;
   border: black solid 1px;
 }
+
+
+
+
 
 
 
