@@ -20,18 +20,19 @@ module.exports = {
             image : req.file ? req.file.filename : "producto-sin-foto.png",
             price : +price,
             discount : +discount,
-            color :null,
+            color : null,
             detail : detail,
             codigo : +codigo,
             lens : lens,
             frame : null,
             duration : null,
+            graduation : null,
             category : "solucion oftalmologica"
 
         }
         products.push(product)
         guardar(products)
-        return res.redirect('/products')
+        return res.redirect('/admin')
     },
     solOftalEdit: (req, res) => {
         let product = products.find(producto => producto.id === +req.params.id)
@@ -47,25 +48,25 @@ module.exports = {
 
         products.forEach(product => {
             if (product.id === +req.params.id){
-
+                
                 product.name = name.trim();
                 product.marca =  marca.trim();
                 product.image = req.file ? req.file.filename : "producto-sin-foto.png";
                 product.price = +price;
                 product.discount = +discount;
-                product.color = null;
+                color = null;
                 product.detail = detail.trim();
                 product.codigo = +codigo;
                 product.lens = lens;
-                product.frame = null;
-                product.duration =null;
-                product.graduation = null;
-                product.category
+                frame = null;
+                duration = null;
+                graduation = null;
+                category = product.category
             }
         })
 
         guardar(products)
-        return res.redirect('/')
+        return res.redirect('/admin')
     },
 
 
@@ -102,8 +103,6 @@ addProduct: (req, res) => {
         graduation: null, 
         category, 
     }
-  
-
      products.push(product)
      guardar(products)
      return res.redirect('/products')
@@ -165,7 +164,7 @@ products : (req, res) => {
         priceFinal,
         toThousand
     });
-},
+}
 
 
 
