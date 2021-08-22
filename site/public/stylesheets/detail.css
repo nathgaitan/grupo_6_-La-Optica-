@@ -105,6 +105,36 @@
     display: none;
 }
 
+.product main section.contenedorglider{
+    width: 88%;
+}
+
+.product main section article  p.discount{
+    text-decoration: line-through;
+    font-size: var(--font-title);
+    color:blue;
+    height: 15px;
+    
+}
+.product main section div.precio p.discount{
+    text-decoration: line-through;
+    font-size: var(--font-title);
+    color:blue;
+    padding-left: 40%;
+}
+
+
+.product main section article  p.price{
+    
+    font-size: 1.7rem;
+    margin-top: 5px;
+    
+}
+
+.product main section div.precio p.price{
+    font-size: var(--font-title);
+    padding-left: 40%;
+}
 
 
 @media (min-width:481px){
