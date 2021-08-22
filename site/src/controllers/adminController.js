@@ -58,5 +58,22 @@ module.exports = {
         products.push(product)
         guardar(products)
         return res.redirect('/products')
-    }
+    },
+    addContLentes: (req,res) => {
+        return res.render("admin/contactLentesAdd",{title : "Lentes de contacto"})
+    },
+    storeLentesContact: (req, res) => {
+        const { name,marca,price,discount,detail } = req.body;
+        let product = {
+            id: products[products.length - 1].id + 1,
+            name,
+            marca,
+            price: +price,
+            discount: +discount,
+            detail,
+        }
+        products.push(product)
+        guardar(products)
+        return res.redirect('/products')
+    },
 }

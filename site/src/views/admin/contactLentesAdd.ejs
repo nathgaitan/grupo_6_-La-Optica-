@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %> 
+<body class="lentes-contact">
+<%- include('../partials/header') %> 
+    <main>
+        <form action="/admin/add-lentesContact" method="post">
+            <div class="formulario">
+                <div class="box">
+                    <label for="name" class="form-label">Nombre del producto</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="box">
+                    <label for="name" class="form-label">Marca</label>
+                    <input type="text" name="marca">
+                </div>
+                <div class="box">
+                    <label for="name" class="form-label">Precio</label>
+                    <input type="number" name="price">
+                </div>
+                <div class="box">
+                    <label for="name" class="form-label">Descuento</label>
+                    <input type="number" name="descuento">
+                </div>
+                <div class="box">
+                    <label for="name" class="form-label">Detalles de producto</label>
+                    <input type="text" name="detail">
+                </div>
+
+                <div class="box">
+                    <label for="imagen" class="form-label">Imagen</label>
+                      <input type="file" class="form-control" id="imagen" name="imagen" required>
+                </div>
+            
+            
+            <div class="box">
+                <input type="submit" value="Cargar producto">
+            </div>
+        </div>
+        </form>
+    </main>
+<%- include('../partials/footer') %> 
+</body>
+</html>
