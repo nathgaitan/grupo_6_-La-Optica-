@@ -344,5 +344,33 @@
     "frame": null,
     "duration": null,
     "category": "solucion oftalmologica"
+  },
+  {
+    "id": 23,
+    "name": "hola",
+    "imagen": "producto-sin-foto.png",
+    "price": "",
+    "discount": "",
+    "color": "verde",
+    "detail": "",
+    "lens": "",
+    "frame": "",
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
+  },
+  {
+    "id": 24,
+    "name": "hola",
+    "imagen": "producto-sin-foto.png",
+    "price": "17",
+    "discount": "13",
+    "color": "verde",
+    "detail": "",
+    "lens": "fotocromaticas",
+    "frame": "metalico",
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   }
 ]
