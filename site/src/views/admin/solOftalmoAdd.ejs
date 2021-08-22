@@ -8,19 +8,28 @@
         <div>
             <form action="/admin/add-solucion-oftalmologica" method="post">
                 <div class="box-input">
-                    <input type="text" name="name" placeholder="Introduzca la name">
+                    <input type="text" name="name"required>
                 </div>
                 <div class="box-input">
-                    <input type="text" name="marca" placeholder="Introduzca la marca">
+                    <input type="text" name="marca" required>
                 </div>
                 <div class="box-input">
-                    <input type="number" name="price" placeholder="Precio">
+                    <input type="number" name="codigo" required>
                 </div>
                 <div class="box-input">
-                    <input type="number" name="discount" placeholder="Descuento">
+                    <input type="number" name="price" required>
                 </div>
                 <div class="box-input">
-                    <input type="text" name="detail" placeholder="Detalle de producto">
+                    <input type="number" name="discount" required>
+                </div>
+                <div class="box-input">
+                    <input type="file" name="image" id="image" required>
+                </div>
+                <div class="box-input">
+                    <input type="text" name="lens" required>
+                </div>
+                <div class="box-input">
+                    <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
                 </div>
                 <div class="box-input">
                     <input type="submit" value="Cargar">

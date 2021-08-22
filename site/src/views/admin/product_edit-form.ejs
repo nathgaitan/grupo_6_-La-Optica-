@@ -1,162 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
     <body>
-    <%- include('../partials/header') %> 
+        <%- include('../partials/header') %>
 
 
 
 
-    <main class="edit">
+            <main class="edit">
 
-        <section class="imagen">
-            
-           <div class='anteojo'>
-            <img src="/images/anteojo-madera (1).jpg" alt="">
-           </div>
-               
-            
-            
+                <section class="formulario">
 
+                     <h3>Editando : <%= product.name %> </h3>
 
 
-            <div>
-                <button>
-                    <a href="">Cargar imagen</a>
-                </button>
-            </div>
 
-            <div>
-                <label for="">JPG</label>
-                <input type="checkbox">
-                <label for="">PNG</label>
-                <input type="checkbox">
-                <label for="">TIFF</label>
-                <input type="checkbox">
-                <label for="">BMP</label>
-                <input type="checkbox">
-            </div>
 
+                    <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST">
 
 
-        </section>
+                        <section class="imagen">
 
+                            <div class='anteojo'>
+                                <input type="file" name="lentes">
+                            </div>
 
 
 
-        <section class="formulario">
-            <form action="/products/edit <%=product.id%>?_method=PUT" method="POST">
+                        </section>
 
 
-                <div class="container">
 
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" id="name" name="name" value="<%= product.name %> ">
-                     
 
 
-                </div>
 
-                <div class="container">
+                        <div class="container">
 
-                    <label for="Marca">Marca del producto</label>
-                    <input type="text" id="brand" name="Marca" value="<%= product.marca %> ">
+                            <label for="name">Nombre del producto</label>
+                            <input type="text" id="name" name="name" value="<%= product.name %> ">
 
 
 
-                </div>
+                        </div>
 
-                <div class="container">
+                        <div class="container">
 
-                    <label for="price">Precio del producto</label>
-                    <input type="number" id="price" name="price" value=<%= product.price %> >
+                            <label for="marca">Marca del producto</label>
+                            <input type="text" id="marca" name="Marca" value="<%= product.marca %> ">
 
 
-                </div>
-                <div class="container">
 
-                    <label for="Descuento">Descuento del producto</label>
-                    <input type="text" id="Descuento" name="Descuento" value=<%= product.discount %> >
+                        </div>
 
+                        <div class="container">
 
+                            <label for="price">Precio del producto</label>
+                            <input type="number" id="price" name="price" value=<%=product.price %> >
 
-                </div>
-                <div class="container">
 
-                    <label for="color">color del producto</label>
-                    <input type="color" id="color" name="color" value="<%= product.color %> ">
+                        </div>
+                        <div class="container">
 
+                            <label for="discount">Descuento del producto</label>
+                            <input type="number" id="discount" name="discount" value=<%=product.discount %> >
 
 
-                </div>
 
-                <div class="container">
-                    <div>
-                        <label for="descripcion">detalle del producto</label>
-                    </div>
-                    <div>
-                        <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
-                    </div>
+                        </div>
+                        <div class="container">
 
-                </div>
+                            <label for="color">color del producto</label>
+                            <input type="text" id="color" name="color" value="<%= product.color %> ">
 
 
 
-                <div class="container">
+                        </div>
 
-                    <label for="Codigo">Codigo del producto</label>
-                    <input type="text" id="Codigo" name="Codigo">
+                        <div class="container">
+                            <div>
+                                <label for="detail">detalle del producto</label>
+                            </div>
+                            <div>
+                                <textarea name="detail" id="" cols="30" rows="10"><%= product.detail %> </textarea>
+                            </div>
 
+                        </div>
 
 
-                </div>
-                <div class="container">
 
-                    <label for="lente">Tipo de lente del producto</label>
-                    <input type="text" id="lente" name="lente">
+                        <div class="container">
 
+                            <label for="codigo">Codigo del producto</label>
+                            <input type="number" id="codigo" name="codigo" value="<%=product.codigo%> ">
 
 
-                </div>
 
-                <div class="container">
-                    <div class="container">
+                        </div>
+                        <div class="container">
 
-                        <label for="marco">Tipo de marco del producto</label>
-                        <input type="text" id="marco" name="marco">
+                            <label>color de lente:
+                                <select class="lens" name="lens">
+                                    <option value="">Seleccione Uno …</option>
+                                    <option value="de sol"<%= product.lens ? 'selected' : null %>>de sol</option>
+                                    <option value="fotocromaticas"<%= product.lens ? 'selected' : null %>>fotocromaticas</option>
+                                    <option value="blue ligth"<%= product.lens ? 'selected' : null %>>blue ligth</option>
+                                    <option value="transition"<%= product.lens ? 'selected' : null %>>transition</option>
+                                </select>
+                            </label>
 
+                           
+                            
 
 
-                    </div>
+                        </div>
 
+                        <div class="container">
+                            <div class="container">
+                               
+                                <label>tipo de marco:
+                                    <select class="frame" name="frame">
 
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="metalico" <%= product.frame ? 'selected' : null %>>metalico</option>
+                                        <option value="acrilico" <%= product.frame ? 'selected' : null %>>acrilico</option>
+                                        <option value="madera" <%= product.frame ? 'selected' : null %> >madera</option>
+                                        <option value="flexibles" <%= product.frame ? 'selected' : null %>>flexibles</option>
+                                    </select>
+                                </label>
 
+                                 
 
+                            </div>
+                            <div class="container">
+                                <div class="container">
+                                    <label>categoria
+                                        <select class="category" name="category">
+                                            <option value="anteojos" >Anteojos</option>
+                                         
+                                        </select>
+                                    </label>
 
 
 
+                                </div>
 
 
 
-                    <button>
-                        <input type="submit" value="Cargar">
-                    </button>
 
 
 
 
-            </form>
-            
-        </section>
 
-    </main>
 
+                                <div class="cargar">
+                                    <input type="submit" value="Cargar">
+                                </div>
 
 
 
-    <%- include('../partials/footer') %> 
 
-</body>
+
+
+
+                    </form>
+
+                </section>
+
+            </main>
+
+
+
+
+            <%- include('../partials/footer') %>
+
+    </body>
 
 </html>

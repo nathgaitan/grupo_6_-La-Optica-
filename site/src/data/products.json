@@ -11,9 +11,9 @@
     "codigo": 97,
     "lens": "sol",
     "frame": "madera",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 2,
@@ -27,9 +27,9 @@
     "codigo": 91,
     "lens": "sol",
     "frame": "madera",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 3,
@@ -43,9 +43,9 @@
     "codigo": 52,
     "lens": "sol",
     "frame": "acrílico",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 4,
@@ -59,9 +59,9 @@
     "codigo": 36,
     "lens": "recetado",
     "frame": "acrílico",
-    "duration" : "null",
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 5,
@@ -75,9 +75,9 @@
     "codigo": 47,
     "lens": "recetado",
     "frame": "metálico",
-    "duration" : "null",
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 6,
@@ -91,9 +91,9 @@
     "codigo": 98,
     "lens": "sol",
     "frame": "madera",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 7,
@@ -107,9 +107,9 @@
     "codigo": 92,
     "lens": "sol",
     "frame": "madera",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 8,
@@ -123,9 +123,9 @@
     "codigo": 58,
     "lens": "recetado",
     "frame": "metálico",
-    "duration" : "null",
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 9,
@@ -136,12 +136,12 @@
     "discount": 5,
     "color": "verde",
     "detail": "lorem",
-    "codigo": "null",
+    "codigo": null,
     "lens": "estetico",
-    "frame": "null",
-    "duration" : "3 meces",
-    "graduation" : "null",
-    "category" : "lentes de contacto"
+    "frame": null,
+    "duration": "3 meces",
+    "graduation": null,
+    "category": "lentes de contacto"
   },
   {
     "id": 10,
@@ -150,14 +150,14 @@
     "image": "lentesDeContacto_2.jpg",
     "price": 3250,
     "discount": 15,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
-    "codigo": "null",
+    "codigo": null,
     "lens": "recetado",
-    "frame": "null",
-    "duration" : "6 meces",
-    "graduation" : "0,25 a 6 dioptrias",
-    "category" : "lentes de contacto"
+    "frame": null,
+    "duration": "6 meces",
+    "graduation": "0,25 a 6 dioptrias",
+    "category": "lentes de contacto"
   },
   {
     "id": 11,
@@ -166,14 +166,14 @@
     "image": "lentesDeContacto_3.jpg",
     "price": 3500,
     "discount": 0,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
     "lens": "recetado",
-    "frame": "null",
-    "duration" : "un año",
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "lentes de contacto"
+    "frame": null,
+    "duration": "un año",
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "lentes de contacto"
   },
   {
     "id": 12,
@@ -182,14 +182,14 @@
     "image": "limpiador de anteojos_1.jpg",
     "price": 500,
     "discount": 10,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
-    "codigo": "null",
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "limpiador de anteojos"
+    "codigo": null,
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 13,
@@ -198,14 +198,14 @@
     "image": "limpiador de anteojos_2.jpg",
     "price": 450,
     "discount": 5,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
-    "codigo": "null",
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "limpiador de anteojos"
+    "codigo": null,
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 14,
@@ -214,14 +214,14 @@
     "image": "limpiador de anteojos_3.jpg",
     "price": 650,
     "discount": 5,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
-    "codigo": "null",
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "limpiador de anteojos"
+    "codigo": null,
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 15,
@@ -230,14 +230,14 @@
     "image": "limpiador de lentes de contactos_1.jpg",
     "price": 1500,
     "discount": 5,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
-    "codigo": "null",
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "lentes de contacto"
+    "codigo": null,
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 16,
@@ -246,14 +246,14 @@
     "image": "limpiador de lentes de contactos_2.jpg",
     "price": 1200,
     "discount": 5,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "lentes de contacto"
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 17,
@@ -262,14 +262,14 @@
     "image": "limpiador de lentes de contactos_3.jpg",
     "price": 2000,
     "discount": 10,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "lentes de contacto"
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 18,
@@ -278,14 +278,14 @@
     "image": "solucionOftalmologica_1.png",
     "price": 1500,
     "discount": 5,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "solucion oftalmologica"
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
   },
   {
     "id": 19,
@@ -294,14 +294,14 @@
     "image": "solucionOftalmologica_2.jpg",
     "price": 1200,
     "discount": 0,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
-    "lens": "null",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "solucion oftalmologica"
+    "lens": null,
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
   },
   {
     "id": 20,
@@ -310,14 +310,14 @@
     "image": "solucionOftalmologica_3.jpg",
     "price": 2000,
     "discount": 20,
-    "color": "null",
+    "color": null,
     "detail": "lorem",
     "codigo": 58,
     "lens": "recetado",
-    "frame": "null",
-    "duration" : "null",
-    "graduation" : "null",
-    "category" : "solucion oftalmologica"
-  }  
+    "frame": null,
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
+  }
   
 ]

@@ -83,6 +83,7 @@ addProduct: (req, res) => {
         id: products[products.length - 1].id + 1,
         name,
         marca,
+        imagen: req.file ? req.file.filename :"producto-sin-foto.png",
         price,
         discount,
         color,
@@ -90,8 +91,8 @@ addProduct: (req, res) => {
         codigo, 
         lens,
         frame, 
-        duration, 
-        graduation, 
+        duration:null,
+        graduation: null, 
         category, 
     }
   
@@ -117,20 +118,21 @@ addProduct: (req, res) => {
 
 update:(req,res) =>{
 
-    const{name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category}=req.body;
+    const{name,marca,price,discount,color,detail,codigo,lens,frame,category}=req.body;
     products.forEach(product => {
         if(product.id === +req.params.id){
-            product.name = name;
-            product.marca = marca;
-            product.price = price;
-            product.discount = discount;
-            product.color = color;
-            product.detail = detail;
-            product.codigo = codigo;
+            product.name = name.trim();
+            product.marca = marca.trim();
+            product.imagen = req.file ? req.file.filename : product.imagen;
+            product.price = +price;
+            product.discount = +discount;
+            product.color = color.trim();
+            product.detail = detail.trim();
+            product.codigo = +codigo;
             product.lens = lens;
             product.frame = frame;
-            product.duration = duration;
-            product.graduation = graduation;
+            duration = null;
+            graduation = null;
             product.category = category;
         }
         
@@ -138,7 +140,7 @@ update:(req,res) =>{
 
     
     guardar(products)
-     return res.redirect('/products')
+     return res.redirect('/admin')
 },
 
 
@@ -150,15 +152,9 @@ update:(req,res) =>{
 
 
 products : (req, res) => {
-    return res.render('admin/productsTable', {
+    return res.render('admin/productTable', {
         title : "Listado de Productos",
         products,
-        priceMayor,
-        priceMenor,
-        titleAsc,
-        titleDesc,
-        marcaAsc,
-        marcaDesc,
         priceFinal,
         toThousand
     });
