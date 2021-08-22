@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head') %> 
+<body>
+<%- include('../partials/header') %> 
+    <main>
+        <div>
+            <h3>Editando: <%= product.name %> de la categoría <%= product.category %></h3>
+            <form action="/admin/edit-solucion-oftalmologica/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+                <div class="box-input">
+                    <input type="text" name="name" value="<%= product.name%>" required>
+                </div>
+                <div class="box-input">
+                    <input type="text" name="marca" value="<%= product.marca%>" required>
+                </div>
+                <div class="box-input">
+                    <input type="number" name="codigo" value="<%= product.codigo%>" required>
+                </div>
+                <div class="box-input">
+                    <input type="number" name="price" value="<%= product.price%>" required>
+                </div>
+                <div class="box-input">
+                    <input type="number" name="discount" value="<%= product.discount%>" required>
+                </div>
+                <div class="box-input">
+                    <input type="file" name="image" id="image" required>
+                </div>
+                <div class="box-input">
+                    <input type="text" name="lens" value="<%= product.lens%>" required>
+                </div>
+                <div class="box-input">
+                    <textarea name="detail" id="detail" cols="30" rows="10" ><%= product.detail %></textarea>
+                </div>
+                <div class="box-input">
+                    <input type="submit" value="Cargar">
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer') %> 
+</body>
+</html>

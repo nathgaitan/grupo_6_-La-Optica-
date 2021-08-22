@@ -29,6 +29,37 @@ module.exports = {
         guardar(products)
         return res.redirect('/products')
     },
+    solOftalEdit: (req, res) => {
+        let product = products.find(producto => producto.id === +req.params.id)
+        return res.render('admin/solOftalmoEdit', {
+            title: "Editar Soluciones Oftalmológicas",
+            product,
+            products
+        })
+
+    },
+    solOftalUpdate : (req,res) => {
+        const { name , marca, price, discount, detail } = req.body;
+
+        products.forEach(product => {
+            if (product.id === +req.params.id){
+
+                product.name = name.trim();
+                product.marca =  marca.trim();
+                product.image = req.file ? req.file.filename : "producto-sin-foto.png";
+                product.price = +price;
+                product.discount = +discount;
+                product.color = null;
+                product.detail = detail.trim();
+                product.codigo = null;
+                product.lente = null;
+                product.marco = null
+            }
+        })
+
+        guardar(products)
+        return res.redirect('/')
+    },
 
 
 
@@ -132,6 +163,8 @@ products : (req, res) => {
         toThousand
     });
 },
+
+
 
 
 
