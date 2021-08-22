@@ -1,6 +1,7 @@
 var express = require('express');
 const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, solOftalEdit, solOftalUpdate } = require('../controllers/adminController');
 var router = express.Router();
+const path = require('path');
 
 const multer = require('multer');
 
