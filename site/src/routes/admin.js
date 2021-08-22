@@ -1,5 +1,5 @@
 var express = require('express');
-const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, solOftalEdit, solOftalUpdate } = require('../controllers/adminController');
+const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, solOftalEdit, solOftalUpdate, addContLentes, storeLentesContact, } = require('../controllers/adminController');
 var router = express.Router();
 const path = require('path');
 
@@ -39,7 +39,7 @@ router.get('/edit-solucion-oftalmologica/:id', solOftalEdit)
 router.put('/edit-solucion-oftalmologica/:id', upload.single("image"), solOftalUpdate);
 
 
-
-
+router.get("/add-contactLentes",addContLentes)
+router.get("/add-contactLentes",storeLentesContact)
 
 module.exports = router;

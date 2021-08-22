@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <%- include('../partials/head') %> 
-<body class="lentes-contact">
+<body>
 <%- include('../partials/header') %> 
-    <main>
-        <form action="/admin/add-lentesContact" method="post">
-            <div class="formulario">
-                <div class="box">
-                    <label for="name" class="form-label">Nombre del producto</label>
-                    <input type="text" name="name">
+    <main class="edit">
+        <div class="formulario">
+            <h3>Carga de Solucion Oftalmologica</h3>
+            <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
+                <div class="container">
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" name="name"required>
                 </div>
-                <div class="box">
-                    <label for="name" class="form-label">Marca</label>
-                    <input type="text" name="marca">
+                <div class="container">
+                    <label for="marca">Marca del producto</label>
+                    <input type="text" name="marca" required>
                 </div>
-                <div class="box">
-                    <label for="name" class="form-label">Precio</label>
-                    <input type="number" name="price">
+                <div class="container">
+                    <label for="price">Código del producto</label>
+                    <input type="number" name="codigo" required>
                 </div>
-                <div class="box">
-                    <label for="name" class="form-label">Descuento</label>
-                    <input type="number" name="descuento">
+                <div class="container">
+                    <label for="price">Precio del producto</label>
+                    <input type="number" name="price" required>
                 </div>
-                <div class="box">
-                    <label for="name" class="form-label">Detalles de producto</label>
-                    <input type="text" name="detail">
+                <div class="container">
+                    <label for="discount">Descuento del producto</label>
+                    <input type="number" name="discount" required>
                 </div>
-
-                <div class="box">
-                    <label for="imagen" class="form-label">Imagen</label>
-                      <input type="file" class="form-control" id="imagen" name="imagen" required>
+                <section class="imagen">
+                    <div class="anteojo">
+                    <input type="file" name="image" id="image" required>
                 </div>
-            
-            
-            <div class="box">
-                <input type="submit" value="Cargar producto">
-            </div>
+                </section>
+                <div class="container">
+                    <div>
+                        <label for="detail">detalle del producto</label>
+                    </div>
+                    <div>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                    </div>
+                </div>
+                <div class="container">
+                    <input type="submit" value="Cargar">
+                </div>
+            </form>
         </div>
-        </form>
     </main>
 <%- include('../partials/footer') %> 
 </body>

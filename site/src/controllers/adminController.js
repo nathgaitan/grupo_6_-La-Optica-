@@ -101,23 +101,7 @@ module.exports = {
         guardar(products)
         return res.redirect('/products')
     },
-    addContLentes: (req,res) => {
-        return res.render("admin/contactLentesAdd",{title : "Lentes de contacto"})
-    },
-    storeLentesContact: (req, res) => {
-        const { name,marca,price,discount,detail } = req.body;
-        let product = {
-            id: products[products.length - 1].id + 1,
-            name,
-            marca,
-            price: +price,
-            discount: +discount,
-            detail,
-        }
-        products.push(product)
-        guardar(products)
-        return res.redirect('/products')
-    },
+    
 
 /*method to addProduct*/
 
@@ -201,7 +185,27 @@ products : (req, res) => {
         priceFinal,
         toThousand
     });
-}
+},
+addContLentes: (req,res) => {
+    return res.render("admin/contactLentesAdd",{title : "Lentes de contacto"})
+},
+storeLentesContact: (req, res) => {
+    const { name,marca,price,discount,detail } = req.body;
+    let product = {
+        id: products[products.length-1].id+1,
+            name:name,
+            marca:marca,
+            image: req.file ? req.file.filename :"producto-sin-foto.png",
+            price: +price,
+            discount: +discount,
+            detail:detail,
+            codigo :codigo,
+            lente : lente,
+    }
+    products.push(product)
+    guardar(products)
+    return res.redirect('/products')
+},
 
 
 
