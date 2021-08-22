@@ -11,9 +11,8 @@ var productsRouter = require('./routes/products');
 var adminRouter = require('./routes/admin');
 
 
-
-
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

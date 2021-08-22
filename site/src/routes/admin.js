@@ -3,6 +3,7 @@ const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, so
 var router = express.Router();
 const path = require('path');
 
+
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -15,8 +16,8 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({
-    storage,
-})
+    storage
+});
 
 
 /*tabla*/
