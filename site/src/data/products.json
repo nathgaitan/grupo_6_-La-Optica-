@@ -318,31 +318,5 @@
     "duration": null,
     "graduation": null,
     "category": "solucion oftalmologica"
-  },
-  {
-    "id": 21,
-    "image": "producto-sin-foto.png",
-    "price": null,
-    "discount": null,
-    "color": null,
-    "codigo": null,
-    "frame": null,
-    "duration": null,
-    "category": "solucion oftalmologica"
-  },
-  {
-    "id": 22,
-    "name": "Nombre bien cachi",
-    "marca": "D&G",
-    "image": "image-1629668390318.png",
-    "price": 35,
-    "discount": 33,
-    "color": null,
-    "detail": "aefefa",
-    "codigo": 23432,
-    "lens": "blue ligth",
-    "frame": null,
-    "duration": null,
-    "category": "solucion oftalmologica"
   }
 ]
