@@ -46,80 +46,102 @@
 
 
         <section class="formulario">
-            <form action="">
-
-
+            <form action="/products/edit <%=product.id%>?_method=PUT" method="POST">
 
 
                 <div class="container">
-                    
+
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" id="name" name="name" value="<%= product.name %> ">
+                     
+
+
+                </div>
+
+                <div class="container">
+
                     <label for="Marca">Marca del producto</label>
-                    <input type="text" id="Marca" name="Marca">
-                    
-                   
-                           
+                    <input type="text" id="brand" name="Marca" value="<%= product.marca %> ">
+
+
+
                 </div>
 
                 <div class="container">
-                  
-                    <label for="Precio">Precio del producto</label>
-                    <input type="number" id="Precio" name="Precio">
-                    
-                          
+
+                    <label for="price">Precio del producto</label>
+                    <input type="number" id="price" name="price" value=<%= product.price %> >
+
+
                 </div>
                 <div class="container">
-                   
-                    <label for="marco">Tipo de marco del producto</label>
-                    <input type="text" id="marco" name="marco">
-                    
-                    
-                           
+
+                    <label for="Descuento">Descuento del producto</label>
+                    <input type="text" id="Descuento" name="Descuento" value=<%= product.discount %> >
+
+
+
+                </div>
+                <div class="container">
+
+                    <label for="color">color del producto</label>
+                    <input type="color" id="color" name="color" value="<%= product.color %> ">
+
+
+
                 </div>
 
                 <div class="container">
-                   
+                    <div>
+                        <label for="descripcion">detalle del producto</label>
+                    </div>
+                    <div>
+                        <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+                    </div>
+
+                </div>
+
+
+
+                <div class="container">
+
+                    <label for="Codigo">Codigo del producto</label>
+                    <input type="text" id="Codigo" name="Codigo">
+
+
+
+                </div>
+                <div class="container">
+
                     <label for="lente">Tipo de lente del producto</label>
                     <input type="text" id="lente" name="lente">
-                    
-                   
-                           
-                </div>
-                <div class="container">
-                    
-                        <label for="Descuento">Descuento del producto</label>
-                        <input type="text" id="Descuento" name="Descuento">
-                        
-                       
-                   
+
+
+
                 </div>
 
                 <div class="container">
-                    
-                        <label for="Codigo">Codigo del producto</label>
-                        <input type="text" id="Codigo" name="Codigo">
-                       
-                        
-                   
-                </div>
+                    <div class="container">
+
+                        <label for="marco">Tipo de marco del producto</label>
+                        <input type="text" id="marco" name="marco">
 
 
 
-
-
-                <div class="container">
-                    <div>
-                        <label for="desctription">detalle del producto</label>
-                    </div>
-                    <div>
-                        <textarea name="description" id="" cols="30" rows="10"></textarea>
                     </div>
 
-                </div>
 
 
-                <button>
-                    <input type="submit" value="Cargar">
-                </button>
+
+
+
+
+
+
+
+                    <button>
+                        <input type="submit" value="Cargar">
+                    </button>
 
 
 
