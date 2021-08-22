@@ -91,12 +91,12 @@ addProduct: (req, res) => {
         id: products[products.length - 1].id + 1,
         name,
         marca,
-        imagen: req.file ? req.file.filename :"producto-sin-foto.png",
-        price,
-        discount,
+        image: req.file ? req.file.filename :"producto-sin-foto.png",
+        price:+price,
+        discount:+discount,
         color,
         detail,
-        codigo, 
+        codigo:+codigo,
         lens,
         frame, 
         duration:null,
@@ -105,7 +105,7 @@ addProduct: (req, res) => {
     }
      products.push(product)
      guardar(products)
-     return res.redirect('/products')
+     return res.redirect('/admin')
     }, 
 
     /*update -form to edit*/
@@ -129,7 +129,7 @@ update:(req,res) =>{
         if(product.id === +req.params.id){
             product.name = name.trim();
             product.marca = marca.trim();
-            product.imagen = req.file ? req.file.filename : product.imagen;
+            product.image = req.file ? req.file.filename : product.image;
             product.price = +price;
             product.discount = +discount;
             product.color = color.trim();
