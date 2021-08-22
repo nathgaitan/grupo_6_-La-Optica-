@@ -24,7 +24,7 @@ router.get('/',products);
 
 /*crear*/
 router.get('/crear-producto',create);
-router.post('/crear-producto',addProduct);
+router.post('/crear-producto',upload.single("lentes"),addProduct);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
