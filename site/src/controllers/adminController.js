@@ -40,6 +40,7 @@ module.exports = {
             title: "Editar Soluciones Oftalmológicas",
             product,
             products
+
         })
 
     },
@@ -49,22 +50,22 @@ module.exports = {
         products.forEach(product => {
             if (product.id === +req.params.id){
                 
-                product.name = name.trim();
-                product.marca =  marca.trim();
+                product.name = name;
+                product.marca =  marca;
                 product.image = req.file ? req.file.filename : "producto-sin-foto.png";
                 product.price = +price;
                 product.discount = +discount;
-                color = null;
-                product.detail = detail.trim();
+                product.color = null;
+                product.detail = detail;
                 product.codigo = +codigo;
                 product.lens = lens;
-                frame = null;
-                duration = null;
-                graduation = null;
-                category = product.category
+                product.frame = null;
+                product.duration = null;
+                product.graduation = null;
+                product.category = "solucion oftalmologica"
+
             }
         })
-
         guardar(products)
         return res.redirect('/admin')
     },
@@ -144,7 +145,6 @@ update:(req,res) =>{
         
     });
 
-    
     guardar(products)
      return res.redirect('/admin')
 },
