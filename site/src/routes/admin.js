@@ -1,10 +1,8 @@
 var express = require('express');
-const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products } = require('../controllers/adminController');
+const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, solOftalEdit, solOftalUpdate } = require('../controllers/adminController');
 var router = express.Router();
 
 const multer = require('multer');
-
-
 
 const storage = multer.diskStorage({
     destination : (req,file,callback) => {
@@ -20,13 +18,12 @@ const upload = multer({
 })
 
 
+/*tabla*/
+router.get('/',products);
 
 /*crear*/
 router.get('/crear-producto',create);
 router.post('/crear-producto',addProduct);
-
-/*tabla*/
-router.get('/admin/products',products);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
@@ -38,7 +35,7 @@ router.post('/add-solucion-oftalmologica', solOftalStore);
 
 /* editar solucion oftalmologica */
 router.get('/edit-solucion-oftalmologica/:id', solOftalEdit)
-router.put('/edit-solucion-oftalmologica/:id', upload.single('image'), solOftalUpdate);
+router.put('/edit-solucion-oftalmologica/:id', upload.single("image"), solOftalUpdate);
 
 
 

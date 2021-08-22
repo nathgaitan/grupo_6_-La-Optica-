@@ -4,34 +4,58 @@
 <%- include('../partials/head') %> 
 <body>
 <%- include('../partials/header') %> 
-    <main>
-        <div>
-            <form action="/admin/add-solucion-oftalmologica" method="post">
-                <div class="box-input">
+    <main class="edit">
+        <div class="formulario">
+            <h3>Carga de <%= product.category %></h3>
+            <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
+                <div class="container">
+                    <label for="name">Nombre del producto</label>
                     <input type="text" name="name"required>
                 </div>
-                <div class="box-input">
+                <div class="container">
+                    <label for="marca">Marca del producto</label>
                     <input type="text" name="marca" required>
                 </div>
-                <div class="box-input">
+                <div class="container">
+                    <label for="price">Código del producto</label>
                     <input type="number" name="codigo" required>
                 </div>
-                <div class="box-input">
+                <div class="container">
+                    <label for="price">Precio del producto</label>
                     <input type="number" name="price" required>
                 </div>
-                <div class="box-input">
+                <div class="container">
+                    <label for="discount">Descuento del producto</label>
                     <input type="number" name="discount" required>
                 </div>
-                <div class="box-input">
+                <section>
+                    <div class="anteojo">
                     <input type="file" name="image" id="image" required>
                 </div>
-                <div class="box-input">
-                    <input type="text" name="lens" required>
+                </section>
+                <div class="container">
+
+                    <label for="lens">Tipo de lente del producto</label>
+                    <select class="lens" name="lens">
+                        <option value="">Seleccione Uno …</option>
+                        <option value="de sol">de sol</option>
+                        <option value="fotocromaticas">fotocromaticas</option>
+                        <option value="blue ligth">blue ligth</option>
+                        <option value="transition">transition</option>
+                    </select>
+
+
+
                 </div>
-                <div class="box-input">
-                    <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                <div class="container">
+                    <div>
+                        <label for="detail">detalle del producto</label>
+                    </div>
+                    <div>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                    </div>
                 </div>
-                <div class="box-input">
+                <div class="container">
                     <input type="submit" value="Cargar">
                 </div>
             </form>

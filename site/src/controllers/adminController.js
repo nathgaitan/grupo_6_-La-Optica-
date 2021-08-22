@@ -39,7 +39,7 @@ module.exports = {
 
     },
     solOftalUpdate : (req,res) => {
-        const { name , marca, price, discount, detail } = req.body;
+        const { name , marca, codigo, price, discount, detail, lens } = req.body;
 
         products.forEach(product => {
             if (product.id === +req.params.id){
@@ -51,9 +51,12 @@ module.exports = {
                 product.discount = +discount;
                 product.color = null;
                 product.detail = detail.trim();
-                product.codigo = null;
-                product.lente = null;
-                product.marco = null
+                product.codigo = +codigo;
+                product.lens = lens;
+                product.frame = null;
+                product.duration =null;
+                product.graduation = null;
+                product.category
             }
         })
 
