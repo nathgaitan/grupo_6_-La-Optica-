@@ -84,15 +84,9 @@ addProduct: (req, res) => {
 
 
 products : (req, res) => {
-    return res.render('admin/productsTable', {
+    return res.render('admin/productTable', {
         title : "Listado de Productos",
         products,
-        priceMayor,
-        priceMenor,
-        titleAsc,
-        titleDesc,
-        marcaAsc,
-        marcaDesc,
         priceFinal,
         toThousand
     });
