@@ -3,13 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
-var adminRouter = require('./routes/admin')
-
+var adminRouter = require('./routes/admin');
+app.use(methodOverride('_method'));
 
 var app = express();
 
