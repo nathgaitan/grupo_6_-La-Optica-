@@ -11,7 +11,7 @@ body.home main p, body.home main h3 {
 
 /* ------------------ Marcas ------------------ */
 body.home main .glider-contain {
-    width: 80%;
+    width: 85%;
     margin: 15px auto;
     background-color: rgba(128, 128, 128, 0.1);
     border-radius: 45px;
@@ -395,7 +395,9 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 425px) {
     /* --------- marcas --------- */
-    body.home main .glider-contain,
+    body.home main .glider-contain {
+        display: block;
+    }
     body.home main .dots {
         display: flex;
     }

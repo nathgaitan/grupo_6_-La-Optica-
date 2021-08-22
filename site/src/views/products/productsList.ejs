@@ -9,7 +9,7 @@
             <% products.forEach(product => { %>
                 <article>
                     <a href="/products/detalle-de-producto/<%= product.id %>">
-                        <% if (products.codigo != null) { %>
+                        <% if (product.codigo != null) { %>
                          <h3><%= product.codigo %></h3>
                         <% } %>
                         <figure>

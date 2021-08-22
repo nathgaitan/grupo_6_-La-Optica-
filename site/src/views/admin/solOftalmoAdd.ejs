@@ -5,14 +5,28 @@
 <body>
 <%- include('../partials/header') %> 
     <main>
-        <form action="/admin/add-solucion-oftalmologica" method="post">
-            <input type="text" name="name" placeholder="Introduzca la name">
-            <input type="text" name="marca" placeholder="Introduzca la marca">
-            <input type="number" name="price" placeholder="Precio">
-            <input type="number" name="discount" placeholder="Descuento">
-            <input type="text" name="detail" placeholder="Detalle de producto">
-            <input type="submit" value="Cargar">
-        </form>
+        <div>
+            <form action="/admin/add-solucion-oftalmologica" method="post">
+                <div class="box-input">
+                    <input type="text" name="name" placeholder="Introduzca la name">
+                </div>
+                <div class="box-input">
+                    <input type="text" name="marca" placeholder="Introduzca la marca">
+                </div>
+                <div class="box-input">
+                    <input type="number" name="price" placeholder="Precio">
+                </div>
+                <div class="box-input">
+                    <input type="number" name="discount" placeholder="Descuento">
+                </div>
+                <div class="box-input">
+                    <input type="text" name="detail" placeholder="Detalle de producto">
+                </div>
+                <div class="box-input">
+                    <input type="submit" value="Cargar">
+                </div>
+            </form>
+        </div>
     </main>
 <%- include('../partials/footer') %> 
 </body>

@@ -11,7 +11,7 @@ module.exports = {
         })
     },
     solOftalStore: (req, res) => {
-        const { name , marca, price, discount } = req.body;
+        const { name , marca, price, discount, detail } = req.body;
         let product = {
             id: products[products.length - 1].id + 1,
             name,
