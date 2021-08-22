@@ -32,7 +32,7 @@ router.put('/editar-producto/:id',upload.single("lentes"),update);
 
 /* crear solucion oftalmologica*/
 router.get('/add-solucion-oftalmologica', solOftalAdd);
-router.post('/add-solucion-oftalmologica', solOftalStore);
+router.post('/add-solucion-oftalmologica', upload.single("image"), solOftalStore);
 
 /* editar solucion oftalmologica */
 router.get('/edit-solucion-oftalmologica/:id', solOftalEdit)

@@ -6,7 +6,7 @@
 <%- include('../partials/header') %> 
     <main class="edit">
         <div class="formulario">
-            <h3>Carga de <%= product.category %></h3>
+            <h3>Carga de Solucion Oftalmologica</h3>
             <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
                 <div class="container">
                     <label for="name">Nombre del producto</label>
@@ -28,13 +28,12 @@
                     <label for="discount">Descuento del producto</label>
                     <input type="number" name="discount" required>
                 </div>
-                <section>
+                <section class="imagen">
                     <div class="anteojo">
                     <input type="file" name="image" id="image" required>
                 </div>
                 </section>
                 <div class="container">
-
                     <label for="lens">Tipo de lente del producto</label>
                     <select class="lens" name="lens">
                         <option value="">Seleccione Uno …</option>
@@ -43,9 +42,6 @@
                         <option value="blue ligth">blue ligth</option>
                         <option value="transition">transition</option>
                     </select>
-
-
-
                 </div>
                 <div class="container">
                     <div>

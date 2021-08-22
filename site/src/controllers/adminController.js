@@ -7,23 +7,27 @@ let priceFinal = require('../utils/priceFinal');
 module.exports = {
     solOftalAdd: (req, res) => {
         res.render('admin/solOftalmoAdd', {
-            title: "Cargar producto"
+            title: "Cargar producto",
+            products
         })
     },
     solOftalStore: (req, res) => {
-        const { name , marca, price, discount, detail } = req.body;
+        const { name , marca, price, discount, detail, codigo, lens } = req.body;
         let product = {
-            id: products[products.length - 1].id + 1,
-            name,
-            marca,
-            image:null,
-            price: +price,
-            discount: +discount,
-            color:null,
-            detail,
-            codigo:null,
-            lente:null,
-            marco:null,
+            id : products[products.length - 1].id + 1,
+            name : name,
+            marca : marca,
+            image : req.file ? req.file.filename : "producto-sin-foto.png",
+            price : +price,
+            discount : +discount,
+            color :null,
+            detail : detail,
+            codigo : +codigo,
+            lens : lens,
+            frame : null,
+            duration : null,
+            category : "solucion oftalmologica"
+
         }
         products.push(product)
         guardar(products)
