@@ -10,7 +10,8 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var adminRouter = require('./routes/admin')
 
-/*const methodOverride = require('method-override');*/
+
+
 
 var app = express();
 

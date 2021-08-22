@@ -11,9 +11,9 @@
     "codigo": 97,
     "lens": "sol",
     "frame": "madera",
-    "duration" : null,
-    "graduation" : null,
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 2,
@@ -27,9 +27,9 @@
     "codigo": 91,
     "lens": "sol",
     "frame": "madera",
-    "duration" : null,
-    "graduation" : null,
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 3,
@@ -43,9 +43,9 @@
     "codigo": 52,
     "lens": "sol",
     "frame": "acrílico",
-    "duration" : null,
-    "graduation" : null,
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 4,
@@ -59,9 +59,9 @@
     "codigo": 36,
     "lens": "recetado",
     "frame": "acrílico",
-    "duration" : null,
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 5,
@@ -75,9 +75,9 @@
     "codigo": 47,
     "lens": "recetado",
     "frame": "metálico",
-    "duration" : null,
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 6,
@@ -91,9 +91,9 @@
     "codigo": 98,
     "lens": "sol",
     "frame": "madera",
-    "duration" : null,
-    "graduation" : null,
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 7,
@@ -107,9 +107,9 @@
     "codigo": 92,
     "lens": "sol",
     "frame": "madera",
-    "duration" : null,
-    "graduation" : null,
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "anteojos"
   },
   {
     "id": 8,
@@ -123,9 +123,9 @@
     "codigo": 58,
     "lens": "recetado",
     "frame": "metálico",
-    "duration" : null,
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "anteojos"
+    "duration": null,
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "anteojos"
   },
   {
     "id": 9,
@@ -139,9 +139,9 @@
     "codigo": null,
     "lens": "estetico",
     "frame": null,
-    "duration" : "3 meces",
-    "graduation" : null,
-    "category" : "lentes de contacto"
+    "duration": "3 meces",
+    "graduation": null,
+    "category": "lentes de contacto"
   },
   {
     "id": 10,
@@ -155,9 +155,9 @@
     "codigo": null,
     "lens": "recetado",
     "frame": null,
-    "duration" : "6 meces",
-    "graduation" : "0,25 a 6 dioptrias",
-    "category" : "lentes de contacto"
+    "duration": "6 meces",
+    "graduation": "0,25 a 6 dioptrias",
+    "category": "lentes de contacto"
   },
   {
     "id": 11,
@@ -171,9 +171,9 @@
     "codigo": 58,
     "lens": "recetado",
     "frame": null,
-    "duration" : "un año",
-    "graduation" : "0,25 a 12 dioptrias",
-    "category" : "lentes de contacto"
+    "duration": "un año",
+    "graduation": "0,25 a 12 dioptrias",
+    "category": "lentes de contacto"
   },
   {
     "id": 12,
@@ -187,9 +187,9 @@
     "codigo": null,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador de anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 13,
@@ -203,9 +203,9 @@
     "codigo": null,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador de anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 14,
@@ -219,9 +219,9 @@
     "codigo": null,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador de anteojos"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador de anteojos"
   },
   {
     "id": 15,
@@ -235,9 +235,9 @@
     "codigo": null,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador lentes de contacto"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 16,
@@ -251,9 +251,9 @@
     "codigo": 58,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador lentes de contacto"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 17,
@@ -267,9 +267,9 @@
     "codigo": 58,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "limpiador lentes de contacto"
+    "duration": null,
+    "graduation": null,
+    "category": "limpiador lentes de contacto"
   },
   {
     "id": 18,
@@ -283,9 +283,9 @@
     "codigo": 58,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "solucion oftalmologica"
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
   },
   {
     "id": 19,
@@ -299,9 +299,9 @@
     "codigo": 58,
     "lens": null,
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "solucion oftalmologica"
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
   },
   {
     "id": 20,
@@ -315,9 +315,9 @@
     "codigo": 58,
     "lens": "recetado",
     "frame": null,
-    "duration" : null,
-    "graduation" : null,
-    "category" : "solucion oftalmologica"
-  }  
+    "duration": null,
+    "graduation": null,
+    "category": "solucion oftalmologica"
+  }
   
 ]

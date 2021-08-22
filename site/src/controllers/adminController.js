@@ -46,20 +46,23 @@ module.exports = {
 /*method to addProduct*/
 
 addProduct: (req, res) => {
-    const{name,marca,price,discount,color,detail,codigo,lente,marco}=req.body;
+    const{name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category}=req.body;
 
     let product ={
         id: products[products.length - 1].id + 1,
         name,
         marca,
-        image:null,
-        price: +price,
-        discount: +discount,
+        imagen: req.file ? req.file.filename :"producto-sin-foto.png",
+        price,
+        discount,
         color,
         detail,
-        codigo,
-        lente,
-        marco,
+        codigo, 
+        lens,
+        frame, 
+        duration:null,
+        graduation: null, 
+        category, 
     }
   
 
@@ -81,6 +84,40 @@ addProduct: (req, res) => {
 
  
 /*update -method to update*/
+
+update:(req,res) =>{
+
+    const{name,marca,price,discount,color,detail,codigo,lens,frame,category}=req.body;
+    products.forEach(product => {
+        if(product.id === +req.params.id){
+            product.name = name.trim();
+            product.marca = marca.trim();
+            product.imagen = req.file ? req.file.filename : product.imagen;
+            product.price = +price;
+            product.discount = +discount;
+            product.color = color.trim();
+            product.detail = detail.trim();
+            product.codigo = +codigo;
+            product.lens = lens;
+            product.frame = frame;
+            duration = null;
+            graduation = null;
+            product.category = category;
+        }
+        
+    });
+
+    
+    guardar(products)
+     return res.redirect('/admin')
+},
+
+
+
+
+
+
+
 
 
 products : (req, res) => {
