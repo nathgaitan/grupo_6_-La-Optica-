@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head') %> 
+<body>
+<%- include('../partials/header') %> 
+    <main class="edit">
+        <div class="formulario">
+            <h3>Carga de Solucion Oftalmologica</h3>
+            <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
+                <div class="container">
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" name="name"required>
+                </div>
+                <div class="container">
+                    <label for="marca">Marca del producto</label>
+                    <input type="text" name="marca" required>
+                </div>
+                <div class="container">
+                    <label for="price">Código del producto</label>
+                    <input type="number" name="codigo" required>
+                </div>
+                <div class="container">
+                    <label for="price">Precio del producto</label>
+                    <input type="number" name="price" required>
+                </div>
+                <div class="container">
+                    <label for="discount">Descuento del producto</label>
+                    <input type="number" name="discount" required>
+                </div>
+                <section class="imagen">
+                    <div class="anteojo">
+                    <input type="file" name="image" id="image" required>
+                </div>
+                </section>
+                <div class="container">
+                    <div>
+                        <label for="detail">detalle del producto</label>
+                    </div>
+                    <div>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                    </div>
+                </div>
+                <div class="container">
+                    <input type="submit" value="Cargar">
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer') %> 
+</body>
+</html>
