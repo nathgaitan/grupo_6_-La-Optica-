@@ -103,8 +103,6 @@ addProduct: (req, res) => {
         graduation: null, 
         category, 
     }
-  
-
      products.push(product)
      guardar(products)
      return res.redirect('/products')
@@ -166,7 +164,7 @@ products : (req, res) => {
         priceFinal,
         toThousand
     });
-},
+}
 
 
 
