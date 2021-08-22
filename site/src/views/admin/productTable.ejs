@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body class="tabla">
+    <div class="zebra1">
+
+    <main class="tabla1">
+        <div class="container">
+            <table class="tabla">
+                <thead>
+                    <tr class="algo">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Detalle</th>
+                        <th>Codigo</th>
+                        <th>Lente</th>
+                        <th>Categoria</th> 
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="algo2">
+                    
+                    <% products.forEach(product => { %>
+                        <tr> <td> <%= product.id %>  </td>
+                        <td><%= product.name %> </td>
+                        <td><%= product.marca %> </td>
+                        <td><%= product.price %> </td>
+                        <td><%= product.detail %> </td>
+                        <td><%= product.codigo %> </td>
+                        <td><%= product.lens %> </td>
+                        <td><%= product.category %> </td>
+                        <td>
+                            <% if (product.category === "anteojos")  { %>
+                                <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>  
+                                <%}else if (product.category === "lentes de contacto") { %>
+                                    <a href="#"></a>                  
+
+                                    <% }else{ %> 
+                                        <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          
+                            <% } %>
+                           
+                            <a href="/products/detail/<%= product.id %>"><i class="fas fa-eye"></i></a>
+                            <!-- <form action="/products/delete/?_method=DELETE " method="POST">
+                                <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button></form> -->
+                            
+                        </td>
+                     
+                    <% }) %>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </main>
+</div>
+    
+</body>
+</html>

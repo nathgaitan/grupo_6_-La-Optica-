@@ -5,7 +5,7 @@
 }
 
 /*main*/
-.cuerpo .edit {
+body .edit {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,11 +13,11 @@
   background-color: #f2f2f2;
 }
 
-.cuerpo .edit section.imagen {
+body .edit section.imagen {
   text-align: center;
   width: 100%;
 }
-.cuerpo .edit section.imagen div button {
+body .edit section.imagen div button {
   margin: 10px;
   width: 90%;
   height: 40px;
@@ -26,29 +26,40 @@
   border: black solid 1px;
 }
 
-.cuerpo .edit img {
-  border: #a0c5f7 solid 1px;
-  border-radius: 5%;
-  width: 80%;
+body .edit section.imagen .anteojo {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: center;
 }
 
-.cuerpo .edit .formulario {
+body .edit .formulario {
   background-color: #a0c5f7;
   border: black solid 1px;
   border-radius: 2%;
   width: 100%;
+  
+}
+body .edit .formulario h3{
+  text-align: center;
+  color: #252440;
+  font-size: 18px;
+  padding: 10%;
 }
 
-.cuerpo .edit .formulario .container {
+body .edit .formulario form .container {
   text-align: center;
   padding: 20px;
   width: 100%;
 }
-.cuerpo .edit .formulario .container textarea {
+body .edit .formulario form.container textarea {
   width: 100%;
 }
 
-.cuerpo .edit button {
+
+
+
+body .edit div .cargar input{
   margin: 10px;
   width: 90%;
   height: 40px;
@@ -57,23 +68,31 @@
   border: black solid 1px;
 }
 
+
+
+
+
+
+
+
+
 @media (min-width: 481px) {
-  .cuerpo .edit .formulario .container textarea {
+   body .edit .formulario .container textarea {
     width: 90%;
   }
 
-  .cuerpo .edit button {
+  body .edit button {
     margin: 20px;
 
     margin-left: 5%;
   }
 }
 @media (min-width: 768px) {
-  .cuerpo .edit .formulario .container textarea {
+  body .edit .formulario .container textarea {
     width: 80%;
   }
 
-  .cuerpo .edit button {
+  body .edit button {
     margin: 30px;
 
     margin-left: 5%;

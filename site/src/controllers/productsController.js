@@ -33,7 +33,7 @@ module.exports = {
     
     cart : (req,res) => {
         return res.render('products/cart', {
-            title: "algo"
+            title: "Tus Compras!"
         })
     },
    
