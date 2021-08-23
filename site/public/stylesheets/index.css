@@ -374,20 +374,17 @@ body.home main section.whatsapp .contenedor nav {
     }
     /* adaptando imagen segun categoria de producto */
     body.home main section.productos article figure.anteojos {
-        width: 90%;
-    }
-    body.home main section.productos article figure.solucion {
-        width: 65.076%;
+        width: 86%;
     }
     body.home main section.productos article figure.solucion-lentillas {
-        width: 68.365%;
+        width: 55.9%;
     }
     body.home main section.productos img.img-anteojos {
         margin-top: 75px;
-        height: 177.83px;        
+        height: auto;        
     }
     body.home main section.productos img.img-solucion-lentillas {
-        margin: 45px 0 10px;
+        margin: 45px 0 30px;
     }
     /* fin adaptando imagen segun categoria de producto */
     body.home main section.productos article .check-like {
@@ -427,18 +424,14 @@ body.home main section.whatsapp .contenedor nav {
         display: block;
     }
     /* adaptando imagen segun categoria de producto */
-    body.home main section.productos article figure.solucion {
-        width: 78.412%;
-    }
     body.home main section.productos article figure.solucion-lentillas {
-        width: 78.415%;
+        width: 55.895%;
     }
     body.home main section.productos img.img-anteojos {
-        margin-top: 67px;
-        height: 108.64px;        
+        margin-top: 80px;      
     }
     body.home main section.productos img.img-solucion-lentillas {
-        margin: 20px 0 10px;
+        margin: 50px 0 30px;
     }
     /* fin adaptando imagen segun categoria de producto */
     body.home main section.productos article .box-detalle p {
@@ -466,7 +459,7 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 768px) {
     body.home main {
-        max-width: 1100px;
+        max-width: 1000px;
     }
 
     /* products */
@@ -478,12 +471,14 @@ body.home main section.whatsapp .contenedor nav {
         display: block;
     }
     /* adaptando imagen segun categoria de producto */
-    body.home main section.productos article figure.solucion {
-        width: 81%;
-        height: 189.22px;
+    body.home main section.productos article figure.solucion,
+    body.home main section.productos article figure.solucion-lentillas {
+    height: 189.22px;
+    display: flex;
+    align-items: center;
     }
     body.home main section.productos article figure.solucion-lentillas {
-        width: 88%;
+        width: 69.255%;
     }
     body.home main section.productos img.img-anteojos {
         height: 121.22px;
