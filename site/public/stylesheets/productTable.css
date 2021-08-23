@@ -1,10 +1,18 @@
-.container{
 
-}
 
 .tabla{
     padding: 0;
     border-collapse: collapse;
+    text-align: center;
+    margin: 20px 30px;
+}
+
+.tabla1{
+    margin-top: 60px;    
+}
+
+.botones{
+    text-align: center;
 }
 
 th, td{
