@@ -5,6 +5,9 @@
     <div class="zebra1">
 
     <main class="tabla1">
+        <button><a href="/admin/add-solucion-oftalmologica">crear solucion</a></button>
+        <button><a href="/admin/crear-producto">crear anteojos</a></button>
+        <button><a href="/admin/add-contactLentes">crear lent-cont</a></button>
         <div class="container">
             <table class="tabla">
                 <thead>
@@ -35,7 +38,7 @@
                             <% if (product.category === "anteojos")  { %>
                                 <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>  
                                 <%}else if (product.category === "lentes de contacto") { %>
-                                    <a href="#"></a>                  
+                                    <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                 
 
                                     <% }else{ %> 
                                         <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          
