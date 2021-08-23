@@ -12,6 +12,8 @@ module.exports = {
         res.render("products/productDetail",{
             products,
             product,
+            toThousand,
+            priceFinal
         })
     },
     list : (req, res) => {

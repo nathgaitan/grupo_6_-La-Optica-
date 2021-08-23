@@ -18,13 +18,13 @@
 
 
 
-                    <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST">
+                    <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
 
 
                         <section class="imagen">
 
                             <div class='anteojo'>
-                                <input type="file" name="lentes">
+                                <input type="file" name="image" required>
                             </div>
 
 
@@ -39,7 +39,7 @@
                         <div class="container">
 
                             <label for="name">Nombre del producto</label>
-                            <input type="text" id="name" name="name" value="<%= product.name %> ">
+                            <input type="text" id="name" name="name" value="<%= product.name %> " required>
 
 
 
@@ -48,7 +48,7 @@
                         <div class="container">
 
                             <label for="marca">Marca del producto</label>
-                            <input type="text" id="marca" name="Marca" value="<%= product.marca %> ">
+                            <input type="text" id="marca" name="marca" value="<%= product.marca %>" required>
 
 
 
@@ -57,14 +57,14 @@
                         <div class="container">
 
                             <label for="price">Precio del producto</label>
-                            <input type="number" id="price" name="price" value=<%=product.price %> >
+                            <input type="number" id="price" name="price" value="<%=product.price %>" required>
 
 
                         </div>
                         <div class="container">
 
                             <label for="discount">Descuento del producto</label>
-                            <input type="number" id="discount" name="discount" value=<%=product.discount %> >
+                            <input type="number" id="discount" name="discount" value="<%=product.discount %>" required>
 
 
 
@@ -72,7 +72,7 @@
                         <div class="container">
 
                             <label for="color">color del producto</label>
-                            <input type="text" id="color" name="color" value="<%= product.color %> ">
+                            <input type="text" id="color" name="color" value="<%= product.color %>" required>
 
 
 
@@ -83,7 +83,7 @@
                                 <label for="detail">detalle del producto</label>
                             </div>
                             <div>
-                                <textarea name="detail" id="" cols="30" rows="10"><%= product.detail %> </textarea>
+                                <textarea name="detail" id="" cols="30" rows="10"><%= product.detail %></textarea>
                             </div>
 
                         </div>
@@ -93,7 +93,7 @@
                         <div class="container">
 
                             <label for="codigo">Codigo del producto</label>
-                            <input type="number" id="codigo" name="codigo" value="<%=product.codigo%> ">
+                            <input type="number" id="codigo" name="codigo" value="<%=product.codigo%>" required>
 
 
 
@@ -101,7 +101,7 @@
                         <div class="container">
 
                             <label for="lens">Tipo de lente del producto</label>
-                            <select class="lens" name="lens">
+                            <select class="lens" name="lens" required>
                                 <option value="">Seleccione Uno …</option>
                                 <option value="de sol">de sol</option>
                                 <option value="fotocromaticas">fotocromaticas</option>
@@ -117,7 +117,7 @@
                             <div class="container">
                                
                                 <label>tipo de marco:
-                                    <select class="frame" name="frame">
+                                    <select class="frame" name="frame" required>
 
                                         <option value="">Seleccione Uno …</option>
                                         <option value="metalico" <%= product.frame ? 'selected' : null %>>metalico</option>
@@ -133,7 +133,7 @@
                             <div class="container">
                                 <div class="container">
                                     <label>categoria
-                                        <select class="category" name="category">
+                                        <select class="category" name="category" required>
                                             <option value="anteojos" >Anteojos</option>
                                          
                                         </select>

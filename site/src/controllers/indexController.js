@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 /* Data */
 const { products } = require('../data/products_db');
 
@@ -15,7 +12,7 @@ module.exports = {
     index : (req, res) => {
         return res.render('index', {
             title : "Home",
-            products : JSON.parse(fs.readFileSync(path.join(__dirname,'..', 'data', 'products.json'), 'utf-8')),
+            products,
             marcas :  require('../data/marcas'),
             galeria,
             priceFinal,
