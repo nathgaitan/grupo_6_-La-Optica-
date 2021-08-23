@@ -2,18 +2,18 @@
   {
     "id": 1,
     "name": "RAY-BAN 97",
-    "marca": "RAY-BAN",
     "image": "lentes.png",
     "price": 4500,
-    "discount": 7,
+    "discount": 8,
     "color": "cerezo",
     "detail": "lorem",
     "codigo": 97,
-    "lens": "sol",
+    "lens": "de sol",
     "frame": "madera",
     "duration": null,
     "graduation": null,
-    "category": "anteojos"
+    "category": "anteojos",
+    "marca": "RAY-BAN"
   },
   {
     "id": 2,

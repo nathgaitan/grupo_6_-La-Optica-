@@ -3,6 +3,7 @@ const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, so
 var router = express.Router();
 const path = require('path');
 
+
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -15,8 +16,8 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({
-    storage,
-})
+    storage
+});
 
 
 /*tabla*/
@@ -24,11 +25,11 @@ router.get('/',products);
 
 /*crear*/
 router.get('/crear-producto',create);
-router.post('/crear-producto',upload.single("lentes"),addProduct);
+router.post('/crear-producto',upload.single("image"),addProduct);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
-router.put('/editar-producto/:id',upload.single("lentes"),update);
+router.put('/editar-producto/:id',upload.single("image"),update);
 
 /* crear solucion oftalmologica*/
 router.get('/add-solucion-oftalmologica', solOftalAdd);
