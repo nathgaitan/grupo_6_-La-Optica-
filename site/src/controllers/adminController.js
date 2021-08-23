@@ -190,7 +190,7 @@ addContLentes: (req,res) => {
     return res.render("admin/contactLentesAdd",{title : "Lentes de contacto"})
 },
 storeLentesContact: (req, res) => {
-    const { name,marca,price,discount,detail } = req.body;
+    const { name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category} = req.body;
     let product = {
         id: products[products.length-1].id+1,
             name:name,
@@ -198,13 +198,54 @@ storeLentesContact: (req, res) => {
             image: req.file ? req.file.filename :"producto-sin-foto.png",
             price: +price,
             discount: +discount,
+            color:null,
             detail:detail,
-            codigo :codigo,
-            lente : lente,
+            codigo :+codigo,
+            lens:lens,
+            frame:null,
+            duration,
+            graduation,
+            category,
     }
     products.push(product)
     guardar(products)
-    return res.redirect('/products')
+    return res.redirect('/admin')
+},
+
+
+editLentesContact: (req, res) => {
+    let product = products.find(producto => producto.id === +req.params.id)
+    return res.render('admin/contactLentesEdit', {
+        title: "Editar lentes de Contacto",
+        product,
+        products
+    })
+
+},
+updateLentesContact : (req,res) => {
+    const { name,marca,price,discount,color,detail } = req.body;
+
+    products.forEach(product => {
+        if (product.id === +req.params.id){
+            
+            product.name = name.trim();
+            product.marca =  marca.trim();
+            product.image = req.file ? req.file.filename : "producto-sin-foto.png";
+            product.price = +price;
+            product.discount = +discount;
+            product.color=color;
+            product.detail = detail.trim();
+            product.codigo = +codigo;
+            product.lens = lens.trim();
+            product.frame = frame.trim();
+            product.duration = duration.trim()
+            product.graduation = graduation.trim();
+            product.category= category.trim()
+        }
+    })
+
+    guardar(products)
+    return res.redirect('/admin')
 },
 
 
