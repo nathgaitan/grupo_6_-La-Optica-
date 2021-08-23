@@ -14,7 +14,7 @@
 
                     <h3>Carga de anteojos:</h3>
 
-                    <form action="/admin/crear-producto" method="POST">
+                    <form action="/admin/crear-producto" method="POST" enctype="multipart/form-data">
 
                         <section class="imagen">
 
@@ -43,7 +43,7 @@
                         <div class="container">
 
                             <label for="name">Nombre del producto</label>
-                            <input type="text" id="name" name="name" >
+                            <input type="text" id="name" name="name" required>
 
 
 
@@ -52,7 +52,7 @@
                         <div class="container">
 
                             <label for="marca">Marca del producto</label>
-                            <input type="text" id="marca" name="marca" >
+                            <input type="text" id="marca" name="marca"required>
 
 
 
@@ -61,14 +61,14 @@
                         <div class="container">
 
                             <label for="price">Precio del producto</label>
-                            <input type="number" id="price" name="price" >
+                            <input type="number" id="price" name="price" required>
 
 
                         </div>
                         <div class="container">
 
                             <label for="discount">Descuento del producto</label>
-                            <input type="number" id="discount" name="discount" >
+                            <input type="number" id="discount" name="discount" requiured>
 
 
 
@@ -76,7 +76,7 @@
                         <div class="container">
 
                             <label for="color">color del producto</label>
-                            <input type="text" id="color" name="color" >
+                            <input type="text" id="color" name="color" required>
 
 
 
@@ -87,7 +87,7 @@
                                 <label for="detail">detalle del producto</label>
                             </div>
                             <div>
-                                <textarea name="detail" id="" cols="30" rows="10"></textarea>
+                                <textarea name="detail" id="" cols="30" rows="10" required></textarea>
                             </div>
 
                         </div>
@@ -97,7 +97,7 @@
                         <div class="container">
 
                             <label for="Codigo">Codigo del producto</label>
-                            <input type="number" id="Codigo" name="Codigo">
+                            <input type="number" id="Codigo" name="Codigo" required>
 
 
 
@@ -105,7 +105,7 @@
                         <div class="container">
 
                             <label for="lens">Tipo de lente del producto</label>
-                            <select class="lens" name="lens">
+                            <select class="lens" name="lens"required>
                                 <option value="">Seleccione Uno …</option>
                                 <option value="de sol">de sol</option>
                                 <option value="fotocromaticas">fotocromaticas</option>
@@ -122,7 +122,7 @@
 
                                 <label for="frame">Tipo de marco del producto</label>
                                 
-                                <select class="frame" name="frame">
+                                <select class="frame" name="frame" required>
 
                                     <option value="">Seleccione Uno …</option>
                                     <option value="metalico" >metalico</option>
@@ -137,7 +137,7 @@
                             <div class="container">
                                 <div class="container">
                                     <label>categoria
-                                        <select class="category" name="category">
+                                        <select class="category" name="category" required>
                                             <option value="anteojos" >Anteojos</option>
                                          
                                         </select>
@@ -157,7 +157,7 @@
 
 
                                 <div class="cargar">
-                                    <input type="submit" value="Cargar">
+                                    <input type="submit" value="Cargar" >
                                 </div>
                                
                                 
