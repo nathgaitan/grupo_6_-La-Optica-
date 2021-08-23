@@ -5,9 +5,11 @@
     <div class="zebra1">
 
     <main class="tabla1">
-        <button><a href="/admin/add-solucion-oftalmologica">crear solucion</a></button>
-        <button><a href="/admin/crear-producto">crear anteojos</a></button>
-        <button><a href="/admin/add-contactLentes">crear lent-cont</a></button>
+        <div class="botones">
+        <button><a href="/admin/add-solucion-oftalmologica">Crear solucion</a></button>
+        <button><a href="/admin/crear-producto">Crear anteojos</a></button>
+        <button><a href="/admin/add-contactLentes">Crear lent-cont</a></button>
+        </div>
         <div class="container">
             <table class="tabla">
                 <thead>
@@ -44,7 +46,7 @@
                                         <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          
                             <% } %>
                            
-                            <a href="/products/detail/<%= product.id %>"><i class="fas fa-eye"></i></a>
+                            <a href="/products/detalle-de-producto/<%= product.id %>"><i class="fas fa-eye"></i></a>
                             <!-- <form action="/products/delete/?_method=DELETE " method="POST">
                                 <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button></form> -->
                             
