@@ -223,7 +223,7 @@ editLentesContact: (req, res) => {
 
 },
 updateLentesContact : (req,res) => {
-    const { name,marca,price,discount,color,detail } = req.body;
+    const { name,marca,price,discount,color,detail,codigo,lens,frame,duration,graduation,category } = req.body;
 
     products.forEach(product => {
         if (product.id === +req.params.id){
@@ -236,11 +236,11 @@ updateLentesContact : (req,res) => {
             product.color=color;
             product.detail = detail.trim();
             product.codigo = +codigo;
-            product.lens = lens.trim();
-            product.frame = frame.trim();
-            product.duration = duration.trim()
-            product.graduation = graduation.trim();
-            product.category= category.trim()
+            product.lens = lens;
+            product.frame = frame;
+            product.duration = duration
+            product.graduation = graduation;
+            product.category= category;
         }
     })
 
@@ -254,12 +254,5 @@ updateLentesContact : (req,res) => {
 
 
 
-
-
-
-
-
 }
 
-      
-    

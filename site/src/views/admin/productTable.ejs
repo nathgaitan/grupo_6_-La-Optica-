@@ -35,7 +35,7 @@
                             <% if (product.category === "anteojos")  { %>
                                 <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>  
                                 <%}else if (product.category === "lentes de contacto") { %>
-                                    <a href="#"></a>                  
+                                    <a href="/admin/edit-contactLentes/<%= product.id %> "><i class="fas fa-edit"></i></a>                  
 
                                     <% }else{ %> 
                                         <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          

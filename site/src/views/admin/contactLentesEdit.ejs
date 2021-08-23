@@ -18,15 +18,15 @@
                 </div>
                 <div class="container">
                     <label for="price">Código del producto</label>
-                    <input type="number" name="codigo" value="<%= product.codigo %> " required>
+                    <input type="number" name="codigo" value=<%= product.codigo %>  required>
                 </div>
                 <div class="container">
                     <label for="price">Precio del producto</label>
-                    <input type="number" name="price" value="<%= product.price %> " required>
+                    <input type="number" name="price" value=<%= product.price %>  required>
                 </div>
                 <div class="container">
                     <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" value="<%= product.discount %> " required>
+                    <input type="number" name="discount" value=<%= product.discount %>  required>
                 </div>
                 <section class="imagen">
                     <div class="anteojo">
@@ -45,12 +45,26 @@
             <div class="container">
                 <div class="container">
                     <div>
-                        <label for="detail">detalle del producto</label>
-                    </div>
-                    <div>
-                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ><%= product.detail %> </textarea>
                     </div>
                 </div>
+
+
+
+
+                <div class="container">
+                    <label>categoria
+                        <select class="category" name="category" required>
+                            <option value="contacto" >lentes de contacto</option>
+                         
+                        </select>
+                    </label>
+                </div>
+
+
+
+
+
                 <div class="container">
                     <input type="submit" value="Cargar">
                 </div>
