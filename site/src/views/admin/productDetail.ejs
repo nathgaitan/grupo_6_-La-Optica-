@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head",{title : product.name}) %> 
+
+<body class="product">
+    <%- include("../partials/header") %> 
+
+   <main>
+    <section class="container">
+            <img src="/images/products/<%= product.image %> " alt="">
+            <div class="alineacion">
+                <div class="marnye">
+                    <span class="marca marca2"><%= product.marca %> </span>
+                    <div class="nye">
+                        <h2><%= product.name %> </h2>
+                        <div>
+                            
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="precio">
+                                            
+                    <% if (product.discount> 0) { %>
+                        <p class="discount">$<%= toThousand(product.price) %></p>
+                        <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
+                        <% } else { %>
+                        <p class="discount"></p>
+                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                         <% } %>
+                </div>
+
+                <button class="agregar">
+                    <h4>Agregá tus lentes:</h4>
+                    <span><i class="fas fa-plus"></i></span>
+                </button>
+                    <div class="receta">
+                        <span>Receta oculista.</span>
+                        <button>SUBIR ARCHIVO</button>
+                    </div>
+                    <button class="comprarya">Comprar Ahora</button>
+            </div>
+        
+    </section>
+    <section class="info">
+            <h3>Detalles del Producto</h3>
+        <button class="vermas">
+            <span>Descripción</span>
+            <span><i class="fas fa-plus"></i></span>
+        </button>
+        <button class="vermas">
+            <span>Especificaciones</span>
+            <span><i class="fas fa-plus"></i></span>
+        </button>
+        <button class="vermas">
+            <span>Tamaño del marco</span>
+            <span><i class="fas fa-plus"></i></span>
+        </button>
+        <button class="vermas opciones">
+            <span>Opciones de pago</span>
+            <span><i class="fas fa-plus"></i></span>
+        </button>
+
+        <div class="editar-but">
+        <button class="but-editar">                            <% if (product.category === "anteojos")  { %>
+            <a href="/admin/editar-producto/<%= product.id %>" class="editador">EDITAR</i></a>  
+            <%}else if (product.category === "lentes de contacto") { %>
+                <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador">EDITAR</i></a>                 
+
+                <% }else{ %> 
+                    <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador">EDITAR</i></a>                          
+        <% } %></button>
+    </div>
+
+    </section>
+    <div class="interesar">
+        <h3 class="bis">Tambien te podria interesar</h3>
+    </div>
+        <div class="interes">
+            
+            <section>
+                
+                
+                    
+                </section>
+                
+        </div>
+        <div class="botontablet">
+            <button class="fijo comprarya">Comprar Ahora</button>
+        </div>
+        <section class="contenedorglider">
+            <div class="glider-contain">
+                <div class="glider">
+                    <% products.forEach(product => { %>
+                        <article>
+                            <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
+                            
+                                <div class="combo">
+                                    <span class="marca"><%= product.marca %></span>
+                                    <div class="nye">
+                                        <h2><%= product.name %></h2>
+                                        <div>
+                                            
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="far fa-star"></i></span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                            
+                                    <% if (product.discount> 0) { %>
+                                        <p class="discount">$<%= toThousand(product.price) %></p>
+                                        <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
+                                        <% } else { %>
+                                        <p class="discount"></p>
+                                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                                         <% } %>
+                                </div>
+                        </article>
+                    <% }) %>
+                </div>
+              
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
+              </div>
+        </section>
+</main>
+<%- include("../partials/footer") %> 
+<%- include("../partials/scripts") %> 
+<script src="/js/detail.js"></script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 var express = require('express');
-const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products, solOftalEdit, solOftalUpdate, addContLentes, storeLentesContact, } = require('../controllers/adminController');
+const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products,detail, solOftalEdit, solOftalUpdate, addContLentes, storeLentesContact, } = require('../controllers/adminController');
 var router = express.Router();
 const path = require('path');
 
@@ -22,6 +22,7 @@ const upload = multer({
 
 /*tabla*/
 router.get('/',products);
+router.get('/productDetail/:id',detail);
 
 /*crear*/
 router.get('/crear-producto',create);

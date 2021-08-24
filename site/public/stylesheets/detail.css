@@ -86,6 +86,20 @@
     border-color: blue transparent blue;
 }
 
+.product main section .editar-but{
+    width: 100%;
+}
+
+.product main section button.but-editar{
+    border-color: blue;
+    border-radius: 15px;
+    background-color: aquamarine;
+    width: 150px;
+    height: 50px;
+    margin: 20px 40%;
+}
+
+
 .product main section.container button.comprarya{
     display: block;
     position: fixed;
