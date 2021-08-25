@@ -7,7 +7,7 @@
     <main class="edit">
         <div class="formulario">
             <h3>Editando lentes de contacto</h3>
-            <form action="/admin/add-contactLentes/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/admin/edit-contactLentes/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="container">
                     <label for="name">Nombre del producto</label>
                     <input type="text" name="name" value="<%= product.name %> " required>
