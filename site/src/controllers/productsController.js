@@ -38,7 +38,11 @@ module.exports = {
     },
    
 
-
+    terminos : (req,res) => {
+        return res.render('products/terminos&condiciones', {
+            title: "Terminos y Condiciones"
+        })
+    },
 
 
 

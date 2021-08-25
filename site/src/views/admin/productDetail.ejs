@@ -45,7 +45,7 @@
                         <span>Receta oculista.</span>
                         <button>SUBIR ARCHIVO</button>
                     </div>
-                    <button class="comprarya"><a href="/products/cart">Comprar Ahora</a></button>
+                    <button class="comprarya">Comprar Ahora</button>
             </div>
         
     </section>
@@ -67,6 +67,18 @@
             <span>Opciones de pago</span>
             <span><i class="fas fa-plus"></i></span>
         </button>
+
+        <div class="editar-but">
+        <button class="but-editar">                            <% if (product.category === "anteojos")  { %>
+            <a href="/admin/editar-producto/<%= product.id %>" class="editador">EDITAR</i></a>  
+            <%}else if (product.category === "lentes de contacto") { %>
+                <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador">EDITAR</i></a>                 
+
+                <% }else{ %> 
+                    <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador">EDITAR</i></a>                          
+        <% } %></button>
+    </div>
+
     </section>
     <div class="interesar">
         <h3 class="bis">Tambien te podria interesar</h3>

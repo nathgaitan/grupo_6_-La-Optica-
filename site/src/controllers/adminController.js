@@ -212,6 +212,15 @@ storeLentesContact: (req, res) => {
     return res.redirect('/admin')
 },
 
+detail: (req,res)=>{
+    const product = products.find(product => product.id ===+req.params.id)
+    res.render("admin/productDetail",{
+        products,
+        product,
+        toThousand,
+        priceFinal
+    })
+},
 
 editLentesContact: (req, res) => {
     let product = products.find(producto => producto.id === +req.params.id)

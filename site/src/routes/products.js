@@ -1,5 +1,5 @@
 var express = require('express');
-const { detail, list, cart, create, edit } = require('../controllers/productsController');
+const { detail, list, cart, terminos } = require('../controllers/productsController');
 var router = express.Router();
 
 
@@ -7,6 +7,6 @@ var router = express.Router();
 router.get('/', list);
 router.get('/detalle-de-producto/:id', detail);
 router.get('/cart', cart);
-
+router.get('/terminos&condiciones', terminos);
 
 module.exports = router;
