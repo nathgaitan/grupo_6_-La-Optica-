@@ -47,8 +47,9 @@
                             <% } %>
                            
                             <a href="/admin/productDetail/<%= product.id %>"><i class="fas fa-eye"></i></a>
-                            <!-- <form action="/products/delete/?_method=DELETE " method="POST">
-                                <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button></form> -->
+                            <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST">
+                                <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                             
                         </td>
                      
