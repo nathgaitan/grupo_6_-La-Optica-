@@ -6,27 +6,27 @@
 <%- include('../partials/header') %> 
     <main class="edit">
         <div class="formulario">
-            <h3>Carga de Solucion Oftalmologica</h3>
-            <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
+            <h3>Editando lentes de contacto</h3>
+            <form action="/admin/edit-contactLentes/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="container">
                     <label for="name">Nombre del producto</label>
-                    <input type="text" name="name"required>
+                    <input type="text" name="name" value="<%= product.name %> " required>
                 </div>
                 <div class="container">
                     <label for="marca">Marca del producto</label>
-                    <input type="text" name="marca" required>
+                    <input type="text" name="marca" value="<%= product.marca %> " required>
                 </div>
                 <div class="container">
                     <label for="price">Código del producto</label>
-                    <input type="number" name="codigo" required>
+                    <input type="number" name="codigo" value=<%= product.codigo %>  required>
                 </div>
                 <div class="container">
                     <label for="price">Precio del producto</label>
-                    <input type="number" name="price" required>
+                    <input type="number" name="price" value=<%= product.price %>  required>
                 </div>
                 <div class="container">
                     <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" required>
+                    <input type="number" name="discount" value=<%= product.discount %>  required>
                 </div>
                 <section class="imagen">
                     <div class="anteojo">
@@ -34,13 +34,37 @@
                 </div>
                 </section>
                 <div class="container">
+                    <label for="lens">Tipo de lente del producto</label>
+                    <select class="lens" name="lens">
+                        <option value="" hidden disabled>Seleccione Uno …</option>
+                        <option value="recetado" <%= product.lens ? 'selected' : null %>>recetado</option>
+                        <option value="estetico" <%= product.lens ? 'selected' : null %>>estetico</option>
+                        
+                    </select>
+                </div>
+            <div class="container">
+                <div class="container">
                     <div>
-                        <label for="detail">detalle del producto</label>
-                    </div>
-                    <div>
-                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ><%= product.detail %> </textarea>
                     </div>
                 </div>
+
+
+
+
+                <div class="container">
+                    <label>categoria
+                        <select class="category" name="category" required>
+                            <option value="contacto" >lentes de contacto</option>
+                         
+                        </select>
+                    </label>
+                </div>
+
+
+
+
+
                 <div class="container">
                     <input type="submit" value="Cargar">
                 </div>

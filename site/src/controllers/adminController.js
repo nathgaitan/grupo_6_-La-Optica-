@@ -74,9 +74,6 @@ module.exports = {
 
     /* method to create*/
 
-
-
-
     create: (req, res) => {
         return res.render('admin/product_create-form', {
             title: "Crear producto"
@@ -132,8 +129,6 @@ module.exports = {
 
     /*update -form to edit*/
 
-
-
     edit: (req, res) => {
         let product = products.find(product => product.id === +req.params.id)
         return res.render('admin/product_edit-form', {
@@ -171,13 +166,6 @@ module.exports = {
     },
 
 
-
-
-
-
-
-
-
     products: (req, res) => {
         return res.render('admin/productTable', {
             title: "Listado de Productos",
@@ -190,7 +178,7 @@ module.exports = {
         return res.render("admin/contactLentesAdd", { title: "Lentes de contacto" })
     },
     storeLentesContact: (req, res) => {
-        const { name, marca, price, discount, detail } = req.body;
+        const { name, marca, price, discount, color, detail, codigo, lens, frame, duration, graduation, category } = req.body;
         let product = {
             id: products[products.length - 1].id + 1,
             name: name,
@@ -198,13 +186,18 @@ module.exports = {
             image: req.file ? req.file.filename : "producto-sin-foto.png",
             price: +price,
             discount: +discount,
+            color: null,
             detail: detail,
-            codigo: codigo,
-            lente: lente,
+            codigo: +codigo,
+            lens: lens,
+            frame: null,
+            duration,
+            graduation,
+            category,
         }
         products.push(product)
         guardar(products)
-        return res.redirect('/products')
+        return res.redirect('/admin')
     },
 
     detail: (req, res) => {
@@ -216,11 +209,49 @@ module.exports = {
             priceFinal
         })
     },
+
+    editLentesContact: (req, res) => {
+        let product = products.find(producto => producto.id === +req.params.id)
+        return res.render('admin/contactLentesEdit', {
+            title: "Editar lentes de Contacto",
+            product,
+            products
+        })
+
+    },
+    updateLentesContact: (req, res) => {
+        const { name, marca, price, discount, color, detail, codigo, lens, frame, duration, graduation, category } = req.body;
+
+        products.forEach(product => {
+            if (product.id === +req.params.id) {
+
+                product.name = name.trim();
+                product.marca = marca.trim();
+                product.image = req.file ? req.file.filename : "producto-sin-foto.png";
+                product.price = +price;
+                product.discount = +discount;
+                product.color = color;
+                product.detail = detail.trim();
+                product.codigo = +codigo;
+                product.lens = lens;
+                product.frame = frame;
+                product.duration = duration
+                product.graduation = graduation;
+                product.category = category;
+            }
+        })
+
+        guardar(products)
+        return res.redirect('/admin')
+    },
+
+
+    /* destroy product */
     destroy : (req,res) => {
-        const { id } = req.params;
-        let productSave = products.filter(product => product.id !== +id);
-        
+        let { id } = req.params;
+        let productSave = products.filter( product => product.id !== +id);
         guardar(productSave);
+
         return res.redirect('/admin')
     }
 
@@ -229,8 +260,5 @@ module.exports = {
 
 
 
-
-
-
-
 }
+
