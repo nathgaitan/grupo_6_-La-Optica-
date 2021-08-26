@@ -37,8 +37,8 @@
                     <label for="lens">Tipo de lente del producto</label>
                     <select class="lens" name="lens">
                         <option value="" hidden disabled>Seleccione Uno …</option>
-                        <option value="recetado" <%= product.lens ? 'selected' : null %>>recetado</option>
-                        <option value="estetico" <%= product.lens ? 'selected' : null %>>estetico</option>
+                        <option value="recetado" <%= product.lens ? 'selected' === "recetado": null %>>recetado</option>
+                        <option value="estetico" <%= product.lens ? 'selected' === "estetico": null %>>estetico</option>
                         
                     </select>
                 </div>

@@ -17,10 +17,6 @@
                     <input type="text" name="marca" value="<%= product.marca%>" required>
                 </div>
                 <div class="container">
-                    <label for="price">Código del producto</label>
-                    <input type="number" name="codigo" value="<%= product.codigo%>" required>
-                </div>
-                <div class="container">
                     <label for="price">Precio del producto</label>
                     <input type="number" name="price" value="<%= product.price%>" required>
                 </div>
@@ -30,17 +26,19 @@
                 </div>
                 <section class="imagen">
                     <div class="anteojo">
-                        <input type="file" name="image" id="image" required>
+                        <input type="file" name="image" id="image">
                     </div>
                 </section>
                     <div class="container">
                         <label for="lens">Tipo de lente del producto</label>
                         <select class="lens" name="lens">
                             <option value="" hidden disabled>Seleccione Uno …</option>
-                            <option value="de sol" <%= product.lens ? 'selected' : null %>>de sol</option>
-                            <option value="fotocromaticas" <%= product.lens ? 'selected' : null %>>fotocromaticas</option>
-                            <option value="blue ligth" <%= product.lens ? 'selected' : null %>>blue ligth</option>
-                            <option value="transition" <%= product.lens ? 'selected' : null %>>transition</option>
+                            <option value="de sol" <%= product.lens === "de sol"? 'selected' : null %>>de sol</option>
+                            <option value="fotocromaticas" <%= product.lens === "fotocromaticas"? 'selected' : null %>>fotocromaticas</option>
+                            <option value="blue ligth" <%= product.lens === "blue light"? 'selected' : null %>>blue ligth</option>
+                            <option value="transition" <%= product.lens === "transition" ? 'selected' : null %>>transition</option>
+                            <option value="recetado" <%= product.lens === "recetado" ? 'selected' : null %>>recetado</option>
+                            <option value="estetico" <%= product.lens === "estetico" ? 'selected' : null %>>estetico</option>
                         </select>
                     </div>
                 <div class="container">

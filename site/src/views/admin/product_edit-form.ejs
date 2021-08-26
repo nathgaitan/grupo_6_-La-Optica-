@@ -39,7 +39,7 @@
                         <div class="container">
 
                             <label for="name">Nombre del producto</label>
-                            <input type="text" id="name" name="name" value="<%= product.name %> " required>
+                            <input type="text" id="name" name="name" value="<%= product.name %>" required>
 
 
 
@@ -103,10 +103,10 @@
                             <label for="lens">Tipo de lente del producto</label>
                             <select class="lens" name="lens" required>
                                 <option value="">Seleccione Uno …</option>
-                                <option value="de sol">de sol</option>
-                                <option value="fotocromaticas">fotocromaticas</option>
-                                <option value="blue ligth">blue ligth</option>
-                                <option value="transition">transition</option>
+                                <option value="de sol" <%= product.lens === "de sol" ? 'selected' : null %>>de sol</option>
+                                <option value="fotocromaticas" <%= product.lens === "fotocromaticas" ? 'selected' : null %>>fotocromaticas</option>
+                                <option value="blue ligth" <%= product.lens === "blue light" ? 'selected' : null %>>blue ligth</option>
+                                <option value="transition" <%= product.lens === "transition" ? 'selected' : null %>>transition</option>
                             </select>
         
         
@@ -120,10 +120,10 @@
                                     <select class="frame" name="frame" required>
 
                                         <option value="">Seleccione Uno …</option>
-                                        <option value="metalico" <%= product.frame ? 'selected' : null %>>metalico</option>
-                                        <option value="acrilico" <%= product.frame ? 'selected' : null %>>acrilico</option>
-                                        <option value="madera" <%= product.frame ? 'selected' : null %> >madera</option>
-                                        <option value="flexibles" <%= product.frame ? 'selected' : null %>>flexibles</option>
+                                        <option value="metalico" <%= product.frame === "metalico" ? 'selected' : null %>>metalico</option>
+                                        <option value="acrilico" <%= product.frame === "acrilico" ? 'selected' : null %>>acrilico</option>
+                                        <option value="madera" <%= product.frame === "madera" ? 'selected' : null %> >madera</option>
+                                        <option value="flexibles" <%= product.frame === "flexibles" ? 'selected' : null %>>flexibles</option>
                                     </select>
                                 </label>
 

@@ -1,4 +1,6 @@
 const { products, guardar } = require('../data/products_db');
+const fs = require('fs');
+const path = require('path');
 
 /* utils */
 let toThousand = require('../utils/toThousand');
@@ -22,7 +24,7 @@ module.exports = {
             discount: +discount,
             color: null,
             detail: detail,
-            codigo: +codigo,
+            codigo: null,
             lens: lens,
             frame: null,
             duration: null,
@@ -52,12 +54,12 @@ module.exports = {
 
                 product.name = name;
                 product.marca = marca;
-                product.image = req.file ? req.file.filename : "producto-sin-foto.png";
+                product.image = req.file ? req.file.filename : product.image;
                 product.price = +price;
                 product.discount = +discount;
                 product.color = null;
                 product.detail = detail;
-                product.codigo = +codigo;
+                product.codigo = null;
                 product.lens = lens;
                 product.frame = null;
                 product.duration = null;
@@ -249,6 +251,15 @@ module.exports = {
     /* destroy product */
     destroy : (req,res) => {
         let { id } = req.params;
+        let productDelete = products.find( product => product.id === +id)
+        let filenameDelete = productDelete.image
+        
+        try {
+            fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'products', filenameDelete))
+        } catch (err) {
+            console.log("Motivo " + err)
+        }
+
         let productSave = products.filter( product => product.id !== +id);
         guardar(productSave);
 
