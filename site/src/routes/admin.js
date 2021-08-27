@@ -1,23 +1,7 @@
 var express = require('express');
 const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products,detail, solOftalEdit, solOftalUpdate, addContLentes, storeLentesContact,editLentesContact,updateLentesContact, destroy } = require('../controllers/adminController');
 var router = express.Router();
-const path = require('path');
-
-
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination : (req,file,callback) => {
-        callback(null,'public/images/products')
-    },
-    filename : (req,file,callback) => {
-        callback(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-
-const upload = multer({
-    storage
-});
+const  upload = require('../middlewares/imageProductStorage')
 
 
 /*tabla*/
