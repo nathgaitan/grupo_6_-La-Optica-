@@ -37,15 +37,6 @@
                          <% } %>
                 </div>
 
-                <button class="agregar">
-                    <h4>Agregá tus lentes:</h4>
-                    <span><i class="fas fa-plus"></i></span>
-                </button>
-                    <div class="receta">
-                        <span>Receta oculista.</span>
-                        <button>SUBIR ARCHIVO</button>
-                    </div>
-                    <button class="comprarya">Comprar Ahora</button>
             </div>
         
     </section>
@@ -80,64 +71,9 @@
     </div>
 
     </section>
-    <div class="interesar">
-        <h3 class="bis">Tambien te podria interesar</h3>
-    </div>
-        <div class="interes">
-            
-            <section>
-                
-                
-                    
-                </section>
-                
-        </div>
-        <div class="botontablet">
-            <button class="fijo comprarya">Comprar Ahora</button>
-        </div>
-        <section class="contenedorglider">
-            <div class="glider-contain">
-                <div class="glider">
-                    <% products.forEach(product => { %>
-                        <article>
-                            <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
-                            
-                                <div class="combo">
-                                    <span class="marca"><%= product.marca %></span>
-                                    <div class="nye">
-                                        <h2><%= product.name %></h2>
-                                        <div>
-                                            
-                                                <span><i class="fas fa-star"></i></span>
-                                                <span><i class="fas fa-star"></i></span>
-                                                <span><i class="fas fa-star"></i></span>
-                                                <span><i class="fas fa-star"></i></span>
-                                                <span><i class="far fa-star"></i></span>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                            
-                                    <% if (product.discount> 0) { %>
-                                        <p class="discount">$<%= toThousand(product.price) %></p>
-                                        <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
-                                        <% } else { %>
-                                        <p class="discount"></p>
-                                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
-                                         <% } %>
-                                </div>
-                        </article>
-                    <% }) %>
-                </div>
-              
-                <button aria-label="Previous" class="glider-prev">«</button>
-                <button aria-label="Next" class="glider-next">»</button>
-                <div role="tablist" class="dots"></div>
-              </div>
-        </section>
+    
 </main>
-<%- include("../partials/footer") %> 
+
 <%- include("../partials/scripts") %> 
 <script src="/js/detail.js"></script>
 
