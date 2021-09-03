@@ -1,6 +1,9 @@
 body.forms div.container {
     width: 80%;
     margin: 20px auto 50px;
+    background-color: #a0c5f7;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 body.forms div.container h3 {
@@ -13,9 +16,26 @@ body.forms div.container form {
 }
 
 
+
+body.forms .a-imagen{
+   border: 1px black solid; 
+   padding: 3px 5px;
+   border-radius: 5px;
+   background-color: white;
+
+}
+
+body.forms .caja-item{
+    margin-top: 20px;
+}
+
+body.forms div.container textarea{
+    border: 1px gray solid;
+}
+
+
 body.forms div.container form label, 
 body.forms div.container input,
-body.forms div.container textarea,
 body.forms div.container select  {
     display: inline-block;
     width: 80%;
@@ -28,6 +48,21 @@ body.forms div.container input#image {
 body.forms div.container form textarea {
     resize: none;
 }
+
+body.forms .caja-carga{
+    padding: 20px 0;
+}
+
+body.forms .row{
+    display: flex;
+    flex-direction: row;
+}
+
+body.forms .caja-row{
+    width: 50%;
+}
+
+
 @media (min-width : 320px) {
     body.forms div.container form div.box {
         width: 100%;
