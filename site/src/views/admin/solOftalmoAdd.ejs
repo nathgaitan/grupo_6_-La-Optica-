@@ -2,56 +2,56 @@
 <html lang="es">
 
 <%- include('../partials/head') %> 
-<body>
+<body class="forms">
 <%- include('../partials/header') %> 
-    <main class="edit">
-        <div class="formulario">
+    <main>
+        <div class="container">
             <h3>Carga de Solucion Oftalmologica</h3>
             <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
-                <div class="container">
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" name="name"required>
-                </div>
-                <div class="container">
-                    <label for="marca">Marca del producto</label>
-                    <input type="text" name="marca" required>
-                </div>
-                <div class="container">
-                    <label for="price">Precio del producto</label>
-                    <input type="number" name="price" required>
-                </div>
-                <div class="container">
-                    <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" required>
-                </div>
-                <section class="imagen">
-                    <div class="anteojo">
-                    <input type="file" name="image" id="image">
-                </div>
-                </section>
-                <div class="container">
-                    <label for="lens">Tipo de lente del producto</label>
-                    <select class="lens" name="lens">
-                        <option value="">Seleccione Uno …</option>
-                        <option value="de sol">de sol</option>
-                        <option value="fotocromaticas">fotocromaticas</option>
-                        <option value="blue ligth">blue ligth</option>
-                        <option value="transition">transition</option>
-                        <option value="recetado">recetado</option>
-                        <option value="estetico">estetico</option>
-                    </select>
-                </div>
-                <div class="container">
-                    <div>
-                        <label for="detail">detalle del producto</label>
+                <div class="box left">
+                    <div class="">
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" name="name"required>
                     </div>
-                    <div>
-                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                    <div class="">
+                        <label for="marca">Marca del producto</label>
+                        <input type="text" name="marca" required>
+                    </div>
+                    <div class="">
+                        <label for="image">Imagen</label>
+                        <input type="file" name="image" id="image" hidden>
+                    </div>
+                    <div class="">
+                        <label for="lens">Tipo de lente del producto</label>
+                        <select class="lens" name="lens">
+                            <option value="">Seleccione Uno …</option>
+                            <option value="de sol">de sol</option>
+                            <option value="fotocromaticas">fotocromaticas</option>
+                            <option value="blue ligth">blue ligth</option>
+                            <option value="transition">transition</option>
+                            <option value="recetado">recetado</option>
+                            <option value="estetico">estetico</option>
+                        </select>
+                    </div>
+                    <div class="">
+                            <label for="detail">Detalle del producto</label>
+                            <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
                     </div>
                 </div>
-                <div class="container">
-                    <input type="submit" value="Cargar">
+                <div class="box rigth">
+                    <div class="">
+                        <label for="price">Precio del producto</label>
+                        <input type="number" name="price" required>
+                    </div>
+                    <div class="">
+                        <label for="discount">Descuento del producto</label>
+                        <input type="number" name="discount" required>
+                    </div>
+                    <div class="">
+                        <input type="submit" value="Cargar">
+                    </div>
                 </div>
+                
             </form>
         </div>
     </main>

@@ -1,0 +1,41 @@
+body.forms div.container {
+    width: 80%;
+    margin: 20px auto 50px;
+}
+
+body.forms div.container h3 {
+    margin: 30px 20px;
+    text-align: center;    
+} 
+body.forms div.container form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+body.forms div.container form label, 
+body.forms div.container input,
+body.forms div.container textarea,
+body.forms div.container select  {
+    display: inline-block;
+    width: 80%;
+    line-height: 1.5;
+    padding: 5px;
+}
+body.forms div.container input#image {
+    display: none;
+}
+body.forms div.container form textarea {
+    resize: none;
+}
+@media (min-width : 320px) {
+    body.forms div.container form div.box {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (min-width : 768px) {
+    body.forms div.container form div.box {
+        width: 50%;
+    }
+}
