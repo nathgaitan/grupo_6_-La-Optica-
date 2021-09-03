@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <%- include('../partials/head') %>
 <body class="tabla">
-    <div class="zebra1">
-
-    <main class="tabla1">
+    <main>
+        <div class="table-responsive">
         <div class="botones">
-        <button><a href="/admin/add-solucion-oftalmologica">Crear solucion</a></button>
-        <button><a href="/admin/crear-producto">Crear anteojos</a></button>
-        <button><a href="/admin/add-contactLentes">Crear lent-cont</a></button>
+        <button class="but-crear"><a href="/admin/add-solucion-oftalmologica">Crear solucion</a></button>
+        <button class="but-crear"><a href="/admin/crear-producto">Crear anteojos</a></button>
+        <button class="but-crear"><a href="/admin/add-contactLentes">Crear lent-cont</a></button>
         </div>
-        <div class="container">
-            <table class="tabla">
+        <div class="">
+            <table class="tabla12">
                 <thead>
-                    <tr class="algo">
+                    <tr class="tabla1">
                         <th>#</th>
-                        <th>Nombre</th>
-                        <th>Marca</th>
-                        <th>Precio</th>
-                        <th>Detalle</th>
-                        <th>Codigo</th>
-                        <th>Lente</th>
-                        <th>Categoria</th> 
-                        <th>Acciones</th>
+                        <th class="th-nombre">Nombre</th>
+                        <th class="th-marca">Marca</th>
+                        <th class="th-precio">Precio</th>
+                        <th class="th-detalle">Detalle</th>
+                        <th class="th-codigo">Codigo</th>
+                        <th class="th-lente">Lente</th>
+                        <th class="th-categoria">Categoria</th> 
+                        <th >Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="algo2">
@@ -32,22 +31,20 @@
                         <td><%= product.name %> </td>
                         <td><%= product.marca %> </td>
                         <td><%= product.price %> </td>
-                        <td><%= product.detail %> </td>
-                        <td><%= product.codigo %> </td>
-                        <td><%= product.lens %> </td>
-                        <td><%= product.category %> </td>
-                        <td>
+                        <td class="td-detail"><%= product.detail %> </td>
+                        <td class="td-codigo"><%= product.codigo %> </td>
+                        <td class="td-lens"><%= product.lens %> </td>
+                        <td class="td-category"><%= product.category %> </td>
+                        <td class="acc-but">
                             <% if (product.category === "anteojos")  { %>
                                 <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>  
                                 <%}else if (product.category === "lentes de contacto") { %>
-                                    <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                 
-
+                                    <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>
                                     <% }else{ %> 
                                         <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          
-                            <% } %>
-                           
-                            <a href="/admin/productDetail/<%= product.id %>"><i class="fas fa-eye"></i></a>
-                            <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST">
+                            <% } %>                           
+                            <a href="/admin/productDetail/<%= product.id %>" class="detail" ><i class="fas fa-eye"></i></a>
+                            <form class="borrar1" action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST">
                                 <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             
@@ -59,9 +56,8 @@
             </table>
 
         </div>
-
+    </div>
     </main>
-</div>
     
 </body>
 </html>
