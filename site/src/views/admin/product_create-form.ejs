@@ -9,167 +9,127 @@
 
 
 
-            <main class="edit">
-                <section class="formulario">
+        <main class="formulario">
 
-                    <h3>Carga de anteojos:</h3>
-
-                    <form action="/admin/crear-producto" method="POST" enctype="multipart/form-data">
-
-                        <section class="imagen">
-
-
-
-                            <div class='anteojo'>
-                                <input type="file" name="image">
-                            </div>
-
-
-
-
-
-                            
-
-
-
-
-                        </section>
-
-
-
-
-
-
-                        <div class="container">
-
+            <form action="/admin/crear-producto" method="POST" enctype="multipart/form-data">
+                <div class="arriba">
+    
+    
+                    <h3>CARGA Y EDICION</h3>
+                   
+                    <div class='anteojo'>
+                        <input type="file" name="image">
+                    </div>
+    
+                    <div class="juntos">
+    
+    
+                        <div>
                             <label for="name">Nombre del producto</label>
                             <input type="text" id="name" name="name" required>
-
-
-
                         </div>
-
-                        <div class="container">
-
+                        <div>
                             <label for="marca">Marca del producto</label>
-                            <input type="text" id="marca" name="marca"required>
-
-
-
+                            <input type="text" id="marca" name="marca" required>
                         </div>
-
-                        <div class="container">
-
-                            <label for="price">Precio del producto</label>
-                            <input type="number" id="price" name="price" required>
-
-
+    
+    
+    
+                    </div>
+    
+    
+                    <div class="cuadrados">
+                        <div class="cuadrado1">
+                            <label for="price"> Precio del producto</label>
+                            <input class="color" type="number" id="price" name="price" required>
                         </div>
-                        <div class="container">
-
+                        <div class="cuadrado2">
                             <label for="discount">Descuento del producto</label>
-                            <input type="number" id="discount" name="discount" requiured>
-
-
-
+                            <input class="color" type="number" id="discount" name="discount" requiured>
                         </div>
-                        <div class="container">
-
+    
+    
+    
+    
+                    </div>
+    
+    
+                    <div class="separado">
+                        <div>
                             <label for="color">color del producto</label>
                             <input type="text" id="color" name="color" required>
-
-
-
                         </div>
-
-                        <div class="container">
+                        
+                    </div>
+    
+                </div>
+    
+    
+    
+    
+    
+                <div class="abajo">
+                    <div class="separado">
+                        <label for="detail">detalle del producto</label>
+                    </div>
+                    <div>
+                        <textarea name="detail" id="" cols="30" rows="10" required></textarea>
+                    </div>
+                    <div class="separado">
+                        <label for="Codigo">Codigo del producto</label>
+                        <input type="number" id="Codigo" name="Codigo" required>
+                    </div>
+                    <div class="separado">
+                        <div class="juntos">
                             <div>
-                                <label for="detail">detalle del producto</label>
-                            </div>
-                            <div>
-                                <textarea name="detail" id="" cols="30" rows="10" required></textarea>
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="container">
-
-                            <label for="Codigo">Codigo del producto</label>
-                            <input type="number" id="Codigo" name="Codigo" required>
-
-
-
-                        </div>
-                        <div class="container">
-
-                            <label for="lens">Tipo de lente del producto</label>
-                            <select class="lens" name="lens"required>
-                                <option value="">Seleccione Uno …</option>
-                                <option value="de sol">de sol</option>
-                                <option value="fotocromaticas">fotocromaticas</option>
-                                <option value="blue ligth">blue ligth</option>
-                                <option value="transition">transition</option>
-                            </select>
-
-
-
-                        </div>
-
-                        <div class="container">
-                            <div class="container">
-
-                                <label for="frame">Tipo de marco del producto</label>
-                                
-                                <select class="frame" name="frame" required>
-
+                                <label for="lens">Tipo de lente del producto</label>
+                                <select class="lens" name="lens" required>
                                     <option value="">Seleccione Uno …</option>
-                                    <option value="metalico" >metalico</option>
-                                    <option value="acrilico" >acrilico</option>
-                                    <option value="madera" >madera</option>
-                                    <option value="flexibles" >flexibles</option>
+                                    <option value="de sol">de sol</option>
+                                    <option value="fotocromaticas">fotocromaticas</option>
+                                    <option value="blue ligth">blue ligth</option>
+                                    <option value="transition">transition</option>
                                 </select>
-
-
-
                             </div>
-                            <div class="container">
-                                <div class="container">
-                                    <label>categoria
-                                        <select class="category" name="category" required>
-                                            <option value="anteojos" >Anteojos</option>
-                                         
-                                        </select>
-                                    </label>
-
-
-
-                                </div>
-
-
-
-
-
-
-
-
-
-
-                                <div class="cargar">
-                                    <input type="submit" value="Cargar" >
-                                </div>
-                               
-                                
-
-
-
-
-                    </form>
-
-                </section>
-
-            </main>
+                           <div>
+                            <label for="frame">Tipo de marco del producto</label>
+    
+                            <select class="frame" name="frame" required>
+            
+                                <option value="">Seleccione Uno …</option>
+                                <option value="metalico">metalico</option>
+                                <option value="acrilico">acrilico</option>
+                                <option value="madera">madera</option>
+                                <option value="flexibles">flexibles</option>
+                            </select>
+                           </div>
+                        
+                       
+                        
+                           
+                        </div>
+    
+    
+                        <div class="separado">
+                            <label>categoria
+                                <select class="category" name="category" required>
+                                    <option value="anteojos">Anteojos</option>
+            
+                                </select>
+                            </label>
+                        </div>
+                        
+                    </div>
+    
+    
+                    
+                        <button type="submit"value="Cargar">Cargar</button>
+                        
+                    
+                </div>
+    
+            </form>
+        </main>
 
 
 
