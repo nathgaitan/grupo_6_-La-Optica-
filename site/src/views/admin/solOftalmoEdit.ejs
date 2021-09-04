@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head') %> 
-<body>
-<%- include('../partials/header') %> 
-    <main class="edit">
-        <div class="formulario">
-            <h3>Editando: <%= product.name %> de la categoría <%= product.category %></h3>
-            <form action="/admin/edit-solucion-oftalmologica/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+<%- include('../partials/head') %>
+
+    <body class="forms">
+        <%- include('../partials/header') %>
+            <main>
                 <div class="container">
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" name="name" value="<%= product.name%>" required>
+                    <h3>Editando: <%= product.name %> de la categoría <%= product.category %>
+                    </h3>
+                    <form action="/admin/edit-solucion-oftalmologica/<%= product.id %>?_method=PUT" method="post"
+                        enctype="multipart/form-data">
+                        <div class="box left">
+                            <div class="caja-item">
+                                <label for="name">Nombre del producto</label>
+                                <input type="text" name="name" value="<%= product.name%>" required>
+                            </div>
+                            <div class="caja-item">
+                                <label for="marca">Marca del producto</label>
+                                <input type="text" name="marca" value="<%= product.marca%>" required>
+                            </div>
+                            <div class="caja-item">
+                                <div class="anteojo">
+                                    <input type="file" name="image" id="image">
+                                </div>
+                            </div>
+                            <div class="caja-item">
+                                <label for="lens">Tipo de lente del producto</label>
+                                <select class="lens" name="lens">
+                                    <option value="" hidden disabled>Seleccione Uno …</option>
+                                    <option value="de sol" <%=product.lens==="de sol" ? 'selected' : null %>>de sol</option>
+                                    <option value="fotocromaticas" <%=product.lens==="fotocromaticas" ? 'selected' : null %>
+                                        >fotocromaticas</option>
+                                    <option value="blue ligth" <%=product.lens==="blue light" ? 'selected' : null %>>blue
+                                        ligth</option>
+                                    <option value="transition" <%=product.lens==="transition" ? 'selected' : null %>
+                                        >transition</option>
+                                    <option value="recetado" <%=product.lens==="recetado" ? 'selected' : null %>>recetado
+                                    </option>
+                                    <option value="estetico" <%=product.lens==="estetico" ? 'selected' : null %>>estetico
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="caja-item">
+                                <textarea name="detail" id="detail" cols="30" rows="10"><%= product.detail %></textarea>
+                            </div>
+                        </div>
+                        <div class="box rigth">
+                            <div class="row">
+                                <div class="caja-item caja-row">
+                                    <label for="price">Precio del producto</label>
+                                    <input type="number" name="price" value="<%= product.price%>" required>
+                                </div>
+                                <div class="caja-item caja-row">
+                                    <label for="discount">Descuento del producto</label>
+                                    <input type="number" name="discount" value="<%= product.discount%>" required>
+                                </div>
+                            </div>
+                            <div class="caja-carga">
+                                <input type="submit" value="Cargar">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="container">
-                    <label for="marca">Marca del producto</label>
-                    <input type="text" name="marca" value="<%= product.marca%>" required>
-                </div>
-                <div class="container">
-                    <label for="price">Precio del producto</label>
-                    <input type="number" name="price" value="<%= product.price%>" required>
-                </div>
-                <div class="container">
-                    <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" value="<%= product.discount%>" required>
-                </div>
-                <section class="imagen">
-                    <div class="anteojo">
-                        <input type="file" name="image" id="image">
-                    </div>
-                </section>
-                    <div class="container">
-                        <label for="lens">Tipo de lente del producto</label>
-                        <select class="lens" name="lens">
-                            <option value="" hidden disabled>Seleccione Uno …</option>
-                            <option value="de sol" <%= product.lens === "de sol"? 'selected' : null %>>de sol</option>
-                            <option value="fotocromaticas" <%= product.lens === "fotocromaticas"? 'selected' : null %>>fotocromaticas</option>
-                            <option value="blue ligth" <%= product.lens === "blue light"? 'selected' : null %>>blue ligth</option>
-                            <option value="transition" <%= product.lens === "transition" ? 'selected' : null %>>transition</option>
-                            <option value="recetado" <%= product.lens === "recetado" ? 'selected' : null %>>recetado</option>
-                            <option value="estetico" <%= product.lens === "estetico" ? 'selected' : null %>>estetico</option>
-                        </select>
-                    </div>
-                <div class="container">
-                    <textarea name="detail" id="detail" cols="30" rows="10" ><%= product.detail %></textarea>
-                </div>
-                <div class="container">
-                    <input type="submit" value="Cargar">
-                </div>
-            </form>
-        </div>
-    </main>
-<%- include('../partials/footer') %> 
-</body>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>
