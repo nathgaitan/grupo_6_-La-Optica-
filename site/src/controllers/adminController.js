@@ -14,7 +14,7 @@ module.exports = {
         })
     },
     solOftalStore: (req, res) => {
-        const { name, marca, price, discount, detail, codigo, lens } = req.body;
+        const { name, marca, price, discount, detail, lens } = req.body;
         let product = {
             id: products[products.length - 1].id + 1,
             name: name,
@@ -47,7 +47,7 @@ module.exports = {
 
     },
     solOftalUpdate: (req, res) => {
-        const { name, marca, codigo, price, discount, detail, lens } = req.body;
+        const { name, marca, price, discount, detail, lens } = req.body;
 
         products.forEach(product => {
             if (product.id === +req.params.id) {
@@ -75,38 +75,15 @@ module.exports = {
 
 
     /* method to create*/
-
     create: (req, res) => {
         return res.render('admin/product_create-form', {
             title: "Crear producto"
         })
     },
 
-    addProduct: (req, res) => {
-        const { name, marca, price, discount, detail } = req.body;
-        let product = {
-            id: products[products.length - 1].id + 1,
-            name: name,
-            marca: marca,
-            image,
-            price: +price,
-            discount: +discount,
-            color: color,
-            detail: detail,
-            codigo: codigo,
-            lente: lente,
-            marco: marco,
-        }
-        products.push(product)
-        guardar(products)
-        return res.redirect('/products')
-    },
-
-
     /*method to addProduct*/
-
     addProduct: (req, res) => {
-        const { name, marca, price, discount, color, detail, codigo, lens, frame, duration, graduation, category } = req.body;
+        const { name, marca, price, discount, color, detail, codigo, lens, frame, category } = req.body;
 
         let product = {
             id: products[products.length - 1].id + 1,
@@ -130,7 +107,6 @@ module.exports = {
     },
 
     /*update -form to edit*/
-
     edit: (req, res) => {
         let product = products.find(product => product.id === +req.params.id)
         return res.render('admin/product_edit-form', {
@@ -140,7 +116,6 @@ module.exports = {
 
 
     /*update -method to update*/
-
     update: (req, res) => {
 
         const { name, marca, price, discount, color, detail, codigo, lens, frame, category } = req.body;
@@ -229,7 +204,7 @@ module.exports = {
 
                 product.name = name.trim();
                 product.marca = marca.trim();
-                product.image = req.file ? req.file.filename : "producto-sin-foto.png";
+                product.image = req.file ? req.file.filename : product.image;
                 product.price = +price;
                 product.discount = +discount;
                 product.color = color;
@@ -237,7 +212,7 @@ module.exports = {
                 product.codigo = +codigo;
                 product.lens = lens;
                 product.frame = frame;
-                product.duration = duration
+                product.duration = duration;
                 product.graduation = graduation;
                 product.category = category;
             }
@@ -265,11 +240,6 @@ module.exports = {
 
         return res.redirect('/admin')
     }
-
-
-
-
-
 
 }
 
