@@ -2,71 +2,66 @@
 <html lang="es">
 
 <%- include('../partials/head') %> 
-<body>
-<%- include('../partials/header') %> 
+<body class="forms">
+    <%- include('../partials/header') %> 
     <main class="edit">
-        <div class="formulario">
+        <div class="container">
             <h3>Editando lentes de contacto</h3>
             <form action="/admin/edit-contactLentes/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="container">
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" name="name" value="<%= product.name %> " required>
-                </div>
-                <div class="container">
-                    <label for="marca">Marca del producto</label>
-                    <input type="text" name="marca" value="<%= product.marca %> " required>
-                </div>
-                <div class="container">
-                    <label for="price">Código del producto</label>
-                    <input type="number" name="codigo" value=<%= product.codigo %>  required>
-                </div>
-                <div class="container">
-                    <label for="price">Precio del producto</label>
-                    <input type="number" name="price" value=<%= product.price %>  required>
-                </div>
-                <div class="container">
-                    <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" value=<%= product.discount %>  required>
-                </div>
-                <section class="imagen">
-                    <div class="anteojo">
-                    <input type="file" name="image" id="image">
-                </div>
-                </section>
-                <div class="container">
-                    <label for="lens">Tipo de lente del producto</label>
-                    <select class="lens" name="lens">
-                        <option value="" hidden disabled>Seleccione Uno …</option>
-                        <option value="recetado" <%= product.lens ? 'selected' === "recetado": null %>>recetado</option>
-                        <option value="estetico" <%= product.lens ? 'selected' === "estetico": null %>>estetico</option>
-                        
-                    </select>
-                </div>
-            <div class="container">
-                <div class="container">
-                    <div>
-                        <textarea name="detail" id="detail" cols="30" rows="10" ><%= product.detail %> </textarea>
+                <div class="box left">
+                    <div class="caja-item">
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" name="name" value="<%= product.name %> " required>
+                    </div>
+                    <div class="caja-item">
+                        <label for="marca">Marca del producto</label>
+                        <input type="text" name="marca" value="<%= product.marca %> " required>
+                    </div>
+                    <div class="caja-item">
+                        <label for="price">Código del producto</label>
+                        <input type="number" name="codigo" value=<%= product.codigo %>  required>
+                    </div>
+                    
+                    <div class="caja-item">
+                        <label for="image"><a class="a-imagen">Imagen</a></label>
+                        <input type="file" name="image" id="image" hidden>
+                    </div>
+                    <div class="caja-item">
+                        <label for="lens">Tipo de lente del producto</label>
+                        <select class="lens" name="lens">
+                            <option value="" hidden disabled>Seleccione Uno …</option>
+                            <option value="recetado" <%= product.lens ? 'selected' === "recetado": null %>>recetado</option>
+                            <option value="estetico" <%= product.lens ? 'selected' === "estetico": null %>>estetico</option>
+                            
+                        </select>
+                    </div>
+                    <div class="caja-item">
+                        <label for="detail">detalle del producto</label>
+                        <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
+                    </div>
+                    <div class="caja-item">
+                        <label>categoria
+                            <select class="category" name="category" required>
+                                <option value="contacto" >lentes de contacto</option>
+                             
+                            </select>
+                        </label>
                     </div>
                 </div>
-
-
-
-
-                <div class="container">
-                    <label>categoria
-                        <select class="category" name="category" required>
-                            <option value="contacto" >lentes de contacto</option>
-                         
-                        </select>
-                    </label>
-                </div>
-
-
-
-
-
-                <div class="container">
-                    <input type="submit" value="Cargar">
+                <div class="box rigth">
+                    <div class="row">
+                        <div class="caja-item caja-row">
+                            <label for="price">Precio del producto</label>
+                            <input type="number" name="price" value=<%= product.price %>  required>
+                        </div>
+                        <div class="caja-item caja-row">
+                            <label for="discount">Descuento del producto</label>
+                            <input type="number" name="discount" value=<%= product.discount %>  required>
+                        </div>
+                    </div>
+                    <div class="caja-item">
+                        <input type="submit" value="Cargar">
+                    </div>
                 </div>
             </form>
         </div>

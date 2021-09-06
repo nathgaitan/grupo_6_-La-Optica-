@@ -2,55 +2,65 @@
 <html lang="es">
 
 <%- include('../partials/head') %> 
-<body>
+<body class="forms">
+
 <%- include('../partials/header') %> 
-    <main class="edit">
-        <div class="formulario">
+    <main>
+        <div class="container">
             <h3>Lentes de contacto </h3>
             <form action="/admin/add-contactLentes" method="POST" enctype="multipart/form-data">
-                <div class="container">
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" name="name"required>
-                </div>
-                <div class="container">
-                    <label for="marca">Marca del producto</label>
-                    <input type="text" name="marca" required>
-                </div>
-                <div class="container">
-                    <label for="codigo">Código del producto</label>
-                    <input type="number" name="codigo" required>
-                </div>
-                <div class="container">
-                    <label for="price">Precio del producto</label>
-                    <input type="number" name="price" required>
-                </div>
-                <div class="container">
-                    <label for="discount">Descuento del producto</label>
-                    <input type="number" name="discount" required>
-                </div>
-                <section class="imagen">
-                    <div class="anteojo">
-                    <input type="file" name="image" id="image" required>
-                </div>
-                </section>
-                <div class="container">
-                    <label>categoria
-                        <select class="category" name="category" required>
-                            <option value="lentes de contacto" >lentes de contacto</option>
-                         
-                        </select>
-                    </label>
-                </div>
-                <div class="container">
-                    <div>
-                        <label for="detail">detalle del producto</label>
+                <div class="box left">
+                    <div class="caja-item">
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" name="name"required>
                     </div>
-                    <div>
+                    <div class="caja-item">
+                        <label for="marca">Marca del producto</label>
+                        <input type="text" name="marca" required>
+                    </div>
+                    <div class="caja-item">
+                        <label for="codigo">Código del producto</label>
+                        <input type="number" name="codigo" required>
+                    </div>
+                    <div class="caja-item">
+                        <label for="image"><a class="a-imagen">Imagen</a></label>
+                        <input type="file" name="image" id="image" hidden>
+                    </div>
+                    <div class="caja-item">
+                        <label>categoria
+                            <select class="category" name="category" required>
+                                <option value="lentes de contacto" >lentes de contacto</option>
+                             
+                            </select>
+                        </label>
+                    </div>
+                    <div class="caja-item">
+                        <label for="lens">Tipo de lente del producto</label>
+                        <select class="lens" name="lens">
+                            <option value="">Seleccione Uno …</option>
+                            <option value="recetado">recetado</option>
+                            <option value="estetico">estetico</option>
+                        </select>
+                    </div>
+                    <div class="caja-item">
+                        <label for="detail">detalle del producto</label>
                         <textarea name="detail" id="detail" cols="30" rows="10" ></textarea>
                     </div>
                 </div>
-                <div class="container">
-                    <input type="submit" value="Cargar">
+                <div class="box rigth">
+                    <div class="row">
+                        <div class="caja-item caja-row">
+                            <label for="price">Precio del producto</label>
+                            <input type="number" name="price" required>
+                        </div>
+                        <div class="caja-item caja-row">
+                            <label for="discount">Descuento del producto</label>
+                            <input type="number" name="discount" required>
+                        </div>
+                    </div>
+                    <div class="caja-item">
+                        <input type="submit" value="Cargar">
+                    </div>
                 </div>
             </form>
         </div>
