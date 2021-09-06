@@ -5,6 +5,7 @@ const path = require('path');
 /* utils */
 let toThousand = require('../utils/toThousand');
 let priceFinal = require('../utils/priceFinal');
+let capitalize = require('../utils/capitalize');
 
 module.exports = {
     solOftalAdd: (req, res) => {
@@ -148,7 +149,8 @@ module.exports = {
             title: "Listado de Productos",
             products,
             priceFinal,
-            toThousand
+            toThousand,
+            capitalize
         });
     },
     addContLentes: (req, res) => {
