@@ -3,17 +3,29 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 const methodOverride = require('method-override');
+const session = require('express-session');
+const localsUser = require('./middlewares/localsUser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var adminRouter = require('./routes/admin');
 
-
-
 var app = express();
+
+
+
 app.use(methodOverride('_method'));
+
+app.use(session({
+  secret : 'la optica palabra clave',
+  saveUninitialized : true,
+  resave : false,
+}));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -26,6 +38,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(methodOverride('_method'));
 
+app.use(localsUser);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

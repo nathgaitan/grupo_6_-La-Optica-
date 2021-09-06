@@ -1,7 +1,15 @@
 var express = require('express');
 const { solOftalAdd, solOftalStore, create,update, edit, addProduct,products,detail, solOftalEdit, solOftalUpdate, addContLentes, storeLentesContact,editLentesContact,updateLentesContact, destroy } = require('../controllers/adminController');
 var router = express.Router();
-const  upload = require('../middlewares/imageProductStorage')
+
+/* middlewares requerir aquí abajo */
+const  upload = require('../middlewares/imageProductStorage');
+
+
+/* validations requerir aquí abajo */
+const anteojosValidator = require('../validations/anteojosValidator');
+const lentesContactoValidator = require('../validations/lentesContactoValidator');
+const soluionesValidator = require('../validations/soluionesValidator');
 
 
 /*tabla*/

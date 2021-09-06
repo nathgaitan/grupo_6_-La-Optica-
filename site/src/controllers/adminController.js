@@ -7,6 +7,9 @@ let toThousand = require('../utils/toThousand');
 let priceFinal = require('../utils/priceFinal');
 let capitalize = require('../utils/capitalize');
 
+/* Validations */
+const {validationResult} = require('express-validator');
+
 module.exports = {
     solOftalAdd: (req, res) => {
         res.render('admin/solOftalmoAdd', {
