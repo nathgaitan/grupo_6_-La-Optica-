@@ -1,76 +1,146 @@
-.tabla main{
-    padding-left: 10px;
-}
-
-
-.tabla .todo3{   
-    margin: 0 auto;
-    border-collapse: collapse;
-    border: darkslateblue 3px solid;
-}
- 
-
-.tabla .botones{
-    max-width: 900px;      
-    display: block;
-    
-    
-}
-
-.tabla .tabla12{    
-    box-sizing: border-box;  
-} 
-
-
-.tabla .but-crear{
-    width: 30%;
-    background-color: rgb(81, 133, 245);
-    margin: 30px auto;
-    padding: 10px;
-    display: inline;
+body.tabla main{
     text-align: center;
+    margin: auto;
 }
 
-.tabla th, td{
-    border: solid 1px black;
-    padding: 5px;
+body.tabla section {
+    width: 95%;
+    margin: auto;
+    
+}
+body.tabla table {
+    width: 70%;
+    min-width: 915px;
+    margin: 20px auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    position: relative;
 }
 
-.tabla thead{
+
+body.tabla table thead{
     background-color: rgb(122, 159, 226);
-    border-bottom: solid 5px black;
 }
 
-.tabla tr:nth-child(even){
+body.tabla table tr:nth-child(even){
     background-color: #ddd;
 }
 
-.tabla tr:hover{
+body.tabla table tr:hover{
     background-color: #abf0e1;
 }
 
-.tabla .th-categoria{
-    width: 150px;
+
+body.tabla table td,
+body.tabla table th {
+    padding: 10px;
+}
+body.tabla table .static {
+    position: absolute;
+    background-color: rgb(122, 159, 226);
+    width: 35px;
+}
+body.tabla table td.static {
+    height: 111px;
+}
+body.tabla table th.static {
+    height: 62px;
+}
+  
+body.tabla table .first-col {
+    padding-left: 50px;
+}  
+
+body.tabla table td:nth-child(3) {
+    text-transform: capitalize;
+}
+body.tabla table td:nth-child(4) {
+    text-transform: uppercase;
+}
+body.tabla table td.cash {
+    font-size: 1.3rem;
+}
+body.tabla table td:nth-last-child(2) {
+    color: red;
 }
 
-.tabla .acc-but{
-    text-align: center;
+
+body.tabla table article {
+    display: flex;
+    text-align: left;
+}
+body.tabla table figure {
+    width: 25%;
+    margin: auto 0;
+}
+body.tabla table img {
+    width: 100%;
+}
+body.tabla table div.right {
+    padding-left: 30px;
+    width: 75%;
+}
+body.tabla table div.right p:last-child {
+    margin-bottom: 0
 }
 
-.tabla .borrar1{
+
+
+body.tabla table td div {
+    width: 100px;
+}
+body.tabla table form {
     display: inline-block;
 }
-
-.tabla .borrar{
-    background-color: red;
+body.tabla table td.acc-but div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+body.tabla td a,
+body.tabla td button.borrar{
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.439);
+    line-height: 1.3rem;
+}
+body.tabla td a i {
+    line-height: 1.3rem;
 }
 
-.tabla .editador{
-    background-color: rgb(170, 170, 236);
-    border: 1px solid black;
+body.tabla .borrar{
+    background-color: red;    
 }
-
-.tabla .detail{
-    border: black 1px solid;
+body.tabla .editador{
+    background-color: rgba(0, 0, 0, 0.302);
+}
+body.tabla .detail{
     background-color: rgb(95, 240, 95);
+}
+
+@media (min-width: 320px) {
+    body.tabla table td.acc-but div {
+        flex-direction: column;
+        height: 110px;
+    
+    }
+    body.tabla td a,
+    body.tabla td button.borrar {
+        width: 2.3rem;
+
+    }
+    body.table section {
+        margin: 20px
+    }
+}
+
+@media (min-width: 425px) {
+    body.tabla table td.acc-but div {
+        flex-direction: row;
+        height: auto;
+    
+    }
+    body.tabla td a,
+    body.tabla td button.borrar {
+        width: 2rem;
+    }
 }

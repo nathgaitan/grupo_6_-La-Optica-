@@ -1,63 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head') %>
-<body class="tabla">
-    <main>
-        <div class="table-responsive">
-        <div class="botones">
-        <button class="but-crear"><a href="/admin/add-solucion-oftalmologica">Crear solucion</a></button>
-        <button class="but-crear"><a href="/admin/crear-producto">Crear anteojos</a></button>
-        <button class="but-crear"><a href="/admin/add-contactLentes">Crear lent-cont</a></button>
-        </div>
-        <div class="">
-            <table class="tabla12">
-                <thead>
-                    <tr class="tabla1">
-                        <th>#</th>
-                        <th class="th-nombre">Nombre</th>
-                        <th class="th-marca">Marca</th>
-                        <th class="th-precio">Precio</th>
-                        <th class="th-detalle">Detalle</th>
-                        <th class="th-codigo">Codigo</th>
-                        <th class="th-lente">Lente</th>
-                        <th class="th-categoria">Categoria</th> 
-                        <th >Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="algo2">
-                    
-                    <% products.forEach(product => { %>
-                        <tr> <td> <%= product.id %>  </td>
-                        <td><%= product.name %> </td>
-                        <td><%= product.marca %> </td>
-                        <td><%= product.price %> </td>
-                        <td class="td-detail"><%= product.detail %> </td>
-                        <td class="td-codigo"><%= product.codigo %> </td>
-                        <td class="td-lens"><%= product.lens %> </td>
-                        <td class="td-category"><%= product.category %> </td>
-                        <td class="acc-but">
-                            <% if (product.category === "anteojos")  { %>
-                                <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>  
-                                <%}else if (product.category === "lentes de contacto") { %>
-                                    <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>
-                                    <% }else{ %> 
-                                        <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador"><i class="fas fa-edit"></i></a>                          
-                            <% } %>                           
-                            <a href="/admin/productDetail/<%= product.id %>" class="detail" ><i class="fas fa-eye"></i></a>
-                            <form class="borrar1" action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST">
-                                <button type="submit" class="borrar"><i class="fas fa-trash-alt"></i></button>
-                            </form>
-                            
-                        </td>
-                     
-                    <% }) %>
-                </tr>
-                </tbody>
-            </table>
+<%- include('../partials/head') %>
 
-        </div>
-    </div>
-    </main>
-    
-</body>
+    <body class="tabla">
+        <main>
+            <div class="botones">
+                <button class="but-crear"><a href="/admin/add-solucion-oftalmologica">Crear solucion</a></button>
+                <button class="but-crear"><a href="/admin/crear-producto">Crear anteojos</a></button>
+                <button class="but-crear"><a href="/admin/add-contactLentes">Crear lent-cont</a></button>
+            </div>
+            <section class="table-responsive">
+                <table>
+                    <thead>
+                        <tr class="">
+                            <th class="static">#</th>
+                            <th class="first-col">Descripción</th>
+                            <th>Lente</th>
+                            <th>Categoria</th>
+                            <th>Precio de lista</th>
+                            <th>Precio final</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="">
+
+                        <% products.forEach((product, index)=> { %>
+                            <tr>
+                                <td class="static">
+                                   <%= index + 1 %>
+                                </td>
+                                <td class="first-col">
+                                    <article>
+                                        <figure class="left">
+                                            <img src="images/products/<%= product.image %>"
+                                                alt="<%= product.name %> <%= product.marca %> <%= product.category %>">
+                                        </figure>
+                                        <div class="right">
+                                            <p>
+                                                <%= product.name %>
+                                            </p>
+                                            <small>
+                                                
+                                                 <%= product.marca %> |
+                                                 <% if (product.codigo != null) { %>
+                                                    <%= product.codigo %> |
+                                                <% } %>
+                                                <%= product.frame != null ? capitalize(product.frame) : capitalize(product.category) %>
+                                                
+                                                
+                                            </small>
+                                            <p>
+                                                <%= product.detail %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                </td>
+                                <td class="">
+                                    <%= product.lens %>
+                                </td>
+                                <td class="">
+                                    <%= capitalize(product.category) %>
+                                </td>
+                                <td class="cash">
+                                    <%= toThousand(product.price) %>
+                                </td>
+                                <td class="cash price-final">
+                                    <%= product.discount != 0 ? toThousand(priceFinal(product.price, product.discount).toFixed(0)) : product.price %>
+                                </td>
+                                <td class="acc-but">
+                                    <div>
+                                        <% if (product.category==="anteojos" ) { %>
+                                            <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i
+                                                    class="fas fa-edit"></i></a>
+                                            <%}else if (product.category==="lentes de contacto" ) { %>
+                                                <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i
+                                                        class="fas fa-edit"></i></a>
+                                                <% }else{ %>
+                                                    <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>"
+                                                        class="editador"><i class="fas fa-edit"></i></a>
+                                                    <% } %>
+                                                        <a href="/admin/productDetail/<%= product.id %>" class="detail"><i
+                                                                class="fas fa-eye"></i></a>
+                                                        <form
+                                                            action="/admin/delete/<%= product.id %>?_method=DELETE "
+                                                            method="POST">
+                                                            <button type="submit" class="borrar">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </form>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <% }) %>
+
+                    </tbody>
+                </table>
+
+            </section>
+        </main>
+
+    </body>
+
 </html>
