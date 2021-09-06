@@ -14,7 +14,6 @@ body.tabla table {
     margin: 20px auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-collapse: collapse;
-    position: relative;
 }
 
 
@@ -40,9 +39,7 @@ body.tabla table .static {
     background-color: rgb(122, 159, 226);
     width: 35px;
 }
-body.tabla table td.static {
-    height: 111px;
-}
+
 body.tabla table th.static {
     height: 62px;
 }
@@ -80,8 +77,22 @@ body.tabla table div.right {
     padding-left: 30px;
     width: 75%;
 }
+body.tabla table div.right p {
+    line-height: 1rem;
+    margin-bottom: 10px;
+}
+body.tabla table div.right p:first-child {
+    height: 28px;
+    display: block;
+    margin-bottom: 3px;
+}
 body.tabla table div.right p:last-child {
     margin-bottom: 0
+}
+body.tabla table div.right small {
+    height: 34px;
+    display: block;
+    margin-bottom: 3px;
 }
 
 
@@ -118,6 +129,9 @@ body.tabla .detail{
 }
 
 @media (min-width: 320px) {
+    body.tabla table td.static {
+    height: 130px;
+}
     body.tabla table td.acc-but div {
         flex-direction: column;
         height: 110px;
@@ -134,6 +148,9 @@ body.tabla .detail{
 }
 
 @media (min-width: 425px) {
+    body.tabla table td.static {
+        height: 102px;
+    }
     body.tabla table td.acc-but div {
         flex-direction: row;
         height: auto;
