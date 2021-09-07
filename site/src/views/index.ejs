@@ -3,50 +3,65 @@
 <%- include('./partials/head') %>
 
     <body class="home">
+
         <%- include('./partials/header') %>
             <main>
-                    <div class="glider-contain">
-                        <div class="glider">
-                            <% marcas.forEach(marca=> { %>
-                                <div style="background-image: url('/images/marcas/<%= marca %>')">
-                                </div>
-                                <% }) %>
-                        </div>
-                        <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
-                        <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
-
+                <div class="glider-contain">
+                    <div class="glider">
+                        <% marcas.forEach(marca=> { %>
+                            <div style="background-image: url('/images/marcas/<%= marca %>')">
+                            </div>
+                            <% }) %>
                     </div>
+                    <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
+                    <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
 
-                    <div role="tablist" class="dots"></div>
+                </div>
+
+                <div role="tablist" class="dots"></div>
 
                 <section class="productos">
                     <% products.forEach(product=> { %>
                         <article>
                             <a href="/products/detalle-de-producto/<%= product.id %>">
-                                <h3>
-                                    <%= product.codigo %>
-                                </h3>
-                                <figure>
-                                    <img src="/images/products/<%= product.image %>" alt="">
+                            <% if (product.codigo !=null) { %>
+                                <h3><%= product.codigo %></h3>
+                            <% } %>
+                            <% if (product.category==="anteojos") { %>
+                                <figure class="anteojos">
+                                    <img class="img-anteojos" src="/images/products/<%= product.image %>"
+                                    alt="">
                                 </figure>
-                                <div class="box-detalle">
+                            <% } else { %>
+                                <figure class="solucion-lentillas">
+                                    <img class="img-solucion-lentillas" src="/images/products/<%= product.image %>" alt="">
+                                </figure>
+                            <% } %>
+
+                            <div class="box-detalle">
+                                <% if (product.codigo !=null && product.color !=null) { %>
                                     <p class="title">
                                         <%= product.name %> "<%= product.color.toUpperCase() %>"
                                     </p>
-                                    <% if (product.discount> 0) { %>
-                                        <p class="discount">
-                                            <%= toThousand(product.price) %>
-                                        </p>
-                                        <p class="price">
-                                            <%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %>
-                                        </p>
-                                        <% } else { %>
-                                            <p class="discount"></p>
-                                            <p class="price">
-                                                <%= toThousand(product.price.toFixed(0)) %>
-                                            </p>
-                                            <% } %>
-                                </div>
+                                <% } else { %>
+                                    <p class="title">
+                                        <%= product.name %>
+                                    </p>
+                                <% } %>
+                                <% if (product.discount> 0) { %>
+                                    <p class="discount">
+                                        <%= toThousand(product.price) %>
+                                    </p>
+                                    <p class="price">
+                                        <%= toThousand(priceFinal(product.price,product.discount).toFixed(0))%>
+                                    </p>
+                                <% } else { %>
+                                    <p class="discount"></p>
+                                    <p class="price">
+                                        <%= toThousand(product.price.toFixed(0)) %>
+                                    </p>
+                                <% } %>
+                            </div>
                             </a>
                             <div class="check-like">
                                 <input type="checkbox" id="<%= product.id %>">
@@ -90,7 +105,7 @@
                         </div>
                         <h4>@LaOptica | Instagram</h4>
                     </div>
-                    
+
                     <section class="galeria-redes">
                         <div class="icono-flecha-der galeria-flechas"><button><i
                                     class="fas fa-chevron-right"></i></button></div>
@@ -134,7 +149,8 @@
                 </section>
             </main>
             <%- include('./partials/footer') %>
-                <%- include('./partials/scripts') %>
+                <script src="/js/glider.js"></script>
+                <script src="/js/indexCarrousel.js"></script>
     </body>
 
 </html>

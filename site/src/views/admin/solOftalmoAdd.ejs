@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head') %>
+
+    <body class="forms">
+        <%- include('../partials/headerAdmin') %>
+            <main>
+                <div class="container">
+                    <h3>Carga de Solucion Oftalmologica</h3>
+                    <form action="/admin/add-solucion-oftalmologica" method="POST" enctype="multipart/form-data">
+                        <div class="box left">
+                            <div class="caja-item">
+                                <label for="name">Nombre del producto</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="caja-item">
+                                <label for="marca">Marca del producto</label>
+                                <input type="text" name="marca" required>
+                            </div>
+                            <div class="caja-item">
+                                <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
+                                <input type="file" name="image" id="image" hidden>
+                            </div>
+                            <div class="caja-item">
+                                <label for="lens">Tipo de lente del producto</label>
+                                <select class="lens" name="lens">
+                                    <option value="">Seleccione Uno …</option>
+                                    <option value="de sol">de sol</option>
+                                    <option value="fotocromaticas">fotocromaticas</option>
+                                    <option value="blue ligth">blue ligth</option>
+                                    <option value="transition">transition</option>
+                                    <option value="recetado">recetado</option>
+                                    <option value="estetico">estetico</option>
+                                </select>
+                            </div>
+                            <div class="caja-item">
+                                <label for="detail">Detalle del producto</label>
+                                <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="box rigth">
+                            <div class="row">
+                                <div class="caja-item caja-row">
+                                    <label for="price">Precio del producto</label>
+                                    <input type="number" name="price" required>
+                                </div>
+                                <div class="caja-item caja-row">
+                                    <label for="discount">Descuento del producto</label>
+                                    <input type="number" name="discount" required>
+                                </div>
+                            </div>
+                            <div class="caja-carga">
+                                <button class="btn btn-primary" type="submit" value="Cargar">Cargar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

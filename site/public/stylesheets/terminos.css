@@ -1,0 +1,23 @@
+.terminos {
+    background-color: #a0c5f7;
+    
+}
+
+
+
+.terminos .menuT h1{
+    font-size: var(--font-title);
+    color: var(--color-title);
+    margin: 5%;
+    background-color: #a0c5f7;
+    text-align: center;
+    
+}
+
+.terminos .menuT h3{
+    font-size: var(--font-subtitle);
+    color: var(--color-subtitle);
+    margin:  5%;
+    text-align: center;
+}
+

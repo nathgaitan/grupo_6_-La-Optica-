@@ -11,7 +11,7 @@ body.home main p, body.home main h3 {
 
 /* ------------------ Marcas ------------------ */
 body.home main .glider-contain {
-    width: 80%;
+    width: 85%;
     margin: 15px auto;
     background-color: rgba(128, 128, 128, 0.1);
     border-radius: 45px;
@@ -23,9 +23,10 @@ body.home main .dots {
 body.home main div.glider-contain div.glider {
     overflow-x: hidden;        
 }
+body.home main div.glider-contain div.glider-track {
+    height: 220px;
+}
 body.home main div.glider-contain div.glider div div {
-    height: 220px!important;
-    width: 100%!important;
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: center;
@@ -63,17 +64,18 @@ body.home main section.productos article h3 {
     position: absolute;
     z-index: 1;
 }
+
+/* Figure y img de productos */
 body.home main section.productos article figure {
-    width: 90%;
     height: max-content;
     margin: auto;
 }
 body.home main section.productos img {
     position:relative;
     z-index: 20;
-    margin-top: 70px;
     width: 100%;
 }
+/* fin Figure y img de productos */
 body.home main section.productos article .box-detalle {
     text-align: center;
     padding-bottom: 20px;
@@ -81,6 +83,7 @@ body.home main section.productos article .box-detalle {
 body.home main section.productos article .box-detalle p {
     line-height: 1.9;
     margin: 0;
+    padding: 0 7px;
 }
 body.home main section.productos article .box-detalle p a {
     color: var(--font-body);
@@ -98,6 +101,7 @@ body.home main section.productos article .box-detalle p.price{
     font-family: 'Crimson Text', serif;
     font-size: 1.7rem;
     margin-top: 2px;
+    height: 45px;
 }
 
 body.home main section.productos article .check-like {
@@ -368,11 +372,23 @@ body.home main section.whatsapp .contenedor nav {
         margin-top: 5px;
         font-size: 115px;
     }
-    body.home main section.productos img {
-        margin-top: 75px;
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.anteojos {
+        width: 86%;
     }
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 55.9%;
+    }
+    body.home main section.productos img.img-anteojos {
+        margin-top: 75px;
+        height: auto;        
+    }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin: 45px 0 30px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
     body.home main section.productos article .check-like {
-        bottom: 28.2px;
+        bottom: 29.37px;
     }
 
     /* --------- galeria redes ---------  */
@@ -394,7 +410,9 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 425px) {
     /* --------- marcas --------- */
-    body.home main .glider-contain,
+    body.home main .glider-contain {
+        display: block;
+    }
     body.home main .dots {
         display: flex;
     }
@@ -405,8 +423,19 @@ body.home main section.whatsapp .contenedor nav {
     body.home main section.productos article.seis {
         display: block;
     }
-    body.home main section.productos img {
-        margin-top: 67px;
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 55.895%;
+    }
+    body.home main section.productos img.img-anteojos {
+        margin-top: 80px;      
+    }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin: 50px 0 30px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
+    body.home main section.productos article .box-detalle p {
+        height: 52px;
     }
 
     /* --------- galeria redes --------- */
@@ -430,7 +459,7 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 768px) {
     body.home main {
-        max-width: 1100px;
+        max-width: 1000px;
     }
 
     /* products */
@@ -441,13 +470,27 @@ body.home main section.whatsapp .contenedor nav {
         width: 23%;
         display: block;
     }
-    
-    body.home main section.productos img {
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.solucion,
+    body.home main section.productos article figure.solucion-lentillas {
+    height: 189.22px;
+    display: flex;
+    align-items: center;
+    }
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 69.255%;
+    }
+    body.home main section.productos img.img-anteojos {
+        height: 121.22px;
         margin-top: 65px;
         padding: 20px;
     }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin-top: 24.91px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
     body.home main section.productos article .check-like {
-        bottom: 131px;
+        bottom: 150px;
         background-color: rgba(245, 235, 226, 0.45);
         z-index: 30;
         opacity: 0;

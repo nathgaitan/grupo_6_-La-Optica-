@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head') %> 
+<body class="cart">
+    
+    <%- include('../partials/header') %> 
+
+
+    <main class="menu">
+
+        <div class="inicio">
+
+            <h4>¡Registrate o inicia sesion para ver tus compras,favoritos y disfrutar beneficios!</h4>
+            <ol>
+                <li>CARRITO</li>
+                <li>PAGO SEGURO</li>
+                <li>ORDEN COMPLETADA</li>
+            </ol>
+            <button type="submit" style="background-color: rgb(94, 155, 235);"> <a href="/users/login">INGRESAR</a></button>
+
+
+        </div>
+
+        <div class="articulo">
+            <article>
+
+                <h4>Articulo</h4>
+                    <h4>Nombre del articulo</h4>
+
+                    <nav class="imagendetallada">
+                        
+                        <div>
+                            <img src="/images/products/lentes(3).png" alt="">
+                        </div>
+                           
+                        
+
+
+                        <ul>
+
+                            <div class="marco">
+
+                                <label>tipo de marco:
+                                    <select class="marco" name="marco">
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="metalico">metalico</option>
+                                        <option value="acrilico">acrilico</option>
+                                        <option value="madera">madera</option>
+                                        <option value="flexibles">flexibles</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="lente">
+                                <label>color de lente:
+                                    <select class="lente" name="lente">
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="de sol">de sol</option>
+                                        <option value="fotocromaticas">fotocromaticas</option>
+                                        <option value="blue ligth">blue ligth</option>
+                                        <option value="transition">transition</option>
+                                    </select>
+                                </label>
+
+
+
+                                
+                                  
+                            </div>
+
+                        </ul>
+
+                    </nav>
+
+                    <ol>
+
+
+
+                        <label for="price">Precio unitario</label>
+                        <input type="number" id="price" name="price">
+
+                        <label for="price">Precio del producto</label>
+                        <input type="number" id="price" name="price">
+                        
+
+                        <label for="price">total</label>
+                        <input type="number" id="price" name="price">
+                        
+
+                        <label for="cantidad">cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad"
+                               min="10" max="100">
+                        
+                        
+
+                        
+                        
+
+                    </ol>
+
+            </article>
+
+        </div>
+
+        <h4>Si desea agregar un comentario sobre su orden,por favor escribalo enseguida</h4>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <nav>
+            <input type="checkbox" name="" id="">
+            <label for="terminos y condiciones">Acepto los terminos de servicio <a href="/products/terminos&condiciones">(leer)</a> </label>
+        </nav>
+
+        <button type="reset" style="background-color: dimgray;"><a href="/"> SEGUIR COMPRANDO</a></button>
+        <button type="submit" style="background-color: rgb(87, 180, 241);"><a href="">COMPRAR AHORA</a> </button>
+
+
+
+
+    </main>
+
+    <%- include('../partials/footer') %> 
+
+
+
+
+   
+
+</body>
+
+</html>
