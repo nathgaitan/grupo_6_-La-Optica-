@@ -17,14 +17,14 @@
                         <label for="marca">Marca del producto</label>
                         <input type="text" name="marca" value="<%= product.marca %> " required>
                     </div>
-                    <div class="caja-item">
-                        <label for="price">Código del producto</label>
-                        <input type="number" name="codigo" value=<%= product.codigo %>  required>
-                    </div>
                     
                     <div class="caja-item">
-                        <label for="image"><a class="a-imagen">Imagen</a></label>
+                        <label for="image"><a class="btn btn-primary">Subir imagen</a></label>
                         <input type="file" name="image" id="image" hidden>
+                    </div>
+                    <div class="caja-item">
+                        <label for="duration">Duración</label>
+                        <input type="text" name="duration" value="<%= product.duration %> " required>
                     </div>
                     <div class="caja-item">
                         <label for="lens">Tipo de lente del producto</label>
@@ -34,6 +34,10 @@
                             <option value="estetico" <%= product.lens ? 'selected' === "estetico": null %>>estetico</option>
                             
                         </select>
+                    </div>
+                    <div class="caja-item">
+                        <label for="graduation">Graduación</label>
+                        <input type="text" name="graduation" value="<%= product.graduation %> " required>
                     </div>
                     <div class="caja-item">
                         <label for="detail">detalle del producto</label>

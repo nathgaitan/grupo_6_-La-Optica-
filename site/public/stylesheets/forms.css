@@ -76,5 +76,7 @@ body.forms .caja-row{
 
     body.forms .row input{
         height: 90px;
+        text-align: center;
+        font-size: 25px;
     }
 }

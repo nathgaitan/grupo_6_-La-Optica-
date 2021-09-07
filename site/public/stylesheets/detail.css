@@ -150,6 +150,16 @@
     padding-left: 40%;
 }
 
+.product main button.delete{
+    color: black;
+    border-color: white;
+    border-radius: 15px;
+    background-color: red;
+    width: 150px;
+    height: 50px;
+    margin: 20px 40%;
+}
+
 
 @media (min-width:481px){
 
