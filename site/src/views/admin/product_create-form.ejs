@@ -4,9 +4,10 @@
 
     <body>
         <%- include('../partials/headerAdmin') %>
-            <main class="formulario">
-                <form action="/admin/crear-producto" method="POST" enctype="multipart/form-data">
-                    <h3>CARGA Y EDICION</h3>
+        <main >
+            <div class="container">
+                 <h3>Carga de Anteojos</h3>
+                 <form action="/admin/crear-producto" method="POST" enctype="multipart/form-data">
                     <div class="box left">
                         <div class="caja-item">
                             <label for="name">Nombre del producto</label>
@@ -17,8 +18,13 @@
                             <input type="text" id="marca" name="marca" required>
                         </div>
                         <div class="caja-item">
-                            <label for="image">imagen</label>
-                            <input type="file" name="image">
+                            <label for="Codigo">Codigo del producto</label>
+                            <input type="number" id="Codigo" name="Codigo" required>
+                        </div>
+
+                        <div class="caja-item">
+                            <label for="image"><a class="a-imagen">Imagen</a></label>
+                            <input type="file" name="image" id="image" hidden>
                         </div>
                         <div class="caja-item">
                             <label for="color">color del producto</label>
@@ -30,9 +36,19 @@
                         <div>
                             <textarea name="detail" id="" cols="30" rows="10" required></textarea>
                         </div>
-                        <div class="caja-item">
-                            <label for="Codigo">Codigo del producto</label>
-                            <input type="number" id="Codigo" name="Codigo" required>
+                        
+                        
+                    </div>
+                    <div class="box rigth">
+                        <div class="row">
+                            <div class="caja-item caja-row">
+                                <label for="price"> Precio del producto</label>
+                                <input class="color" type="number" id="price" name="price" required>
+                            </div>
+                            <div class="caja-item caja-row">
+                                <label for="discount">Descuento del producto</label>
+                                <input class="color" type="number" id="discount" name="discount" requiured>
+                            </div>
                         </div>
                         <div class="caja-item">
                             <label for="lens">Tipo de lente del producto</label>
@@ -61,23 +77,14 @@
                                 </select>
                             </label>
                         </div>
-                    </div>
-                    <div class="box rigth">
-                        <div class="row">
-                            <div class="caja-item caja-row">
-                                <label for="price"> Precio del producto</label>
-                                <input class="color" type="number" id="price" name="price" required>
-                            </div>
-                            <div class="caja-item caja-row">
-                                <label for="discount">Descuento del producto</label>
-                                <input class="color" type="number" id="discount" name="discount" requiured>
-                            </div>
-                        </div>
+
                         <div class="caja-carga">
                             <button type="submit" value="Cargar">Cargar</button>
                         </div>
                     </div>
                 </form>
+                </div>
+                
             </main>
             <%- include('../partials/footer') %>
     </body>

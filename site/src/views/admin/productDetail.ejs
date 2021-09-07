@@ -68,7 +68,9 @@
                 <% }else{ %> 
                     <a href="/admin/edit-solucion-oftalmologica/<%= product.id %>" class="editador">EDITAR</i></a>                          
         <% } %></button>
-
+        <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST">
+            <button type="submit" class="delete">ELIMINAR</button>
+        </form>
     </div>
 
     </section>

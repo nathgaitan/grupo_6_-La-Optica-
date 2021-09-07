@@ -2,11 +2,11 @@
 <html lang="es">
 <%- include('../partials/head') %>
 
-    <body>
+    <body class="forms">
         <%- include('../partials/headerAdmin') %>
-            <main class="edit">
-                <section class="formulario">
-                    <h3>Editando : <%= product.name %>
+       <main>
+                <div class="container">
+                    <h3>Editando : <%= product.name %> de la categoría <%= product.category %>
                     </h3>
                     <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST"
                         enctype="multipart/form-data">
@@ -19,9 +19,13 @@
                                 <label for="marca">Marca del producto</label>
                                 <input type="text" id="marca" name="marca" value="<%= product.marca %>" required>
                             </div>
-                            <div class='caja-item'>
-                                <label for="image">Imagen</label>
-                                <input type="file" name="image" hidden>
+                            <div class="caja-item">
+                                <label for="codigo">Codigo del producto</label>
+                                <input type="number" id="codigo" name="codigo" value="<%=product.codigo%>" required>
+                            </div>
+                            <div class="caja-item">
+                                <label for="image"><a class="a-imagen">Imagen</a></label>
+                                <input type="file" name="image" id="image" hidden>
                             </div>
                             <div class="caja-item">
                                 <label for="color">Color del producto</label>
@@ -31,49 +35,9 @@
                                 <label for="detail">Detalle del producto</label>
                                 <textarea name="detail" id="" cols="30" rows="10"><%= product.detail %></textarea>
                             </div>
-                            <div class="caja-item">
-                                <label for="codigo">Codigo del producto</label>
-                                <input type="number" id="codigo" name="codigo" value="<%=product.codigo%>" required>
-                            </div>
-                            <div class="caja-item">
-                                <label for="lens">Tipo de lente del producto</label>
-                                <select class="lens" name="lens" required>
-                                    <option value="">Seleccione Uno …</option>
-                                    <option value="de sol" <%=product.lens==="de sol" ? 'selected' : null %>>de sol
-                                    </option>
-                                    <option value="fotocromaticas" <%=product.lens==="fotocromaticas" ? 'selected' :
-                                        null %>
-                                        >fotocromaticas</option>
-                                    <option value="blue ligth" <%=product.lens==="blue light" ? 'selected' : null %>
-                                        >blue
-                                        ligth</option>
-                                    <option value="transition" <%=product.lens==="transition" ? 'selected' : null %>
-                                        >transition</option>
-                                </select>
-                            </div>
-                            <div class="caja-item">
-                                <label>tipo de marco:</label>
-                                <select class="frame" name="frame" required>
-                                    <option value="">Seleccione Uno …</option>
-                                    <option value="metalico" <%=product.frame==="metalico" ? 'selected' : null %>
-                                        >metalico</option>
-                                    <option value="acrilico" <%=product.frame==="acrilico" ? 'selected' : null %>
-                                        >acrilico</option>
-                                    <option value="madera" <%=product.frame==="madera" ? 'selected' : null %>
-                                        >madera</option>
-                                    <option value="flexibles" <%=product.frame==="flexibles" ? 'selected' : null %>
-                                        >flexibles</option>
-                                </select>
-                                </label>
-                            </div>
-                            <div class="caja-item">
-                                <label>categoria</label>
-                                <select class="category" name="category" required>
-                                    <option value="anteojos">Anteojos</option>
-                                </select>
-                            </div>
+                            
+                            
                         </div>
-                        <div class="box left">
                             <div class="box rigth">
                                 <div class="row">
                                     <div class="caja-item caja-row">
@@ -87,13 +51,52 @@
                                             value="<%=product.discount %>" required>
                                     </div>
                                 </div>
+
+                                <div class="caja-item">
+                                    <label for="lens">Tipo de lente del producto</label>
+                                    <select class="lens" name="lens" required>
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="de sol" <%=product.lens==="de sol" ? 'selected' : null %>>de sol
+                                        </option>
+                                        <option value="fotocromaticas" <%=product.lens==="fotocromaticas" ? 'selected' :
+                                            null %>
+                                            >fotocromaticas</option>
+                                        <option value="blue ligth" <%=product.lens==="blue light" ? 'selected' : null %>
+                                            >blue
+                                            ligth</option>
+                                        <option value="transition" <%=product.lens==="transition" ? 'selected' : null %>
+                                            >transition</option>
+                                    </select>
+                                </div>
+                                <div class="caja-item">
+                                    <label>tipo de marco:</label>
+                                    <select class="frame" name="frame" required>
+                                        <option value="">Seleccione Uno …</option>
+                                        <option value="metalico" <%=product.frame==="metalico" ? 'selected' : null %>
+                                            >metalico</option>
+                                        <option value="acrilico" <%=product.frame==="acrilico" ? 'selected' : null %>
+                                            >acrilico</option>
+                                        <option value="madera" <%=product.frame==="madera" ? 'selected' : null %>
+                                            >madera</option>
+                                        <option value="flexibles" <%=product.frame==="flexibles" ? 'selected' : null %>
+                                            >flexibles</option>
+                                    </select>
+                                    </label>
+                                </div>
+                                <div class="caja-item">
+                                    <label>categoria</label>
+                                    <select class="category" name="category" required>
+                                        <option value="anteojos">Anteojos</option>
+                                    </select>
+                                </div>
+
                                 <div class="caja-carga">
                                     <input type="submit" value="Cargar">
                                 </div>
                             </div>
                         </div>
                     </form>
-                </section>
+                </div>
             </main>
             <%- include('../partials/footer') %>
     </body>
