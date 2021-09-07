@@ -1,0 +1,43 @@
+.headerAdmin{    
+    text-align: center;
+    margin: auto;
+}
+
+.headerAdmin .nav-adm{
+    text-align: center;
+    width: 100%;
+}
+
+.headerAdmin .medio1{
+    text-align: center;
+    background-color: rgb(228, 228, 230);
+    
+}
+
+.headerAdmin .admin-t{
+    color: rgb(44, 33, 156);
+    text-align: center;
+}
+
+.headerAdmin .headerlaptop1{
+    text-align: center;
+}
+
+.headerAdmin .navbar{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(196, 196, 230);
+}
+
+.headerAdmin .boton-admin{
+    color: black;
+    background-color: rgb(122, 159, 226) ;
+    border: black;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.headerAdmin a{
+    font-size: 15px;
+    color: white;
+}

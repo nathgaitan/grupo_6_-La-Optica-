@@ -1,6 +1,11 @@
 body.tabla main{
     text-align: center;
     margin: auto;
+    
+}
+
+body section{
+    padding-top: 30px;
 }
 
 body.tabla section {
