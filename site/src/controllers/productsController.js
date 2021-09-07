@@ -3,8 +3,8 @@ const { products }  = require('../data/products_db');
 /* utils */
 let toThousand = require('../utils/toThousand');
 let priceFinal = require('../utils/priceFinal');
+const capitalize = require('../utils/capitalize');
 let { priceMayor, priceMenor, titleDesc, titleAsc, marcaAsc, marcaDesc } = require('../utils/filterListProducts')
-
 
 module.exports = {
     detail: (req,res)=>{
