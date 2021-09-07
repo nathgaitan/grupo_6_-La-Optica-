@@ -9,17 +9,14 @@ module.exports = {
         return res.render("users/register",{
             title : "register"})
     },
-    processregister : (req,res) => {
-
+    processRegister : (req,res) => {
     },
     login : (req,res) => {
         return res.render("users/login",{
             title : "login"})
     },
     processLogin : (req,res) => {
-
     },
     profile : (req,res) => {
-
     }
 }
