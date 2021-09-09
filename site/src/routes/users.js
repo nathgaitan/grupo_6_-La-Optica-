@@ -15,7 +15,7 @@ router.get("/register", register);
 router.post("/register", processRegister);
 
 router.get("/login", login);
-router.post("/login", processLogin);
+router.post("/login", loginValidator, processLogin);
 
 router.put("/profile", profile)
 
