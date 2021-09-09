@@ -16,14 +16,14 @@
                 <img class="logo" src="/images/register01.jpg" alt="">
             </div>
                 
-        <form action="">
+        <form action="" method="POST">
             <div class="todo2">
                 <div class=" reg-img">
             <div class="box-p">
             
             <div class="reg-box">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingresá tu Nombre">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Ingresá tu Nombre">
             </div>
             <div class="reg-box">
                 <label for="apellido">Apellido</label>
@@ -37,6 +37,11 @@
                 <label for="password">Contraseña</label>
                 <input type="password" name="password" id="password" placeholder="Ingresá tu contraseña">
             </div>
+            <!-- Esto es un comentario -->
+           <!--  <div class="reg-box rei-box">
+                <label class="rei-lab" for="password">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Reingresá tu contraseña">
+            </div>-->
             
         </div>
         <div>
@@ -61,10 +66,14 @@
        
     </div>
 </div>
-        </form>
+<div class="terminos1">
+    <input type="checkbox" name="terminos" id="terminos">
+    <label class="term-lab" for="terminos">Acepto los términos y condiciones</label>
+</div>
+        
 
             <div class="but-box">
-                <button type="submit">Crear cuenta</button>
+                <button type="submit" value="Registrarme">Crear cuenta</button>
             </div>
             <div class="google-box">
                 <a href=""><img src="/images/reg google.png" alt=""></a>
@@ -72,66 +81,12 @@
             <div class="registrate"><h4>¿Ya tenés una cuenta?</h4>
                 <a class="ingresa" href="/users/login">Ingresá.</a>
             </div>
+        </form>
     </article>
 
     </main>
 
-    <footer>
-
-
-
-        <div class="logo">
-            <img src="/images/logo optica para footer.png" alt="">
-        </div>
-        <section>
-            <nav class="lista">
-                <nav>
-
-                    <h4>Productos</h4>
-                    <ul>
-                        <li>De Sol</li>
-                        <li>De Contacto</li>
-                        <li>Soluciones Oftalmicas</li>
-                        <li>Recetados</li>
-                    </ul>
-                </nav>
-                <nav>
-                    <h4>Coleccion</h4>
-                    <ul>
-                        <li>Madera</li>
-                        <li>Actrilicos</li>
-                        <li>Metalicos</li>
-                        <li>Flexibles</li>
-                    </ul>
-                </nav>
-
-                <nav class="redes">
-                    <h4>Siguenos</h4>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>Twitter</li>
-                </nav>
-
-                </ul>
-            </nav>
-
-            <nav class="marca">
-
-                <nav class="iconos">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-youtube"></i>
-                </nav>
-                <nav class="registrada">
-                    <p>La Optica ecommerce </p>
-                    <p>all rigths reserved</p>
-                </nav>
-            </nav>
-        </section>
-
-    </footer>
+    <%- include('../partials/footer') %> 
     
 </body>
 </html>
