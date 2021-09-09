@@ -2,7 +2,8 @@ const users = require('../data/users.json');
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
+
 
 module.exports = {
     register : (req,res) => {
@@ -10,8 +11,22 @@ module.exports = {
             title : "register"})
     },
     processRegister : (req,res) => {
-        res.send(req.body)
+        const {name,apellido,email,password,imagen} = req.body;
+        let user = {
+            id : users[users.length -1] ?  users[users.length -1].id + 1 : 1,
+            name : name.trim(),
+            apellido : apellido.trim(),
+            email : email.trim(),
+            password : bcryptjs.hashSync(password, 10),
+            rol : "user",
+            imagen
+        }
+        users.push(user);
+
+        fs.writeFileSync(path.join(__dirname,"..","data","users.json"),JSON.stringify(users,null,2),"utf-8");
         
+        return res.redirect("/users/login")
+
     },
     login : (req,res) => {
         return res.render("users/login",{
