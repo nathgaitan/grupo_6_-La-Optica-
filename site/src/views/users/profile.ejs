@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<body class="profile">
+    <%- include('../partials/header') %>
+    <main>
+        <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="box-input">
+                <label for="avatar_user" class="btn btn-primary">Imagen</label>
+                <input type="file" name="avatar_user" id="avatar_user" hidden>
+                <small><%= locals.errores && errores.imagen ? errores.imagen.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" 
+                value="<%= locals.old && old.nombre ? old.nombre.msg : null %>">
+                <small><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" 
+                value="<%= locals.old && old.apellido ? old.apellido.msg : null %>">
+                <small><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" disabled 
+                value="<%= locals.old && old.email ? old.email.msg : null %>">
+                <small><%= locals.errores && errores.email ? errores.email.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="oldpassword">Contraseña</label>
+                <input type="password" name="oldpassword" id="oldpassword" placeholder="Ingresá tu contraseña">
+                <small><%= locals.errores && errores.oldpassword ? errores.oldpassword.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="password">Nueva contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Ingresá nueva contraseña">
+                <small><%= locals.errores && errores.password ? errores.password.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <label for="confirmpassword">Confirma contraseña</label>
+                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirma la contraseña">
+                <small><%= locals.errores && errores.confirmpassword ? errores.confirmpassword.msg : null %></small>
+            </div>
+            <div class="box-input">
+                <button class="btn btn-primary" type="submit" value="Cargar"></button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

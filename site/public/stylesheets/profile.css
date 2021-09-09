@@ -1,0 +1,10 @@
+/* body.profile
+main
+form
+div.box-input 
+*/
+
+body.profile main form input {
+    border: none;
+    border-bottom: rgba(0, 0, 0, 0.393) solid 1px;
+}
