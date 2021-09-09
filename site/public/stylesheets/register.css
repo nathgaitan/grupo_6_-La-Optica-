@@ -81,6 +81,10 @@
     display:none;
  }
 
+ .register main article .terminos1{
+     margin-left: 40px;
+ }
+
 .register main article .but-box{
     text-align: center;
     padding: 5px 0;
@@ -203,6 +207,10 @@
         margin-right: 5px;
     }
 
+    .register main article .terminos1{
+        text-align: center;
+    }
+
     .register main article .recup-box{
         width: 40%;
         padding-left: 140px;
@@ -213,6 +221,10 @@
         text-align: center;
         padding: 20px 0;
         margin: 10px 20px;
+    }
+
+    .register main .rei-box{
+        display: inline;
     }
 
     .register main article button{
@@ -302,6 +314,15 @@
         text-align:left;        
         padding: 5px 0 0 220px ;
         font-size: 15px;
+    }
+
+    .register main article .term-lab{
+        font-size: 20px;
+    }
+
+    .register main article .terminos1{
+        text-align: center;
+        background-color: rgba(88, 88, 235, 0.137);
     }
 
     .register main article .registrate{

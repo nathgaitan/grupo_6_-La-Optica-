@@ -1,50 +1,64 @@
 [
-    {
-        "name": "nathalia",
-        "apellido": "gaitan",
-        "email": "nathalia2912dante@gmail.com",
-        "password": "123123",
-        "admin":"1",
-        "imagen":"nath.png"
-    },
-    {
-        "name": "jimena",
-        "apellido": "witencamps",
-        "email": "jimena.witen@gmail.com",
-        "password": "123123",
-        "admin":"1",
-        "imagen":"jime.png"
-    },
-    {
-        "name": "leonardo",
-        "apellido": "vega",
-        "email": "Leoo_0690@hotmail.com",
-        "password": "123123",
-        "admin":"1",
-        "imagen":"leo.jpg"
-    },
-    {
-        "name": "kevin",
-        "apellido": "sarli",
-        "email": "sarlikevin99@gmail.com",
-        "password": "123123",
-        "admin":"1",
-        "imagen":"kevin.jpeg"
-    },
-    {
-        "name": "eric",
-        "apellido": "mena",
-        "email": "ericdanielmena@gmail.com",
-        "password": "123123",
-        "admin":"0",
-        "imagen":"profe eric.png"
-    },
-    {
-        "name": "cristian",
-        "apellido": "elias",
-        "email": "cristianelias4@gmail.com",
-        "password": "123123",
-        "admin":"0",
-        "imagen":"profe cris.png"
-    }
+  {
+    "id": 1,
+    "name": "nathalia",
+    "apellido": "gaitan",
+    "email": "nathalia2912dante@gmail.com",
+    "password": "123123",
+    "rol": "admin",
+    "imagen": "nath.png"
+  },
+  {
+    "id": 2,
+    "name": "jimena",
+    "apellido": "witencamps",
+    "email": "jimena.witen@gmail.com",
+    "password": "123123",
+    "rol": "admin",
+    "imagen": "jime.png"
+  },
+  {
+    "id": 3,
+    "name": "leonardo",
+    "apellido": "vega",
+    "email": "Leoo_0690@hotmail.com",
+    "password": "123123",
+    "rol": "admin",
+    "imagen": "leo.jpg"
+  },
+  {
+    "id": 4,
+    "name": "kevin",
+    "apellido": "sarli",
+    "email": "sarlikevin99@gmail.com",
+    "password": "123123",
+    "rol": "admin",
+    "imagen": "kevin.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "eric",
+    "apellido": "mena",
+    "email": "ericdanielmena@gmail.com",
+    "password": "123123",
+    "rol": "user",
+    "imagen": "profe eric.png"
+  },
+  {
+    "id": 6,
+    "name": "cristian",
+    "apellido": "elias",
+    "email": "cristianelias4@gmail.com",
+    "password": "123123",
+    "rol": "user",
+    "imagen": "profe cris.png"
+  },
+  {
+    "id": 7,
+    "name": "juan",
+    "apellido": "topo",
+    "email": "topo@gmail.com",
+    "password": "$2a$10$aibXuolzH4RVISrNwYVb3.dNnTRLvmElcezHbYhPFvFpFHv4wyOde",
+    "rol": "user"
+  }
 ]
