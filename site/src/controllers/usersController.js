@@ -10,6 +10,8 @@ module.exports = {
             title : "register"})
     },
     processRegister : (req,res) => {
+        res.send(req.body)
+        
     },
     login : (req,res) => {
         return res.render("users/login",{
