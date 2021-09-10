@@ -1,6 +1,6 @@
-const users = require('../data/users.json');
 const fs = require('fs');
 const path = require('path');
+const users = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'users.json'), 'utf-8'));
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
@@ -55,6 +55,8 @@ module.exports = {
         }
     },
     profile : (req,res) => {
+        const users = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'users.json'), 'utf-8'));
+
         return res.render('users/profile', {
             title : "Perfil",
             user : users.find(user => user.id === +req.session.userLogin.id)
@@ -64,11 +66,11 @@ module.exports = {
         const errors = validationResult(req);
 
         if (req.fileValidationError) {
-            let image = {
-                param : 'image',
+            let imagen = {
+                param : 'imagen',
                 msg: req.fileValidationError,
             }
-            errors.errors.push(image)
+            errors.errors.push(imagen)
         }
 
         if (errors.isEmpty()) {
@@ -78,17 +80,18 @@ module.exports = {
             const { nombre, apellido, password } = req.body;
 
             if (req.file) {
-                if(fs.existsSync(path.join(__dirname,'..','public','images','usuarios',userLogin.image))){
-                    fs.unlinkSync(path.join(__dirname,'..','public','images','usuarios',userLogin.image))
+                if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))) {
+                    fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))
                 }
             }
 
             let userModificado = {
-                nombre : nombre.trim(),
+                id : user.id,
+                name : nombre.trim(),
                 apellido : apellido.trim(),
                 email : user.email,
                 password : req.password ? bcrypt.hashSync(password.trim(),10) : user.password,
-                admin : +user.admin,
+                rol : user.rol,
                 imagen : req.file ? req.file.filename : user.imagen
             }
 
@@ -103,5 +106,6 @@ module.exports = {
                 old : req.body
             })
         }
+    
     }
 }

@@ -1,52 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head') %>
-<body class="profile">
-    <%- include('../partials/header') %>
-    <main>
-        <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="box-input">
-                <label for="avatar_user" class="btn btn-primary">Imagen</label>
-                <input type="file" name="avatar_user" id="avatar_user" hidden>
-                <small><%= locals.errores && errores.imagen ? errores.imagen.msg : null %></small>
+
+    <body class="profile">
+        <header>
+            <div class="banner">
+                <img src="/images/banner-profile.jpg" alt="">
             </div>
-            <div class="box-input">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" 
-                value="<%= user.name %>">
-                <small><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></small>
+            <div class="position">
+                <div class="user">
+                    <img src="/images/usuarios/<%= user.imagen %>" alt="<%= userLogin.name %>">
+                </div>
+                <div>
+                    <a href=""> + </a>
+                </div>
             </div>
-            <div class="box-input">
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" 
-                value="<%= user.apellido %>">
-                <small><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></small>
+            <article>
+                <form action="/users/profile?_method=PUT" method="POST">
+                    <div class="box-input">
+                        <label for="avatar_user" class="btn btn-primary">Imagen</label>
+                        <input type="file" name="avatar_user" id="avatar_user" hidden>
+                        <div>
+                            <small>
+                                <%= locals.errores && errores.imagen ? errores.imagen.msg : null %>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="box-input">
+                        <button type="submit" class="btn btn-primary">Subir</button>
+                    </div>
+                </form>
+            </article>
+        </header>
+        <main>
+            <section class="position-profile">
+            </section>
+            <div class="column">
+                <section>
+                    <h3>Perfil de usuario</h3>
+                    <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <p>¿Quieres editar el avatar de usuario?</p>
+                        <div class="box-input">
+                            <label for="avatar_user" class="btn btn-primary">Imagen</label>
+                            <input type="file" name="avatar_user" id="avatar_user" hidden>
+                            <small>
+                                <%= locals.errores && errores.imagen ? errores.imagen.msg : null %>
+                            </small>
+                        </div>
+                        <hr>
+                        <p>¿Quieres editar la información personal?</p>
+                        <div class="box-input">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre"
+                                value="<%= locals.old && old.nombre ? old.nombre : user.name %>">
+                            <small>
+                                <%= locals.errores && errores.nombre ? errores.nombre.msg : null %>
+                            </small>
+                        </div>
+                        <div class="box-input">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" id="apellido"
+                                value="<%= locals.old && old.apellido ? old.apellido : user.apellido %>">
+                            <small>
+                                <%= locals.errores && errores.apellido ? errores.apellido.msg : null %>
+                            </small>
+                        </div>
+                        <div class="box-input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" disabled value="<%= user.email %>">
+                            <br>
+                            <small>Por razones de seguridad el email no puede ser editado.<br> Comuniquese con nosotros
+                                si desea realizar este cambio.</small>
+                        </div>
+                        <hr>
+                        <p>¿Quieres cambiar la contraseña?</p>
+                        <div class="box-input">
+                            <label for="password">Nueva contraseña</label>
+                            <input type="password" name="password" id="password" placeholder="Ingresá la nueva contraseña">
+                            <small>
+                                <%= locals.errores && errores.password ? errores.password.msg : null %>
+                            </small>
+                        </div>
+                        <div class="box-input">
+                            <label for="confirmpassword">Confirma nueva contraseña</label>
+                            <input type="password" name="confirmpassword" id="confirmpassword"
+                                placeholder="Confirma la nueva contraseña">
+                            <small>
+                                <%= locals.errores && errores.confirmpassword ? errores.confirmpassword.msg : null %>
+                            </small>
+                        </div>
+
+                        <hr>
+                        Para confirmar cambios ingrese la contraseña actual.
+                        <div class="box-input">
+                            <label for="oldpassword">Contraseña</label>
+                            <input type="password" name="oldpassword" id="oldpassword"
+                                placeholder="Ingresá tu contraseña">
+                            <small>
+                                <%= locals.errores && errores.oldpassword ? errores.oldpassword.msg : null %>
+                            </small>
+                        </div>
+                        <br>
+                        <div class="box-input">
+                            <button class="btn btn-primary" type="submit">Cargar</button>
+                        </div>
+                    </form>
+                </section>
+                <aside>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Lista de productos</a></li>
+                        <li><a href="">Deseados</a></li>
+                        <li><a href="/products/cart">Carrito</a></li>
+                    </ul>
+                </aside>
             </div>
-            <div class="box-input">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" disabled 
-                value="<%= user.email %>">
-                <small><%= locals.errores && errores.email ? errores.email.msg : null %></small>
-            </div>
-            <div class="box-input">
-                <label for="oldpassword">Contraseña</label>
-                <input type="password" name="oldpassword" id="oldpassword" placeholder="Ingresá tu contraseña">
-                <small><%= locals.errores && errores.oldpassword ? errores.oldpassword.msg : null %></small>
-            </div>
-            <div class="box-input">
-                <label for="password">Nueva contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Ingresá nueva contraseña">
-                <small><%= locals.errores && errores.password ? errores.password.msg : null %></small>
-            </div>
-            <div class="box-input">
-                <label for="confirmpassword">Confirma contraseña</label>
-                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirma la contraseña">
-                <small><%= locals.errores && errores.confirmpassword ? errores.confirmpassword.msg : null %></small>
-            </div>
-            <div class="box-input">
-                <button class="btn btn-primary" type="submit">Cargar</button>
-            </div>
-        </form>
-    </main>
-</body>
+        </main>
+    </body>
+
 </html>

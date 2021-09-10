@@ -9,15 +9,6 @@
     "imagen": "nath.png"
   },
   {
-    "id": 2,
-    "name": "jimena",
-    "apellido": "witencamps",
-    "email": "jimena.witen@gmail.com",
-    "password": "123123",
-    "rol": "admin",
-    "imagen": "jime.png"
-  },
-  {
     "id": 3,
     "name": "leonardo",
     "apellido": "vega",
@@ -25,15 +16,6 @@
     "password": "123123",
     "rol": "admin",
     "imagen": "leo.jpg"
-  },
-  {
-    "id": 4,
-    "name": "kevin",
-    "apellido": "sarli",
-    "email": "sarlikevin99@gmail.com",
-    "password": "123123",
-    "rol": "admin",
-    "imagen": "kevin.jpeg"
   },
   {
     "id": 5,
@@ -54,14 +36,6 @@
     "imagen": "profe cris.png"
   },
   {
-    "id": 7,
-    "name": "juan",
-    "apellido": "topo",
-    "email": "topo@gmail.com",
-    "password": "$2a$10$aibXuolzH4RVISrNwYVb3.dNnTRLvmElcezHbYhPFvFpFHv4wyOde",
-    "rol": "user"
-  },
-  {
     "id": 8,
     "name": "Kevin",
     "apellido": "Sarli",
@@ -76,5 +50,32 @@
     "email": "oliver@sarli.com",
     "password": "$2a$10$.9fMLSAUnlSZjugysWt83et2CQMzblZI06VCwSlJ1TOoR9XMMxEkS",
     "rol": "user"
+  },
+  {
+    "id": 10,
+    "name": "Jimena Rocio",
+    "apellido": "Witencamps",
+    "email": "jimena.witen@gmail.com",
+    "password": "$2a$10$FouzeJBHBlF99uU7qJTcJu5eV.UHP5Xs1J6H4l3q4owHWjHKT9ivC",
+    "rol": "admin",
+    "imagen": "mujer-default-3.png"
+  },
+  {
+    "id": 11,
+    "name": "Com Nueve",
+    "apellido": "La Digna",
+    "email": "comision9@gmail.com",
+    "password": "$2a$10$azNBlg9ZP6m.Mq/k2hwT6.MpiebbcLO42GH/rfR370f72ZQ3bvseK",
+    "rol": "admin",
+    "imagen": "hombre-default-3.png"
+  },
+  {
+    "id": 12,
+    "name": "Gabriel",
+    "apellido": "Manaos",
+    "email": "vamosmanaos@gmail.com",
+    "password": "$2a$10$MbukmaBUMeEAvPQhceSRPuTiRat1Bh2J87HZT9F25h0JIMvUq1Nkm",
+    "rol": "user",
+    "imagen": "hombre-default.png"
   }
 ]
