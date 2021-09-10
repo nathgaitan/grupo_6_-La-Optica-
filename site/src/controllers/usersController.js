@@ -33,6 +33,26 @@ module.exports = {
             title : "login"})
     },
     processLogin : (req,res) => {
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email.trim());
+            
+            req.session.userLogin = {
+                id : user.id,
+                name : user.name,
+                rol : user.rol
+            }
+
+            
+
+            res.redirect("/")
+        }else{
+            return res.render("users/login",{
+               title:"login",
+               errors : errors.mapped()
+            })
+        }
     },
     profile : (req,res) => {
         return res.render('users/profile', {
