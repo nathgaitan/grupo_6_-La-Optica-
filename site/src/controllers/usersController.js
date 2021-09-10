@@ -43,6 +43,9 @@ module.exports = {
                 name : user.name,
                 admin : user.admin
             }
+
+            
+
             res.redirect("/")
         }else{
             return res.render("users/login",{

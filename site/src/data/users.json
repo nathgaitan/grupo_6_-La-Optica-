@@ -60,5 +60,21 @@
     "email": "topo@gmail.com",
     "password": "$2a$10$aibXuolzH4RVISrNwYVb3.dNnTRLvmElcezHbYhPFvFpFHv4wyOde",
     "rol": "user"
+  },
+  {
+    "id": 8,
+    "name": "Kevin",
+    "apellido": "Sarli",
+    "email": "sarlikevin99@gmail.com",
+    "password": "$2a$10$ZFh0auGQq.T33zUoookfdOmz2hNLfIuNp9UKgV2E5MdFeKurLbD0W",
+    "rol": "user"
+  },
+  {
+    "id": 9,
+    "name": "Kevin",
+    "apellido": "Sarli",
+    "email": "sarlikevin99@gmail.com",
+    "password": "$2a$10$cCKIrQrMYQsZyNZrFkaChOyP4pKuKY2aA2Ele.gh3JELAvENcx3JK",
+    "rol": "user"
   }
 ]
