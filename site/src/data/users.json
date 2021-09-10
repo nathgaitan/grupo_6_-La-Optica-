@@ -67,14 +67,14 @@
     "apellido": "Sarli",
     "email": "sarlikevin99@gmail.com",
     "password": "$2a$10$ZFh0auGQq.T33zUoookfdOmz2hNLfIuNp9UKgV2E5MdFeKurLbD0W",
-    "rol": "user"
+    "rol": "admin"
   },
   {
     "id": 9,
-    "name": "Kevin",
+    "name": "oliver",
     "apellido": "Sarli",
-    "email": "sarlikevin99@gmail.com",
-    "password": "$2a$10$cCKIrQrMYQsZyNZrFkaChOyP4pKuKY2aA2Ele.gh3JELAvENcx3JK",
+    "email": "oliver@sarli.com",
+    "password": "$2a$10$.9fMLSAUnlSZjugysWt83et2CQMzblZI06VCwSlJ1TOoR9XMMxEkS",
     "rol": "user"
   }
 ]
