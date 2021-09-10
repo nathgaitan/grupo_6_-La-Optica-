@@ -19,7 +19,7 @@ module.exports = {
             email : email.trim(),
             password : bcryptjs.hashSync(password, 10),
             rol : "user",
-            imagen
+            avatar : "avatar_default.png"
         }
         users.push(user);
 
