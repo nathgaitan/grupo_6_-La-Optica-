@@ -85,5 +85,32 @@
     "password": "$2a$10$ljeAWHgPsAI01yiLrJJyVOBblD/PfmNypFLACBfG5Di0huGnCDCbu",
     "rol": "user",
     "avatar": "avatar_default.png"
+  },
+  {
+    "id": 11,
+    "name": "poca",
+    "apellido": "hontas",
+    "email": "poca@gmail.com",
+    "password": "$2a$10$u3j3JIj1xPMHixnzJX8t3OPo323DKD0.Bbqk1JHi6rjIoczfOfI8.",
+    "rol": "user",
+    "avatar": "avatar_default.png"
+  },
+  {
+    "id": 12,
+    "name": "",
+    "apellido": "",
+    "email": "",
+    "password": "$2a$10$FeGVN0tiIDTHsnif2qltWeMupWb3SJH2xt9.cVB.v45PX6nn0ZQj2",
+    "rol": "user",
+    "avatar": "avatar_default.png"
+  },
+  {
+    "id": 13,
+    "name": "",
+    "apellido": "landa",
+    "email": "lalo@gmail.com",
+    "password": "$2a$10$mfV16c0sKduCfQyZlufXWuLSbQAfeTDORSf/TdOIZU5xyxpsQEPNK",
+    "rol": "user",
+    "avatar": "avatar_default.png"
   }
 ]

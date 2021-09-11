@@ -11,13 +11,15 @@ module.exports = {
             title : "register"})
     },
     processRegister : (req,res) => {
-        const {name,apellido,email,password,imagen} = req.body;
+        let errors = validationResult(req);
+        
+        const {name,apellido,email,password} = req.body;
         let user = {
             id : users[users.length -1] ?  users[users.length -1].id + 1 : 1,
             name : name.trim(),
             apellido : apellido.trim(),
             email : email.trim(),
-            password : bcryptjs.hashSync(password, 10),
+            password : bcryptjs.hashSync(password.trim(), 10),
             rol : "user",
             avatar : "avatar_default.png"
         }
