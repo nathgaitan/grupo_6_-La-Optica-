@@ -6,38 +6,38 @@ div.box-input
 body.profile {
     background-color: whitesmoke;
 }
-body.profile header {
+body.profile .encabezado {
     position: relative;
 }
-body.profile header div.banner {
+body.profile .encabezado div.banner {
     width: 80%;
     height: 250px;
     margin: auto;
     overflow: hidden;
 }
-body.profile header article {
+body.profile .encabezado article {
     display: none;
 }
-body.profile header div.banner img {
+body.profile .encabezado div.banner img {
     width: 100%;
     
 }
 
 /* profile avatar */
-body.profile header div.position {
+body.profile .encabezado div.position {
     position: absolute;
     bottom: -80px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-body.profile header div.user {
+body.profile .encabezado div.user {
     border-radius: 50%;
     width: 200px;
     overflow: hidden;
 
 }
-body.profile header div.user img {
+body.profile .encabezado div.user img {
     width: 100%;
 }
 body.profile main section.position-profile {
