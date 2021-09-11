@@ -18,9 +18,7 @@ router.post("/register", processRegister);
 router.get("/login", login);
 router.post("/login", loginValidator, processLogin);
 
-router.get("/profile", sessionUser, profile);
+router.get("/profile", sessionUser, profileValidator, profile);
 router.put("/profile",avatarUserStorage.single('avatar_user'), processProfile);
-
-
 
 module.exports = router;
