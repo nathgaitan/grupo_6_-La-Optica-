@@ -6,7 +6,7 @@
     "email": "nathalia2912dante@gmail.com",
     "password": "123123",
     "rol": "admin",
-    "imagen": "nath.png"
+    "avatar": "nath.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "email": "jimena.witen@gmail.com",
     "password": "123123",
     "rol": "admin",
-    "imagen": "jime.png"
+    "avatar": "jime.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "email": "Leoo_0690@hotmail.com",
     "password": "123123",
     "rol": "admin",
-    "imagen": "leo.jpg"
+    "avatar": "leo.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "email": "sarlikevin99@gmail.com",
     "password": "123123",
     "rol": "admin",
-    "imagen": "kevin.jpeg"
+    "avatar": "kevin.jpeg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "email": "ericdanielmena@gmail.com",
     "password": "123123",
     "rol": "user",
-    "imagen": "profe eric.png"
+    "avatar": "profe eric.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "email": "cristianelias4@gmail.com",
     "password": "123123",
     "rol": "user",
-    "imagen": "profe cris.png"
+    "avatar": "profe cris.png"
   },
   {
     "id": 7,
@@ -76,5 +76,14 @@
     "email": "oliver@gmail.com",
     "password": "$2a$10$.9fMLSAUnlSZjugysWt83et2CQMzblZI06VCwSlJ1TOoR9XMMxEkS",
     "rol": "user"
+  },
+  {
+    "id": 10,
+    "name": "ariel",
+    "apellido": "ortega",
+    "email": "ortega@gmail.com",
+    "password": "$2a$10$15UwmwEHyXjcDWm6iGM7J.o9udGxQcBWINhE8GAEP8SmheDsHlPR.",
+    "rol": "user",
+    "avatar": "avatar_default.png"
   }
 ]
