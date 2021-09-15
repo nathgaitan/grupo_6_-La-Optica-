@@ -1,9 +1,6 @@
-function recordameMiddleware(req,res,netx){
-    netx();
-
-    if(req.cookies.recordar != undefined && req.session.userLogin === undefined){
-        
+module.exports = (req,res,next)=> {
+    if(req.cookies.optica){
+        req.session.userLogin = req.cookies.optica
     }
+    next()
 }
-
-module.exports = recordameMiddleware

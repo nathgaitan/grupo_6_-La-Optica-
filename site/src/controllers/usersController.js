@@ -55,15 +55,19 @@ module.exports = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()){
+            const {recordar} = req.body
             let user = users.find(user => user.email === req.body.email.trim());
             
             req.session.userLogin = {
                 id : user.id,
                 name : user.name,
-                rol : user.rol
+                rol : user.rol,
+                email: user.email
             }
 
-            
+            if(recordar){
+                res.cookie("optica",req.session.userLogin,{maxAge: 60000})
+            }
 
             res.redirect("/")
         }else{
