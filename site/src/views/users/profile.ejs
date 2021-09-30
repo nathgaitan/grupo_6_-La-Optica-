@@ -9,12 +9,28 @@
             </div>
             <div class="position">
                 <div class="user">
-                    <img src="/images/usuarios/<%= user.avatar %>" alt="<%= userLogin.name %>">
+                    <img src="/images/usuarios/<%= user.imagen %>" alt="<%= userLogin.name %>">
                 </div>
                 <div>
                     <a href=""> + </a>
                 </div>
             </div>
+            <article>
+                <form action="/users/profile?_method=PUT" method="POST">
+                    <div class="box-input">
+                        <label for="avatar_user" class="btn btn-primary">Imagen</label>
+                        <input type="file" name="avatar_user" id="avatar_user" hidden>
+                        <div>
+                            <small>
+                                <%= locals.errores && errores.imagen ? errores.imagen.msg : null %>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="box-input">
+                        <button type="submit" class="btn btn-primary">Subir</button>
+                    </div>
+                </form>
+            </article>
         </section>
         <main>
             <section class="position-profile">
@@ -25,11 +41,10 @@
                     <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
                         <p>¿Quieres editar el avatar de usuario?</p>
                         <div class="box-input">
-                            <label for="avatar" class="btn btn-primary">Imagen</label>
-                            <input type="file" name="avatar" id="avatar" hidden>
-                            <br>
+                            <label for="avatar_user" class="btn btn-primary">Imagen</label>
+                            <input type="file" name="avatar_user" id="avatar_user" hidden>
                             <small>
-                                <%= locals.errores && errores.avatar ? errores.avatar.msg : null %>
+                                <%= locals.errores && errores.imagen ? errores.imagen.msg : null %>
                             </small>
                         </div>
                         <hr>
@@ -38,7 +53,6 @@
                             <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" id="nombre"
                                 value="<%= locals.old && old.nombre ? old.nombre : user.name %>">
-                                <br>
                             <small>
                                 <%= locals.errores && errores.nombre ? errores.nombre.msg : null %>
                             </small>
@@ -47,7 +61,6 @@
                             <label for="apellido">Apellido</label>
                             <input type="text" name="apellido" id="apellido"
                                 value="<%= locals.old && old.apellido ? old.apellido : user.apellido %>">
-                                <br>
                             <small>
                                 <%= locals.errores && errores.apellido ? errores.apellido.msg : null %>
                             </small>
@@ -64,7 +77,6 @@
                         <div class="box-input">
                             <label for="password">Nueva contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Ingresá la nueva contraseña">
-                            <br>
                             <small>
                                 <%= locals.errores && errores.password ? errores.password.msg : null %>
                             </small>
@@ -73,7 +85,6 @@
                             <label for="confirmpassword">Confirma nueva contraseña</label>
                             <input type="password" name="confirmpassword" id="confirmpassword"
                                 placeholder="Confirma la nueva contraseña">
-                                <br>
                             <small>
                                 <%= locals.errores && errores.confirmpassword ? errores.confirmpassword.msg : null %>
                             </small>
@@ -85,7 +96,6 @@
                             <label for="oldpassword">Contraseña</label>
                             <input type="password" name="oldpassword" id="oldpassword"
                                 placeholder="Ingresá tu contraseña">
-                                <br>
                             <small>
                                 <%= locals.errores && errores.oldpassword ? errores.oldpassword.msg : null %>
                             </small>

@@ -97,12 +97,7 @@ body.profile main form input:focus {
 body.profile main form label {
     display: block;
 }
-body.profile main form small {
-    color : red;
-}
-body.profile main form small.email {
-    color : black;
-}
+
 
 
 /* aside */

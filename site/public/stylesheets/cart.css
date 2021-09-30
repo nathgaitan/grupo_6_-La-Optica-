@@ -1,6 +1,6 @@
 
 
-body.menu{
+body .menu{
   
   padding-top: 30px;
   text-align: center;
@@ -9,7 +9,7 @@ body.menu{
   
  font-family: var(--font-body);
 }
-body.menu .inicio{
+body .menu .inicio{
 
   background-color: #fff;
   text-align: center;
@@ -19,17 +19,17 @@ body.menu .inicio{
   margin: 5%;
   border-radius: 5%;
 }
-body.menu .inicio .articulo{
+body .menu .inicio .articulo{
   width: 90%;
   border:  gray solid 2px;
 }
-body.menu .inicio .articulo  article{
+body .menu .inicio .articulo  article{
   width: 90%;
   
 }
 
 
-body.menu  .articulo  article .imagendetallada {
+body .menu  .articulo  article .imagendetallada {
   
   margin:5%;
   width: 90%;
@@ -37,18 +37,18 @@ body.menu  .articulo  article .imagendetallada {
   border: gray solid 2px;
   border-radius: 5%;
 }
-body.menu  .articulo  article .imagendetallada div{
+body .menu  .articulo  article .imagendetallada div{
   
   
   margin :5%;
   text-align: center;
 }
-body.menu  .articulo  article .imagendetallada div img{
+body .menu  .articulo  article .imagendetallada div img{
  
   width: 80%;
 }
 
-body.menu  .articulo  article .imagendetallada ul{
+body .menu  .articulo  article .imagendetallada ul{
   
   width: 90%;
   font-family: var(--font-body);
@@ -56,10 +56,10 @@ body.menu  .articulo  article .imagendetallada ul{
   text-align: center;
   
 }
-body.menu  .articulo  article .imagendetallada ul label{
+body .menu  .articulo  article .imagendetallada ul label{
   font-size: var(--font-subtitle)
 }
-body.menu  .articulo  article  ol{
+body .menu  .articulo  article  ol{
 
 
   background-color: #c1dbfd;
@@ -73,13 +73,13 @@ body.menu  .articulo  article  ol{
   flex-direction: column;
 }
 
-body.menu  .articulo  article  ol label{
+body .menu  .articulo  article  ol label{
   font-size:  var(--font-subtitle);
   font-family: var(--font-body);
 }
 
 
-body.menu  .articulo  article  ol input{
+body .menu  .articulo  article  ol input{
 padding: 2%;
 font-size: var(--font-subtitle);
 border: steelblue solid 1px;
@@ -88,18 +88,18 @@ border: steelblue solid 1px;
 }
 
 
-body.menu h4{
+body .menu h4{
   font-size: var(--font-title);
   margin: 5%;
   text-align: center;
 }
-body.menu textarea{
+body .menu textarea{
   border-radius: 5%;
   background-color: #c1dbfd;
   width: 80%;
   margin: 5%;
 }
- body.menu button{
+ body .menu button{
    
    margin: 5%;
    width: 70%;
