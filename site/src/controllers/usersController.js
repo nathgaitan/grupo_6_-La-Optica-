@@ -60,8 +60,6 @@ module.exports = {
             req.session.userLogin = {
                 id : user.id,
                 name : user.name,
-                email : user.email,
-                avatar : user.avatar,
                 rol : user.rol
             }
 
@@ -87,11 +85,11 @@ module.exports = {
         const errors = validationResult(req);
 
         if (req.fileValidationError) {
-            let avatar = {
+            let imagen = {
                 param : 'imagen',
                 msg: req.fileValidationError,
             }
-            errors.errors.push(avatar)
+            errors.errors.push(imagen)
         }
 
         if (errors.isEmpty()) {
@@ -101,10 +99,8 @@ module.exports = {
             const { nombre, apellido, password } = req.body;
 
             if (req.file) {
-                if (!user.avatar.includes('default')){
-                    if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.avatar))) {
-                        fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.avatar))
-                    }
+                if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))) {
+                    fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))
                 }
             }
 
@@ -113,21 +109,18 @@ module.exports = {
                 name : nombre.trim(),
                 apellido : apellido.trim(),
                 email : user.email,
-                password : req.password ? bcryptjs.hashSync(password.trim(),10) : user.password,
+                password : req.password ? bcrypt.hashSync(password.trim(),10) : user.password,
                 rol : user.rol,
-                avatar : req.file ? req.file.filename : user.avatar
+                imagen : req.file ? req.file.filename : user.imagen
             }
 
-            let modificados = users.map(user => user.id === +req.session.userLogin.id ? userModificado : user)
+            let modificados = users.map(user => user.id === +req.params.id ? userModificado : user)
 
             fs.writeFileSync(path.join(__dirname,'..','data','users.json'),JSON.stringify(modificados,null,2),'utf-8');
             res.redirect('/users/profile')
 
         } else {
-            let user = users.find(user => user.id === +req.session.userLogin.id)
-            return res.render('users/profile', {
-                title : "Perfil",
-                user,
+            return res.rendr('users/profile', {
                 errores : errors.mapped(),
                 old : req.body
             })
