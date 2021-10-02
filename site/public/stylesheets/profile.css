@@ -1,0 +1,135 @@
+/* body.profile
+main
+form
+div.box-input 
+*/
+body.profile {
+    background-color: whitesmoke;
+}
+body.profile .encabezado {
+    position: relative;
+}
+body.profile .encabezado div.banner {
+    width: 80%;
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+}
+body.profile .encabezado article {
+    display: none;
+}
+body.profile .encabezado div.banner img {
+    width: 100%;
+    
+}
+
+/* profile avatar */
+body.profile .encabezado div.position {
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+body.profile .encabezado div.user {
+    border-radius: 50%;
+    width: 200px;
+    overflow: hidden;
+
+}
+body.profile .encabezado div.user img {
+    width: 100%;
+}
+body.profile main section.position-profile {
+    height: 50px;
+    width: 50%;
+    border-radius: 2px;
+    margin: 0px auto 40px;
+    background-color: gray;
+}
+
+
+
+
+body.profile main {
+    width: 80%;
+    margin: auto;
+    
+}
+body.profile main div.column {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+body.profile div.column section {
+    width: 75%;
+    height: inherit;
+    margin: 0 auto;
+    padding: 40px 50px;
+    text-align: left;
+}
+
+body.profile form {
+    width: 420px;
+    background-color: whitesmoke;
+}
+
+body.profile main form div.box-input {
+    padding: 7px
+}
+
+
+
+body.profile main form input {
+    border: none;
+    border-bottom: rgba(0, 0, 0, 0.393) solid 1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 250px;
+    line-height: 1.8;
+    background-color:rgba(233, 230, 230, 0.644);
+    padding: 0 7px;
+}
+body.profile main form input:focus {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #2826bc
+}
+body.profile main form label {
+    display: block;
+}
+
+
+
+/* aside */
+body.profile main .column aside {
+    width: 25%;
+    height: 100vh;
+    padding: 40px 0;
+}
+body.profile main .column aside ul {
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+body.profile main .column aside li{
+    margin: 20px 0;
+}
+body.profile main .column aside li:first-child{
+    margin: 0;
+}
+
+body.profile main .column aside li a{
+    display: block;
+    line-height: 2;
+    margin-right: 7px;
+    margin-left: 5px;
+    padding-left: 4px;
+    border-right: 1px solid rgb(204 204 204);
+    border-bottom: 1px solid rgb(204 204 204);
+    box-shadow: 2px 4px rgb(204 204 204 / 34%);
+    border-bottom-right-radius: 3px; 
+}
+
+body.profile main .column aside li a:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #2826bc;
+}
