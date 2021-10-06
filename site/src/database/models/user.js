@@ -14,10 +14,54 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   User.init({
-    name: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'name' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El nombre del usuario es requerido"
+        }
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'lastName' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El apellido del usuario es requerido"
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'email' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El email es requerido"
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'password' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "La contraseña es requerido"
+        }
+      }
+    },
     rolId: DataTypes.INTEGER,
     avatar: DataTypes.STRING
   }, {

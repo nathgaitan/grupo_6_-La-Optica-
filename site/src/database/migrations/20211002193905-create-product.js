@@ -9,13 +9,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+
       },
       markId: {
         type: Sequelize.INTEGER
       },
       price: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL,
+        allowNull: false,
+
       },
       discount: {
         type: Sequelize.INTEGER
@@ -24,7 +28,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       detail: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+
       },
       code: {
         type: Sequelize.INTEGER
@@ -37,6 +43,10 @@ module.exports = {
       },
       graduationId: {
         type: Sequelize.INTEGER
+      },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

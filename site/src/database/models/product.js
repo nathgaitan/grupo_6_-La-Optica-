@@ -14,16 +14,61 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Product.init({
-    name: DataTypes.STRING,
+    name:{
+      type : DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'name' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El nombre del producto es requerido"
+        }
+      }
+  },
     markId: DataTypes.INTEGER,
-    price: DataTypes.DECIMAL,
+    price:{
+      type : DataTypes.DECIMAL,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'price' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El precio del producto es requerido"
+        }
+      }
+  },
     discount: DataTypes.INTEGER,
     colorId: DataTypes.INTEGER,
-    detail: DataTypes.STRING,
+    detail: {
+      type : DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'detail' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "El detalle del producto es requerido"
+        }
+      }
+  },
     code: DataTypes.INTEGER,
     lensId: DataTypes.INTEGER,
     frameId: DataTypes.INTEGER,
-    graduationId: DataTypes.INTEGER
+    graduationId: DataTypes.INTEGER,
+    categoryId:{
+      type : DataTypes.INTEGER,
+      allowNull : false,
+      validate : {
+        notNull : {
+          msg : "El campo 'categoryId' no pude ser nulo"
+        },
+        notEmpty : {
+          msg : "La categoria del producto es requerido"
+        }
+      }
+  },
   }, {
     sequelize,
     modelName: 'Product',
