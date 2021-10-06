@@ -1,36 +1,39 @@
 module.exports = [
     {
         id : 1,
-        name : "-",
+        userId : 4,
+        productId : 7,
+        quantity : 1,
+        orderId : 1,
         createdAt : new Date,
         updatedAt : new Date
     },
     {
         id : 2,
-        name : "0 hasta 3",
-        type : "dioptria",
+        userId : 4,
+        productId : 2,
+        quantity : 1,
+        orderId : 4,
         createdAt : new Date,
         updatedAt : new Date
     },
     {
         id : 3,
-        name : "0 hasta 6",
-        type : "dioptria",
+        userId : 2,
+        productId : 7,
+        quantity : 1,
+        orderId : 2,
         createdAt : new Date,
         updatedAt : new Date
     },
     {
         id : 4,
-        name : "0 hasta 9",
-        type : "dioptria",
-        createdAt : new Date,
-        updatedAt : new Date
-    },
-    {
-        id : 5,
-        name : " 0 hasta 12",
-        type : "dioptria",
+        userId : 10,
+        productId : 10,
+        quantity : 1,
+        orderId : 5,
         createdAt : new Date,
         updatedAt : new Date
     }
+    
 ]
