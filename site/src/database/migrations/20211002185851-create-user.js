@@ -29,7 +29,13 @@ module.exports = {
 
       },
       rolId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Rols',
+          },
+          key : 'id'
+        }
       },
       avatar: {
         type: Sequelize.STRING

@@ -14,7 +14,13 @@ module.exports = {
 
       },
       markId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Marks',
+          },
+          key : 'id'
+        }
       },
       price: {
         type: Sequelize.DECIMAL,
@@ -25,7 +31,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       colorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Colors',
+          },
+          key : 'id'
+        }
       },
       detail: {
         type: Sequelize.STRING,
@@ -36,17 +48,41 @@ module.exports = {
         type: Sequelize.STRING
       },
       lensId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Lens',
+          },
+          key : 'id'
+        }
       },
       frameId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Frames',
+          },
+          key : 'id'
+        }
       },
       graduationId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Graduations',
+          },
+          key : 'id'
+        }
       },
       categoryId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references : {
+          model : {
+            tableName : 'Categories',
+          },
+          key : 'id'
+        }
       },
       createdAt: {
         allowNull: false,
