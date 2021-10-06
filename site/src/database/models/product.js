@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
   },
-    code: DataTypes.INTEGER,
+    code: DataTypes.STRING,
     lensId: DataTypes.INTEGER,
     frameId: DataTypes.INTEGER,
     graduationId: DataTypes.INTEGER,

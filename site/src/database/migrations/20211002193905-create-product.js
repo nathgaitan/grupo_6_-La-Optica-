@@ -33,7 +33,7 @@ module.exports = {
 
       },
       code: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       lensId: {
         type: Sequelize.INTEGER
