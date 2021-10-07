@@ -1,10 +1,10 @@
 'use strict';
 
-const lens = require('../../data/lens')
+const lenses = require('../../data/lenses')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Lens', lens, {});
+    await queryInterface.bulkInsert('Lens', lenses, {});
 
   },
 

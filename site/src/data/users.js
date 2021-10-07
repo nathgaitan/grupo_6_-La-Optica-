@@ -93,7 +93,7 @@ module.exports = [
     lastName : "Manaos",
     email : "vamosmanaos@gmail.com",
     password : "$2a$10$MbukmaBUMeEAvPQhceSRPuTiRat1Bh2J87HZT9F25h0JIMvUq1Nkm",
-    rolId : 2,
+    rolId : 3,
     avatar : "hombre-default.png",
     createdAt : new Date,
     updatedAt : new Date

@@ -1,20 +1,3 @@
-const fs = require('fs')
-const path = require('path')
-const dir = path.join(__dirname,
-    '../../public/images/products/180°_DG2220_Polarized_0281')
-const files = fs.readdirSync(dir)
-
-let images = [];
-for (const file of files) {
-    let archivo =
-    {
-        file: file,
-        productId: 13
-    }
-    images.push(archivo)
-}
-console.log(images)
-
 module.exports = [
     {
         file: '0rb3447n__002_71_000a1-1024-1024.jpg',
@@ -239,37 +222,5 @@ module.exports = [
     {
         file: 'Gucci_GG0841S_003_0180.jpg',
         productId: 14
-    },
-    {
-        file: "lentes.png",
-        productId: 1
-    },
-    {
-        file: "lentes(1).png",
-        productId: 1
-    },
-    {
-        file: "lentes(2).png",
-        productId: 1
-    },
-    {
-        file: "lentes(3).png",
-        productId: 1
-    },
-    {
-        file: "lentes(4).png",
-        productId: 1
-    },
-    {
-        file: "lentes(5).png",
-        productId: 1
-    },
-    {
-        file: "lentes(6).png",
-        productId: 1
-    },
-    {
-        file: "lentes(7).png",
-        productId: 1
     }
 ]
