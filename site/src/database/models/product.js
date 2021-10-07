@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     discount: DataTypes.INTEGER,
     colorId: DataTypes.INTEGER,
     detail: {
-      type : DataTypes.STRING,
+      type : DataTypes.STRING(500),
       allowNull : false,
       validate : {
         notNull : {

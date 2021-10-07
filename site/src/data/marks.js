@@ -30,7 +30,7 @@ module.exports = [
         updatedAt : new Date
     },
     {
-        id : 5,
+        id : 6,
         name : "Tom Ford",
         createdAt : new Date,
         updatedAt : new Date
