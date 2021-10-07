@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { register, login, processRegister, processLogin, profile } = require ("../controllers/usersController");
+const { register, login, processRegister, processLogin, profile, processProfile } = require ("../controllers/usersController");
 
 /* middlewares requerir aquí abajo */
 const avatarUserStorage =require('../middlewares/avatarUserStorage');
+const sessionUser =require('../middlewares/sessionUser');
 
 /* validations requerir aquí abajo */
 const registerValidator = require('../validations/registerValidator');
@@ -17,8 +18,7 @@ router.post("/register",registerValidator, processRegister);
 router.get("/login", login);
 router.post("/login", loginValidator, processLogin);
 
-router.put("/profile", profile)
-
-
+router.get("/profile", sessionUser, profileValidator, profile);
+router.put("/profile",avatarUserStorage.single('avatar_user'), processProfile);
 
 module.exports = router;

@@ -1,7 +1,8 @@
-/* Data */
-const { products } = require('../data/products_db');
+const fs = require('fs');
+const path = require('path');
 
-const galeria = require('../data/galeria');
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 /* Utils */
 let toThousand = require('../utils/toThousand');
@@ -14,7 +15,6 @@ module.exports = {
             title : "Home",
             products,
             marcas :  require('../data/marcas'),
-            galeria,
             priceFinal,
             toThousand
 

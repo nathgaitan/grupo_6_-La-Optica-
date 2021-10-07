@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +10,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const localsUser = require('./middlewares/localsUser');
 const recordameMiddleware=require("./middlewares/recordameMiddlewares")
+const sessionUserAdmin =require('./middlewares/sessionUserAdmin');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -45,7 +48,7 @@ app.use(localsUser)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', sessionUserAdmin, adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
