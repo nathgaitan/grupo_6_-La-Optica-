@@ -2,8 +2,7 @@
   {
     "id": 1,
     "name": "RAY-BAN 97",
-    "image": "0rb3447__91984e_000a1-1024-1024.jpg",
-    "marca": "RAY-BAN",
+    "image": "lentes.png",
     "price": 4500,
     "discount": 8,
     "color": "cerezo",
@@ -11,14 +10,16 @@
     "codigo": 97,
     "lens": "de sol",
     "frame": "madera",
+    "duration": null,
     "graduation": null,
-    "category": "anteojos"
+    "category": "anteojos",
+    "marca": "RAY-BAN"
   },
   {
     "id": 2,
     "name": "RAY-BAN 91",
     "marca": "RAY-BAN",
-    "image": "boss_0480__8SV_0000.jpg",
+    "image": "lentes(1).png",
     "price": 4500,
     "discount": 0,
     "color": "marrón",
@@ -26,6 +27,7 @@
     "codigo": 91,
     "lens": "de sol",
     "frame": "madera",
+    "duration": null,
     "graduation": null,
     "category": "anteojos"
   },
@@ -41,6 +43,7 @@
     "codigo": 52,
     "lens": "de sol",
     "frame": "acrílico",
+    "duration": null,
     "graduation": null,
     "category": "anteojos"
   },
@@ -56,6 +59,7 @@
     "codigo": 36,
     "lens": "recetado",
     "frame": "acrílico",
+    "duration": null,
     "graduation": "0,25 a 12 dioptrias",
     "category": "anteojos"
   },
@@ -71,6 +75,7 @@
     "codigo": 47,
     "lens": "recetado",
     "frame": "metálico",
+    "duration": null,
     "graduation": "0,25 a 12 dioptrias",
     "category": "anteojos"
   },
@@ -86,6 +91,7 @@
     "codigo": 98,
     "lens": "de sol",
     "frame": "madera",
+    "duration": null,
     "graduation": null,
     "category": "anteojos"
   },
@@ -101,6 +107,7 @@
     "codigo": 92,
     "lens": "transition",
     "frame": "madera",
+    "duration": null,
     "graduation": null,
     "category": "anteojos"
   },
@@ -116,6 +123,7 @@
     "codigo": 58,
     "lens": "recetado",
     "frame": "metálico",
+    "duration": null,
     "graduation": "0,25 a 12 dioptrias",
     "category": "anteojos"
   },
@@ -179,6 +187,7 @@
     "codigo": null,
     "lens": null,
     "frame": null,
+    "duration": null,
     "graduation": null,
     "category": "limpiador de anteojos"
   },
