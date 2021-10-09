@@ -11,6 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Product.belongsTo(models.Category,{
+        as : 'Category'
+      })
+      Product.hasMany(models.Image, {
+        as : 'Images'
+      })
+      Product.belongsTo(models.Mark, {
+        as : 'Marks'
+      }) 
+      Product.belongsTo(models.Color, {
+        as : 'Colors'
+      })  
+      Product.hasMany(models.Graduation, {
+        as : 'Graduations'
+      })  
+      Product.hasMany(models.Frame, {
+        as : 'Frames'
+      })    
+      Product.hasMany(models.Lens, {
+        as : 'Lens'
+      })   
+      
+    
+
     }
   };
   Product.init({
