@@ -1,6 +1,5 @@
-const { products, guardar } = require('../data/products_db');
-const fs = require('fs');
-const path = require('path');
+const db = require("../database/models")
+
 
 /* utils */
 let toThousand = require('../utils/toThousand');
@@ -11,7 +10,7 @@ let capitalize = require('../utils/capitalize');
 const {validationResult} = require('express-validator');
 
 module.exports = {
-    solOftalAdd: (req, res) => {
+    /*solOftalAdd: (req, res) => {
         res.render('admin/solOftalmoAdd', {
             title: "Cargar producto",
             products
@@ -76,7 +75,7 @@ module.exports = {
         return res.redirect('/admin')
     },
 
-
+*/
 
     /* method to create*/
     create: (req, res) => {
@@ -89,13 +88,23 @@ module.exports = {
     addProduct: (req, res) => {
         const { name, marca, price, discount, color, detail, codigo, lens, frame, category } = req.body;
 
+        db.Product.create(
+            {
+                name : name.trim(),
+                markId : marca,
+                price : price,
+                discount : discount,
+                colorId : color,
+                detail : detail,
+                code : codigo,
+                lensId : lens,
+                frameId : frame,
+                categoryId : category,
+                graduationId : graduation
+            }
+        )
         let product = {
-            id: products[products.length - 1].id + 1,
-            name,
-            marca,
-            image: req.file ? req.file.filename : "producto-sin-foto.png",
-            price: +price,
-            discount: +discount,
+            
             color,
             detail,
             codigo: +codigo,
@@ -148,14 +157,21 @@ module.exports = {
 
 
     products: (req, res) => {
-        return res.render('admin/productTable', {
+
+        db.Product.findAll({
+            include : ["Category","Frames","Marks","Images","Lens"]
+        })
+        .then(products => res.render('admin/productTable', {
             title: "Listado de Productos",
             products,
             priceFinal,
             toThousand,
             capitalize
-        });
+        }) )
+        .catch(error => console.log(error))
+        
     },
+    /*
     addContLentes: (req, res) => {
         return res.render("admin/contactLentesAdd", { title: "Lentes de contacto" })
     },
@@ -181,6 +197,7 @@ module.exports = {
         guardar(products)
         return res.redirect('/admin')
     },
+    */
 
     detail: (req, res) => {
         const product = products.find(product => product.id === +req.params.id)
@@ -191,7 +208,7 @@ module.exports = {
             priceFinal
         })
     },
-
+/*
     editLentesContact: (req, res) => {
         let product = products.find(producto => producto.id === +req.params.id)
         return res.render('admin/contactLentesEdit', {
@@ -226,7 +243,7 @@ module.exports = {
         guardar(products)
         return res.redirect('/admin')
     },
-
+*/
 
     /* destroy product */
     destroy : (req,res) => {

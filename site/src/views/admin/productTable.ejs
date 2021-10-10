@@ -30,8 +30,8 @@
                                 <td class="first-col">
                                     <article>
                                         <figure class="left">
-                                            <img src="images/products/<%= product.image %>"
-                                                alt="<%= product.name %> <%= product.marca %> <%= product.category %>">
+                                            <img src="images/products/<%= product.images[0].file %>"
+                                                alt="<%= product.name %> <%= product.mark.name %> <%= product.category.name %>">
                                         </figure>
                                         <div class="right">
                                             <p>
@@ -39,11 +39,11 @@
                                             </p>
                                             <small>
                                                 
-                                                 <%= product.marca %> |
-                                                 <% if (product.codigo != null) { %>
-                                                    <%= product.codigo %> |
+                                                 <%= product.Mark.name %> |
+                                                 <% if (product.code != null) { %>
+                                                    <%= product.code %> |
                                                 <% } %>
-                                                <%= product.frame != null ? capitalize(product.frame) : capitalize(product.category) %>
+                                                <%= product.frame.name != null ? capitalize(product.frame.name) : capitalize(product.category.name) %>
                                                 
                                                 
                                             </small>
@@ -54,10 +54,10 @@
                                     </article>
                                 </td>
                                 <td class="">
-                                    <%= product.lens %>
+                                    <%= product.lens.name %>
                                 </td>
                                 <td class="">
-                                    <%= capitalize(product.category) %>
+                                    <%= capitalize(product.category.name) %>
                                 </td>
                                 <td class="cash">
                                     <%= toThousand(product.price) %>
@@ -67,10 +67,10 @@
                                 </td>
                                 <td class="acc-but">
                                     <div>
-                                        <% if (product.category==="anteojos" ) { %>
+                                        <% if (product.category.name==="anteojos" ) { %>
                                             <a href="/admin/editar-producto/<%= product.id %>" class="editador"><i
                                                     class="fas fa-edit"></i></a>
-                                            <%}else if (product.category==="lentes de contacto" ) { %>
+                                            <%}else if (product.category.name==="lentes de contacto" ) { %>
                                                 <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador"><i
                                                         class="fas fa-edit"></i></a>
                                                 <% }else{ %>
