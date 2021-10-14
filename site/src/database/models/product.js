@@ -34,7 +34,11 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.Lens, {
         as : 'Lens',
         foreignKey: 'lensId'
-      })   
+      }) 
+      Product.belongsTo(models.Lens, {
+        as : 'Frame',
+        foreignKey: 'frameId'
+      })     
       
     
 
