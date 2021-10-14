@@ -78,16 +78,7 @@
                             </label>
                         </div> --> 
 
-                        <div class="caja-item">
-                            <label>Marca
-                                <select name="mark" id="mark" class="mark">
-                                    <option value="" selected hidden>Marca del producto</option>
-                                    <% mark.forEach(mark => { %>
-                                     <option value="<%= mark.id %>" <%= locals.old && old.mark.name === mark.name ? 'selected' : null %> ><%= mark.name %> </option>
-                                    <% }) %>
-                                </select>
-                            </label>
-                        </div>
+                        
 
                         <div class="caja-item">
                             <label>Color
@@ -106,6 +97,16 @@
                                     <option value="" selected hidden>Tipo de lente del producto</option>
                                     <% lens.forEach(lens => { %>
                                      <option value="<%= lens.id %>" <%= locals.old && old.lens.name === lens.name ? 'selected' : null %> ><%= lens.name %> </option>
+                                    <% }) %>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="caja-item">
+                            <label>Marca
+                                <select name="mark" id="mark" class="mark">
+                                    <option value="" selected hidden>Marca del producto</option>
+                                    <% mark.forEach(mark => { %>
+                                     <option value="<%= mark.id %>" <%= locals.old && old.mark.name === mark.name ? 'selected' : null %> ><%= mark.name %> </option>
                                     <% }) %>
                                 </select>
                             </label>

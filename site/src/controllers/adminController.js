@@ -79,9 +79,50 @@ module.exports = {
 
     /* method to create*/
     create: (req, res) => {
-        return res.render('admin/product_create-form', {
-            title: "Crear producto"
+        let categories = db.Category.findAll({
+            order : [
+                ['name','ASC']
+            ]
         })
+        let marks = db.Mark.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let color = db.Color.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let lens = db.Lens.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let frame = db.Frame.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let graduation = db.Graduation.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        Promise.all(([categories, marks, color, lens, frame,graduation ]))
+            .then(([categories, marks, color, lens, frames,graduation  ]) => {
+                return res.render('admin/product_create-form',{
+                    title: "Crear producto",
+                    categories,
+                    marks,
+                    color,
+                    lens,
+                    frames,
+                    graduation
+                })
+            })
+            .catch(error => console.log(error))
+        
     },
 
     /*method to addProduct*/
