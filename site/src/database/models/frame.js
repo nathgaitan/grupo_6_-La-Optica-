@@ -11,8 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Frame.belongsTo(models.Product, {
-        as : 'Products'
+      Frame.hasMany(models.Product, {
+        as : 'products',        
+        foreignKey: 'frameId',
+        
       }) 
     }
   };
