@@ -28,5 +28,17 @@ module.exports = [
         name : "plástico",
         createdAt : new Date,
         updatedAt : new Date
+    },
+    {
+        id : 6,
+        name : "acetato y plástico",
+        createdAt : new Date,
+        updatedAt : new Date
+    },
+    {
+        id : 7,
+        name : "metal y plástico",
+        createdAt : new Date,
+        updatedAt : new Date
     }
 ]
