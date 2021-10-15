@@ -1,35 +1,15 @@
 module.exports = [
     {
         id : 1,
-        name : "-",
+        name : "No",
+        type : "coso",
         createdAt : new Date,
         updatedAt : new Date
     },
     {
         id : 2,
-        name : "0 hasta 3",
-        type : "dioptria",
-        createdAt : new Date,
-        updatedAt : new Date
-    },
-    {
-        id : 3,
-        name : "0 hasta 6",
-        type : "dioptria",
-        createdAt : new Date,
-        updatedAt : new Date
-    },
-    {
-        id : 4,
-        name : "0 hasta 9",
-        type : "dioptria",
-        createdAt : new Date,
-        updatedAt : new Date
-    },
-    {
-        id : 5,
-        name : " 0 hasta 12",
-        type : "dioptria",
+        name : "Si",
+        type : "coso",
         createdAt : new Date,
         updatedAt : new Date
     }

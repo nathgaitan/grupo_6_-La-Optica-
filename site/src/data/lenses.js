@@ -1,7 +1,7 @@
 module.exports = [
     {
         id : 1,
-        name : "fotocromáticas",
+        name : "transparente",
         createdAt : new Date,
         updatedAt : new Date
     },
