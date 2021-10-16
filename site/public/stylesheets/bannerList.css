@@ -1,0 +1,58 @@
+body.bannerList {
+    background-color: whitesmoke;
+}
+body.bannerList main {
+    width: 90%;
+    margin: auto;
+}
+body.bannerList main div.banner-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+body.bannerList main div.banner-container div.banner__item {
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body.bannerList main div.banner-container p {
+    display: none
+}
+
+body.bannerList main div.banner-container div.botones {
+    height: 100px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    z-index: 10;
+}
+body.bannerList main div.banner-container div.botones form,
+body.bannerList main div.banner-container div.botones button,
+body.bannerList main div.banner-container div.botones a {
+    display: inline-block
+}
+body.bannerList main div.banner-container div.botones button,
+body.bannerList main div.banner-container div.botones a {
+    padding: 20px;
+}
+
+body.bannerList main div.banner-container div.botones i.fas.fa-edit {
+    font-size: 3rem;
+    color: greenyellow;
+}
+body.bannerList main div.banner-container div.botones i.fas.fa-trash-alt {
+    font-size: 3rem;
+    color: red;
+}
+body.bannerList main div.banner-container div.botones button {
+    background-color: transparent;
+    border: none;
+}
