@@ -1,20 +1,21 @@
-body.list main {
+body.list main section.contenedora {
     position: relative;
 }
 
 /* products */
-body.list main section.productos {
+body.list main section.contenedora section.productos {
     margin: 90px 10px 110px;
+    max-width: 900px;
 }
 
 
 /* category */
-body.list main section.category {
+body.list main section.contenedora section.category {
     width: 21%;
-    margin: 90px 10px;
+    margin: 90px 10px 90px 20px;
     display: none;
 }
-body.list main section.category ul {
+body.list main section.contenedora section.category ul {
     padding-bottom: 10px;
     margin: 20px 0;
     text-transform: uppercase;
@@ -23,35 +24,35 @@ body.list main section.category ul {
     box-shadow: 2px 4px rgb(204 204 204 / 34%);
     border-bottom-right-radius: 3px;
 }
-body.list main section.category ul a {
+body.list main section.contenedora section.category ul a {
     display: block;
     margin-right: 5px;
     padding-left: 4px;
     line-height: 2;
 }
-body.list main section.category li a{
+body.list main section.contenedora section.category li a{
     display: block;
     line-height: 2;
     margin-right: 7px;
     margin-left: 5px;
     padding-left: 4px;
 }
-body.list main section.category a:hover {
+body.list main section.contenedora section.category a:hover {
     background-color: rgba(255, 255, 255, 0.705);
     color: #2826bc;
 }
 
 /* filter */
-body.list main section.filter {
+body.list main section.contenedora section.filter {
     position: absolute;
     top: -48px;
 }
-body.list main section.filter form {
+body.list main section.contenedora section.filter form {
     display: flex;
     justify-content: center;
     width: 300px;
 }
-body.list main section.filter select {
+body.list main section.contenedora section.filter select {
     width: 70%;
     height: 2.7rem;
     border: 1px solid gray;
@@ -60,7 +61,7 @@ body.list main section.filter select {
     border-right: none;
     padding-left: 7px;
 }
-body.list main section.filter input {
+body.list main section.contenedora section.filter input {
     width: 25%;
     line-height: 2.5;
     border: 1px solid gray;
@@ -70,7 +71,7 @@ body.list main section.filter input {
     background-color: white;
     padding: 0 7px;
 }
-body.list main section.filter input:hover {
+body.list main section.contenedora section.filter input:hover {
     color: whitesmoke;
     background-color: rgba(128, 128, 128, 0.2);
 }
@@ -79,7 +80,7 @@ body.list main section.filter input:hover {
 /* media queries */
 /* Vista mobile a partir de 320px */
 @media (min-width: 320px) { 
-    body.list main section.filter{
+    body.list main section.contenedora section.filter{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -90,18 +91,19 @@ body.list main section.filter input:hover {
 
 /* Vista Laptop a partir de 768px */
 @media (min-width: 768px) {
-    body.list main {
+    body.list main section.contenedora {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: center;
     }
-    body.list main section.productos article {
+    body.list main section.contenedora section.productos article {
         width: 31.3%;
         display: block;
     }
-    body.list main section.category {
+    body.list main section.contenedora section.category {
         display: block;
     }
-    body.list main section.filter{
+    body.list main section.contenedora section.filter{
         top: 45px;
         width: max-content;
         right: 25px;
@@ -112,6 +114,5 @@ body.list main section.filter input:hover {
 @media (min-width: 1020px) {
     body.list main section.productos article {
         width: 23%;
-        display: block;
     }
 }

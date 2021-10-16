@@ -198,7 +198,7 @@ module.exports = [
     price : 27310,
     discount : 10,
     colorId : 8,
-    detail : "Echa un vistazo a los anteojos de sol chic Dolce & Gabbana DG2220 Polarized en Black Gold . Hechos de Metal , los anteojos de sol tienen cristales Gris y una protección total UV",
+    detail : "Echa un vistazo a los anteojos de sol chic Dolce & Gabbana D&G DG2220 Polarized en Black Gold. Hechos de Metal, los anteojos de sol tienen cristales Gris y una protección total UV",
     code : "DG2220",
     lensId : 2,
     frameId : 1,

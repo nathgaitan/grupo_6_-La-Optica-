@@ -5,39 +5,138 @@ body.home main {
     margin: 0 auto;
     width: 100%;
 }
-body.home main p, body.home main h3 {
+body.home main p, 
+body.home main h3 {
     cursor: default;
 }
 
-/* ------------------ Marcas ------------------ */
-body.home main .glider-contain {
+/* ------------------ Banner y Marcas ------------------ */
+body.home main section.marcas-container {
+    display: none;
+    position: relative;
+}
+body.home main section.banner-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+body.home main section.marcas-container section.marcas-card {
     width: 85%;
     margin: 15px auto;
     background-color: rgba(128, 128, 128, 0.1);
     border-radius: 45px;
 }
-body.home main .glider-contain,
-body.home main .dots {
-    display: none;
-}
-body.home main div.glider-contain div.glider {
+
+body.home main section.marcas-container section.marcas-card div.carousel-marcas,
+body.home main section.banner-container section.banner-card div.carousel-banner {
     overflow-x: hidden;        
 }
-body.home main div.glider-contain div.glider-track {
+body.home main section.marcas-container section.marcas-card div.glider-track {
     height: 220px;
 }
-body.home main div.glider-contain div.glider div div {
+
+body.home main section.marcas-container section.marcas-card div.carousel-marcas div div {
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: center;
 }
-body.home main div.glider-contain button.glider-next,
-body.home main div.glider-contain button.glider-prev {
+body.home main section.banner-container section.banner-card div.carousel-banner div div{
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body.home main section.marcas-container button.marcas-next,
+body.home main section.marcas-container button.marcas-prev {
     top: 38%;
+    position: absolute;
+    border: none;
+    background-color: transparent;
 }
-body.home main div.glider-contain button i {
+body.home main section.banner-container button.banner-next,
+body.home main section.banner-container button.banner-prev{
+    opacity: .9;
+    position: absolute;
+    display: block;
+    height: calc(100% - 70px);
+    top: 16px;
+    padding: 30px;
+    border: none;
+    background-color: transparent;
+}
+body.home main section.banner-container button i,
+body.home main section.marcas-container button i {
     font-size: 1.3rem;
+    color: whitesmoke
 }
+body.home main section.banner-container div.b-dots .glider-dot,
+body.home main section.marcas-container div.m-dots .glider-dot {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 3px;
+    opacity: .3;
+    position: relative;
+    bottom: 25px;
+}
+body.home main section.marcas-container div.m-dots .glider-dot {
+    bottom: 35px
+}
+body.home main section.banner-container div.b-dots .glider-dot:hover,
+body.home main section.marcas-container div.m-dots .glider-dot:hover {
+	opacity: .5;
+}
+body.home main section.banner-container div.b-dots .glider-dot.active,
+body.home main section.marcas-container div.m-dots .glider-dot.active {
+	opacity: 1;
+}
+
+/* ---------------- Inicio de Buscador ---------------- */
+body.home main section.buscador {
+    margin: 0 auto;
+    width: 63%;
+    display: flex;
+    justify-content: center;
+}
+body.home main section.respuesta {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 95px;
+}
+body.home main section.buscador h3 {
+    display: inline-block;
+}
+body.home main section.buscador form {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 2.7rem;
+}
+body.home main section.buscador form input {
+    width: 70%;
+    height: 2.7rem;
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    padding-left: 7px;
+}
+body.home main section.buscador form button {
+    width: 25%;
+    line-height: 2.5;
+    border: 1px solid gray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius:  5px;
+    border-left: none;
+    background-color: white;
+    padding: 0 7px;
+}
+body.home main section.buscador button:hover {
+    color: whitesmoke;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+/* ---------------- Fin de Buscador ---------------- */
+
 /* ---------------- Productos ---------------- */
 body.home main section.productos {
     display: flex;
@@ -329,7 +428,7 @@ body.home main section.whatsapp .contenedor nav input{
 body.home main section.whatsapp .contenedor nav ul {
     position:absolute;
     left: 70px;
-    bottom: 17.5px;   
+    bottom: 1.5px;   
     padding: 0;
     width: max-content;
 }
@@ -361,6 +460,17 @@ body.home main section.whatsapp .contenedor nav {
         margin: 0 auto;
     }
 
+    /* banner */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 100px;
+    }
+    body.home main section.banner-container button.banner-next{
+        right: 5px;
+    }
+    body.home main section.banner-container button.banner-prev{
+        left: 5px;
+    }
+    
     /* --------- productos --------- */
     body.home main section.productos article {
         width: 100%;
@@ -380,7 +490,7 @@ body.home main section.whatsapp .contenedor nav {
         width: 55.9%;
     }
     body.home main section.productos img.img-anteojos {
-        margin-top: 75px;
+        margin-top: 70px;
         height: auto;        
     }
     body.home main section.productos img.img-solucion-lentillas {
@@ -410,11 +520,20 @@ body.home main section.whatsapp .contenedor nav {
 
 @media (min-width: 425px) {
     /* --------- marcas --------- */
-    body.home main .glider-contain {
+    body.home main section.marcas-container {
         display: block;
+        max-width: 1000px;
+        margin: auto
     }
-    body.home main .dots {
-        display: flex;
+    /* --------- banner --------- */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 185px;
+    }
+    body.home main section.marcas-container button.marcas-next{
+        right: 3%;
+    }
+    body.home main section.marcas-container button.marcas-prev {
+        left: 3%;
     }
     /* --------- products --------- */
         body.home main section.productos article {
@@ -428,7 +547,7 @@ body.home main section.whatsapp .contenedor nav {
         width: 55.895%;
     }
     body.home main section.productos img.img-anteojos {
-        margin-top: 80px;      
+        margin-top: 40px;      
     }
     body.home main section.productos img.img-solucion-lentillas {
         margin: 50px 0 30px;
@@ -458,13 +577,23 @@ body.home main section.whatsapp .contenedor nav {
 }
 
 @media (min-width: 768px) {
-    body.home main {
-        max-width: 1000px;
+    /* banner */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 430px;
+    }
+    
+    /* marcas */
+    body.home main section.marcas-container button.marcas-next{
+        right: 4%;
+    }
+    body.home main section.marcas-container button.marcas-prev {
+        left: 4%;
     }
 
     /* products */
     body.home main section.productos {
         margin: 90px auto 110px;
+        max-width: 1000px;
     }
     body.home main section.productos article {
         width: 23%;
@@ -481,9 +610,8 @@ body.home main section.whatsapp .contenedor nav {
         width: 69.255%;
     }
     body.home main section.productos img.img-anteojos {
-        height: 121.22px;
-        margin-top: 65px;
-        padding: 20px;
+        margin-top: 47px;
+        margin-bottom: 15px;
     }
     body.home main section.productos img.img-solucion-lentillas {
         margin-top: 24.91px;

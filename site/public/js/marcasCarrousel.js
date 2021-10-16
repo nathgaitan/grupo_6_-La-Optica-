@@ -1,12 +1,12 @@
-new Glider(document.querySelector('.glider'), {
+new Glider(document.querySelector('.carousel-marcas'), {
     // Mobile-first defaults
     slidesToShow: 1,
     slidesToScroll: 1,
     scrollLock: true,
-    dots: '.dots',
+    dots: '.m-dots',
     arrows: {
-      prev: '.glider-prev',
-      next: '.glider-next'
+      prev: '.marcas-prev',
+      next: '.marcas-next'
     },
     responsive: [
       {

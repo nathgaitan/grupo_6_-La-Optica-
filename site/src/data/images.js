@@ -176,7 +176,7 @@ module.exports = [
         productId: 11
     },
     {
-        file: 'Guess__GU00009_08B_0000.jpg',
+        file: 'Guess__GU00009_08B_0000-edit.jpg',
         productId: 12
     },
     {

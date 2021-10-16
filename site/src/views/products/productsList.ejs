@@ -4,93 +4,77 @@
 <body class="home list">
     <%- include('../partials/header') %> 
     <main>
-        
-        <section class="productos">
-            <% products.forEach(product=> { %>
-                <article>
-                    <a href="/products/detalle-de-producto/<%= product.id %>">
-                    <% if (product.codigo !=null) { %>
-                        <h3><%= product.codigo %></h3>
-                    <% } %>
-                    <% if (product.category==="anteojos") { %>
-                        <figure class="anteojos">
-                            <img class="img-anteojos" src="/images/products/<%= product.image %>"
-                            alt="">
-                        </figure>
-                    <% } else { %>
-                        <figure class="solucion-lentillas">
-                            <img class="img-solucion-lentillas" src="/images/products/<%= product.image %>" alt="">
-                        </figure>
-                    <% } %>
-
-                    <div class="box-detalle">
-                        <% if (product.codigo !=null && product.color !=null) { %>
-                            <p class="title">
-                                <%= product.name %> "<%= product.color.toUpperCase() %>"
-                            </p>
-                        <% } else { %>
-                            <p class="title">
-                                <%= product.name %>
-                            </p>
-                        <% } %>
-                        <% if (product.discount> 0) { %>
-                            <p class="discount">
-                                <%= toThousand(product.price) %>
-                            </p>
-                            <p class="price">
-                                <%= toThousand(priceFinal(product.price,product.discount).toFixed(0))%>
-                            </p>
-                        <% } else { %>
-                            <p class="discount"></p>
-                            <p class="price">
-                                <%= toThousand(product.price.toFixed(0)) %>
-                            </p>
-                        <% } %>
-                    </div>
-                    </a>
-                    <div class="check-like">
-                        <input type="checkbox" id="<%= product.id %>">
-                        <label for="<%= product.id %>"><i class="far fa-heart"></i></label>
-                        <div class="check-buy">
-                            <input type="checkbox" class="buy" id="buy<%= product.id %>">
-                            <label for="buy<%= product.id %>"><i class="fas fa-shopping-basket"></i></label>
-                            <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
-                        </div>
-                    </div>
-                </article>
+        <%- include('../components/glidejsStart', {clase : 'banner' }) %>
+            <% banners.forEach(banner=> { %>
+                <div class="carousel__item" style="background-image: url('/images/banner/<%= banner.file %>');">
+                </div>
             <% }) %>
-        </section>
-        <section class="category">
-                <ul><a href="">Colección</a>
-                    <li><a href="">Madera</a></li>
-                    <li><a href="">Acrílico</a></li>
-                    <li><a href="">Metálico</a></li>
-                </ul>
-                <ul><a href="">Lentes</a>
-                    <li><a href="">de Sol</a></li>
-                    <li><a href="">de Contacto</a></li>
-                    <li><a href="">Cosméticos</a></li>
-                    <li><a href="">Recetados</a></li>
-                </ul>
-                <ul><a href="">Duración</a>
-                    <li><a href="">Diarios</a></li>
-                    <li><a href="">Semanales</a></li>
-                    <li><a href="">Mensuales</a></li>
-                </ul>
-                <ul><a href="">Soluciones Oftalmológicas</a></ul>
-                <ul><a href="">Limpiadores</a>
-                    <li><a href="">de Lentes</a></li>
-                    <li><a href="">de Lentes de Contacto</a></li>
-                </ul>
-                <ul><a href="">Color</a>
-                    <li><a href="">Marrón</a></li>
-                    <li><a href="">Cerezo</a></li>
-                    <li><a href="">Negro</a></li>
-                    <li><a href="">Floral</a></li>
-                    <li><a href="">Castaño</a></li>
-                    <li><a href="">Fucsia</a></li>
-                </ul>
-        </section>
+        <%- include('../components/glidejsEnd', {clase : 'banner' , dots : 'b-dots' }) %>
+        <section class="contenedora">
+            
+            <section class="productos">
+                <% products.forEach(product=> { %>
+                    <article>
+                        <a href="/products/detalle-de-producto/<%= product.id %>">
+                            <figure class="anteojos">
+                                <img class="img-anteojos" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %>"
+                                alt="<%= product.name, product.mark.name %>">
+                            </figure>
+            
+                        <div class="box-detalle">
+                            <p class="title">
+                                    <%= product.name %>
+                            </p>
+                            <% if (product.discount> 0) { %>
+                                <p class="discount">
+                                    <%= toThousand(product.price) %>
+                                </p>
+                                <p class="price">
+                                    <%= toThousand(priceFinal(product.price,product.discount).toFixed(0))%>
+                                </p>
+                            <% } else { %>
+                                <p class="discount"></p>
+                                <p class="price">
+                                    <%= toThousand(product.price.toFixed(0)) %>
+                                </p>
+                            <% } %>
+                        </div>
+                        </a>
+                        <div class="check-like">
+                            <input type="checkbox" id="<%= product.id %>">
+                            <label for="<%= product.id %>"><i class="far fa-heart"></i></label>
+                            <div class="check-buy">
+                                <input type="checkbox" class="buy" id="buy<%= product.id %>">
+                                <label for="buy<%= product.id %>"><i class="fas fa-shopping-basket"></i></label>
+                                <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
+                            </div>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+            <section class="category">
+                    <ul><a href="">Colección</a>
+                        <% frames.forEach( frame => { %>
+                            <li><a href=""><%= frame.name %></a></li>
+                        <% }) %>
+                    </ul>
+                    <ul><a href="">Marcas</a>
+                        <% marks.forEach( mark => { %>
+                            <li><a href=""><%= mark.name %></a></li>
+                        <% }) %>
+                    </ul>
+                    <ul><a href="">Lentes</a>
+                        <% lenses.forEach( lens => { %>
+                            <li><a href=""><%= lens.name %></a></li>
+                        <% }) %>
+                    </ul>
+                    <ul><a href="">Color</a>
+                        <% colors.forEach( color => { %>
+                            <li><a href=""><%= color.name %></a></li>
+                        <% }) %>
+                    </ul>
+            </section>
+        
         <section class="filter">
             <form action="/products" method="post">
                 <select name="filtro" id="filtro">
@@ -105,6 +89,7 @@
                 <input type="submit" value="Filtrar">
             </form>
         </section>
+    </section>
         <section class="whatsapp">
             <div class="contenedor">
                 <nav>
@@ -117,6 +102,7 @@
             </div>
         </section>
     </main>
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
 </body>
 </html>

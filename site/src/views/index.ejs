@@ -3,51 +3,42 @@
 <%- include('./partials/head') %>
 
     <body class="home">
-
-        <%- include('./partials/header') %>
+        <%- include('./partials/header') %> 
+        
             <main>
-                <div class="glider-contain">
-                    <div class="glider">
-                        <% marcas.forEach(marca=> { %>
-                            <div style="background-image: url('/images/marcas/<%= marca %>')">
-                            </div>
-                            <% }) %>
-                    </div>
-                    <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
-                    <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
+                <%- include('./components/glidejsStart', {clase : 'banner'}) %>
+                    <% banners.forEach(banner => { %>
+                        <div class="carousel__item" style="background-image: url('/images/banner/<%= banner.file %>');">
+                        </div>
+                    <% }) %>
+                <%- include('./components/glidejsEnd', {clase : 'banner', dots : 'b-dots'}) %> 
+                <%- include('./components/glidejsStart', {clase : 'marcas'}) %>
+                    <% marcas.forEach(marca=> { %>
+                        <div class="carousel__item" style="background-image: url('/images/marcas/<%= marca %>')">
+                        </div>
+                    <% }) %>
+                <%- include('./components/glidejsEnd', {clase : 'marcas', dots : 'm-dots'}) %> 
 
-                </div>
-
-                <div role="tablist" class="dots"></div>
+                <section class="buscador">
+                    <form class="" action="/search">
+                        <input class="" type="search" placeholder="Buscar artículo" name="busqueda">
+                        <button class="" type="submit">Buscar</button>
+                    </form>
+                </section>
 
                 <section class="productos">
                     <% products.forEach(product=> { %>
                         <article>
                             <a href="/products/detalle-de-producto/<%= product.id %>">
-                            <% if (product.codigo !=null) { %>
-                                <h3><%= product.codigo %></h3>
-                            <% } %>
-                            <% if (product.category==="anteojos") { %>
                                 <figure class="anteojos">
-                                    <img class="img-anteojos" src="/images/products/<%= product.image %>"
-                                    alt="">
+                                    <img class="img-anteojos" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %>"
+                                    alt="<%= product.name, product.mark.name %>">
                                 </figure>
-                            <% } else { %>
-                                <figure class="solucion-lentillas">
-                                    <img class="img-solucion-lentillas" src="/images/products/<%= product.image %>" alt="">
-                                </figure>
-                            <% } %>
 
                             <div class="box-detalle">
-                                <% if (product.codigo !=null && product.color !=null) { %>
-                                    <p class="title">
-                                        <%= product.name %> "<%= product.color.toUpperCase() %>"
-                                    </p>
-                                <% } else { %>
                                     <p class="title">
                                         <%= product.name %>
                                     </p>
-                                <% } %>
                                 <% if (product.discount> 0) { %>
                                     <p class="discount">
                                         <%= toThousand(product.price) %>
@@ -80,20 +71,20 @@
                 <section class="coleccion">
                     <div class="contenedor">
                         <figure class="uno">
-                            <img src="/images/anteojo-madera.jpg" alt="">
-                            <a href="/images/anteojo-madera.jpg">COLECCIÓN MADERA</a>
+                            <img src="/images/coleccion/anteojo-madera.jpg" alt="">
+                            <a href="/images/coleccion/anteojo-madera.jpg">COLECCIÓN MADERA</a>
                         </figure>
                     </div>
                     <div class="contenedor">
                         <figure class="tres">
-                            <img src="/images/lente-plastico.jpg" alt="">
-                            <a href="/images/lente-plastico.jpg">COLECCIÓN ACRILICO</a>
+                            <img src="/images/coleccion/lente-plastico.jpg" alt="">
+                            <a href="/images/coleccion/lente-plastico.jpg">COLECCIÓN ACRILICO</a>
                         </figure>
                     </div>
                     <div class="contenedor">
                         <figure class="dos">
-                            <img class="lente-coleccion" src="/images/lente metalico(1).jpg" alt="">
-                            <a href="/images/lente metalico(1).jpg">COLECCIÓN METÁLICO</a>
+                            <img class="lente-coleccion" src="/images/coleccion/lente metalico(1).jpg" alt="">
+                            <a href="/images/coleccion/lente metalico(1).jpg">COLECCIÓN METÁLICO</a>
                         </figure>
                     </div>
                 </section>
@@ -115,20 +106,20 @@
                         <section class="post">
                             <section class="post-column">
                                 <div class="post-row">
-                                    <img class="uno" src="/images/anteojo-madera.jpg" alt="">
-                                    <img class="dos" src="/images/anteojo-plastico.jpg" alt="">
+                                    <img class="uno" src="/images/galeria/anteojo-madera.jpg" alt="">
+                                    <img class="dos" src="/images/galeria/anteojo-plastico.jpg" alt="">
                                 </div>
 
-                                <img class="grande" src="/images/anteojo-madera (4).jpg" alt="">
-                                <img class="grande" src="/images/anteojo-madera (6).jpg" alt="">
+                                <img class="grande" src="/images/galeria/anteojo-madera (4).jpg" alt="">
+                                <img class="grande" src="/images/galeria/anteojo-madera (6).jpg" alt="">
                                 <div class="post-row">
-                                    <img src="/images/banner (2).jpg" alt="">
-                                    <img src="/images/banner (3).jpg" alt="">
+                                    <img src="/images/galeria/banner (2).jpg" alt="">
+                                    <img src="/images/galeria/banner (3).jpg" alt="">
                                 </div>
                                 <div class="post-column last-column">
-                                    <img src="/images/banner (4).jpg" alt="">
-                                    <img src="/images/banner.jpg" alt="">
-                                    <img src="/images/anteojo-madera (5).jpg" alt="">
+                                    <img src="/images/galeria/banner (4).jpg" alt="">
+                                    <img src="/images/galeria/banner.jpg" alt="">
+                                    <img src="/images/galeria/anteojo-madera (5).jpg" alt="">
                                 </div>
                             </section>
                         </section>
@@ -149,8 +140,7 @@
                 </section>
             </main>
             <%- include('./partials/footer') %>
-                <script src="/js/glider.js"></script>
-                <script src="/js/indexCarrousel.js"></script>
+            <%- include('./partials/scripts') %>
+                
     </body>
-
 </html>
