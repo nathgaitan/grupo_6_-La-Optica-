@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { register, login, processRegister, processLogin, profile, processProfile } = require ("../controllers/usersController");
+const { register, login, processRegister, processLogin, profile, processProfile, logout } = require ("../controllers/usersController");
 
 /* middlewares requerir aquí abajo */
 const avatarUserStorage =require('../middlewares/avatarUserStorage');
@@ -20,5 +20,8 @@ router.post("/login", loginValidator, processLogin);
 
 router.get("/profile", sessionUser, profileValidator, profile);
 router.put("/profile",avatarUserStorage.single('avatar_user'), processProfile);
+
+router.get("/logout",logout);
+
 
 module.exports = router;
