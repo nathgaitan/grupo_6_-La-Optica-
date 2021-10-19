@@ -7,10 +7,10 @@
 
    <main>
     <section class="container">
-            <img src="/images/products/<%= product.image %> " alt="">
+            <img src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %> " alt="">
             <div class="alineacion">
                 <div class="marnye">
-                    <span class="marca marca2"><%= product.marca %> </span>
+                    <span class="marca marca2"><%= product.mark.name %> </span>
                     <div class="nye">
                         <h2><%= product.name %> </h2>
                         <div>
@@ -51,22 +51,46 @@
     </section>
     <section class="info">
             <h3>Detalles del Producto</h3>
-        <button class="vermas">
-            <span>Descripción</span>
-            <span><i class="fas fa-plus"></i></span>
-        </button>
-        <button class="vermas">
-            <span>Especificaciones</span>
-            <span><i class="fas fa-plus"></i></span>
-        </button>
-        <button class="vermas">
-            <span>Tamaño del marco</span>
-            <span><i class="fas fa-plus"></i></span>
-        </button>
-        <button class="vermas opciones">
-            <span>Opciones de pago</span>
-            <span><i class="fas fa-plus"></i></span>
-        </button>
+
+
+
+            
+
+
+
+            <div class="accordion-item">
+                  <button class="accordion-button collapsed vermas" id="description" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span>Descripción</span>
+                  </button>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                   <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-button collapsed vermas" id="especificaciones" type="button" data-bs-toggle="collapse" data-bs-target="#especificaciones" aria-expanded="false" aria-controls="especificaciones">
+                  <span>Especificaciones</span>
+                </button>
+              <div id="especificaciones" class="accordion-collapse collapse" aria-labelledby="especificaciones" data-bs-parent="#accordionExample">
+                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button collapsed vermas" id="tamaño" type="button" data-bs-toggle="collapse" data-bs-target="#tamaño" aria-expanded="false" aria-controls="tamaño">
+                  <span>Tamaño de marco</span>
+                </button>
+              <div id="tamaño" class="accordion-collapse collapse" aria-labelledby="tamaño" data-bs-parent="#accordionExample">
+                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button collapsed vermas" id="opciones" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" aria-expanded="false" aria-controls="opciones">
+                    <span>Opciones de pago</span>
+                </button>
+              <div id="opciones" class="accordion-collapse collapse" aria-labelledby="opciones" data-bs-parent="#accordionExample">
+                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+              </div>
+            </div>
+
     </section>
     <div class="interesar">
         <h3 class="bis">Tambien te podria interesar</h3>
@@ -88,10 +112,10 @@
                 <div class="glider">
                     <% products.forEach(product => { %>
                         <article>
-                            <img class="anteojo" src="/images/products/<%= product.image %> " alt="">
+                            <img class="anteojo" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %> " alt="">
                             
                                 <div class="combo">
-                                    <span class="marca"><%= product.marca %></span>
+                                    <span class="marca"><%= product.mark.name %></span>
                                     <div class="nye">
                                         <h2><%= product.name %></h2>
                                         <div>

@@ -6,89 +6,117 @@
         <%- include('../partials/headerAdmin') %>
        <main>
                 <div class="container">
-                    <h3>Editando : <%= product.name %> de la categoría <%= product.category %>
+                    <h3>Editando : <%= product.name %> de la categoría <%= product.category.name %>
                     </h3>
                     <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST"
                         enctype="multipart/form-data">
+
+
                         <div class="box left">
                             <div class="caja-item">
                                 <label for="name">Nombre del producto</label>
                                 <input type="text" id="name" name="name" value="<%= product.name %>" required>
                             </div>
+                            
                             <div class="caja-item">
-                                <label for="marca">Marca del producto</label>
-                                <input type="text" id="marca" name="marca" value="<%= product.marca %>" required>
+                                <label for="code">Codigo del producto</label>
+                                <input type="number" id="code" name="code" value="<%=product.code%>" required>
                             </div>
                             <div class="caja-item">
-                                <label for="codigo">Codigo del producto</label>
-                                <input type="number" id="codigo" name="codigo" value="<%=product.codigo%>" required>
+                                <label>Color
+                                    <select name="color" id="color" class="color">
+                                        <% color.forEach(color => { %>
+                                            <option value="<%= color.id %>" <%= product.colorId === color.id ? 'selected' : null %> ><%= color.name %> </option>                  
+                                        <% }) %>
+                                    </select>
+                                </label>
+                            </div>
+    
+                            <div class="caja-item">
+                                <label>Lente
+                                    <select name="lens" id="lens" class="lens">
+                                        <% lens.forEach(lens => { %>
+                                            <option value="<%= lens.id %>" <%= product.lensId === lens.id ? 'selected' : null %> ><%= lens.name %> </option>       
+                                        <% }) %>
+                                    </select>
+                                </label>
+                            </div>
+                            
+                            <div class="caja-item">
+                                <label>Marca
+                                    <select name="mark" id="mark" class="mark">
+                                        <% mark.forEach(mark => { %>
+                                            <option value="<%= mark.id %>" <%= product.markId === mark.id ? 'selected' : null %> ><%= mark.name %> </option>                                       
+                                             <% }) %>
+                                    </select>
+                                </label>
+                            </div>
+    
+                            <div class="caja-item">
+                                <label>Marco
+                                    <select name="frame" id="frame" class="frame">
+                                        <% frame.forEach(frame => { %>
+                                            <option value="<%= frame.id %>" <%= product.frameId === frame.id ? 'selected' : null %> ><%= frame.name %> </option>                                     
+                                        <% }) %>
+                                    </select>
+                                </label>
+                            </div>
+    
+    
+                            <div class="caja-item">
+                                <label>categorias
+                                    <select name="category" id="category" class="category">
+                                        <% category.forEach(category => { %>
+                                            <option value="<%= category.id %>" <%= product.categoryId === category.id ? 'selected' : null %> ><%= category.name %> </option>                                      
+                                              <% }) %>
+                                    </select>
+                                </label>
+                            </div>
+    
+    
+                           <div class="caja-item">
+                                <label>graduacion
+                                    <select name="graduation" id="graduation" class="category">
+                                        <% graduation.forEach(graduation => { %>
+                                            <option value="<%= graduation.id %>" <%= product.graduationId === graduation.id ? 'selected' : null %> ><%= graduation.name %> </option>                                       
+                                             <% }) %>
+                                    </select>
+                                </label>
                             </div>
                             <div class="caja-item">
-                                <label for="image"><a  class="btn btn-primary"> Subir Imagen</a></label>
+                                <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
                                 <input type="file" name="image" id="image" hidden>
                             </div>
-                            <div class="caja-item">
-                                <label for="color">Color del producto</label>
-                                <input type="text" id="color" name="color" value="<%= product.color %>" required>
-                            </div>
-                            <div class="caja-item">
-                                <label for="detail">Detalle del producto</label>
-                                <textarea name="detail" id="" cols="30" rows="10"><%= product.detail %></textarea>
-                            </div>
+                            
+                            
                             
                             
                         </div>
-                            <div class="box rigth">
-                                <div class="row">
-                                    <div class="caja-item caja-row">
-                                        <label for="price">Precio del producto</label>
-                                        <input type="number" id="price" name="price" value="<%=product.price %>"
-                                            required>
-                                    </div>
-                                    <div class="caja-item caja-row">
-                                        <label for="discount">Descuento del producto</label>
-                                        <input type="number" id="discount" name="discount"
-                                            value="<%=product.discount %>" required>
-                                    </div>
+                        <div class="box rigth">
+                            <div class="row">
+                                <div class="caja-item caja-row">
+                                    <label for="price"> Precio del producto</label>
+                                    <input class="color" type="number" id="price" value=<%= product.price %>  name="price" required>
                                 </div>
+                                <div class="caja-item caja-row">
+                                    <label for="discount">Descuento del producto</label>
+                                    <input class="color" type="number" id="discount" value=<%= product.discount %>  name="discount" requiured>
+                                </div>
+                            </div>
 
-                                <div class="caja-item">
-                                    <label for="lens">Tipo de lente del producto</label>
-                                    <select class="lens" name="lens" required>
-                                        <option value="">Seleccione Uno …</option>
-                                        <option value="de sol" <%=product.lens==="de sol" ? 'selected' : null %>>de sol
-                                        </option>
-                                        <option value="fotocromaticas" <%=product.lens==="fotocromaticas" ? 'selected' :
-                                            null %>
-                                            >fotocromaticas</option>
-                                        <option value="blue ligth" <%=product.lens==="blue light" ? 'selected' : null %>
-                                            >blue
-                                            ligth</option>
-                                        <option value="transition" <%=product.lens==="transition" ? 'selected' : null %>
-                                            >transition</option>
-                                    </select>
-                                </div>
-                                <div class="caja-item">
-                                    <label>tipo de marco:</label>
-                                    <select class="frame" name="frame" required>
-                                        <option value="">Seleccione Uno …</option>
-                                        <option value="metalico" <%=product.frame==="metalico" ? 'selected' : null %>
-                                            >metalico</option>
-                                        <option value="acrilico" <%=product.frame==="acrilico" ? 'selected' : null %>
-                                            >acrilico</option>
-                                        <option value="madera" <%=product.frame==="madera" ? 'selected' : null %>
-                                            >madera</option>
-                                        <option value="flexibles" <%=product.frame==="flexibles" ? 'selected' : null %>
-                                            >flexibles</option>
-                                    </select>
-                                    </label>
-                                </div>
-                                <div class="caja-item">
-                                    <label>categoria</label>
-                                    <select class="category" name="category" required>
-                                        <option value="anteojos">Anteojos</option>
-                                    </select>
-                                </div>
+
+
+
+
+
+
+
+
+                        
+                            
+                            
+                            
+                            
 
                                 <div class="caja-carga">
                                     <button class="btn btn-primary" type="submit" value="Cargar">Cargar</button>
