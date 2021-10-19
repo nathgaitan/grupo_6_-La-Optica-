@@ -30,7 +30,7 @@
                                 <td class="first-col">
                                     <article>
                                         <figure class="left">
-                                            <img src="images/products/<%= product.images[0].file %>"
+                                            <img src="images/products/<%= product.images[0] ? product.images[0].file : "producto-sin-foto.png" %>"
                                                 alt="<%= product.name %> <%= product.mark.name %> <%= product.category.name %>">
                                         </figure>
                                         <div class="right">
@@ -39,7 +39,7 @@
                                             </p>
                                             <small>
                                                 
-                                                 <%= product.mark.name %> |
+                                                <%= product.mark.name %>|
                                                  <% if (product.code != null) { %>
                                                     <%= product.code %> |
                                                 <% } %>

@@ -1,5 +1,6 @@
 const db = require("../database/models")
-
+const fs = require('fs');
+const path = require('path');
 
 /* utils */
 let toThousand = require('../utils/toThousand');
@@ -79,12 +80,12 @@ module.exports = {
 
     /* method to create*/
     create: (req, res) => {
-        let categories = db.Category.findAll({
+        let category = db.Category.findAll({
             order : [
                 ['name','ASC']
             ]
         })
-        let marks = db.Mark.findAll({
+        let mark = db.Mark.findAll({
             order : [
                 ['name','ASC']
             ]
@@ -109,15 +110,15 @@ module.exports = {
                 ['name','ASC']
             ]
         })
-        Promise.all(([categories, marks, color, lens, frame,graduation ]))
-            .then(([categories, marks, color, lens, frames,graduation  ]) => {
+        Promise.all(([category, mark, color, lens, frame,graduation ]))
+            .then(([category, mark, color, lens, frame,graduation  ]) => {
                 return res.render('admin/product_create-form',{
                     title: "Crear producto",
-                    categories,
-                    marks,
+                    category,
+                    mark,
                     color,
                     lens,
-                    frames,
+                    frame,
                     graduation
                 })
             })
@@ -127,80 +128,239 @@ module.exports = {
 
     /*method to addProduct*/
     addProduct: (req, res) => {
-        const { name, marca, price, discount, color, detail, codigo, lens, frame, category } = req.body;
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            const { name, mark, price, discount, color, detail, code, lens, frame, category, graduation } = req.body;
+
+        
 
         db.Product.create(
             {
                 name : name.trim(),
-                markId : marca,
+                markId : mark,
                 price : price,
                 discount : discount,
                 colorId : color,
                 detail : detail,
-                code : codigo,
+                code : code,
                 lensId : lens,
                 frameId : frame,
                 categoryId : category,
                 graduationId : graduation
             }
         )
-        let product = {
-            
-            color,
-            detail,
-            codigo: +codigo,
-            lens,
-            frame,
-            duration: null,
-            graduation: null,
-            category,
-        }
-        products.push(product)
-        guardar(products)
+        .then(product => {
+            console.log(product);
+            if(req.files.length != 0){
+                let images = req.files.map(image => {
+                    let item = {
+                        file : image.filename,
+                        productId : product.id
+                    }
+                    return item
+                }) 
+
+                db.Image.bulkCreate(images,{validate : true})
+                    .then( () => console.log('imagenes guardadas'))
+            }
         return res.redirect('/admin')
+    })
+    .catch(error => console.log(error))
+        }else{
+            let category = db.Category.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            let mark = db.Mark.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            let color = db.Color.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            let lens = db.Lens.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            let frame = db.Frame.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            let graduation = db.Graduation.findAll({
+                order : [
+                    ['name','ASC']
+                ]
+            })
+            Promise.all(([category, mark, color, lens, frame,graduation ]))
+                .then(([category, mark, color, lens, frame,graduation  ]) => {
+                    return res.render('admin/product_create-form',{
+                        title: "Crear producto",
+                        category,
+                        mark,
+                        color,
+                        lens,
+                        frame,
+                        graduation,
+                        errores : errors.mapped(),
+                        old : req.body
+                    })
+                })
+                .catch(error => console.log(error))
+        }
     },
 
     /*update -form to edit*/
     edit: (req, res) => {
-        let product = products.find(product => product.id === +req.params.id)
-        return res.render('admin/product_edit-form', {
-            product, title: "editar"
+        let category = db.Category.findAll({
+            order : [
+                ['name','ASC']
+            ]
         })
+        let mark = db.Mark.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let color = db.Color.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let lens = db.Lens.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let frame = db.Frame.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let graduation = db.Graduation.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let product = db.Product.findByPk(req.params.id,{
+            include : ["category","mark","color","lens","frame","graduation","images"]
+        })
+        Promise.all(([category, mark, color, lens, frame,graduation,product ]))
+                .then(([category, mark, color, lens, frame,graduation,product  ]) => {
+                    return res.render('admin/product_edit-form',{
+                        title: "editar",
+                        category,
+                        mark,
+                        color,
+                        lens,
+                        frame,
+                        graduation,
+                        product,
+                    })
+                })
+                .catch(error => console.log(error))
     },
+
 
 
     /*update -method to update*/
     update: (req, res) => {
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            const { name, mark, price, discount, color, detail, code, lens, frame, category, graduation } = req.body;
 
-        const { name, marca, price, discount, color, detail, codigo, lens, frame, category } = req.body;
-        products.forEach(product => {
-            if (product.id === +req.params.id) {
-                product.name = name.trim();
-                product.marca = marca.trim();
-                product.image = req.file ? req.file.filename : product.image;
-                product.price = +price;
-                product.discount = +discount;
-                product.color = color.trim();
-                product.detail = detail.trim();
-                product.codigo = +codigo;
-                product.lens = lens;
-                product.frame = frame;
-                duration = null;
-                graduation = null;
-                product.category = category;
+        
+
+        db.Product.update(
+            {
+                name : name.trim(),
+                markId : mark,
+                price : price,
+                discount : discount,
+                colorId : color,
+                detail : detail,
+                code : code,
+                lensId : lens,
+                frameId : frame,
+                categoryId : category,
+                graduationId : graduation
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
             }
+        )
+        .then(response => {
+            console.log(response)
+            return res.redirect("/admin")
+        })
+        .catch(error => console.log(error))
 
-        });
-
-        guardar(products)
-        return res.redirect('/admin')
-    },
+    }else{
+        let category = db.Category.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let mark = db.Mark.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let color = db.Color.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let lens = db.Lens.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let frame = db.Frame.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let graduation = db.Graduation.findAll({
+            order : [
+                ['name','ASC']
+            ]
+        })
+        let product = db.Product.findByPk(req.params.id,{
+            include : ["category","mark","color","lens","frame","graduation","images"]
+        })
+        Promise.all(([category, mark, color, lens, frame,graduation,product ]))
+                .then(([category, mark, color, lens, frame,graduation,product  ]) => {
+                    return res.render('admin/product_edit-form',{
+                        title: "Editar producto",
+                        category,
+                        mark,
+                        color,
+                        lens,
+                        frame,
+                        graduation,
+                        product,
+                        errores : errors.mapped(),
+                        old : req.body
+                    })
+                })
+                .catch(error => console.log(error))
+    }},
 
 
     products: (req, res) => {
 
         db.Product.findAll({
-            include : ["Category","Frames","Marks","Images","Lens"]
+            include : ["category","frame","mark","images","lens"]
         })
         .then(products => res.render('admin/productTable', {
             title: "Listado de Productos",
@@ -212,6 +372,7 @@ module.exports = {
         .catch(error => console.log(error))
         
     },
+    
     /*
     addContLentes: (req, res) => {
         return res.render("admin/contactLentesAdd", { title: "Lentes de contacto" })
@@ -241,14 +402,20 @@ module.exports = {
     */
 
     detail: (req, res) => {
-        const product = products.find(product => product.id === +req.params.id)
-        res.render("admin/productDetail", {
-            products,
-            product,
-            toThousand,
-            priceFinal
+        db.Product.findByPk(req.params.id,{
+            include : ["category","images","mark"]
         })
+            .then(product =>{
+                return res.render("admin/productDetail", {
+                    product,
+                    toThousand,
+                    priceFinal
+            })
+            })
+            .catch(error => console.log(error))
+
     },
+
 /*
     editLentesContact: (req, res) => {
         let product = products.find(producto => producto.id === +req.params.id)
@@ -288,20 +455,26 @@ module.exports = {
 
     /* destroy product */
     destroy : (req,res) => {
-        let { id } = req.params;
-        let productDelete = products.find( product => product.id === +id)
-        let filenameDelete = productDelete.image
-        
-        try {
-            fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'products', filenameDelete))
-        } catch (err) {
-            console.log("Motivo " + err)
-        }
+        db.Product.findByPk(req.params.id,{
+            include : ["images"]
+        })
+        .then(products => {
+            products.images.forEach(image => {
+                if(fs.existsSync(path.join(__dirname,"../../public/images/products",image.file))){
+                    fs.unlinkSync(path.join(__dirname,"../../public/images/products",image.file))
+                }
+            });
+            db.Product.destroy({
+                where : {
+                    id : req.params.id
+                }
+            })
+            .then( () => {
+                return res.redirect('/admin')
+            })
+        })
+        .catch(error => console.log(error))
 
-        let productSave = products.filter( product => product.id !== +id);
-        guardar(productSave);
-
-        return res.redirect('/admin')
     }
 
 }

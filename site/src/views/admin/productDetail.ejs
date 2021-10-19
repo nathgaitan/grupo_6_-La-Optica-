@@ -7,10 +7,10 @@
 
    <main>
     <section class="container">
-            <img src="/images/products/<%= product.image %> " alt="">
+            <img src="/images/products/<%= product.images[0] ? product.images[0].file : "producto-sin-foto.png" %>" alt="">
             <div class="alineacion">
                 <div class="marnye">
-                    <span class="marca marca2"><%= product.marca %> </span>
+                    <span class="marca marca2"><%= product.mark.name %> </span>
                     <div class="nye">
                         <h2><%= product.name %> </h2>
                         <div>
@@ -60,9 +60,9 @@
         </button>
 
         <div class="editar-but">
-        <button class="but-editar">                            <% if (product.category === "anteojos")  { %>
+        <button class="but-editar">                            <% if (product.category.name === "anteojos")  { %>
             <a href="/admin/editar-producto/<%= product.id %>" class="editador">EDITAR</i></a>  
-            <%}else if (product.category === "lentes de contacto") { %>
+            <%}else if (product.category.name === "lentes de contacto") { %>
                 <a href="/admin/edit-contactLentes/<%= product.id %>" class="editador">EDITAR</i></a>                 
 
                 <% }else{ %> 
