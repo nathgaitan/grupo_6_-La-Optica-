@@ -325,10 +325,10 @@ module.exports = {
         try {
             let errors = validationResult(req);
 
-            if (req.fileValidationError) {
+            if (req.fileValidationError || !req.file) {
                 let image = {
                     param : 'banner',
-                    msg: req.fileValidationError,
+                    msg: typeof req.fileValidationError != 'undefined' ? req.fileValidationError : 'Debes ingresar una imagen para el banner',
                 }
                 errors.errors.push(image)
             }
@@ -413,37 +413,38 @@ module.exports = {
                 }
                 errors.errors.push(image)
             }
-
             if (errors.isEmpty()) {
                 const { description, views } = req.body;
-                const file = req.file.filename
-                if (req.file) {
-                    let banner = db.Banner
-                        .findByPk(req.params.id, {
-                            include: ['view']
-                        })
-                    if (fs.existsSync(path.join(__dirname, '../../public/images/banner/', banner.file))) {
-                        fs.unlinkSync(path.join(__dirname, '../../public/images/banner/', banner.file))
-                    }
-                }
+                
                 db.Banner
-                    .update({
-                        file,
-                        description: description.trim(),
-                        viewId: views,
-                    },
-                        {
-                            where: {
-                                id: req.params.id
+                    .findByPk(req.params.id, {
+                        include: ['view']
+                    })
+                    .then( (banner) => {
+                        if (typeof req.file != 'undefined') {
+                            if (fs.existsSync(path.join(__dirname, '../../public/images/banner/', banner.file))) {
+                                fs.unlinkSync(path.join(__dirname, '../../public/images/banner/', banner.file))
                             }
-                        }
-                    )
-                                  
-                    .then(() => {
-                        return res.redirect('/admin/banners')
+                        } 
+                        
+                        db.Banner
+                            .update({
+                                file: typeof req.file == 'undefined' ? banner.file : req.file.filename,
+                                description: description.trim(),
+                                viewId: views,
+                            },
+                                {
+                                    where: {
+                                        id: req.params.id
+                                    }
+                                }
+                            )
+                            .then(() => {
+                                return res.redirect('/admin/banners')
+                            })
                     })
                     .catch(err => res.send(err))
-
+                
             } else {
                 let banner = db.Banner
                     .findByPk(req.params.id, {
