@@ -13,9 +13,6 @@ let capitalize = require('../utils/capitalize');
 const db = require('../database/models');
 const { Op } = require('sequelize');
 
-/* Validator */
-const {validationResult} = require('express-validator');
-
 module.exports = {
     index: (req, res) => {
         let products = db.Product
