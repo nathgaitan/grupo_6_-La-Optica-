@@ -50,19 +50,19 @@
                         <hr>
                         <p>¿Quieres editar la información personal?</p>
                         <div class="box-input">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre"
-                                value="<%= locals.old && old.nombre ? old.nombre : user.name %>">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name" id="name"
+                                value="<%= locals.old && old.name ? old.name : user.name %>">
                             <small>
-                                <%= locals.errores && errores.nombre ? errores.nombre.msg : null %>
+                                <%= locals.errores && errores.name ? errores.name.msg : null %>
                             </small>
                         </div>
                         <div class="box-input">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" name="apellido" id="apellido"
-                                value="<%= locals.old && old.apellido ? old.apellido : user.apellido %>">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" name="lastName" id="lastName"
+                                value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>">
                             <small>
-                                <%= locals.errores && errores.apellido ? errores.apellido.msg : null %>
+                                <%= locals.errores && errores.lastName ? errores.lastName.msg : null %>
                             </small>
                         </div>
                         <div class="box-input">

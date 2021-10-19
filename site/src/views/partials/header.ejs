@@ -11,18 +11,8 @@
                    <li><a href="/"><h1>La Óptica</h1></a></li>
                </ul>
                <ul class="ultimo">
-<<<<<<< HEAD
                 
-=======
-                <% if (locals.userLogin) { %>
-                    <li><a href="/users/profile"><%= locals.userLogin.name %>  <i class="fas fa-user"></i><i class="fas fa-chevron-down acompañante"></i></a></li>
-
-                <% }else{ %>
-                <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
-                 
-                <% } %>
->>>>>>> 310cb3f705be77e314577ce600c3e2cfad1ebcff
-                <% if (locals.userLogin && userLogin.rol === "admin") { %>
+                <% if (locals.userLogin && userLogin.rolId === 1) { %>
                     <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                    <% }else{ %>
                    <li><a href=""><i class="far fa-heart"></i></a></li>
@@ -39,7 +29,7 @@
                     </button>
                     <ul  class="dropdown-menu "  aria-labelledby="navbarDropdown" >
                         <li class="dropdown-item"><a class=" text-dark" href="/users/profile" >Mi perfil</a></li>
-                        <li class="dropdown-item"><a class=" text-dark" href="#!" >Cerrar sesion</a></li>
+                        <li class="dropdown-item"><a class=" text-dark" href="/users/logout" >Cerrar sesion</a></li>
                     </ul>
                 
 
@@ -62,17 +52,7 @@
                     <li><a href="/">Home<i class="fas fa-home acompañante"></i></a></li>
                     <li><a href="/products">Productos<i class="fas fa-chevron-down acompañante"></i></a></li>
                     <li><a href="/products">Colección<i class="fas fa-chevron-down acompañante"></i></a></li>
-<<<<<<< HEAD
                     
-=======
-                    <% if (locals.userLogin) { %>
-                        <li><a href="/users/profile"><%= locals.userLogin.name %>  <i class="fas fa-user"></i><i class="fas fa-chevron-down acompañante"></i></a></li>
-
-                    <% }else{ %>
-                    <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
-                     
-                    <% } %>
->>>>>>> 310cb3f705be77e314577ce600c3e2cfad1ebcff
                     <% if (locals.userLogin && userLogin.rol === "admin") { %>
                         <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                     <% }else{ %>
@@ -91,7 +71,7 @@
                             </button>
                             <ul  class="dropdown-menu "  aria-labelledby="navbarDropdown" >
                                 <li class="dropdown-item"><a class=" text-dark" href="/users/profile" >Mi perfil</a></li>
-                                <li class="dropdown-item"><a class=" text-dark" href="#!" >Cerrar sesion</a></li>
+                                <li class="dropdown-item"><a class=" text-dark" href="/users/logout" >Cerrar sesion</a></li>
                             </ul>
                         
 
