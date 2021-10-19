@@ -51,23 +51,23 @@
                         <p>¿Quieres editar la información personal?</p>
                         <div class="box-input">
                             <label for="name">Nombre</label>
-                            <input type="text" name="name" id="name"
-                                value="<%= locals.old && old.name ? old.name : user.name %>">
+                            <input type="text" name="name" id="name" 
+                                value="<%= locals.old && old.name ? old.name : userLogin.name %>">
                             <small>
                                 <%= locals.errores && errores.name ? errores.name.msg : null %>
                             </small>
                         </div>
                         <div class="box-input">
                             <label for="lastName">Apellido</label>
-                            <input type="text" name="lastName" id="lastName"
-                                value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>">
+                            <input type="text" name="lastName" id="lastName" 
+                                value="<%= locals.old && old.lastName ? old.lastName : userLogin.lastName %>">
                             <small>
                                 <%= locals.errores && errores.lastName ? errores.lastName.msg : null %>
                             </small>
                         </div>
                         <div class="box-input">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" disabled value="<%= user.email %>">
+                            <input type="email" name="email" id="email" disabled value="<%= userLogin.email %>">
                             <br>
                             <small>Por razones de seguridad el email no puede ser editado.<br> Comuniquese con nosotros
                                 si desea realizar este cambio.</small>

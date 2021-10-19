@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const users = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'users.json'), 'utf-8'));
 const {validationResult} = require('express-validator');
+const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
-
 
 module.exports = {
     register : (req,res) => {
@@ -14,29 +14,28 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
         
-        const {name,apellido,email,password} = req.body;
-        let user = {
-            id : users[users.length -1] ?  users[users.length -1].id + 1 : 1,
+        const {name,lastName,email,password} = req.body;
+        db.User.create ({
             name : name.trim(),
-            apellido : apellido.trim(),
+            lastName : lastName.trim(),
             email : email.trim(),
             password : bcryptjs.hashSync(password.trim(), 10),
-            rol : "user",
+            rolId : 3,
             avatar : "avatar_default.png"
-        }
-        users.push(user);
-
-        fs.writeFileSync(path.join(__dirname,"..","data","users.json"),JSON.stringify(users,null,2),"utf-8");
-
+        })
+           .then(user =>{       
         req.session.userLogin = {
             id : user.id,
             name : user.name,
-            apellido : user.apellido,
-            rol : user.rol,
+            lastName : user.lastName,
+            rolId : user.rolId,
             avatar : user.avatar
         }
         
-        res.redirect("/")
+       return res.redirect("/")
+    })
+    .catch(error => console.log(error))
+
     }else{
         return res.render("users/register", {
             title : "register",
@@ -52,24 +51,33 @@ module.exports = {
             title : "login"})
     },
     processLogin : (req,res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            const {recordar} = req.body
-            let user = users.find(user => user.email === req.body.email.trim());
-            
+            const {email,recordar} = req.body;
+            db.User.findOne({
+                where : {
+                    email
+                }
+            })
+                .then(user => {
             req.session.userLogin = {
                 id : user.id,
                 name : user.name,
-                rol : user.rol,
-                email: user.email
+                avatar : user.avatar,
+                rolId : user.rolId,
+                email : user.email
+                
             }
 
             if(recordar){
                 res.cookie("optica",req.session.userLogin,{maxAge: 60000})
             }
 
-            res.redirect("/")
+            return res.redirect("/")
+        })
+        .catch(error => console.log(error))
+                
         }else{
             return res.render("users/login",{
                title:"login",
@@ -80,7 +88,7 @@ module.exports = {
     profile : (req,res) => {
         return res.render('users/profile', {
             title : "Perfil",
-           /* user : users.find(user => user.id === +req.session.userLogin.id)*/
+            user : users.find(user => user.id === +req.session.userLogin.id)
         })
     },
     processProfile : (req,res) => {
@@ -95,15 +103,17 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
+
+            let user = users.find(user => user.id === +req.session.userLogin.id)
             
-            const {name,lastName,email,password,rolId,imagen} = req.body;
-            db.Product.update(
+            const {name,lastName,email,password,rolId} = req.body;
+            db.User.update(
               {  
                 name : name.trim(),
                 lastName : lastName.trim(),
-                email : user.email,
+                email : email,
                 password : req.password ? bcryptjs.hashSync(password.trim(),10) : user.password,
-                rolId : user.rolId,
+                rolId : rolId,
                 imagen : req.file ? req.file.filename : user.imagen
             },
             {
@@ -111,11 +121,7 @@ module.exports = {
                     id : id
                 }
             }
-            )
-
-           /* let user = users.find(user => user.id === +req.session.userLogin.id)
-        
-            const { nombre, apellido, password } = req.body;
+            )            
 
             if (req.file) {
                 if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))) {
@@ -123,10 +129,9 @@ module.exports = {
                 }
             }
 
-
             let modificados = users.map(user => user.id === +req.params.id ? userModificado : user)
 
-            fs.writeFileSync(path.join(__dirname,'..','data','users.json'),JSON.stringify(modificados,null,2),'utf-8');
+           /* fs.writeFileSync(path.join(__dirname,'..','data','users.json'),JSON.stringify(modificados,null,2),'utf-8');
             res.redirect('/users/profile')*/
 
         } else {
@@ -143,5 +148,3 @@ module.exports = {
             return res.redirect('/')
         }
     }
-
-
