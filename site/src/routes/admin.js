@@ -18,11 +18,11 @@ router.get('/productDetail/:id',detail);
 
 /*crear*/
 router.get('/crear-producto',create);
-router.post('/crear-producto',upload.single("image"),addProduct);
+router.post('/crear-producto',upload.array("image"),addProduct);
 
 /*editar*/
 router.get('/editar-producto/:id',edit);
-router.put('/editar-producto/:id',upload.single("image"),update);
+router.put('/editar-producto/:id',upload.array("image"),update);
 
 
 /* delete product */

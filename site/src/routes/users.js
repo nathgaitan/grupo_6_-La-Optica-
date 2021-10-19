@@ -21,7 +21,7 @@ router.post("/login", loginValidator, processLogin);
 router.get("/profile", sessionUser, profileValidator, profile);
 router.put("/profile",avatarUserStorage.single('avatar_user'), processProfile);
 
-router.get("/logout", logout);
+router.get("/logout",logout);
 
 
 module.exports = router;
