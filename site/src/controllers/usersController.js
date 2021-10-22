@@ -64,6 +64,7 @@ module.exports = {
             req.session.userLogin = {
                 id : user.id,
                 name : user.name,
+                lastName : user.lastName,
                 avatar : user.avatar,
                 rolId : user.rolId,
                 email : user.email
@@ -86,11 +87,18 @@ module.exports = {
         }
     },
     profile : (req,res) => {
-        return res.render('users/profile', {
-            title : "Perfil",
-            user : users.find(user => user.id === +req.session.userLogin.id)
+        db.User.findByPk
+        (req.session.userLogin.id)
+        .then(user =>{
+            return res.render('users/profile',
+            {
+                title : "Perfil",
+                user 
+        })
         })
     },
+
+    
     processProfile : (req,res) => {
         const errors = validationResult(req);
 
@@ -99,12 +107,15 @@ module.exports = {
                 param : 'imagen',
                 msg: req.fileValidationError,
             }
+
             errors.errors.push(imagen)
         }
 
-        if (errors.isEmpty()) {
 
-            let user = users.find(user => user.id === +req.session.userLogin.id)
+        if (errors.isEmpty()) {
+            
+
+            let user = db.User.findByPk(req.session.userLogin.id)
             
             const {name,lastName,email,password,rolId} = req.body;
             db.User.update(
@@ -112,33 +123,63 @@ module.exports = {
                 name : name.trim(),
                 lastName : lastName.trim(),
                 email : email,
-                password : req.password ? bcryptjs.hashSync(password.trim(),10) : user.password,
+                password : password ? bcryptjs.hashSync(password.trim(),10) : user.password,
                 rolId : rolId,
-                imagen : req.file ? req.file.filename : user.imagen
+                avatar : req.file ? req.file.filename : user.avatar
             },
             {
                 where : {
-                    id : id
+                    id : +req.session.userLogin.id
                 }
             }
-            )            
+            )
+
+            .then(() => {
+                delete req.session.userLogin
+                delete req.locals.userLogin
+
+                req.session.userLogin={
+                    id : user.id,
+                    name : user.name,
+                    lastName : user.lastName,
+                    rolId : user.rolId,
+                    avatar : user.avatar
+                }
+                req.locals.userLogin = req.session.userLogin
+
+                return res.render ("user/profile")
+            })
+
+            .catch(error => console.log(error))
 
             if (req.file) {
                 if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))) {
                     fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))
                 }
-            }
+            }                
 
-            let modificados = users.map(user => user.id === +req.params.id ? userModificado : user)
+
+ 
+
+
+
+           /*let modificados = users.map(user => user.id === +req.params.id ? userModificado : user)*/
 
            /* fs.writeFileSync(path.join(__dirname,'..','data','users.json'),JSON.stringify(modificados,null,2),'utf-8');
             res.redirect('/users/profile')*/
 
         } else {
-            return res.rendr('users/profile', {
-                errores : errors.mapped(),
-                old : req.body
+            db.User.findByPk
+            (req.session.userLogin.id)
+            .then(user =>{
+                return res.render('users/profile',
+                {
+                    title : "Perfil",
+                    user,
+                    errors : errors.mapped(),
+                    old : req.body
             })
+            })              
         }
     },
 
