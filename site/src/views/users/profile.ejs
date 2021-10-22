@@ -15,22 +15,7 @@
                     <a href=""> + </a>
                 </div>
             </div>
-            <article>
-                <form action="/users/profile?_method=PUT" method="POST">
-                    <div class="box-input">
-                        <label for="avatar_user" class="btn btn-primary">Imagen</label>
-                        <input type="file" name="avatar_user" id="avatar_user" hidden>
-                        <div>
-                            <small>
-                                <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
-                            </small>
-                        </div>
-                    </div>
-                    <div class="box-input">
-                        <button type="submit" class="btn btn-primary">Subir</button>
-                    </div>
-                </form>
-            </article>
+            
         </section>
         <main>
             <section class="position-profile">
@@ -44,7 +29,7 @@
                             <label for="avatar_user" class="btn btn-primary">Imagen</label>
                             <input type="file" name="avatar_user" id="avatar_user" hidden>
                             <small>
-                                <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
+                                <%= locals.errors && errors.avatar_user ? errors.avatar_user.msg : null %>
                             </small>
                         </div>
                         <hr>

@@ -104,69 +104,62 @@ module.exports = {
 
         if (req.fileValidationError) {
             let imagen = {
-                param : 'imagen',
+                param : 'avatar_user',
                 msg: req.fileValidationError,
             }
 
             errors.errors.push(imagen)
         }
 
-
         if (errors.isEmpty()) {
             
+             db.User.findByPk(req.session.userLogin.id)
+            .then( user => {
 
-            let user = db.User.findByPk(req.session.userLogin.id)
-            
-            const {name,lastName,email,password,rolId} = req.body;
-            db.User.update(
-              {  
-                name : name.trim(),
-                lastName : lastName.trim(),
-                email : email,
-                password : password ? bcryptjs.hashSync(password.trim(),10) : user.password,
-                rolId : rolId,
-                avatar : req.file ? req.file.filename : user.avatar
-            },
-            {
-                where : {
-                    id : +req.session.userLogin.id
+                const {name,lastName,password} = req.body;
+
+                if (req.file) {
+                    if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.avatar))) {
+                        fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.avatar))
+                    }
                 }
-            }
-            )
 
-            .then(() => {
-                delete req.session.userLogin
-                delete req.locals.userLogin
-
-                req.session.userLogin={
-                    id : user.id,
-                    name : user.name,
-                    lastName : user.lastName,
+                db.User.update(
+                  {  
+                    name : name.trim(),
+                    lastName : lastName.trim(),
+                    email : user.email,
+                    password : password ? bcryptjs.hashSync(password.trim(),10) : user.password,
                     rolId : user.rolId,
-                    avatar : user.avatar
+                    avatar : req.file ? req.file.filename : user.avatar
+                },
+                {
+                    where : {
+                        id : req.session.userLogin.id
+                    }
                 }
-                req.locals.userLogin = req.session.userLogin
+                )
+                .then(() => {
+                    db.User.findByPk(req.session.userLogin.id)
+                    .then( user2 => {
+                        req.session.userLogin2={
+                            id : user2.id,
+                            name : user2.name,
+                            lastName : user2.lastName,
+                            email : user2.email,
+                            rolId : user2.rolId,
+                            avatar : user2.avatar
+                        }/* 
+                        req.session.userLogin = req.session.userLogin2 */
+                        /* req.locals.userLogin = req.session.userLogin  */
+    
+                        return res.redirect("/users/profile")
 
-                return res.render ("user/profile")
+                    })
+                })
+                .catch(error => res.send(error))
             })
-
-            .catch(error => console.log(error))
-
-            if (req.file) {
-                if(fs.existsSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))) {
-                    fs.unlinkSync(path.join(__dirname,'..','..','public','images','usuarios',user.imagen))
-                }
-            }                
-
-
- 
-
-
-
-           /*let modificados = users.map(user => user.id === +req.params.id ? userModificado : user)*/
-
-           /* fs.writeFileSync(path.join(__dirname,'..','data','users.json'),JSON.stringify(modificados,null,2),'utf-8');
-            res.redirect('/users/profile')*/
+            .catch(error => res.send(error))
 
         } else {
             db.User.findByPk

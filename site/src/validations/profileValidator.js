@@ -13,14 +13,17 @@ module.exports = [
     .notEmpty().withMessage("Debes ingresar la contraseña para guardar cambios")
     .custom((value,{req}) => {
         if(value != ""){
-            let user = users.find(user => user.email === req.body.email && bcrypt.compareSync(value, user.password))
-            if(user){
-                return true
-            }else{
-                return false
-            }
+            return db.User
+            .findByPk(req.session.userLogin.id)
+            
+            .then(user => {
+                if(!bcryptjs.compareSync(value, user.password)){
+                    return Promise.reject()
+
+                }
+            })
+            
         }
-        return true
     }).withMessage('Contraseña incorrecta'),
 
     check('password')
