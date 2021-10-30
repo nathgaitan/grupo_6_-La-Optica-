@@ -18,7 +18,7 @@
                 <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
                  
                 <% } %>
-                <% if (locals.userLogin && userLogin.rol === "admin") { %>
+                <% if (locals.userLogin && userLogin.rolId === 1) { %>
                     <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                    <% }else{ %>
                    <li><a href=""><i class="far fa-heart"></i></a></li>
@@ -65,7 +65,7 @@
                     <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
                      
                     <% } %>
-                    <% if (locals.userLogin && userLogin.rol === "admin") { %>
+                    <% if (locals.userLogin && userLogin.rolId === 1) { %>
                         <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                     <% }else{ %>
                     <li><a href=""><i class="far fa-heart"></i></a></li>
