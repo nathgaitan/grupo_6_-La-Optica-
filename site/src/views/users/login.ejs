@@ -6,7 +6,7 @@
 
     <main>
         <article class="todo">
-            <form method="POST">
+            <form method="POST" id="form-login">
                 <div class="inicio1">
                     <h2>Iniciar Sesión</h2>
                 </div>
@@ -27,18 +27,22 @@
                     <div class="log-box">
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email" placeholder="Ingresá tu email">
+                        <p id="email-msg"></p>
                     </div>
                     <div class="log-box">
                         <label for="password">Contraseña</label>
                         <input type="password" name="password" id="password" placeholder="Ingresá tu contraseña">
+                        <p id="password-msg"></p>
                     </div>
                     <div class="radio-box">
-                        <input class="recor-box" type="checkbox" name="recordar" id="recordar" value="recordar">
-                        <label class="recor-tex" for="recordar">Recordar contraseña</label>
+                        <div>
+                            <input class="recor-box" type="checkbox" name="recordar" id="recordar" value="recordar">
+                            <label class="recor-tex" for="recordar">Recordar contraseña</label>
+                        </div>
                         <a class="recup-box" href="recuperarcontraseña">¿Olvidaste tu contraseña?</a>
                     </div>
-                    <div>
-                        <span><%= locals.errors && errors.email ? errors.email.msg : null %> </span>
+                    <div id="error">
+                        <span id="error-msg"><%= locals.errors && errors.email ? errors.email.msg : null %></span>
                     </div>
                     <div class="but-box">
                         <button type="submit">Entrar</button>
@@ -61,7 +65,7 @@
     
         <%- include('../partials/footer') %> 
 
-    
+    <%- include('../partials/scripts') %> 
     
 </body>
 </html>
