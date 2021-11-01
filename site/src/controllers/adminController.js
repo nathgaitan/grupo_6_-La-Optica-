@@ -8,7 +8,6 @@ let priceFinal = require('../utils/priceFinal');
 let capitalize = require('../utils/capitalize');
 
 /* Models */
-const db = require('../database/models');
 
 /* Validations */
 const {validationResult} = require('express-validator');
