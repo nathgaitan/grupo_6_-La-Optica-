@@ -137,7 +137,6 @@ module.exports = {
             const { name, mark, price, discount, color, detail, code, lens, frame, category, graduation } = req.body;
 
         
-
         db.Product.create(
             {
                 name : name.trim(),
@@ -211,7 +210,7 @@ module.exports = {
                         lens,
                         frame,
                         graduation,
-                        errores : errors.mapped(),
+                        errors : errors.mapped(),
                         old : req.body
                     })
                 })
@@ -352,7 +351,7 @@ module.exports = {
                         frame,
                         graduation,
                         product,
-                        errores : errors.mapped(),
+                        errors : errors.mapped(),
                         old : req.body
                     })
                 })

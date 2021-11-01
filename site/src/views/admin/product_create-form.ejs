@@ -58,9 +58,9 @@
                                     <% lens.forEach(lens => { %>
                                      <option value="<%= lens.id %>" <%= locals.old && old.lens.name === lens.name ? 'selected' : null %> ><%= lens.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
                                 </select>
                             </label>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
                             <div class="invalid-feedback">
                                 El tipo de lente del producto es requerido
                               </div>
@@ -74,9 +74,9 @@
                                     <% mark.forEach(mark => { %>
                                      <option value="<%= mark.id %>" <%= locals.old && old.mark.name === mark.name ? 'selected' : null %> ><%= mark.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
                                 </select>
                             </label>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
                             <div class="invalid-feedback">
                                 La marca del producto es requerido
                               </div>
@@ -91,9 +91,9 @@
                                     <% frame.forEach(frame => { %>
                                      <option value="<%= frame.id %>" <%= locals.old && old.frame.name === frame.name ? 'selected' : null %> ><%= frame.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                                 </select>
                             </label>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                             <div class="invalid-feedback">
                                 El tipo de marco del producto es requerido
                               </div>
@@ -109,9 +109,9 @@
                                     <% category.forEach(category => { %>
                                      <option value="<%= category.id %>" <%= locals.old && old.category.name === category.name ? 'selected' : null %> ><%= category.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
                                 </select>
                             </label>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
                             <div class="invalid-feedback">
                                 La categoria del producto es requerido
                               </div>
@@ -127,9 +127,9 @@
                                     <% graduation.forEach(graduation => { %>
                                      <option value="<%= graduation.id %>" <%= locals.old && old.graduation.name === graduation.name ? 'selected' : null %> ><%= graduation.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                                 </select>
                             </label>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                             <div class="invalid-feedback">
                                 La graduación del producto es requerido
                               </div>
@@ -182,6 +182,9 @@
                             <label for="detail">detalle del producto</label>
                         
                             <textarea name="detail" id="" cols="30" rows="10" required></textarea>
+                            <div class="invalid-feedback">
+                                    La descripción del producto es requerida
+                                   </div>
                             <span class="form-error text-danger small"><%= locals.errors && errors.detail ? errors.detail.msg : null %></span>
                         </div>
 
@@ -201,8 +204,8 @@
                 
             </main>
             <%- include('../partials/footer') %>
-            <%- include('../partials/scripts') %>
-            <script src="/js/productValidator.js"></script>
+            <!--  -->
+           <!--  <script src="/js/productValidator.js"></script> -->
     </body>
 
 </html>
