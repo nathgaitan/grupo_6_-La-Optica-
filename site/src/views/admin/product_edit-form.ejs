@@ -9,7 +9,7 @@
                     <h3>Editando : <%= product.name %> de la categoría <%= product.category.name %>
                     </h3>
                     <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST"
-                        enctype="multipart/form-data">
+                        enctype="multipart/form-data" novalidate>
 
 
                         <div class="box left">
@@ -64,7 +64,7 @@
                                             <option value="<%= frame.id %>" <%= product.frameId === frame.id ? 'selected' : null %> ><%= frame.name %> </option>                                     
                                         <% }) %>
                                     </select>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
+                                    <span><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                                 </label>
                             </div>
     

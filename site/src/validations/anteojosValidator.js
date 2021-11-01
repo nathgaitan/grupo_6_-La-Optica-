@@ -4,31 +4,40 @@ const {check, body} = require("express-validator");
 module.exports = [
 
     check('name')
-    .notEmpty().withMessage('El nombre es obligatorio'),
+    .notEmpty()
+    .withMessage('El nombre es obligatorio'),
 
     check('code')
-    .notEmpty().withMessage('El codigo es obligatorio'),
+    .notEmpty()
+    .withMessage('El codigo es obligatorio'),
 
     check('color')
-    .notEmpty().withMessage('El color es obligatorio'),
+    .isEmpty()
+    .withMessage('El color es obligatorio'),
 
     check('lens')
-    .notEmpty().withMessage('Debe seleccionar un tipo de lente'),
+    .notEmpty()
+    .withMessage('Debe seleccionar un tipo de lente'),
 
     check('mark')
-    .notEmpty().withMessage('Debe seleccionar una marca'),
+    .notEmpty()
+    .withMessage('Debe seleccionar una marca'),
 
     check('frame')
-    .notEmpty().withMessage('Debe seleccionar un tipo de marco'),
+    .notEmpty()
+    .withMessage('Debe seleccionar un tipo de marco'),
 
     check('lens')
-    .notEmpty().withMessage('Debe seleccionar un tipo de lente'),
+    .notEmpty()
+    .withMessage('Debe seleccionar un tipo de lente'),
 
     check('category')
-    .notEmpty().withMessage('Debe seleccionar una categoria'),
+    .notEmpty()
+    .withMessage('Debe seleccionar una categoria'),
 
     check('graduation')
-    .notEmpty().withMessage('Debe seleccionar una graduación'),
+    .notEmpty()
+    .withMessage('Debe seleccionar una graduación'),
 
    
    /* body('image')
@@ -45,5 +54,6 @@ module.exports = [
     .isDecimal().withMessage('Debe ser un número'),
 
     check('detail')
-    .notEmpty().withMessage('Debe escribir los detalles del producto '),
+    .notEmpty()
+    .withMessage('Debe escribir los detalles del producto '),
 ]
