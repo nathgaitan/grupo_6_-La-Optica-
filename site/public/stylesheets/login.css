@@ -61,37 +61,42 @@
 .login main article .boxes{
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    align-items: center;
 }
 
 .login main article label{
     display: block;
-    margin: 5px 0;
 }
 
 .login main article input{
     display: block;
     padding-right: 100px;
     border-radius: 5px;
-    
 }
 
 .login main article .radio-box{
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 303px;
+    margin-top: 10px;
 }
-
+.login main article .radio-box div{
+    display: flex;
+    align-items: center;
+}
 .login main article .recor-box{
-    margin-top: 12px;
+    margin-top: 0px;
+    padding-left: 2px;
 }
 
 .login main article .recor-tex{
-    font-size: 12px;
-    margin-top: 10px;
+    font-size: 11px;
+    padding-left: 2px;
 }
 
 .login main article .recup-box{
-    font-size: 12px;
-    margin: 10px 0 0 18px;
+    font-size: 11px
 }
 
 .login main article .but-box{
@@ -117,6 +122,77 @@
     width: 200px;
     border-radius: 10px;
     height: 30px;    
+}
+
+
+.login input{
+    padding: 3px 4px;
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    
+}
+.login input:focus-visible{
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-invalid {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-invalid:focus-visible {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-valid {
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline:0;
+}
+.login .is-valid:focus-visible{
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .info-input {
+    background-color: lightblue;
+    color: blue;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+    width: inherit;
+
+}
+.login .error-input {
+    background-color: #ff000070;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+}
+.login .log-box {
+    position: relative;
+    margin: auto;
+}
+.login #error {
+    width: 300px;
+    padding: 10px;
+    background-color: rgb(136,193,227);
+    border-radius: 1px;
+    display: none;
+    margin: 20px auto 0;
+}
+.login #error-msg {
+    color: white;
+}
+.log-box p {
+    margin: 0;
 }
 
 @media (min-width : 481px){
@@ -187,27 +263,22 @@
     .login main article input{
         display: block;
         padding-right: 200px;
-        font-size: 18px;
+        font-size: 15px;
+        padding: 5px 11px;
     }
 
     .login main article .radio-box{
         display: flex;
-        margin-top: 10px;
+        margin: 10px 0px;
+        align-items: center;
     }
 
-    .login main article .recor-box{
-        margin-top: 12px;
-    }
 
     .login main article .recor-tex{
-        font-size: 15px;
-        margin-top: 10px;
+        font-size: 11px;
+        padding-left: 4px;
     }
 
-    .login main article .recup-box{
-        font-size: 15px;
-        margin: 10px 0 0 75px;
-    }
 
     .login main article button{
         color: white;
@@ -223,12 +294,17 @@
         border-radius: 10px;
         height: 40px;    
     }
+    .login .error-input {
+        width: 218px;
+    }
 }
 
 
 @media (min-width:769px){
 
-
+    .login .error-input {
+        width: inherit;
+    }
     .login main form{
         display: flex;
     }
