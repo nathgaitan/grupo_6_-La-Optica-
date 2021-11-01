@@ -12,11 +12,13 @@
                         <div class="caja-item">
                             <label for="name">Nombre del producto</label>
                             <input type="text" id="name" name="name" required>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
                         </div>
                         
                         <div class="caja-item">
                             <label for="code">Codigo del producto</label>
                             <input type="number" id="code" name="code" required>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
                         </div>
                         <div class="caja-item">
                             <label>Color
@@ -25,6 +27,7 @@
                                     <% color.forEach(color => { %>
                                      <option value="<%= color.id %>" <%= locals.old && old.color.name === color.name ? 'selected' : null %> ><%= color.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.color ? errors.color.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -36,6 +39,7 @@
                                     <% lens.forEach(lens => { %>
                                      <option value="<%= lens.id %>" <%= locals.old && old.lens.name === lens.name ? 'selected' : null %> ><%= lens.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -46,6 +50,7 @@
                                     <% mark.forEach(mark => { %>
                                      <option value="<%= mark.id %>" <%= locals.old && old.mark.name === mark.name ? 'selected' : null %> ><%= mark.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -57,6 +62,7 @@
                                     <% frame.forEach(frame => { %>
                                      <option value="<%= frame.id %>" <%= locals.old && old.frame.name === frame.name ? 'selected' : null %> ><%= frame.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -69,6 +75,7 @@
                                     <% category.forEach(category => { %>
                                      <option value="<%= category.id %>" <%= locals.old && old.category.name === category.name ? 'selected' : null %> ><%= category.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -81,6 +88,7 @@
                                     <% graduation.forEach(graduation => { %>
                                      <option value="<%= graduation.id %>" <%= locals.old && old.graduation.name === graduation.name ? 'selected' : null %> ><%= graduation.name %> </option>
                                     <% }) %>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                                 </select>
                             </label>
                         </div>
@@ -98,6 +106,7 @@
                             <div class="caja-item caja-row">
                                 <label for="price"> Precio del producto</label>
                                 <input class="color" type="number" id="price" name="price" required>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.price ? errors.price.msg : null %></span>
                             </div>
                             <div class="caja-item caja-row">
                                 <label for="discount">Descuento del producto</label>
@@ -111,6 +120,7 @@
                         </div>
                         <div>
                             <textarea name="detail" id="" cols="30" rows="10" required></textarea>
+                            <span class="form-error text-danger small"><%= locals.errors && errors.detail ? errors.detail.msg : null %></span>
                         </div>
 
                         

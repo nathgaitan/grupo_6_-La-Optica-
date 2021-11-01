@@ -16,11 +16,13 @@
                             <div class="caja-item">
                                 <label for="name">Nombre del producto</label>
                                 <input type="text" id="name" name="name" value="<%= product.name %>" required>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
                             </div>
                             
                             <div class="caja-item">
                                 <label for="code">Codigo del producto</label>
-                                <input type="number" id="code" name="code" value="<%=product.code%>" required>
+                                <input type="number" id="code" name="code" value="<%= product.code %>" required>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
                             </div>
                             <div class="caja-item">
                                 <label>Color
@@ -29,6 +31,7 @@
                                             <option value="<%= color.id %>" <%= product.colorId === color.id ? 'selected' : null %> ><%= color.name %> </option>                  
                                         <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.color ? errors.color.msg : null %></span>
                                 </label>
                             </div>
     
@@ -39,6 +42,7 @@
                                             <option value="<%= lens.id %>" <%= product.lensId === lens.id ? 'selected' : null %> ><%= lens.name %> </option>       
                                         <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
                                 </label>
                             </div>
                             
@@ -49,6 +53,7 @@
                                             <option value="<%= mark.id %>" <%= product.markId === mark.id ? 'selected' : null %> ><%= mark.name %> </option>                                       
                                              <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
                                 </label>
                             </div>
     
@@ -59,6 +64,7 @@
                                             <option value="<%= frame.id %>" <%= product.frameId === frame.id ? 'selected' : null %> ><%= frame.name %> </option>                                     
                                         <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                                 </label>
                             </div>
     
@@ -70,6 +76,7 @@
                                             <option value="<%= category.id %>" <%= product.categoryId === category.id ? 'selected' : null %> ><%= category.name %> </option>                                      
                                               <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
                                 </label>
                             </div>
     
@@ -81,11 +88,13 @@
                                             <option value="<%= graduation.id %>" <%= product.graduationId === graduation.id ? 'selected' : null %> ><%= graduation.name %> </option>                                       
                                              <% }) %>
                                     </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                                 </label>
                             </div>
                             <div class="caja-item">
                                 <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
                                 <input type="file" name="image" id="image" hidden>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.image ? errors.image.msg : null %></span>
                             </div>
                             
                             
@@ -97,6 +106,7 @@
                                 <div class="caja-item caja-row">
                                     <label for="price"> Precio del producto</label>
                                     <input class="color" type="number" id="price" value=<%= product.price %>  name="price" required>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.price ? errors.price.msg : null %></span>
                                 </div>
                                 <div class="caja-item caja-row">
                                     <label for="discount">Descuento del producto</label>
@@ -127,6 +137,26 @@
                 </div>
             </main>
             <%- include('../partials/footer') %>
+            <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                  'use strict'
+                
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.querySelectorAll('.needs-validation')
+                
+                  // Loop over them and prevent submission
+                  Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                      form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                          event.preventDefault()
+                          event.stopPropagation()
+                        }
+                
+                        form.classList.add('was-validated')
+                      }, false)
+                    })
+                })()</script>
     </body>
 
 </html>
