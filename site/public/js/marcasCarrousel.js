@@ -1,4 +1,5 @@
-new Glider(document.querySelector('.carousel-marcas'), {
+if (document.querySelector('body.home')) {
+  new Glider(document.querySelector('.carousel-marcas'), {
     // Mobile-first defaults
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -31,3 +32,5 @@ new Glider(document.querySelector('.carousel-marcas'), {
       }
     ]
   });
+}
+

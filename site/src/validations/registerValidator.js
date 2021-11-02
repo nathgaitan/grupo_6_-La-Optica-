@@ -39,6 +39,7 @@ module.exports = [
     }).withMessage("La contraseña debe tener un mínimo de 6 y máximo de 20 caracteres"),
 
     body("password2")
+    .isEmpty().withMessage('Debes ingresar la verificación de contraseña')
     .custom((value,{req}) =>{
         if(value !== req.body.password){
             return false
