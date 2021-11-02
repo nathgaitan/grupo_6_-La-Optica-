@@ -1,45 +1,33 @@
-const {check} = require("express-validator");
-const bcryptjs = require("bcryptjs") ;
+const { check, body } = require("express-validator");
+const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 
 const regExEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/; // es email
 
 module.exports = [
+
     check('email')
-    .isEmail().withMessage("Debe ingresar un email válido")
+        .matches(regExEmail).withMessage('Email inválido').bail()
+        .isLength({min: 13, max:80}).withMessage('El email debe ser de 13 a 80 caracteres por política de la compañia'),
 
-    .custom((value) => {
-        let isEmail = regExEmail.test(value.trim())
-        if(isEmail){
-            true
-        } else {
-            false
-        }
-    }).withMessage('Debe ingresar un email válido')
-
-    .isString({
-        max : 80,
-        min : 13
-    })
-
-    .custom((value,{req}) => {
-        
-        return db.User.findOne({
-            where : {
-                email : value,
-            }
-        })
-            .then(user => {
-                if(!user || !bcryptjs.compareSync(req.body.password, user.password)){
-                    return Promise.reject()
-                }
-            })
-            .catch( () => Promise.reject('Credenciales inválidas'))
-    }),
+    body('email')
+    .custom((value, { req }) => {
+            return db.User
+                .findOne({
+                    where: {
+                        email: value,
+                    }
+                })
+                    .then(user => {
+                        if (!user || !bcryptjs.compareSync(req.body.password, user.password)) {
+                            return Promise.reject('Credenciales inválidas')
+                        }
+                    })
+                    .catch(() => Promise.reject('Ocurrio un error en el logeo, reintentelo'))
+            
+        }),
     check('password')
-    .isString({
-        max : 20,
-        min : 6
-    }).withMessage('Credenciales inválidas')
+        .isLength({min: 6, max:20}).withMessage('Credenciales inválidas')
+
 
 ]
