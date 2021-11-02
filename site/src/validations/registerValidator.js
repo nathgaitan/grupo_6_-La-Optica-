@@ -2,8 +2,13 @@ const {check, body} = require("express-validator");
 const db = require('../database/models')
 
 module.exports = [
-    check ("name")
-    .notEmpty().withMessage("El nombre es obligatorio"),
+    check('name')
+        .notEmpty().withMessage('El nombre es obligatorio').bail()
+        .isLength({
+            min : 2,
+            max : 30
+        }).withMessage('Como mínimo 2  y máximo 30 caracteres').bail()
+        .isAlpha().withMessage('El nombre solo debe contener letras'),
 
     check ("lastName")
     .notEmpty().withMessage("El apellido es obligatorio"),
@@ -29,7 +34,7 @@ module.exports = [
 
     check ("password")
     .isLength({
-        max : 20,
+        max : 12,
         min : 6
     }).withMessage("La contraseña debe tener un mínimo de 6 y máximo de 20 caracteres"),
 
