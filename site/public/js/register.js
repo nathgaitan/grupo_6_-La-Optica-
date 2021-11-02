@@ -53,7 +53,7 @@ $('name').addEventListener('keydown', () => {
     
         switch (true) {
             case !$('lastName').value.trim():
-                $('lastName-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El nombre es obligatorio</span>"
+                $('lastName-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El apellido es obligatorio</span>"
                 $('lastName').classList.add('is-invalid')
     
                 break;
