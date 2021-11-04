@@ -14,7 +14,7 @@
                             <label for="name">Nombre del producto</label>
                             <input type="text" id="name" name="name" required>
                             
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-start">
                                 El nombre del producto es requerido
                               </div>
                               <span class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
@@ -26,15 +26,16 @@
                             <label for="code">Codigo del producto</label>
                             <input type="number" id="code" name="code" required>
                             <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-start">
                                 El codigo del producto es requerido
                               </div>
                         </div>
                         </div>
 
                         <div class="caja-item">
-                            <div class="input-group has-validation">
-                            <label>Color
+                            
+                            <label class="d-flex">Color
+                                <div class="input-group has-validation">
                                 <select name="color" id="color" class="color" required>
                                     <option value="" selected hidden>Color del producto</option>
                                     <% color.forEach(color => { %>
@@ -42,7 +43,7 @@
                                     <% }) %>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-start">
                                 El color es requerido
                               </div>
                               <span class="form-error text-danger small"><%= locals.errors && errors.color ? errors.color.msg : null %></span>
@@ -50,51 +51,53 @@
                         </div>
                         </div>
 
-                        <div class="caja-item">
-                            <div class="input-group has-validation">
-                            <label>Lente
+                        <div class="caja-item">                            
+                            <label class="d-flex">Lente
+                                <div class="input-group has-validation">
                                 <select name="lens" id="lens" class="lens" required>
                                     <option value="" selected hidden>Tipo de lente del producto</option>
                                     <% lens.forEach(lens => { %>
                                      <option value="<%= lens.id %>" <%= locals.old && old.lens.name === lens.name ? 'selected' : null %> ><%= lens.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
+                            <div class="invalid-feedback text-start">
                                 El tipo de lente del producto es requerido
                               </div>
                         </div>
                         </div>
                         <div class="caja-item">
-                            <div class="input-group has-validation">
-                            <label>Marca
+                            
+                            <label class="d-flex">Marca
+                                <div class="input-group has-validation">
                                 <select name="mark" id="mark" class="mark" required>
                                     <option value="" selected hidden>Marca del producto</option>
                                     <% mark.forEach(mark => { %>
                                      <option value="<%= mark.id %>" <%= locals.old && old.mark.name === mark.name ? 'selected' : null %> ><%= mark.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
+                            <div class="invalid-feedback text-start">
                                 La marca del producto es requerido
                               </div>
                         </div>
                         </div>
 
                         <div class="caja-item">
-                            <div class="input-group has-validation">
-                            <label>Marco
+                           
+                            <label class="d-flex">Marco
+                                <div class="input-group has-validation">
                                 <select name="frame" id="frame" class="frame" required>
                                     <option value="" selected hidden>Tipo de marco del producto</option>
                                     <% frame.forEach(frame => { %>
                                      <option value="<%= frame.id %>" <%= locals.old && old.frame.name === frame.name ? 'selected' : null %> ><%= frame.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
+                            <div class="invalid-feedback text-start">
                                 El tipo de marco del producto es requerido
                               </div>
                         </div>
@@ -102,35 +105,36 @@
 
 
                         <div class="caja-item">
-                            <div class="input-group has-validation">
-                            <label>categorias
+                            
+                            <label class="d-flex">categorias
+                                <div class="input-group has-validation">
                                 <select name="category" id="category" class="category" required>
                                     <option value="" selected hidden>Seleccione la categoría</option>
                                     <% category.forEach(category => { %>
                                      <option value="<%= category.id %>" <%= locals.old && old.category.name === category.name ? 'selected' : null %> ><%= category.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
+                            <div class="invalid-feedback text-start">
                                 La categoria del producto es requerido
                               </div>
                         </div>
                         </div>
 
 
-                       <div class="caja-item">
-                        <div class="input-group has-validation">
-                            <label>graduación
+                       <div class="caja-item">                       
+                            <label class="d-flex">graduación
+                                <div class="input-group has-validation">
                                 <select name="graduation" id="graduation" class="category" required>
                                     <option value="" selected hidden>Seleccione la graduacion</option>
                                     <% graduation.forEach(graduation => { %>
                                      <option value="<%= graduation.id %>" <%= locals.old && old.graduation.name === graduation.name ? 'selected' : null %> ><%= graduation.name %> </option>
                                     <% }) %>
-                                    <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                                 </select>
                             </label>
-                            <div class="invalid-feedback">
+                            <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
+                            <div class="invalid-feedback text-start">
                                 La graduación del producto es requerido
                               </div>
                         </div>
@@ -140,7 +144,7 @@
                             <div class="input-group has-validation">
                             <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
                             <input type="file" name="image" id="image" hidden accept="image/*" multiple required>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-center">
                                La imagen del producto es requerido
                               </div>
                         </div>
@@ -159,7 +163,7 @@
                                 <label for="price"> Precio del producto</label>
                                 <input class="color" type="number" id="price" name="price" required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.price ? errors.price.msg : null %></span>
-                                <div class="invalid-feedback">
+                                <div class="invalid-feedback text-start">
                                     El precio del producto es requerido
                                    </div>
                              </div>
@@ -169,7 +173,8 @@
                                 <div class="input-group has-validation">
                                 <label for="discount">Descuento del producto</label>
                                 <input class="color" type="number" id="discount" name="discount" requiured>
-                                <div class="invalid-feedback">
+                                <span class="form-error text-danger small"><%= locals.errors && errors.discount ? errors.discount.msg : null %></span>
+                                <div class="invalid-feedback text-start">
                                     El descuento del producto es requerido
                                    </div>
                              </div>
@@ -181,7 +186,10 @@
                             <div class="input-group has-validation">
                             <label for="detail">detalle del producto</label>
                         
-                            <textarea name="detail" id="" cols="30" rows="10" required></textarea>
+                            <textarea name="detail" id="detail" cols="30" rows="10" required></textarea>
+                            <div class="invalid-feedback text-start" id="error-detail">
+                                    La descripción del producto es requerida
+                                   </div>
                             <span class="form-error text-danger small"><%= locals.errors && errors.detail ? errors.detail.msg : null %></span>
                         </div>
 
@@ -202,7 +210,8 @@
             </main>
             <%- include('../partials/footer') %>
             <%- include('../partials/scripts') %>
-            <script src="/js/productValidator.js"></script>
+            <!--  -->
+           
     </body>
 
 </html>

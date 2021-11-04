@@ -20,7 +20,7 @@ module.exports = {
             lastName : lastName.trim(),
             email : email.trim(),
             password : bcryptjs.hashSync(password.trim(), 10),
-            rolId : 1,
+            rolId : 3,
             avatar : "avatar_default.png"
         })
            .then(user =>{       
