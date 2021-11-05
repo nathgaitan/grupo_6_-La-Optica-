@@ -133,3 +133,45 @@ $('name').addEventListener('keydown', () => {
             $('terms-js').innerHTML = null
     
         })
+
+        $('form-register').addEventListener('submit', e =>{
+            e.preventDefault();
+
+            let elementForm = $('form-register').elements;
+
+            //console.log(elementForm);
+
+            let errors = false
+            for (let i = 0; i < elementForm.length - 1; i++) {
+
+                if(!elementForm[i].value){
+                    elementForm[i].classList.add('is-invalid')
+                    $('campo-vacio').innerHTML = "Los campos señalados son obligatorios";
+                    errors = true
+                }
+            }
+
+            if(!$('terms').checked) {
+            
+                $('terms').classList.add('is-invalid')
+                $('terms-js').innerText = "Debes aceptar los términos y condiciones";
+                errors = true
+            }
+
+            for (let i = 0; i < elementForm.length - 1; i++) {
+            
+                if(elementForm[i].classList.contains('is-invalid')){
+                    errors = true
+                }
+            }
+
+            if(!errors){
+                $('form-register').submit()
+            }
+        
+
+
+
+        })
+
+        
