@@ -139,14 +139,13 @@ $('name').addEventListener('keydown', () => {
 
             let elementForm = $('form-register').elements;
 
-            //console.log(elementForm);
 
             let errors = false
             for (let i = 0; i < elementForm.length - 1; i++) {
 
                 if(!elementForm[i].value){
                     elementForm[i].classList.add('is-invalid')
-                    $('campo-vacio').innerHTML = "Los campos señalados son obligatorios";
+                    $('campo-vacio').innerHTML = "Debes completar todos los campos";
                     errors = true
                 }
             }
