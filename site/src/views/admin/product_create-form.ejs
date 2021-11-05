@@ -14,7 +14,7 @@
                             <label for="name">Nombre del producto</label>
                             <input type="text" id="name" name="name" required>
                             
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback text-start" id="error-name">
                                 El nombre del producto es requerido
                               </div>
                               <span class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
@@ -26,7 +26,7 @@
                             <label for="code">Codigo del producto</label>
                             <input type="number" id="code" name="code" required>
                             <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback text-start" id="error-code">
                                 El codigo del producto es requerido
                               </div>
                         </div>
@@ -145,7 +145,8 @@
                             <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
                             <input type="file" name="image" id="image" hidden accept="image/*" multiple required>
                             <div class="invalid-feedback text-center">
-                               La imagen del producto es requerido
+                               La imagen del producto es requerido <br>
+                               Debe ser válido (JPG, JPEG, PNG, GIF).
                               </div>
                         </div>
                         </div>
@@ -163,7 +164,7 @@
                                 <label for="price"> Precio del producto</label>
                                 <input class="color" type="number" id="price" name="price" required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.price ? errors.price.msg : null %></span>
-                                <div class="invalid-feedback text-start">
+                                <div class="invalid-feedback text-start" id="error-price">
                                     El precio del producto es requerido
                                    </div>
                              </div>
