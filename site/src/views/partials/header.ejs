@@ -1,6 +1,5 @@
 <header>
     <section>
-        <img src="/images/banner (1).jpg" alt="">
         <div class="sombreado"></div>
         <nav>
                <ul class="primero">
@@ -9,15 +8,10 @@
                </ul>
                <ul class="medio">
                    <li><a href="/"><h1>La Óptica</h1></a></li>
+                   
                </ul>
                <ul class="ultimo">
-                <% if (locals.userLogin) { %>
-                    <li><a href="/users/profile"><%= locals.userLogin.name %>  <i class="fas fa-user"></i><i class="fas fa-chevron-down acompañante"></i></a></li>
-
-                <% }else{ %>
-                <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
-                 
-                <% } %>
+                
                 <% if (locals.userLogin && userLogin.rolId === 1) { %>
                     <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                    <% }else{ %>
@@ -48,23 +42,16 @@
              
             <% } %>
                </ul>
-           <ul class="flechas">
-               <button class="izq"><i class="fas fa-chevron-left"></i></button>
-               <button class="der"><i class="fas fa-chevron-right"></i></button>
-           </ul>
+           
         </nav>
         <nav>
                 <ul class="headerlaptop">
                     <li><a href="/">Home<i class="fas fa-home acompañante"></i></a></li>
                     <li><a href="/products">Productos<i class="fas fa-chevron-down acompañante"></i></a></li>
                     <li><a href="/products">Colección<i class="fas fa-chevron-down acompañante"></i></a></li>
-                    <% if (locals.userLogin) { %>
-                        <li><a href="/users/profile"><%= locals.userLogin.name %>  <i class="fas fa-user"></i><i class="fas fa-chevron-down acompañante"></i></a></li>
-
-                    <% }else{ %>
-                    <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
-                     
-                    <% } %>
+                    
+                   
+                    
                     <% if (locals.userLogin && userLogin.rolId === 1) { %>
                         <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
                     <% }else{ %>
@@ -95,6 +82,7 @@
                     <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
                      
                     <% } %>
+                    
                 </ul>
         </nav>
     </section>
