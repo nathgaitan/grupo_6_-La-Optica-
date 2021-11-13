@@ -79,12 +79,28 @@ module.exports = {
                     ['name', 'ASC']
                 ]
             })
+
+            let categories = db.Category
+            .findAll({
+                order: [
+                    ['name', 'ASC']
+                ]
+            })
+            let graduations = db.Graduation
+            .findAll({
+                order: [
+                    ['name', 'ASC']
+                ]
+            })
+            
         Promise
-            .all([products, banners, frames, marks, lenses, colors])
-            .then(([products, banners, frames, marks, lenses, colors]) => {
+            .all([products, banners, frames, marks, lenses, colors,categories,graduations])
+            .then(([products, banners, frames, marks, lenses, colors,categories,graduations]) => {
                 return res.render('products/productsList', {
                     title: 'Listado de Productos',
                     products,
+                    categories,
+                    graduations,
                     banners: banners.banners,
                     priceFinal,
                     toThousand,
