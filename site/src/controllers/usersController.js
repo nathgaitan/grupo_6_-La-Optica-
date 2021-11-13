@@ -31,6 +31,7 @@ module.exports = {
             rolId : user.rolId,
             avatar : user.avatar
         }
+        req.session.cart = []
         
        return res.redirect("/")
     })
@@ -74,6 +75,8 @@ module.exports = {
             if(recordar){
                 res.cookie("optica",req.session.userLogin,{maxAge: 60000})
             }
+
+            req.session.cart = []
 
             return res.redirect("/")
         })
