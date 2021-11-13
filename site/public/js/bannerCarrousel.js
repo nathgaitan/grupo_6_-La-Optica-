@@ -1,4 +1,5 @@
 if(document.querySelector('body.home') || document.querySelector('body.bannerList')) {
+
   new Glider(document.querySelector('.carousel-banner'), {
       // Mobile-first defaults
       slidesToShow: 1,

@@ -220,13 +220,6 @@ if (bodyLogin) {
                 }
                 $('error').style.display = 'none';
                 $('error-msg').innerHTML = null;
-
-                console.log('test email valid : ' + emailLetterLength('email'))
-                console.log('longitud de email : ' + testRegExEmail('email'))
-                console.log('longitud de password ' + passLetterLength('password'))
-                console.log('longitud de ' + $('email').value + ' => ' + $('email').value.length)
-                console.log('longitud de ' + $('password').value + ' => ' + $('password').value.length)
-                alert('Te logeaste exitosamente!')
                 
                 $('form-login').submit()
                 

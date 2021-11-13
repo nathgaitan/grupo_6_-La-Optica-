@@ -1,3 +1,4 @@
+if ($('body.forms')) {
 console.log('product_createValidator.js success');
 
 
@@ -68,4 +69,4 @@ $('price').addEventListener('keypress', () => {
 
 
 
-
+}
