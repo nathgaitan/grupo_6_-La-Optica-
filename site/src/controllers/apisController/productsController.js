@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 
 
 
+
 const throwError = (res, error) => {
     return res.status(error.status || 500).json({
         status: error.status || 500,
@@ -36,104 +37,7 @@ module.exports = {
 
         }
     },
-
     
-    
-
-    
-    filtradoProducts: async (req,res) => {
-        console.log(req.query)
-
-        let productos
-        try {
-            if(req.query.filter !== 0 ){
-               productos = await db.Product.findAll({
-                where : {
-                    markId : req.query.filter ,
-
-                },
-                limit: +req.query.limit,
-                    include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
-                }) 
-            }else if(req.query.filter === 0  ){
-
-                productos = await db.Product.findAll({
-                    
-                    limit: +req.query.limit,
-                        include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
-                    })
-            }else{
-                productos = await db.Product.findAll({
-                    limit: +req.query.limit,
-
-                    include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
-                })
-            }
-            
-    
-            let response = {
-                status : 200,
-                meta : {
-                    total: productos.length,
-                    status:200,
-                    
-                },
-                data: productos
-                
-    
-        }
-        return res.status(200).json(response)
-        } catch (error) {
-            throwError(res, error)
-
-        }
-    },
-
-
-    
-    
-    
-    
-    
-    filtradoCategories: async (req,res) => {
-        console.log(req.query)
-
-        let productos
-        try {
-            if(+req.query.filter !== 0 ){
-               productos = await db.Product.findAll({
-                where : {
-                    categoryId : req.query.filter 
-
-                },
-                    include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
-                }) 
-            }else{
-                productos = await db.Product.findAll({
-                    include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
-                })
-            }
-            
-    
-            let response = {
-                status : 200,
-                meta : {
-                    total: productos.length,
-                    status:200,
-                    
-                },
-                data: productos
-                
-    
-        }
-        return res.status(200).json(response)
-        } catch (error) {
-            throwError(res, error)
-
-        }
-    },
-
-
     filtradoMarks: async (req,res) => {
         console.log(req.query)
 
@@ -145,12 +49,19 @@ module.exports = {
                     markId : req.query.filter
                 },
                 limit: +req.query.limit,
+                
+                order: [
+                    [req.query.order || 'id']
+                ],
 
                     include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
                 }) 
             }else{
                 productos = await db.Product.findAll({
                     limit: +req.query.limit,
+                    order: [
+                        [req.query.order || 'id']
+                    ],
 
                     include : ['mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images']
                 })

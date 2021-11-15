@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
     let filterGraduation = $('graduation-filter')
     let filterColor = $('color-filter')
     let limit = $('select-limit')
+    let order = $('select-filtro')
     
 
 
@@ -32,9 +33,9 @@ window.addEventListener('load', () => {
 
         
 
-    const filtradoProducts = async (filterMark,limit) =>{
+    const filtradoProducts = async (filterMark,limit,order="id") =>{
          try {
-            let response = await fetch(window.origin + `/api/mark-filter?filter=${filterMark }&limit=${limit }`)
+            let response = await fetch(window.origin + `/api/mark-filter?filter=${filterMark }&limit=${limit }&order=${order}`)
 
             let products = await response.json()
             listado.innerHTML = null
@@ -103,7 +104,7 @@ window.addEventListener('load', () => {
     }
 
    filterMark.addEventListener('change',e =>{
-        filtradoProducts(e.target.value,limit.value)
+        filtradoProducts(e.target.value,limit.value,order.value)
     })
 /* 
     filterColor.addEventListener('change',e =>{
@@ -131,9 +132,33 @@ window.addEventListener('load', () => {
     
 
     limit.addEventListener('change',e =>{
-        filtradoProducts(filterMark.value,e.target.value)
+        filtradoProducts(filterMark.value,e.target.value,order.value)
     })
 
+    order.addEventListener('change', e => {
+        if(e.target.value === 'namedes'){
+            filtradoProducts(filterMark.value,limit.value,order.name).sort((a, b) => (a.name < b.name) ? 1 : (a.name > b.name)? -1 :0)
+        }else if(order.value === 'pricedes'){
+            filtradoProducts(filterMark.value,limit.value,order.price).sort((a, b) => (a.price < b.price) ? 1 : (a.price > b.price)? -1 :0)
+        }else if(order.value === 'markIddes'){
+            filtradoProducts(filterMark.value,limit.value,order.markId).sort((a, b) => (a.markId < b.markId) ? 1 : (a.markId > b.markId)? -1 :0)
+        }else{
+            filtradoProducts(filterMark.value,limit.value,e.target.value)
+        }
+    })
+
+    /*order.addEventListener('change',() =>{
+        switch (order.value) {
+            case 'name':
+                let anteojos = filtradoProducts()
+                anteojos.sort((a, b) => (a.name > b.name) ? 1 : (a.name < b.name)? -1 :0)
+                break;
+        
+            default:
+                break;
+        }
+    }
+    */
 })
 
         
