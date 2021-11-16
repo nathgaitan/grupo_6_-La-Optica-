@@ -38,9 +38,13 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.Frame, {
         as : 'frame',
         foreignKey: 'frameId'
-      })     
-      
-    
+      }) 
+      Product.belongsToMany(models.User, {
+        as : 'users',
+        through : 'Carts',
+        foreignKey : 'productId',
+        otherKey : 'userId'
+      })
 
     }
   };
