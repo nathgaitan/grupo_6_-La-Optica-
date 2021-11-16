@@ -63,6 +63,38 @@ body  header nav ul {
 }
 
 
+/*menu hamburguesa*/
+
+body header nav#navburguer {
+  display: block;
+  padding-top: 50px;
+  display: block;
+}
+
+body header nav#navburguer ul#ulhamburguesa {
+
+  display: none;
+  background-color: black;
+}
+
+body header nav#navburguer ul#ulhamburguesa.mostrar {
+
+  display: block;
+}
+
+body header nav#navburguer ul#ulhamburguesa li.lihamburguesa{
+  display: block;
+}
+
+body header nav#navburguer ul#ulhamburguesa li a{
+  font-size: 19px;
+  color: white;
+}
+
+
+/*fin de menu hamburguesa*/
+
+
 body  header nav ul.primero{
     position: absolute;
     top: 10px;
