@@ -215,5 +215,3 @@ const emptyCart = async () => {
 }
 
 getCart()
-
-setTimeout(getCart(), 3000)
