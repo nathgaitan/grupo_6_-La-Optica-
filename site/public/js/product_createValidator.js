@@ -1,6 +1,8 @@
 if ($('body.forms')) {
 console.log('product_createValidator.js success');
 
+const regExExt = /(.jpg|.png|.webp)$/i;
+
 
 $('name').addEventListener('keypress', () => {
     switch (true) {
@@ -22,7 +24,7 @@ $('name').addEventListener('keypress', () => {
     switch (true) {
            case $('code').value.length < 4:
                $('code').classList.add('is-invalid')
-               $('error-code').innerText = "El nombre debe tener un mínimo de 4 numeros";
+               $('error-code').innerText = "El codigo debe tener un mínimo de caracteres";
                $('code').classList.remove('is-valid');
    
                break
@@ -64,8 +66,74 @@ $('price').addEventListener('keypress', () => {
                $('price').classList.add('is-valid');
                $('error-price').innerText = "";
        }
+    })
+
+    $('image').addEventListener('change', function(e) {
+        switch (true) {
+            case !regExExt.exec(this.value):
+                imagenError.innerHTML = "Solo imágenes con extensión jpg, png, webp"
+                this.classList.add('is-invalid');
+                $('preview').innerHTML = null
+                break;
+            case this.files.length > 3 :
+                imagenError.innerHTML = "Solo se permiten 3 imágenes"
+                this.classList.add('is-invalid');
+                $('preview').innerHTML = null
+                break
+            default:
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+                imagenError.innerHTML = null;
+                btnImages.innerText = "Cambiar imágenes"
+    
+                if(this.files) {
+                    [].forEach.call(this.files,readAndPreview)
+                }
+    
+                function readAndPreview(file) {
+                    var reader = new FileReader();
+                    $('preview').innerHTML = null;
+                    reader.addEventListener('load',function() {
+                        var image = new Image()
+                        image.height = 100;
+                        image.title = file.name;
+                        image.src = this.result;
+                        $('preview').appendChild(image)
+                    })
+                    reader.readAsDataURL(file)
+                }
+    
+    
+                break;
+        }
+    })  
+
+      /* $('form-create').addEventListener('submit', event => {
+        event.preventDefault();
+
+        let elementsForm = $('form-create').elements;
+     
+        let error = false;
+
+        for (let i = 0; i < elementsForm.length - 1; i++) {
+            
+            if(!elementsForm[i].value){
+                elementsForm[i].classList.add('is-invalid');
+                $('error-empty').innerHTML = "Los campos señalados son obligatorios";
+                error = true
+            }
+        }    
+
+        if(!error){
+            $('form-register').submit()
+         
+        }
+    })*/
+
+
+
    
-   });
+ 
 
 
 

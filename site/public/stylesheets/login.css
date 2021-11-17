@@ -68,6 +68,25 @@
     display: block;
 }
 
+.login main article .log-box1{
+    position: relative;
+}
+
+.login main article .icon-eye{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-80%);
+    cursor: pointer;
+    transition: 0.4s ease all;    
+}
+
+.login main article .icon-eye:hover {
+    color: steelblue;
+}
+
+
+
 .login main article input{
     display: block;
     padding-right: 100px;
@@ -260,6 +279,23 @@
         font-size: 18px;
     }
 
+    .login main article .log-box1{
+        position: relative;
+    }
+    
+    .login main article .icon-eye{
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: 0.4s ease all;    
+    }
+    
+    .login main article .icon-eye:hover {
+        color: steelblue;
+    }
+
     .login main article input{
         display: block;
         padding-right: 200px;
@@ -369,6 +405,23 @@
     .login main article input{
         display: block;
         padding-right: 90px;
+    }
+
+    .login main article .log-box1{
+        position: relative;
+    }
+    
+    .login main article .icon-eye{
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: 0.4s ease all;    
+    }
+    
+    .login main article .icon-eye:hover {
+        color: steelblue;
     }
 
 
