@@ -36,7 +36,8 @@ module.exports = {
             tableName : 'Orders',
           },
           key : 'id'
-        }
+        },
+        onDelete : 'cascade'
       },
       createdAt: {
         allowNull: false,

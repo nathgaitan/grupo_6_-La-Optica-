@@ -220,7 +220,6 @@ if (bodyLogin) {
                 }
                 $('error').style.display = 'none';
                 $('error-msg').innerHTML = null;
-
                 $('form-login').submit()
                 
             }

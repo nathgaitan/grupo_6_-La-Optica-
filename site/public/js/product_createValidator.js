@@ -1,3 +1,4 @@
+if ($('body.forms')) {
 console.log('product_createValidator.js success');
 
 const regExExt = /(.jpg|.png|.webp)$/i;
@@ -136,4 +137,4 @@ $('price').addEventListener('keypress', () => {
 
 
 
-
+}

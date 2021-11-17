@@ -17,7 +17,7 @@ body.home main section.marcas-container {
 }
 body.home main section.banner-container {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 body.home main section.marcas-container section.marcas-card {
@@ -122,7 +122,7 @@ body.home main section.buscador form input {
     padding-left: 7px;
 }
 body.home main section.buscador form button {
-    width: 25%;
+    width: 46px;
     line-height: 2.5;
     border: 1px solid gray;
     border-top-right-radius: 5px;
@@ -414,7 +414,7 @@ body.home main section.whatsapp .contenedor {
     border-radius:50px;
     text-align:center;
     border: 1px solid #ccc;
-    z-index:100;
+    z-index:30;
 }
 body.home main section.whatsapp .contenedor i {
     padding: 12px;
