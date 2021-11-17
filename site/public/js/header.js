@@ -1,8 +1,7 @@
-const $ = id => document.getElementById(id);
 
-let burguer = $('burguer')
+let burguer = document.getElementById('burguer')
 
-let burguerMenu = $('ulhamburguesa')
+let burguerMenu = document.getElementById('ulhamburguesa')
 
 burguer.addEventListener(`click`, ()=>{
     burguerMenu.classList.toggle(`mostrar`)

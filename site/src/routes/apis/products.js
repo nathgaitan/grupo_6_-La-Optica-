@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {marks,allProduct, filtradoMarks, filtradoFrames, filtradoLens, filtradoGraduation, filtradoColor} = require('../controllers/apisController/productsController')
+const {marks,allProduct, filtradoMarks, filtradoFrames, filtradoLens, filtradoGraduation, filtradoColor} = require('../../controllers/apisController/productsController')
 
 
 router
