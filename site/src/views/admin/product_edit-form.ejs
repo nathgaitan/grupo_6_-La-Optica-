@@ -27,7 +27,7 @@
                             <div class="caja-item">
                                 <div class="input-group has-validation">
                                 <label for="code">Codigo del producto</label>
-                                <input type="number" id="code" name="code" value="<%= product.code %>" required>
+                                <input type="text" id="code" name="code" value="<%= product.code %>" required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
                                 <div class="invalid-feedback text-start" id="error-code">
                                     El codigo del producto es requerido
@@ -36,7 +36,7 @@
                             </div>
                             <div class="caja-item">
                                 <label>Color
-                                                                      <select name="color" id="color" class="color" requiured>
+                                    <select name="color" id="color" class="color" required>
                                         <% color.forEach(color => { %>
                                             <option value="<%= color.id %>" <%= product.colorId === color.id ? 'selected' : null %> ><%= color.name %> </option>                  
                                         <% }) %>
@@ -47,7 +47,7 @@
     
                             <div class="caja-item">
                                 <label>Lente
-                                    <select name="lens" id="lens" class="lens" requiured>
+                                    <select name="lens" id="lens" class="lens" required>
                                         <% lens.forEach(lens => { %>
                                             <option value="<%= lens.id %>" <%= product.lensId === lens.id ? 'selected' : null %> ><%= lens.name %> </option>       
                                         <% }) %>
@@ -59,7 +59,7 @@
                             
                             <div class="caja-item">
                                 <label>Marca
-                                    <select name="mark" id="mark" class="mark" requiured>
+                                    <select name="mark" id="mark" class="mark" required>
                                         <% mark.forEach(mark => { %>
                                             <option value="<%= mark.id %>" <%= product.markId === mark.id ? 'selected' : null %> ><%= mark.name %> </option>                                       
                                              <% }) %>
@@ -70,7 +70,7 @@
     
                             <div class="caja-item">
                                 <label>Marco
-                                    <select name="frame" id="frame" class="frame" requiured>
+                                    <select name="frame" id="frame" class="frame" required>
                                         <% frame.forEach(frame => { %>
                                             <option value="<%= frame.id %>" <%= product.frameId === frame.id ? 'selected' : null %> ><%= frame.name %> </option>                                     
                                         <% }) %>
@@ -82,7 +82,7 @@
     
                             <div class="caja-item">
                                 <label>categorias
-                                    <select name="category" id="category" class="category" requiured>
+                                    <select name="category" id="category" class="category" required>
                                         <% category.forEach(category => { %>
                                             <option value="<%= category.id %>" <%= product.categoryId === category.id ? 'selected' : null %> ><%= category.name %> </option>                                      
                                               <% }) %>
@@ -94,7 +94,7 @@
     
                            <div class="caja-item">
                                 <label>graduacion
-                                    <select name="graduation" id="graduation" class="category" requiured>
+                                    <select name="graduation" id="graduation" class="category" required>
                                         <% graduation.forEach(graduation => { %>
                                             <option value="<%= graduation.id %>" <%= product.graduationId === graduation.id ? 'selected' : null %> ><%= graduation.name %> </option>                                       
                                              <% }) %>
@@ -132,7 +132,7 @@
                                 <div class="caja-item caja-row">
                                     <div class="input-group has-validation">
                                     <label for="discount">Descuento del producto</label>
-                                    <input class="color" type="number" id="discount" value=<%= product.discount %>  name="discount" requiured>
+                                    <input class="color" type="number" id="discount" value=<%= product.discount %>  name="discount" required>
                                     <div class="invalid-feedback text-start">
                                         El descuento del producto es requerido
                                        </div>

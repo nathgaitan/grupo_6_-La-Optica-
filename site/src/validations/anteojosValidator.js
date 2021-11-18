@@ -12,7 +12,7 @@ module.exports = [
     .withMessage('El codigo es obligatorio'),
 
     check('color')
-    .isEmpty()
+    .notEmpty()
     .withMessage('El color es obligatorio'),
 
     check('lens')
@@ -27,9 +27,6 @@ module.exports = [
     .notEmpty()
     .withMessage('Debe seleccionar un tipo de marco'),
 
-    check('lens')
-    .notEmpty()
-    .withMessage('Debe seleccionar un tipo de lente'),
 
     check('category')
     .notEmpty()
