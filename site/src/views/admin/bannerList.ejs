@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<body class="bannerList">
+    <%- include('../partials/headerAdmin') %>
+    <main>
+        <div class="banner-container">
+            <h2>Banner de Home</h2>
+            <% bannerHome.forEach(banner => { %>
+            <div class="banner__item" style="background-image: url('/images/banner/<%= banner.file%>');">
+                <p><%= banner.description != 0 ? banner.description : null %></p>
+                <div class="botones">
+                    <a href="/admin/edit-banner/<%= banner.id %>"
+                        class=""><i class="fas fa-edit"></i></a>
+                </div>
+                <div class="botones">
+                    <form
+                        action="/admin/delete-banner/<%= banner.id %>?_method=DELETE "
+                        method="POST">
+                        <button type="submit" class="">
+                                <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            <% }) %>
+        </div>
+        <div class="banner-container">
+            <h2>Banner de listado de Productos</h2>
+            <% bannerProductList.forEach(banner => { %>
+                <div class="banner__item" style="background-image: url('/images/banner/<%= banner.file%>');">
+                <p><%= banner.description != 0 ? banner.description : null %></p>
+                <div class="botones">
+                    <a href="/admin/edit-banner/<%= banner.id %>"
+                        class=""><i class="fas fa-edit"></i></a>
+                </div>
+                <div class="botones">
+                    
+                    <form
+                        action="/admin/delete-banner/<%= banner.id %>?_method=DELETE "
+                        method="POST">
+                        <button type="submit" class="">
+                                <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>

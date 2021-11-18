@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body class="forms">
+        <%- include('../partials/headerAdmin') %>
+       <main>
+                <div class="container">
+                    <h3>Editando : <%= product.name %> de la categoría <%= product.category.name %>
+                    </h3>
+                    <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST"
+                        enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <p class="text-danger text-center" id="error-empty"></p>
+
+
+                        <div class="box left">
+                            <div class="caja-item">
+                                <div class="input-group has-validation">
+                                <label for="name">Nombre del producto</label>
+                                <input type="text" id="name" name="name" value="<%= product.name %>" required>
+                                <div class="invalid-feedback text-start" id="error-name">
+                                    El nombre del producto es requerido
+                                  </div>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                            </div>
+                            </div>
+                            
+                            <div class="caja-item">
+                                <div class="input-group has-validation">
+                                <label for="code">Codigo del producto</label>
+                                <input id="code" name="code" value="<%= product.code %>" required>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.code ? errors.code.msg : null %></span>
+                                <div class="invalid-feedback text-start" id="error-code">
+                                    El codigo del producto es requerido
+                                  </div>
+                            </div>
+                            </div>
+                            <div class="caja-item">
+                                <label>Color
+                                                                      <select name="color" id="color" class="color" requiured>
+                                        <% color.forEach(color => { %>
+                                            <option value="<%= color.id %>" <%= product.colorId === color.id ? 'selected' : null %> ><%= color.name %> </option>                  
+                                        <% }) %>
+                                    </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.color ? errors.color.msg : null %></span>
+                                </label>                              
+                            </div>
+    
+                            <div class="caja-item">
+                                <label>Lente
+                                    <select name="lens" id="lens" class="lens" requiured>
+                                        <% lens.forEach(lens => { %>
+                                            <option value="<%= lens.id %>" <%= product.lensId === lens.id ? 'selected' : null %> ><%= lens.name %> </option>       
+                                        <% }) %>
+                                    </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
+                                    
+                                </label>
+                             </div>
+                            
+                            <div class="caja-item">
+                                <label>Marca
+                                    <select name="mark" id="mark" class="mark" requiured>
+                                        <% mark.forEach(mark => { %>
+                                            <option value="<%= mark.id %>" <%= product.markId === mark.id ? 'selected' : null %> ><%= mark.name %> </option>                                       
+                                             <% }) %>
+                                    </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
+                                </label>
+                            </div>
+    
+                            <div class="caja-item">
+                                <label>Marco
+                                    <select name="frame" id="frame" class="frame" requiured>
+                                        <% frame.forEach(frame => { %>
+                                            <option value="<%= frame.id %>" <%= product.frameId === frame.id ? 'selected' : null %> ><%= frame.name %> </option>                                     
+                                        <% }) %>
+                                    </select>
+                                    <span><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
+                                </label>
+                            </div>
+    
+    
+                            <div class="caja-item">
+                                <label>categorias
+                                    <select name="category" id="category" class="category" requiured>
+                                        <% category.forEach(category => { %>
+                                            <option value="<%= category.id %>" <%= product.categoryId === category.id ? 'selected' : null %> ><%= category.name %> </option>                                      
+                                              <% }) %>
+                                    </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
+                                </label>
+                            </div>
+    
+    
+                           <div class="caja-item">
+                                <label>graduacion
+                                    <select name="graduation" id="graduation" class="category" requiured>
+                                        <% graduation.forEach(graduation => { %>
+                                            <option value="<%= graduation.id %>" <%= product.graduationId === graduation.id ? 'selected' : null %> ><%= graduation.name %> </option>                                       
+                                             <% }) %>
+                                    </select>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
+                                </label>
+                            </div>
+
+                            <div class="col-12" id="preview">
+                            
+                            </div>
+    
+                            
+                            <div class="caja-item">
+                                <div class="input-group has-validation">
+                                <label for="image"><a class="btn btn-primary" id="btnImages" >Subir Imagenes</a></label>
+                                <input type="file" name="image" id="image" hidden multiple required>
+                                <span class="form-error text-danger small"><%= locals.errors && errors.image ? errors.image.msg : null %></span>
+                                <div class="invalid-feedback text-center" id="imagenError">
+                                    La imagen del producto es requerido
+                                   </div>
+                            </div>
+                        </div>
+                            
+                            
+                            
+                            
+                        </div>
+                        <div class="box rigth">
+                            <div class="row">
+                                <div class="caja-item caja-row">
+                                    <div class="input-group has-validation">
+                                    <label for="price"> Precio del producto</label>
+                                    <input class="color" type="number" id="price" value=<%= product.price %>  name="price" required>
+                                    <span class="form-error text-danger small"><%= locals.errors && errors.price ? errors.price.msg : null %></span>
+                                    <div class="invalid-feedback text-start" id="error-price">
+                                        El precio del producto es requerido
+                                       </div>
+                                       </div>
+                                </div>
+                                
+                                <div class="caja-item caja-row">
+                                    <div class="input-group has-validation">
+                                    <label for="discount">Descuento del producto</label>
+                                    <input class="color" type="number" id="discount" value=<%= product.discount %>  name="discount" requiured>
+                                </div>
+                                </div>
+                                
+                            </div>
+
+
+
+
+
+
+
+
+
+                        
+                            
+                            
+                            
+                            
+
+                                <div class="caja-carga">
+                                    <button class="btn btn-primary" type="submit" value="Cargar">Cargar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <%- include('../partials/footer') %>
+            <%- include('../partials/scripts') %>
+    </body>
+
+</html>

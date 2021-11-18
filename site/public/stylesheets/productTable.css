@@ -1,0 +1,168 @@
+body.tabla main{
+    text-align: center;
+    margin: auto;
+    
+}
+
+body.tabla section{
+    padding-top: 30px;
+}
+
+body.tabla section {
+    width: 95%;
+    margin: auto;
+    
+}
+body.tabla table {
+    width: 70%;
+    min-width: 915px;
+    margin: 20px auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+
+
+body.tabla table thead{
+    background-color: rgb(122, 159, 226);
+}
+
+body.tabla table tr:nth-child(even){
+    background-color: #ddd;
+}
+
+body.tabla table tr:hover{
+    background-color: #abf0e1;
+}
+
+
+body.tabla table td,
+body.tabla table th {
+    padding: 10px;
+}
+body.tabla table .static {
+    position: absolute;
+    background-color: rgb(122, 159, 226);
+    width: 35px;
+}
+
+body.tabla table th.static {
+    height: 62px;
+}
+  
+body.tabla table .first-col {
+    padding-left: 50px;
+}  
+
+body.tabla table td:nth-child(3) {
+    text-transform: capitalize;
+}
+body.tabla table td:nth-child(4) {
+    text-transform: uppercase;
+}
+body.tabla table td.cash {
+    font-size: 1.3rem;
+}
+body.tabla table td:nth-last-child(2) {
+    color: red;
+}
+
+
+body.tabla table article {
+    display: flex;
+    text-align: left;
+}
+body.tabla table figure {
+    width: 25%;
+    margin: auto 0;
+}
+body.tabla table img {
+    width: 100%;
+}
+body.tabla table div.right {
+    padding-left: 30px;
+    width: 75%;
+}
+body.tabla table div.right p {
+    line-height: 1rem;
+    margin-bottom: 10px;
+}
+body.tabla table div.right p:first-child {
+    height: 28px;
+    display: block;
+    margin-bottom: 3px;
+}
+body.tabla table div.right p:last-child {
+    margin-bottom: 0
+}
+body.tabla table div.right small {
+    height: 34px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+
+
+body.tabla table td div {
+    width: 100px;
+}
+body.tabla table form {
+    display: inline-block;
+}
+body.tabla table td.acc-but div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+body.tabla td a,
+body.tabla td button.borrar{
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.439);
+    line-height: 1.3rem;
+}
+body.tabla td a i {
+    line-height: 1.3rem;
+}
+
+body.tabla .borrar{
+    background-color: red;    
+}
+body.tabla .editador{
+    background-color: rgba(0, 0, 0, 0.302);
+}
+body.tabla .detail{
+    background-color: rgb(95, 240, 95);
+}
+
+@media (min-width: 320px) {
+    body.tabla table td.static {
+    height: 130px;
+}
+    body.tabla table td.acc-but div {
+        flex-direction: column;
+        height: 110px;
+    
+    }
+    body.tabla td a,
+    body.tabla td button.borrar {
+        width: 2.3rem;
+
+    }
+    body.table section {
+        margin: 20px
+    }
+}
+
+@media (min-width: 425px) {
+    body.tabla table td.static {
+        height: 102px;
+    }
+    body.tabla table td.acc-but div {
+        flex-direction: row;
+        height: auto;
+    
+    }
+    body.tabla td a,
+    body.tabla td button.borrar {
+        width: 2rem;
+    }
+}

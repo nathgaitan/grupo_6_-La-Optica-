@@ -1,0 +1,363 @@
+/* body.profile
+main
+form
+div.box-input 
+*/
+body.profile {
+    background-color: whitesmoke;
+}
+
+body.profile main {
+    width: 94%;
+    margin: auto;
+    
+}
+
+body.profile .encabezado {
+    position: relative;
+}
+body.profile .encabezado div.banner {
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+}
+body.profile .encabezado article {
+    display: none;
+}
+body.profile .encabezado div.banner img {
+    width: 100%;
+    
+}
+
+/* profile avatar */
+body.profile .encabezado div.position {
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+body.profile .encabezado div.user {
+    position: relative;
+}
+body.profile .encabezado div.user div {
+    border-radius: 50%;
+}
+body.profile .encabezado div.user div div{
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+}
+body.profile .encabezado div.user .box-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+body.profile main section.position-profile {
+    height: 50px;
+    width: 50%;
+    border-radius: 2px;
+    margin: 0px auto 40px;
+    background-color: gray;
+}
+
+
+
+
+
+body.profile main div.column {
+    display: flex;
+    flex-wrap: wrap;
+}
+body.profile div.column section.container-form{
+    height: inherit;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+body.profile form {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+}
+body.profile .contain-section {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+body.profile .contain-section:first-of-type {
+    padding-bottom: 0;
+}
+body.profile .contain-section:last-of-type {
+    border: none;
+    padding-bottom: 0;
+}
+body.profile main form div.box-input {
+    padding: 7px
+}
+
+
+
+body.profile main form input {
+    border: none;
+    border-bottom: rgba(0, 0, 0, 0.393) solid 1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 250px;
+    line-height: 1.8;
+    background-color:rgba(233, 230, 230, 0.644);
+    padding: 0 7px;
+}
+body.profile main form input:focus {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #2826bc
+}
+
+
+body.profile main form label {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    
+}
+body.profile main form label#btn-avatar {
+    width: 250px;
+    
+}
+body.profile main form small{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+
+/* aside */
+body.profile main .column aside {
+    position: relative;
+}
+body.profile .oculto {
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    left: -500px
+}
+body.profile main .column aside li{
+    margin: 20px 0;
+}
+body.profile main .column aside li:first-child{
+    margin: 0;
+}
+
+body.profile main .column aside li a{
+    display: block;
+    line-height: 2;
+    margin-right: 7px;
+    margin-left: 5px;
+    padding-left: 4px;
+    border-right: 1px solid rgb(204 204 204);
+    border-bottom: 1px solid rgb(204 204 204);
+    box-shadow: 2px 4px rgb(204 204 204 / 34%);
+    border-bottom-right-radius: 3px; 
+}
+
+body.profile main .column aside li a:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #2826bc;
+}
+body.profile .mostrar {
+    width: 100%;
+    z-index: 100;
+    padding: 20px 10px;
+    background-color: #808080;
+    left: 0;
+    transition: all ease-in-out .4s;
+}
+body.profile #navegacion {
+    width: 35px;
+    background-color: #ccc;
+    text-align: center;
+}
+body.profile #navegacion i {
+    font-size: 1.5rem;
+    padding: 7px;
+}
+
+body.profile #error {
+    width: 300px;
+    padding: 10px;
+    background-color: rgb(136,193,227);
+    border-radius: 1px;
+    display: none;
+    margin: 20px auto 0;
+}
+body.profile input{
+    padding: 3px 4px;
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    
+}
+body.profile input:focus-visible{
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    border-radius: 3px;
+    outline: 0;
+}
+body.profile .is-invalid {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+body.profile .btn-invalid {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+    background-color: #f98989;
+}
+body.profile .is-invalid:focus-visible {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+body.profile .is-valid {
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline:0;
+}
+body.profile .is-valid:focus-visible{
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline: 0;
+}
+body.profile .info-input {
+    background-color: lightblue;
+    color: blue;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+    width: inherit;
+
+}
+body.profile .error-input {
+    background-color: #ff000070;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+}
+body.profile #error-msg {
+    color: white;
+}
+body.profile .p-relative {
+    position: relative
+}
+body.profile #quit {
+    position: absolute;
+    right: -4px;
+    top: -4px
+}
+body.profile #quit #quitar{
+    font-size: 1.15rem;
+    padding: 3px;
+}
+@media (min-width: 320px) {
+    body.profile .contain-section,
+    body.profile form  {
+        width: 100%;
+    }
+    body.profile main div.column section.container-form {
+        width: min(max(1150px), 100%);
+    }
+    body.profile div.column section.container-form{
+        padding: 5px;
+        margin-bottom: 40px;
+    }
+    body.profile main section.position-profile {
+        width: 230px;
+    }
+    body.profile main div.column {
+        flex-direction: column-reverse;
+    }
+    body.profile main div.column aside {
+        width: 100%;
+        height: inherit;
+        padding: 20px 0;
+    }
+    body.profile .error-input, 
+    body.profile .info-input  {
+        width: 250px;
+    }
+    
+}
+@media (min-width: 425px) {
+    body.profile form {
+        max-width: 300px;
+        margin: auto;
+    }
+    body.profile main section.position-profile {
+        width: min(max(525px),65%);
+    }
+    body.profile #navegacion {
+        display: none;
+    }
+    body.profile .oculto {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    body.profile main .column aside li a{
+        padding: 20px 10px;
+        line-height: 1;
+        font-size: min(max(16px),2.5vw);
+    }
+}
+@media (min-width: 768px) {
+    body.profile form {
+        max-width: none;
+    }
+    body.profile div.column section.container-form{
+        width: 75%;
+        padding: 40px 50px;
+    }
+    body.profile .contain-section {
+        padding: 15px;
+    }
+    body.profile .contain-section:nth-child(2) {
+        border-right: 1px solid #ccc;
+    }
+    body.profile .contain-section:last-of-type,
+    body.profile .contain-section:first-of-type {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    body.profile .contain-section:last-of-type {
+        height: 250px;
+    }
+    body.profile .oculto {
+        justify-content: center;
+    }
+    body.profile main .column aside li {
+        margin: 0 20px;
+    }
+    body.profile main .column aside li:first-child {
+        margin: 0 20px;
+    }
+    body.profile #error {
+        width: 50%;
+        position: sticky;
+        bottom: 3%;
+        left: 100%;
+        margin: 0;
+        margin-top: 40px;
+        height: max-content;
+    }
+    body.profile .w-50porc {
+        width: 50%;
+    }
+}

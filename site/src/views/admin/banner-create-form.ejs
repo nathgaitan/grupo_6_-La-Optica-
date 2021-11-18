@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body class="forms">
+        <%- include('../partials/headerAdmin') %>
+        <main >
+            <div class="container">
+                 <h3>Carga de Banner</h3>
+                 <form action="/admin/crear-banner" method="POST" enctype="multipart/form-data">
+                    <div class="box left">
+                        <div class="caja-item">
+                            <label for="banner"><a class="btn btn-primary">Subir Imagen</a></label>
+                            <input type="file" class="<%= locals.errors && errors.banner ? 'is-invalid' : locals.old && old.banner ? 'is-valid' : null %>" name="banner" id="banner" hidden>
+                            <div>
+                                <small>
+                                    <%= locals.errors && errors.banner ? errors.banner.msg : null %>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="caja-item">
+                            <label for="description">Texto superpuesto. (opcional)</label>
+                            <textarea name="description" id="description" cols="30" rows="10"><%= locals.old && old.description ? old.description : null %></textarea>
+                        </div>
+                        <div class="caja-item">
+                            <label for="views">Localización</label>
+                            <select class="<%= locals.errors && errors.views ? 'is-invalid' : locals.old && old.views ? 'is-valid' : null %>" name="views">
+                                <option value="" selected hidden disabled>Seleccione una opción</option>
+                                <% views.forEach(view => { %>
+                                    <option value=<%= view.id %> <%= locals.old && old.views ? 'selected' : null %>><%= capitalize(view.type) %></option>
+                                <% }) %>
+                            </select>
+                            <div>
+                                <small>
+                                    <%= locals.errors && errors.views ? errors.views.msg : null %>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="caja-carga">
+                            <button class="btn btn-primary" type="submit" value="Cargar">Cargar</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

@@ -1,0 +1,336 @@
+.register main{
+    width: 350px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 50px 0;
+    
+}
+.register article{
+    border: gray solid 1px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.register main article a{
+    color: blue;
+}
+
+.register main article .registrate{
+    display: flex;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.register main article .titulo{
+    text-align: center;
+}
+
+
+.register main h4{
+    font-size: 10px;
+    padding-left: 20px;
+    width: 60%;
+    
+}
+
+.register main article div .ingresa{
+    font-size: 12px;
+    font-weight: bold;    
+    width: 50%;
+    padding: 0 0 7px 50px;
+}
+
+.register main article div .logo{
+    width: 55%;
+    border-radius: 100px;
+    border: solid 3px rgb(136, 136, 216);
+    margin: 30px 0  0 75px;
+    
+}
+
+.register main article div .logo2{
+    display: none;
+
+}
+
+.register main article div .logo3{
+    display: none;    
+}
+
+.register main article form .reg-box{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 20px 20px;
+    justify-content: center;
+
+}
+
+.register main article form div input{
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.register main article .quehacer{
+   display: none;
+}
+
+.register main article .quehacer2{
+    display:none;
+ }
+
+ .register main article .terminos1{
+     margin-left: 40px;
+ }
+
+.register main article .but-box{
+    text-align: center;
+    padding: 5px 0;
+    margin: 10px 20px;
+}
+
+.register main article button{
+    color: white;
+    background-color: rgb(38, 201, 65);
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    
+}
+
+.register main article .google-box{
+    text-align: center;
+    margin: 10px 20px;
+}
+
+.register main article .google-box img{
+    width: 200px;
+    border-radius: 10px;
+    height: 30px;
+    
+}
+
+@media (min-width : 481px){
+
+    .register main{
+        width: 480px;
+        margin: 0 auto;
+        background-color: white;
+    }
+
+    .register main h4{
+        font-size: 15px;
+        padding-left: 20px;
+        width: 50%;
+        
+    }
+    
+    .register main article div .ingresa{
+        font-size: 15px;
+        font-weight: bold;
+        width: 50%;   
+    }
+
+
+
+    .register main article div .logo{
+        display: none;
+    }
+    
+    .register main article div .logo2{
+        display: inline-block;
+        width: 70%;
+        margin: 20px 0 0 40px;
+        border-radius: 50px;
+        border: solid 3px rgb(161, 161, 243);    
+    }
+
+    .register main article div .logo3{
+        display: none;
+    }
+
+
+    .register main .todo2{
+        display: flex;
+        
+        
+    }
+
+    .register main .reg-p{
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+
+    .register main article form div input{
+        width: 450%;
+        justify-content: center;
+        
+    }
+
+    .register main .box-p{
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    .register main .reg-box{
+        margin: 20px 0 20px 20px;
+        padding-right: 18px;
+    }
+
+    .register main article .quehacer{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+     }
+
+     .register main article .quehacer2{
+        display:none;
+     }
+
+    .register main h3{
+         text-align: center;
+         font-size: 8px;
+     }
+
+    .register main ul li{
+         font-size: 8px;
+         text-align: center;
+     }
+
+    .register main i{
+        color: rgb(52, 238, 52);
+        font-size: 10px;
+        margin-right: 5px;
+    }
+
+    .register main article .terminos1{
+        text-align: center;
+    }
+
+    .register main article .recup-box{
+        width: 40%;
+        padding-left: 140px;
+        font-size: 11px;
+    }
+
+    .register main article .but-box{
+        text-align: center;
+        padding: 20px 0;
+        margin: 10px 20px;
+    }
+
+    .register main .rei-box{
+        display: inline;
+    }
+
+    .register main article button{
+        color: white;
+        background-color: rgb(38, 201, 65);
+        border-radius: 10px;
+        height: 40px;
+        width: 300px;
+        font-size: 25px;
+        
+    }
+
+    .register main article .google-box img{
+        width: 300px;
+        border-radius: 10px;
+        height: 40px;
+        
+    }
+}
+
+
+
+
+@media (min-width:769px){
+
+    .register main{
+        width: 760px;
+        margin: 0 auto;
+        background-color: white;
+    }
+
+    .register main h4{
+        font-size: 15px;
+        padding-left: 20px;
+        width: 40%;
+        
+    }
+    
+    .register main article div .ingresa{
+        font-size: 15px;
+        font-weight: bold;
+        width: 40%;   
+    }
+
+
+
+    .register main article div .logo{
+        display: none;
+    }
+    
+    .register main article div .logo2{
+        display: none;    
+    }
+
+    .register main article div .logo3{
+        display: inline-block;
+        border-radius: 40px;
+        border: solid 3px rgb(160, 160, 229);
+        margin: 20px 0 0 150px;
+        width: 50%;
+    }
+
+    .register main .reg-img{
+        display: flex;
+    }
+
+    .register main .todo2{
+        display: inline-block;        
+    }
+
+    .register main article form div input{
+        width: 150%;
+        justify-content: center;
+        
+    }
+
+    .register main article .quehacer{
+        display:inline-block;
+        width: 100%;
+    }
+
+    .register main article .quehacer h3{
+        font-size: 30px;      
+    }
+
+    .register main article .quehacer ul li{
+        text-align:left;        
+        padding: 5px 0 0 220px ;
+        font-size: 15px;
+    }
+
+    .register main article .term-lab{
+        font-size: 20px;
+    }
+
+    .register main article .terminos1{
+        text-align: center;
+        background-color: rgba(88, 88, 235, 0.137);
+    }
+
+    .register main article .registrate{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+      
+ 
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body class="profile">
+        <%- include('../partials/header.ejs') %>
+            <section class="encabezado">
+                <div class="banner">
+                    <img src="/images/banner-profile.jpg" alt="">
+                </div>
+                <div class="position">
+                    <div class="user">
+                        <div class="box-image">
+                            <a href=""> + </a>
+                        </div>
+                        <div>
+                            <div style="background-image: url('/images/usuarios/<%= userLogin.avatar %>');"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <main>
+                <section class="position-profile">
+                </section>
+                <div class="column">
+                    <section class="container-form">
+                        <h3>Perfil de usuario</h3>
+                        <form id="form-profile" action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                            <section class="contain-section">
+                                <div class="box-input brother3">
+                                    <p id="title">¿Quieres editar el avatar de usuario?</p>
+                                    <label for="avatar_user" id="btn-avatar" class="btn btn-primary">Imagen</label>
+                                    <input type="file" name="avatar_user" id="avatar_user" hidden>
+                                    <p id="avatar-msg"><small><%= locals.errors && errors.avatar_user ? errors.avatar_user.msg : null %></small></p>
+                                    
+                                </div>
+                                <div class="preview brother4">
+                                    <div class="circle">
+                                        <i class="fa fa-picture-o d-none" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="contain-section brother1">
+                                <p id="title">¿Quieres editar la información personal?</p>
+                                <div class="box-input">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" name="name" id="name"
+                                        value="<%= locals.old && old.name ? old.name : userLogin.name %>">
+                                    <p id="name-msg"><small><%= locals.errors && errors.name ? errors.name.msg : null %></small></p>
+                                    
+                                </div>
+                                <div class="box-input">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" name="lastName" id="lastName"
+                                        value="<%= locals.old && old.lastName ? old.lastName : userLogin.lastName %>">
+                                    <p id="lastName-msg"><small><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></small></p>
+                                    
+                                </div>
+                                <div class="box-input">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" disabled value="<%= userLogin.email %>">
+                                    <p id="email-msg"></p>
+                                    <small>Por razones de seguridad el email no puede ser editado.<br> Comuniquese con
+                                        nosotros
+                                        si desea realizar este cambio.</small>
+                                </div>
+                            </section>
+
+                            <section class="contain-section brother2">
+                                <p id="title">¿Quieres cambiar la contraseña?</p>
+                                <div class="box-input">
+                                    <label for="password">Nueva contraseña</label>
+                                    <input type="password" name="password" id="password"
+                                        placeholder="Ingresá la nueva contraseña">
+                                    <p id="pass-msg"><small><%= locals.errors && errors.password ? errors.password.msg : null %></small></p>
+                                    
+                                </div>
+                                <div class="box-input">
+                                    <label for="confirmpassword">Confirma nueva contraseña</label>
+                                    <input type="password" name="confirmpassword" id="confirmpassword"
+                                        placeholder="Confirma la nueva contraseña">
+                                    <p id="pass2-msg"><small><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : null %></small></p>
+                                    
+                                </div>
+                            </section>
+
+                            <section class="contain-section brother5">
+                                <p class="w-100" id="title">Para confirmar cambios ingrese la contraseña actual.</p>
+                                <div class="box-input">
+                                    <label for="oldpassword">Contraseña</label>
+                                    <input type="password" name="oldpassword" id="oldpassword"
+                                        placeholder="Ingresá tu contraseña">
+                                    <p id="passConfirm-msg"><small><%= locals.errors && errors.oldpassword ? errors.oldpassword.msg : null %></small></p>
+                                    
+                                </div>
+                                <div class="box-input w-100">
+                                    <button class="btn btn-primary">Cargar</button>
+                                </div>
+                            </section>
+                            <div id="error">
+                                <div class="p-relative">
+                                    <div id="quit"><i id="quitar" class="fas fa-times"></i></div>
+                                </div>
+                                <span id="error-msg"></span>
+                            </div>
+                        </form>
+                    </section>
+                    <aside>
+                        <div id="navegacion"><i id="menu" class="fas fa-bars" aria-hidden="true"></i><i id="quitar"
+                                class="fas fa-times d-none"></i></div>
+                        <ul class="oculto">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products">Lista de productos</a></li>
+                            <li><a href="/users/fav">Deseados</a></li>
+                            <li><a href="/products/cart">Carrito</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </main>
+
+        <%- include('../partials/footer') %>
+        <%- include('../partials/scripts') %>
+
+    </body>
+
+</html>

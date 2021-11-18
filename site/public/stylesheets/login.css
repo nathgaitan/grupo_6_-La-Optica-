@@ -1,0 +1,437 @@
+.login main{
+    width: 320px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px 0;
+}
+
+.login article{
+    border: gray solid 1px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.login main article a{
+    color: blue;
+}
+
+.login main article .accede{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0 20px 50px;
+    
+}
+
+.login main article .registrate{
+    padding: 0 0 0 10px ;
+}
+
+.login main article .log-img{
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+.login main article div .img1{
+   width: 320px;
+   border-radius: 10px;
+   border: solid 2px rgb(149, 149, 214);
+}
+
+.login main article .log-img2{
+    display: none;
+}
+
+.login main article .img3{
+    display: none;
+}
+
+.login main article .inicio1{
+    text-align: center;
+}
+
+.login main article .inicio2{
+    display: none;
+}
+
+.login main article h2{
+    font-size: 20px;
+}
+
+.login main article .boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login main article label{
+    display: block;
+}
+
+.login main article .log-box1{
+    position: relative;
+}
+
+.login main article .icon-eye{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    transform: translateY(-80%);
+    cursor: pointer;
+    transition: 0.4s ease all;    
+}
+
+.login main article .icon-eye:hover {
+    color: steelblue;
+}
+
+
+
+.login main article input{
+    display: block;
+    padding-right: 100px;
+    border-radius: 5px;
+}
+
+.login main article .radio-box{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 303px;
+    margin-top: 10px;
+}
+.login main article .radio-box div{
+    display: flex;
+    align-items: center;
+}
+.login main article .recor-box{
+    margin-top: 0px;
+    padding-left: 2px;
+}
+
+.login main article .recor-tex{
+    font-size: 11px;
+    padding-left: 2px;
+}
+
+.login main article .recup-box{
+    font-size: 11px
+}
+
+.login main article .but-box{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login main article button{
+    color: white;
+    background-color: rgb(38, 201, 65);
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    
+}
+
+.login main article .google-box{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login main article .google-box img{
+    width: 200px;
+    border-radius: 10px;
+    height: 30px;    
+}
+
+
+.login input{
+    padding: 3px 4px;
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    
+}
+.login input:focus-visible{
+    border: 1px solid rgba(86, 96, 72, 0.7);
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-invalid {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-invalid:focus-visible {
+    border: 1px solid #ff00007a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .is-valid {
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline:0;
+}
+.login .is-valid:focus-visible{
+    border: 1px solid #0066ff7a;
+    border-radius: 3px;
+    outline: 0;
+}
+.login .info-input {
+    background-color: lightblue;
+    color: blue;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+    width: inherit;
+
+}
+.login .error-input {
+    background-color: #ff000070;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: ghostwhite;
+    margin: 3px 0;
+    text-align: center;
+}
+.login .log-box {
+    position: relative;
+    margin: auto;
+}
+.login #error {
+    width: 300px;
+    padding: 10px;
+    background-color: rgb(136,193,227);
+    border-radius: 1px;
+    display: none;
+    margin: 20px auto 0;
+}
+.login #error-msg {
+    color: white;
+}
+.log-box p {
+    margin: 0;
+}
+
+@media (min-width : 481px){
+
+
+    .login main{
+        width: 480px;
+        margin: 0 auto;
+        background-color: white;
+    }
+
+    .login article{
+        border: gray solid 1px;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .login main article .accede{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .login main h4{
+        font-size: 17px;        
+        width: 60%;
+        margin-left: 20px;
+        
+    }
+
+    .login main article .registrate{
+        font-size: 18px;
+        margin: 5px 0 0 20px;
+       
+    }
+
+    .login main article .log-img{
+        display: none;
+    }
+
+    .login main article .img3{
+        display: none;
+    }
+
+    .login main article .log-img2{
+        display: block;
+        text-align: center;
+        padding-bottom: 20pxgit ;
+    }
+
+    .login main article .img2{
+        width: 90%;
+        border-radius: 20px;
+        border: solid 2px rgb(149, 149, 214);
+
+    }
+
+    .login main article h2{
+        font-size: 30px;
+    }
+
+    .login main article label{
+        display: block;
+        margin: 5px 0;
+        font-size: 18px;
+    }
+
+    .login main article .log-box1{
+        position: relative;
+    }
+    
+    .login main article .icon-eye{
+        position: absolute;
+        right: 10px;
+        top: 52px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: 0.4s ease all;    
+    }
+    
+    .login main article .icon-eye:hover {
+        color: steelblue;
+    }
+
+    .login main article input{
+        display: block;
+        padding-right: 200px;
+        font-size: 15px;
+        padding: 5px 11px;
+    }
+
+    .login main article .radio-box{
+        display: flex;
+        margin: 10px 0px;
+        align-items: center;
+    }
+
+
+    .login main article .recor-tex{
+        font-size: 11px;
+        padding-left: 4px;
+    }
+
+
+    .login main article button{
+        color: white;
+        font-size: 25px;
+        background-color: rgb(38, 201, 65);
+        border-radius: 10px;
+        height: 40px;
+        width: 300px;        
+    }
+
+    .login main article .google-box img{
+        width: 300px;
+        border-radius: 10px;
+        height: 40px;    
+    }
+    .login .error-input {
+        width: 218px;
+    }
+}
+
+
+@media (min-width:769px){
+
+    .login .error-input {
+        width: inherit;
+    }
+    .login main form{
+        display: flex;
+    }
+
+    .login main{
+        width: 750px;
+        margin: 0 auto;
+        background-color: white;
+    }
+
+    .login main article .inicio1{
+        display: none;
+    }
+    
+    .login main article .inicio2{
+        display: inline-block;
+        padding-left: 80px;
+    }
+
+    .login main article .img2{
+        display: none;
+    }
+
+    .login main .todo{
+        display: flex;
+    }
+
+    .login main .log-img3{
+        display:inline-block;
+        width: 50%;
+    }
+
+    .login main article .img3{
+        display: inline-block;
+        width: 380px;
+        margin: 25px 0 0 5px;
+        border-radius: 50px;
+        border: solid 2px rgb(149, 149, 214);
+    }
+
+    .login main article .todo2{
+        width: 50%;
+    }
+
+    .login main article .accede{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10px;
+    }
+
+    .login main h4{
+        font-size: 17px;        
+        width: 50%;
+        margin-left: 18px;
+        
+    }
+    
+    .login main article .registrate{
+        padding: 18px 0 0 10px ;
+    }
+
+    .login main article input{
+        display: block;
+        padding-right: 90px;
+    }
+
+    .login main article .log-box1{
+        position: relative;
+    }
+    
+    .login main article .icon-eye{
+        position: absolute;
+        right: 10px;
+        top: 52px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: 0.4s ease all;    
+    }
+    
+    .login main article .icon-eye:hover {
+        color: steelblue;
+    }
+
+
+    
+
+
+
+
+
+
+
+
+}

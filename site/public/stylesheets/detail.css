@@ -1,0 +1,419 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*main*/
+
+.product main{
+    width: 100%;
+    padding-bottom: 35px;
+}
+.product main section{
+    width: 85%;
+    margin: 0 auto;
+    
+}
+
+.product main section img{
+    width: 100%;
+
+    
+   
+}
+
+
+.product main section span.marca{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.product main section div.nye{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product main section div div.nye i{
+    color: blue;
+}
+
+.product main section span.precio{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.product main section button.agregar{
+    width: 100%;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #a0c5f7;
+    color: #252440;
+    border: none;
+}
+
+.product main section h3{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.product main div.interesar h3.bis{
+
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.product main section button.vermas{
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 10px ;
+    background-color: #a0c5f7;
+    color: #252440;
+    border-width: 1px;
+    border-color: blue transparent transparent ;
+}
+
+.product main section button.opciones{
+    border-color: blue transparent blue;
+}
+
+.product main section .editar-but{
+    width: 100%;
+}
+
+.product main section button.but-editar{
+    border-color: blue;
+    border-radius: 15px;
+    background-color: aquamarine;
+    width: 150px;
+    height: 50px;
+    margin: 20px 40%;
+}
+
+
+.product main section.container button.comprarya{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    height: 40px;
+    background-color: #a0c5f7;
+    color: #252440;
+    border: none;
+}
+
+.product main section.segundoart{
+    display: none;
+}
+
+.product main button.fijo{
+    display: none;
+}
+
+.product main section.contenedorglider{
+    width: 88%;
+}
+
+.product main section article  p.discount{
+    text-decoration: line-through;
+    font-size: var(--font-title);
+    color:blue;
+    height: 15px;
+    
+}
+.product main section div.precio p.discount{
+    text-decoration: line-through;
+    font-size: var(--font-title);
+    color:blue;
+    padding-left: 40%;
+}
+
+
+.product main section article  p.price{
+    
+    font-size: 1.7rem;
+    margin-top: 5px;
+    
+}
+
+.product main section div.precio p.price{
+    font-size: var(--font-title);
+    padding-left: 40%;
+}
+
+.product main button.delete{
+    color: black;
+    border-color: white;
+    border-radius: 15px;
+    background-color: red;
+    width: 150px;
+    height: 50px;
+    margin: 20px 40%;
+}
+
+
+@media (min-width:481px){
+
+    /*main */
+
+    .product main{
+        padding-bottom: 55px;
+        
+    }
+
+    .product main section img{
+        width: 60%;
+        
+       
+    }
+
+    .product main section.container{
+        display: flex;
+        
+    }
+
+    .product main section span.marca2{
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .product main section div.nye{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    
+    
+    .product main section div div.nye h2{
+        font-size: 22px;
+    }
+
+    .product main section div.alineacion{
+        display: flex;
+        flex-direction: column ;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .product main section.container button.comprarya{
+    
+        display: none;
+    }
+    .product main div.botontablet{
+        display: flex;
+        justify-content: center;
+    }
+    .product main div.botontablet button.fijo{
+        display: block;
+        justify-content:space-between;
+        margin: auto;
+        position: fixed;
+        bottom: 0;
+        width: 90%;
+        height: 40px;
+        background-color: #a0c5f7;
+        color: #252440;
+        border: none;
+    }
+
+
+
+    
+    .product main section span.precio{
+        font-size: 24px;
+        padding: 10px;
+    }
+    .product main section button.agregar{
+        padding: 15px 0;
+        
+    }
+
+    
+
+    .product main section button.agregar h4{
+        font-size: 22px;
+    }
+
+    .product main section button.agregar span i{
+        padding-top: 8px;
+    }
+    
+    .product main section div.receta span{
+        font-size: 22px;
+        padding-right: 10px;
+    }
+
+    .product main section div.receta button{
+        font-size: 20px;
+    }
+    
+    .product main section h3{
+        width: 90%;
+        display: inline-block;
+        margin: auto;
+        font-size: 22px;
+        padding: 15px 0;
+    }
+    
+    .product main section button.vermas{
+        width: 100%;
+        font-size: 22px;
+        padding: 15px ;
+        
+    }
+    
+    
+    .product main button.comprarya{
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .product main section img.anteojo{
+        width: 100%;
+    }
+    
+
+    .product main section.segundoart{
+        display: inline-block;
+    }
+
+    .product main section span.precio3{
+        font-size: 22px;
+        display: flex;
+        justify-content: left;
+    }
+    
+    .product main div.interes{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        
+
+    }
+}
+
+@media (min-width:769px){
+
+    
+
+    
+    /*main*/
+
+    
+    .product main section img{
+        width: 60%;
+        
+       
+    }
+    .product main section.container{
+        display: flex;
+        
+    }
+    .product main section.info {
+        width: 60%;
+        
+    }
+    
+    
+    .product main section span.marca2{
+        display: flex;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: 600;
+    }
+    
+    .product main section div.nye{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .product main section div div.nye h2{
+        font-size: 26px;
+    }
+
+    .product main section div div.nye i{
+        font-size: 18px;
+    }
+    
+    .product main section div.alineacion{
+        display: flex;
+        flex-direction: column ;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    
+    
+    .product main section h3{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    
+    .product main section button.vermas{
+        width: 100%;
+        
+        display: flex;
+        justify-content: space-between;
+        padding: 10px ;
+        background-color: #a0c5f7;
+        color: #252440;
+        border-width: 1px;
+        border-color: blue transparent transparent ;
+    }
+
+    .product main section button.vermas span{
+        font-size: 24px;
+    }
+    
+    .product main section button.opciones{
+        border-color: blue transparent blue;
+    }
+    
+    .product main section.container button.comprarya{
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product main section img.anteojo{
+        width: 100%;
+    }
+    .product main section span.precio3{
+        font-size: 28px;
+        display: flex;
+        justify-content: left;
+    }
+
+    .product main section.segundoart{
+        display: inline-block;
+    }
+    
+    .product main div.interes{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        
+
+    }
+    .product main div.botontablet button.fijo{
+        display: none;
+    }
+    
+}

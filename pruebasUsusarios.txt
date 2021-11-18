@@ -1,0 +1,14 @@
+usuario con rol de Admin para pruebas
+
+Logeo:
+
+email : comision9@gmail.com
+password : MuyDigna
+
+======================================
+usuario con rol de usuario para pruebas
+
+Logeo:
+
+email : vamosmanaos@gmail.com
+password : vamosmanaos

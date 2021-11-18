@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head') %> 
+<body class="cart">
+    
+    <%- include('../partials/header') %> 
+
+
+    <main class="menu">
+        <section id="cart-container" class="">
+            <div id="title-optica">La Óptica</div>
+            <div id="cuerpo" class="d-flex">
+                <section id="body-cart">
+                    
+                </section>
+                <section id="sugerencias">
+                    <article id="lentes-de-sol"></article>
+                    <article id="lentes"></article>
+                </section>
+        
+                <aside id="buy-container" class="">
+                    <div id="codigo-promocional" class="">
+                        <p class="code-p">¿Tenés un cupón de descuento?</p>
+                        <input type="text" name="codigo-prom" id="codigo-prom">
+                        <a href="#" class="btn-aplicar" id="cupon-code">Aplicar descuento</a>
+                    </div>
+                    <section class="buy">
+                        <div id="total-contain" class="d-flex">
+                            <p id="title-total">Total</p>
+                            <span id="total" class="c-number"></span>
+                        </div>
+                        <div class="small-price">
+                            <small>El precio total lleva incluido los descuentos</small>
+                        </div>
+                        <article class="btn-interaction">
+                            <button type="submit" id="next-box"><span id="buy-next">Continuar comprando</span></button>
+                            <button type="submit" id="buy-box">
+                                <span id="buy-now" class="">Finalizar compra</span>
+                            </button>
+                        </article>
+                    </section>
+                </aside>
+            </div>
+            <button type="submit" id="vaciar" class="d-flex f-column" onclick="emptyCart()">
+                <span id="clean-cart">
+                    <i class="fa fa-trash vaciar-item" aria-hidden="true"></i>
+                Vaciar
+                </span>
+            </button>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>    
+
+</body>
+
+</html>

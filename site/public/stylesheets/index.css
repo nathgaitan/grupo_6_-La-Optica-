@@ -1,0 +1,675 @@
+body.home {
+    background-color:#f2f2f2;
+}
+body.home main {
+    margin: 0 auto;
+    width: 100%;
+}
+body.home main p, 
+body.home main h3 {
+    cursor: default;
+}
+
+/* ------------------ Banner y Marcas ------------------ */
+body.home main section.marcas-container {
+    display: none;
+    position: relative;
+}
+body.home main section.banner-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+body.home main section.marcas-container section.marcas-card {
+    width: 85%;
+    margin: 15px auto;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 45px;
+}
+
+body.home main section.marcas-container section.marcas-card div.carousel-marcas,
+body.home main section.banner-container section.banner-card div.carousel-banner {
+    overflow-x: hidden;        
+}
+body.home main section.marcas-container section.marcas-card div.glider-track {
+    height: 220px;
+}
+
+body.home main section.marcas-container section.marcas-card div.carousel-marcas div div {
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-position: center;
+}
+body.home main section.banner-container section.banner-card div.carousel-banner div div{
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body.home main section.marcas-container button.marcas-next,
+body.home main section.marcas-container button.marcas-prev {
+    top: 38%;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+}
+body.home main section.banner-container button.banner-next,
+body.home main section.banner-container button.banner-prev{
+    opacity: .9;
+    position: absolute;
+    display: block;
+    height: calc(100% - 70px);
+    top: 16px;
+    padding: 30px;
+    border: none;
+    background-color: transparent;
+}
+body.home main section.banner-container button i,
+body.home main section.marcas-container button i {
+    font-size: 1.3rem;
+    color: whitesmoke
+}
+body.home main section.banner-container div.b-dots .glider-dot,
+body.home main section.marcas-container div.m-dots .glider-dot {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 3px;
+    opacity: .3;
+    position: relative;
+    bottom: 25px;
+}
+body.home main section.marcas-container div.m-dots .glider-dot {
+    bottom: 35px
+}
+body.home main section.banner-container div.b-dots .glider-dot:hover,
+body.home main section.marcas-container div.m-dots .glider-dot:hover {
+	opacity: .5;
+}
+body.home main section.banner-container div.b-dots .glider-dot.active,
+body.home main section.marcas-container div.m-dots .glider-dot.active {
+	opacity: 1;
+}
+
+/* ---------------- Inicio de Buscador ---------------- */
+body.home main section.buscador {
+    margin: 0 auto;
+    width: 63%;
+    display: flex;
+    justify-content: center;
+}
+body.home main section.respuesta {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 95px;
+}
+body.home main section.buscador h3 {
+    display: inline-block;
+}
+body.home main section.buscador form {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 2.7rem;
+}
+body.home main section.buscador form input {
+    width: 70%;
+    height: 2.7rem;
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    padding-left: 7px;
+}
+body.home main section.buscador form button {
+    width: 46px;
+    line-height: 2.5;
+    border: 1px solid gray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius:  5px;
+    border-left: none;
+    background-color: white;
+    padding: 0 7px;
+}
+body.home main section.buscador button:hover {
+    color: whitesmoke;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+/* ---------------- Fin de Buscador ---------------- */
+
+/* ---------------- Productos ---------------- */
+body.home main section.productos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 95%;
+}
+body.home main section.productos article{
+    height: max-content;
+    margin: 20px auto;
+    border-radius: 15px;
+    position: relative;
+    background-color: #fff;
+    display: none;
+}
+
+body.home main section.productos article h3 {
+    width:100%;
+    font-family: 'Crimson Text', serif;
+    font-weight: 900;
+    font-size: 150px;
+    text-align: center;
+    color: #f5ebe2;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Figure y img de productos */
+body.home main section.productos article figure {
+    height: max-content;
+    margin: auto;
+}
+body.home main section.productos img {
+    position:relative;
+    z-index: 20;
+    width: 100%;
+}
+/* fin Figure y img de productos */
+body.home main section.productos article .box-detalle {
+    text-align: center;
+    padding-bottom: 20px;
+}
+body.home main section.productos article .box-detalle p {
+    line-height: 1.9;
+    margin: 0;
+    padding: 0 7px;
+}
+body.home main section.productos article .box-detalle p a {
+    color: var(--font-body);
+    text-decoration: none;
+    font-size:var(--font-subtitle);
+}
+body.home main section.productos article .box-detalle p.discount {
+    text-decoration: line-through;
+    font-size: var(--font-title);
+    font-family: 'Crimson Text', serif;
+    color: var(--color-discount);
+    height: 30.4px;
+}
+body.home main section.productos article .box-detalle p.price{
+    font-family: 'Crimson Text', serif;
+    font-size: 1.7rem;
+    margin-top: 2px;
+    height: 45px;
+}
+
+body.home main section.productos article .check-like {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+}
+body.home main section.productos article .check-like input,
+body.home main section.productos article .check-buy input,
+body.home main section.productos article .check-buy label.plus {
+    display:none;
+}
+body.home main section.productos article .check-buy {
+    position:relative;
+    width: 36px;
+}
+body.home main section.productos article .check-like i,
+body.home main section.productos article .check-buy i {
+    padding:7px;
+    font-size: 1.3rem;
+}
+body.home main section.productos article .check-buy label.plus i {
+    font-size: 10px;
+}
+body.home main section.productos article .check-buy label.plus {
+    position:absolute;
+    bottom: -5px;
+    right: -7px;
+}
+body.home main section.productos article .check-like input:checked ~ label i {
+    font-weight: 900;
+}
+
+body.home main section.productos article .check-buy input:checked ~ label.plus {
+    display: block;
+}
+
+/* ------------------ Fin products ------------------ */
+
+/* ------------------  Coleccion ------------------  */
+body.home main section.coleccion {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 450px;
+    width: 752px;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    display:none;
+}
+body.home main section.coleccion .contenedor {
+    display:flex;
+}
+body.home main section.coleccion figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+body.home main section.coleccion figure.uno {
+    height: 450px;
+    width: 450px;
+}
+body.home main section.coleccion figure.dos {
+    width: 313px;
+    height: 241px;
+}
+body.home main section.coleccion figure.tres {
+    height: 209px;
+    width: 303px;
+}
+body.home main section.coleccion img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-out;
+}
+body.home main section.coleccion img.lente-coleccion {
+    position: absolute;
+    left: -51px;
+    width: 113%;
+}
+body.home main section.coleccion a {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 8px;
+    font-size: larger;
+    opacity: 0;
+    visibility: hidden;
+}
+body.home main section.coleccion figure:hover > a {
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.5rem;
+    transition: all 0.5s linear;
+}
+body.home main section.coleccion figure:hover > img {
+    position: absolute;
+    transform: scale(1.3);
+    transition: all 0.5s linear;
+}
+
+/* container-galeria - icono-instagram */
+body.home main section.container-galeria {
+    margin: 50px auto;
+}
+body.home main section.container-galeria div.icono-instagram {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* circulo instagram */
+body.home main section.container-galeria div.icono-instagram .background-icono {
+    background: radial-gradient(
+        circle at 33% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d9237f 62%,
+        #9b36b7 85%,
+        #515ecf
+        );
+    border-radius: 30%;
+    height: 1.3rem;
+    width: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+    
+body.home main section.container-galeria div.icono-instagram h4 {
+    padding-left: 4px;
+}
+body.home main section.container-galeria div.background-icono i {
+    color: white;
+}
+    
+
+
+/* galeria-redes */
+body.home main section.galeria-redes {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 50%, 0.1);
+    /* background-color: var(--color-cuadros); */
+    border-radius: 45px;
+    position: relative;
+    padding: 20px;
+    padding-bottom: 35px;
+}
+
+/* galeria redes - flechas */
+body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+    position: absolute;
+}
+body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+    position: absolute;
+}
+body.home main section.container-galeria .galeria-redes .post-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+body.home main section.container-galeria .galeria-redes .post-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+body.home main section.container-galeria .galeria-redes img {
+    border-radius: 45px;
+    display: none;
+}
+body.home main section.container-galeria .galeria-redes .grande {
+    max-width: 230.5px;
+}
+body.home main section.container-galeria .galeria-redes .last-column {
+    width: max-content;
+}
+
+/*  galeria redes // marca - botones */
+body.home main section.container-galeria .galeria-redes button {
+    border:none;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+}
+
+
+/* Botón flotante Whats App */
+body.home main section.whatsapp .contenedor {
+    position: fixed;
+    bottom: 15px;
+    left: 10px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    border: 1px solid #ccc;
+    z-index:30;
+}
+body.home main section.whatsapp .contenedor i {
+    padding: 12px;
+    font-size: 2.5rem;
+    color: #fff;
+}
+body.home main .contenedor nav ul,
+body.home main section.whatsapp .contenedor nav input{
+    display: none;
+}
+body.home main section.whatsapp .contenedor nav ul {
+    position:absolute;
+    left: 70px;
+    bottom: 1.5px;   
+    padding: 0;
+    width: max-content;
+}
+body.home main section.whatsapp .contenedor nav li {
+    list-style: none;
+}
+body.home main section.whatsapp .contenedor nav li a {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--font-body);
+    box-shadow: 2px 2px #ccc;
+    border: 1px solid #ccc;
+    font-size: var(--font-title)
+}
+body.home main section.whatsapp .contenedor nav input:checked ~ ul{
+    display: block;    
+}
+body.home main section.whatsapp .contenedor nav {
+    position: relative;
+}
+/* Fin botón flotante Whats App */
+
+/* Vista Mobile */
+@media (min-width: 320px) {
+    /* --------- max-width vista ---------  */
+    body.home main {
+        margin: 0 auto;
+    }
+
+    /* banner */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 100px;
+    }
+    body.home main section.banner-container button.banner-next{
+        right: 5px;
+    }
+    body.home main section.banner-container button.banner-prev{
+        left: 5px;
+    }
+    
+    /* --------- productos --------- */
+    body.home main section.productos article {
+        width: 100%;
+    }
+    body.home main section.productos article {
+        display: block;
+    }
+    body.home main section.productos article h3 {
+        margin-top: 5px;
+        font-size: 115px;
+    }
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.anteojos {
+        width: 86%;
+    }
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 55.9%;
+    }
+    body.home main section.productos img.img-anteojos {
+        margin-top: 70px;
+        height: auto;        
+    }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin: 45px 0 30px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
+    body.home main section.productos article .check-like {
+        bottom: 29.37px;
+    }
+
+    /* --------- galeria redes ---------  */
+    body.home main section.container-galeria .galeria-redes {
+        align-items: center;
+    }
+
+    body.home main section.container-galeria .galeria-redes img.uno {
+        display: block;
+        width: 210px;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+        right: 5%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+        left: 5%;
+    }
+}
+
+@media (min-width: 425px) {
+    /* --------- marcas --------- */
+    body.home main section.marcas-container {
+        display: block;
+        max-width: 1000px;
+        margin: auto
+    }
+    /* --------- banner --------- */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 185px;
+    }
+    body.home main section.marcas-container button.marcas-next{
+        right: 3%;
+    }
+    body.home main section.marcas-container button.marcas-prev {
+        left: 3%;
+    }
+    /* --------- products --------- */
+        body.home main section.productos article {
+        width: 46%;
+    }
+    body.home main section.productos article.seis {
+        display: block;
+    }
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 55.895%;
+    }
+    body.home main section.productos img.img-anteojos {
+        margin-top: 40px;      
+    }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin: 50px 0 30px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
+    body.home main section.productos article .box-detalle p {
+        height: 52px;
+    }
+
+    /* --------- galeria redes --------- */
+    body.home main section.container-galeria .galeria-redes img.dos,
+    body.home main section.container-galeria .galeria-redes img.uno {
+        display: block;
+        width: 44%;
+        max-width: 246px;
+    }
+    body.home main section.container-galeria .galeria-redes .post-row {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-der {
+        right: 3.2%;
+    }
+    body.home main section.container-galeria .galeria-redes .icono-flecha-izq {
+        left: 3.2%;
+    }
+}
+
+@media (min-width: 768px) {
+    /* banner */
+    body.home main section.banner-container section.banner-card div.glider-track {
+        height: 430px;
+    }
+    
+    /* marcas */
+    body.home main section.marcas-container button.marcas-next{
+        right: 4%;
+    }
+    body.home main section.marcas-container button.marcas-prev {
+        left: 4%;
+    }
+
+    /* products */
+    body.home main section.productos {
+        margin: 90px auto 110px;
+        max-width: 1000px;
+    }
+    body.home main section.productos article {
+        width: 23%;
+        display: block;
+    }
+    /* adaptando imagen segun categoria de producto */
+    body.home main section.productos article figure.solucion,
+    body.home main section.productos article figure.solucion-lentillas {
+    height: 189.22px;
+    display: flex;
+    align-items: center;
+    }
+    body.home main section.productos article figure.solucion-lentillas {
+        width: 69.255%;
+    }
+    body.home main section.productos img.img-anteojos {
+        margin-top: 47px;
+        margin-bottom: 15px;
+    }
+    body.home main section.productos img.img-solucion-lentillas {
+        margin-top: 24.91px;
+    }
+    /* fin adaptando imagen segun categoria de producto */
+    body.home main section.productos article .check-like {
+        bottom: 150px;
+        background-color: rgba(245, 235, 226, 0.45);
+        z-index: 30;
+        opacity: 0;
+    }
+    body.home main section.productos article a:hover ~ .check-like,
+    body.home main section.productos article .check-like:hover  {
+        opacity: 1;
+    }
+    body.home main section.productos article .box-detalle p a {
+        font-size: 12.5px;
+    }
+    body.home main section.productos article .box-detalle p a:hover {
+        color: var(--color-discount);
+        text-decoration: underline;
+    }
+    
+    /* --------- coleccion --------- */
+    body.home main section.coleccion {
+        display: flex;
+    }
+
+    /* --------- galeria redes --------- */
+    /* sacando flechas */
+    body.home main section.galeria-redes .galeria-flechas {
+        display: none;
+    }
+    body.home main section.container-galeria {
+        background-color: rgba(128, 128, 128, 0.1);
+        border-radius: 45px;
+        width: 730px; 
+        margin: 110px auto;
+    }
+    body.home main section.container-galeria section.galeria-redes {
+        background-color: transparent;
+    }
+    body.home main section.container-galeria .galeria-redes img.dos,
+    body.home main section.container-galeria .galeria-redes img.uno {
+        width: 100px;
+    }
+    body.home main section.container-galeria .galeria-redes img {
+        display: block;
+        max-width: 92.4px;
+    }
+    body.home main section.container-galeria .galeria-redes .post {
+        width: 100%;
+    }
+    body.home main section.container-galeria .galeria-redes .post-column {
+        height: 350px;
+    }
+    body.home main section.container-galeria .galeria-redes .post-row {
+        width: 230.5px;
+        justify-content: space-between;
+    }
+}

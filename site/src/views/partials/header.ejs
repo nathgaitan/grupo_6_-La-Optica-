@@ -1,0 +1,97 @@
+<header>
+    <section>
+        <div class="sombreado"></div>
+        <nav>
+               <ul class="primero">
+                   <li><a class="iconos" href=""><i class="fas fa-bars"></i></a></li>
+                   <li><a class="iconos" href=""><i class="fas fa-search"></i></a></li>
+               </ul>
+               <ul class="medio">
+                   <li><a href="/"><h1>La Óptica</h1></a></li>
+                   
+               </ul>
+               <ul class="ultimo">
+                
+                <% if (locals.userLogin && userLogin.rolId === 1) { %>
+                    <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
+                   <% }else{ %>
+                   <li><a href=""><i class="far fa-heart"></i></a></li>
+                   <% } %>
+                   <% if (locals.userLogin) { %>
+
+
+
+
+                    <button style="background: none; border: none;" type="button"  data-bs-toggle="dropdown" id="dropdownMenu">
+                        
+                        <li class="nav-item dropdown"><a  href="/users/login"><%= locals.userLogin.name %>  <i class="fas fa-chevron-down acompañante"></i></a></li>
+                    </button>
+                    <ul  class="dropdown-menu "  aria-labelledby="navbarDropdown" >
+                        <li class="dropdown-item"><a class=" text-dark" href="/users/profile" >Mi perfil</a></li>
+                        <li class="dropdown-item"><a class=" text-dark" href="/users/logout">Cerrar sesion</a></li>
+                    </ul>
+                
+
+
+
+
+
+            <% }else{ %>
+            <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
+             
+            <% } %>
+               </ul>
+           
+        </nav>
+        <nav>
+                <ul class="headerlaptop">
+                    <li><a href="/">Home<i class="fas fa-home acompañante"></i></a></li>
+                    <li><a href="/products">Productos<i class="fas fa-chevron-down acompañante"></i></a></li>
+                    <li><a href="/products">Colección<i class="fas fa-chevron-down acompañante"></i></a></li>
+                    
+                   
+                    
+                    <% if (locals.userLogin && userLogin.rolId === 1) { %>
+                        <li><a href="/admin"><i class="fas fa-user-cog"></i></a></li>
+                    <% }else{ %>
+                    <li><a href=""><i class="far fa-heart"></i></a></li>
+                    
+                     
+                    <% } %>
+                    <% if (locals.userLogin) { %>
+
+
+
+                        <li>
+                            <a href="/products/cart" id="btn-cart"><i class="fas fa-shopping-bag"></i>
+                                <span class="c-cantidad cant-font span-flotante" id="quantityCart"></span>
+                            </a>
+                        </li>
+                            <button style="background: none; border: none;" type="button"  data-bs-toggle="dropdown" id="dropdownMenu">
+                                
+                                <li class="nav-item dropdown"><a  href="/users/login"><%= locals.userLogin.name %>  <i class="fas fa-chevron-down acompañante"></i></a></li>
+                            </button>
+                            <ul  class="dropdown-menu "  aria-labelledby="navbarDropdown" >
+                                <li class="dropdown-item"><a class=" text-dark" href="/users/profile" >Mi perfil</a></li>
+                                <li class="dropdown-item"><a class=" text-dark" href="/users/logout">Cerrar sesion</a></li>
+                            </ul>
+                        
+
+
+
+
+
+                    <% }else{ %>
+                    <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
+                     
+                    <% } %>
+                    
+                </ul>
+        </nav>
+    </section>
+    
+    <%- include('./cart') %> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</header>

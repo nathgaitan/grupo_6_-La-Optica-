@@ -1,0 +1,72 @@
+require('dotenv').config()
+
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+const methodOverride = require('method-override');
+const session = require('express-session');
+const localsUser = require('./middlewares/localsUser');
+const recordameMiddleware=require("./middlewares/recordameMiddlewares")
+const sessionUserAdmin =require('./middlewares/sessionUserAdmin');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
+var adminRouter = require('./routes/admin');
+
+var app = express();
+
+
+
+app.use(methodOverride('_method'));
+
+app.use(session({
+  secret : 'la optica palabra clave',
+  saveUninitialized : true,
+  resave : false,
+}));
+
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(recordameMiddleware)
+app.use(localsUser)
+
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
+app.use('/admin', sessionUserAdmin, adminRouter);
+// da error las rutas sin contenido ni metodos de controller
+// app.use('/api',require('./routes/apis'))
+app.use('/apis/cart',require('./routes/apis/cart'))
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
