@@ -3,7 +3,7 @@
         <div class="sombreado"></div>
         <nav>
                <ul class="primero">
-                   <li><a class="iconos" href=""><i class="fas fa-bars"></i></a></li>
+                   <li id="burguer"><a  class="iconos" href="#"><i  class="fas fa-bars"></i></a></li>
                    <li><a class="iconos" href=""><i class="fas fa-search"></i></a></li>
                </ul>
                <ul class="medio">
@@ -41,8 +41,18 @@
              
             <% } %>
                </ul>
+               
            
         </nav>
+
+        <nav id="navburguer">
+            <ul id="ulhamburguesa">
+                <li class="lihamburguesa"><a href="/products">Productos</a></li>
+                
+
+            </ul>
+        </nav>
+        
         <nav>
                 <ul class="headerlaptop">
                     <li><a href="/">Home<i class="fas fa-home acompañante"></i></a></li>
@@ -91,6 +101,8 @@
     </section>
     
     <%- include('./cart') %> 
+    
+    <script src="/js/header.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

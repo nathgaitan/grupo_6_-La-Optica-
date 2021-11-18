@@ -27,9 +27,6 @@ module.exports = [
     .notEmpty()
     .withMessage('Debe seleccionar un tipo de marco'),
 
-    check('lens')
-    .notEmpty()
-    .withMessage('Debe seleccionar un tipo de lente'),
 
     check('category')
     .notEmpty()

@@ -10,50 +10,71 @@
                 </div>
             <% }) %>
         <%- include('../components/glidejsEnd', {clase : 'banner' , dots : 'b-dots' }) %>
+
+
+
+
+        <div class="card-header">
+            <div class="row">
+                <div class="col-12 col-md-6"></div>
+                <div class="col-12 col-md-6 my-2 d-flex justify-content-end">
+                    <ul class="pagination pagination-sm" id="box-paginator">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-2">
+                
+                <div class="col-12 col-md-2">
+                    <select class="form-select filter" id="mark-filter">
+                        <option value="" selected hidden>Marcas</option>
+                        <% marks.forEach(mark => { %>
+                            <option value="<%= mark.id %>"><%= mark.name %> </option>
+
+                        <% }) %>
+                        <option value="0">Todas las marcas</option>
+
+                    </select>
+                </div>
+
+                <div class="col-12 col-md-2">
+                    <select class="form-select" name="" id="select-limit">
+                        <option value="6">6</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                    </select>
+            </div>
+
+            <div class="col-12 col-md-2">
+                <select class="form-select" name="" id="select-filtro">
+                    <option value="" selected hidden> Filtro </option>
+                    <option value="namedes"> Nombre : descendente </option>
+                    <option value="name"> Nombre: ascendente </option>
+                    <option value="pricedes"> Precio : mayor a menor </option>
+                    <option value="price"> Precio : menor a mayor </option>
+                    <option value="markId"> Marca : ascendente </option>
+                    <option value="markIddes"> Marca : descendente </option>
+                    <option value="id">Default</option>
+                </select>
+        </div>
+                
+            
+
+    </div>
+
+
+
+
+
+
         <section class="contenedora">
             
-            <section class="productos">
-                <% products.forEach(product=> { %>
-                    <article>
-                        <a href="/products/detalle-de-producto/<%= product.id %>">
-                            <figure class="anteojos">
-                                <img class="img-anteojos" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %>"
-                                alt="<%= product.name, product.mark.name %>">
-                            </figure>
-            
-                        <div class="box-detalle">
-                            <p class="title">
-                                    <%= product.name %>
-                            </p>
-                            <% if (product.discount> 0) { %>
-                                <p class="discount">
-                                    <%= toThousand(product.price) %>
-                                </p>
-                                <p class="price">
-                                    <%= toThousand(priceFinal(product.price,product.discount).toFixed(0))%>
-                                </p>
-                            <% } else { %>
-                                <p class="discount"></p>
-                                <p class="price">
-                                    <%= toThousand(product.price.toFixed(0)) %>
-                                </p>
-                            <% } %>
-                        </div>
-                        </a>
-                        <div class="check-like">
-                            <input type="checkbox" id="<%= product.id %>">
-                            <label for="<%= product.id %>"><i class="far fa-heart"></i></label>
-                            <div class="check-buy">
-                                <input type="checkbox" class="buy" id="buy<%= product.id %>">
-                                <label for="buy<%= product.id %>"><i class="fas fa-shopping-basket"></i></label>
-                                <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
-                            </div>
-                        </div>
-                    </article>
-                <% }) %>
+            <section class="productos" id="listado">
+                
             </section>
             <section class="category">
-                    <ul><a href="">Colección</a>
+                    <ul><li>Colección</li>
                         <% frames.forEach( frame => { %>
                             <li><a href=""><%= frame.name %></a></li>
                         <% }) %>
@@ -85,6 +106,8 @@
                     <option value="pmay"> Precio : menor a mayor </option>
                     <option value="masc"> Marca : ascendente </option>
                     <option value="mdesc"> Marca : descendente </option>
+                    <option value="id">Default</option>
+
                 </select>
                 <input type="submit" value="Filtrar">
             </form>
@@ -104,5 +127,7 @@
     </main>
     <%- include('../partials/footer') %>
     <%- include('../partials/scripts') %>
+
+    <script src="/js/listado.js"></script>
 </body>
 </html>
