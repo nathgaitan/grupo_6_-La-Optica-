@@ -110,14 +110,14 @@
     
                             
                             <div class="caja-item">
-                                <div class="input-group has-validation">
+                               
                                 <label for="image"><a class="btn btn-primary" id="btnImages" >Subir Imagenes</a></label>
                                 <input type="file" name="image" id="image" hidden multiple required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.image ? errors.image.msg : null %></span>
-                                <div class="invalid-feedback text-center" id="imagenError">
-                                    La imagen del producto es requerido
+                                <div id="imagenError">
+                                   
                                    </div>
-                            </div>
+                            
                         </div>
                             
                             

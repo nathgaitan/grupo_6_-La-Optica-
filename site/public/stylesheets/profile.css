@@ -48,6 +48,7 @@ body.profile .encabezado div.user div div{
     height: 200px;
     width: 200px;
     overflow: hidden;
+    background-size: cover;
 }
 body.profile .encabezado div.user .box-image {
     position: absolute;
