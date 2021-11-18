@@ -7,7 +7,8 @@
         <main >
             <div class="container">
                  <h3>Carga de Anteojos</h3>
-                 <form class="needs-validation" action="/admin/crear-producto" method="POST" enctype="multipart/form-data" novalidate>
+                 <form class="needs-validation" id="form-create" action="/admin/crear-producto" method="POST" enctype="multipart/form-data" novalidate>
+                 
                    <div class="box left">
                         <div class="caja-item">
                             <div class="input-group has-validation">
@@ -62,7 +63,7 @@
                                 </select>
                             </label>
                             <span class="form-error text-danger small"><%= locals.errors && errors.lens ? errors.lens.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback">
                                 El tipo de lente del producto es requerido
                               </div>
                         </div>
@@ -79,7 +80,7 @@
                                 </select>
                             </label>
                             <span class="form-error text-danger small"><%= locals.errors && errors.mark ? errors.mark.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback">
                                 La marca del producto es requerido
                               </div>
                         </div>
@@ -97,7 +98,7 @@
                                 </select>
                             </label>
                             <span class="form-error text-danger small"><%= locals.errors && errors.frame ? errors.frame.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback">
                                 El tipo de marco del producto es requerido
                               </div>
                         </div>
@@ -116,7 +117,7 @@
                                 </select>
                             </label>
                             <span class="form-error text-danger small"><%= locals.errors && errors.category ? errors.category.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback">
                                 La categoria del producto es requerido
                               </div>
                         </div>
@@ -134,19 +135,22 @@
                                 </select>
                             </label>
                             <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
-                            <div class="invalid-feedback text-start">
+                            <div class="invalid-feedback">
                                 La graduación del producto es requerido
                               </div>
                         </div>
                         </div>
 
+                        <div class="col-12" id="preview">
+                            
+                        </div>
+
                         <div class="caja-item">
                             <div class="input-group has-validation">
-                            <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
+                            <label for="image"><a class="btn btn-primary" id="btnImages">Subir Imagenes</a></label>
                             <input type="file" name="image" id="image" hidden accept="image/*" multiple required>
-                            <div class="invalid-feedback text-center">
-                               La imagen del producto es requerido <br>
-                               Debe ser válido (JPG, JPEG, PNG, GIF).
+                            <div class="invalid-feedback text-center" id="imagenError">
+                               La imagen del producto es requerido                               
                               </div>
                         </div>
                         </div>
@@ -175,9 +179,6 @@
                                 <label for="discount">Descuento del producto</label>
                                 <input class="color" type="number" id="discount" name="discount" requiured>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.discount ? errors.discount.msg : null %></span>
-                                <div class="invalid-feedback text-start">
-                                    El descuento del producto es requerido
-                                   </div>
                              </div>
                             </div>
                         </div>
@@ -187,8 +188,8 @@
                             <div class="input-group has-validation">
                             <label for="detail">detalle del producto</label>
                         
-                            <textarea name="detail" id="detail" cols="30" rows="10" required></textarea>
-                            <div class="invalid-feedback text-start" id="error-detail">
+                            <textarea name="detail" id="" cols="30" rows="10" required></textarea>
+                            <div class="invalid-feedback">
                                     La descripción del producto es requerida
                                    </div>
                             <span class="form-error text-danger small"><%= locals.errors && errors.detail ? errors.detail.msg : null %></span>
@@ -202,6 +203,7 @@
 
                         <div class="caja-carga">
                             <button class="btn btn-primary" type="submit" value="Cargar">Cargar</button>
+                            <p class="text-danger text-center" id="error-empty"></p>
                             
                         </div>
                     </div>
@@ -210,9 +212,8 @@
                 
             </main>
             <%- include('../partials/footer') %>
-            <%- include('../partials/scripts') %>
             <!--  -->
-           
+           <!--  <script src="/js/productValidator.js"></script> -->
     </body>
 
 </html>

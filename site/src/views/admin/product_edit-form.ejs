@@ -10,6 +10,7 @@
                     </h3>
                     <form action="/admin/editar-producto/<%=product.id%>?_method=PUT" method="POST"
                         enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <p class="text-danger text-center" id="error-empty"></p>
 
 
                         <div class="box left">
@@ -102,15 +103,22 @@
                                     <span class="form-error text-danger small"><%= locals.errors && errors.graduation ? errors.graduation.msg : null %></span>
                                 </label>
                             </div>
+
+                            <div class="col-12" id="preview">
+                            
+                            </div>
+    
                             
                             <div class="caja-item">
-                                <label for="image"><a class="btn btn-primary">Subir Imagen</a></label>
-                                <input type="file" name="image" id="image" hidden>
+                                <div class="input-group has-validation">
+                                <label for="image"><a class="btn btn-primary" id="btnImages" >Subir Imagenes</a></label>
+                                <input type="file" name="image" id="image" hidden multiple required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.image ? errors.image.msg : null %></span>
-                                <div class="invalid-feedback text-center">
+                                <div class="invalid-feedback text-center" id="imagenError">
                                     La imagen del producto es requerido
                                    </div>
                             </div>
+                        </div>
                             
                             
                             
