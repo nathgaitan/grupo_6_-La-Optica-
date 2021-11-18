@@ -12,7 +12,7 @@ module.exports = [
     .withMessage('El codigo es obligatorio'),
 
     check('color')
-    .isEmpty()
+    .notEmpty()
     .withMessage('El color es obligatorio'),
 
     check('lens')
@@ -27,9 +27,6 @@ module.exports = [
     .notEmpty()
     .withMessage('Debe seleccionar un tipo de marco'),
 
-    check('lens')
-    .notEmpty()
-    .withMessage('Debe seleccionar un tipo de lente'),
 
     check('category')
     .notEmpty()
@@ -50,10 +47,10 @@ module.exports = [
     }).withMessage('No ha subido ninguna imagen'),*/
 
     check('price')
-    .notEmpty().withMessage('Debes indicar el precio')
+    .notEmpty().withMessage('Debes indicar el precio').bail()
     .isDecimal().withMessage('Debe ser un número'),
 
     check('detail')
-    .notEmpty()
-    .withMessage('Debe escribir los detalles del producto '),
+    .isLength({ min : 10, max : 500})
+    .withMessage('La descripcion del producto de 10 a 500 caracteres'),
 ]

@@ -52,6 +52,8 @@ app.use('/admin', sessionUserAdmin, adminRouter);
 // da error las rutas sin contenido ni metodos de controller
 // app.use('/api',require('./routes/apis'))
 app.use('/apis/cart',require('./routes/apis/cart'))
+app.use('/apis/products',require('./routes/apis/products'))
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
