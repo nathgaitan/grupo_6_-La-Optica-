@@ -5,136 +5,136 @@ let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\
 let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero y 6 a 12 caracteres
 
 
-$('name').addEventListener('focus', () => {
-    if($('name').value.trim() === ""){
-        $('name-js').innerHTML = "<span><i class='fas fa-info-circle'></i> Solo caracteres alfabéticos</span>"
+document.getElementById('name').addEventListener('focus', () => {
+    if(document.getElementById('name').value.trim() === ""){
+        document.getElementById('name-js').innerHTML = "<span><i class='fas fa-info-circle'></i> Solo caracteres alfabéticos</span>"
     }
 })
 
-$('name').addEventListener('blur', () => {
+document.getElementById('name').addEventListener('blur', () => {
 
     switch (true) {
-        case !$('name').value.trim():
-            $('name-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El nombre es obligatorio</span>"
-            $('name').classList.add('is-invalid')
+        case !document.getElementById('name').value.trim():
+            document.getElementById('name-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El nombre es obligatorio</span>"
+            document.getElementById('name').classList.add('is-invalid')
 
             break;
-        case $('name').value.trim().length < 2 || $('name').value.trim().length > 30 :
-            $('name-js').innerText = "Entre 2 y 30 caracteres"
-            $('name').classList.add('is-invalid')
+        case document.getElementById('name').value.trim().length < 2 || $('name').value.trim().length > 30 :
+            document.getElementById('name-js').innerText = "Entre 2 y 30 caracteres"
+            document.getElementById('name').classList.add('is-invalid')
 
             break;
         case !regExLetter.test($('name').value.trim()):
-            $('name-js').innerText = "Solo caracteres alfabéticos"
-            $('name').classList.add('is-invalid')
+            document.getElementById('name-js').innerText = "Solo caracteres alfabéticos"
+            document.getElementById('name').classList.add('is-invalid')
 
             break;
         default:
-            $('name').classList.remove('is-invalid')
-            $('name').classList.add('is-valid')
-            $('name-js').innerText = null
+            document.getElementById('name').classList.remove('is-invalid')
+            document.getElementById('name').classList.add('is-valid')
+            document.getElementById('name-js').innerText = null
             break;
     }
 })
-$('name').addEventListener('keydown', () => {
-    $('name').classList.remove('is-invalid')
-    $('name-js').innerText = null
+document.getElementById('name').addEventListener('keydown', () => {
+    document.getElementById('name').classList.remove('is-invalid')
+    document.getElementById('name-js').innerText = null
     })
 
 
 
-    $('lastName').addEventListener('focus', () => {
-        if($('lastName').value.trim() === ""){
-            $('lastName-js').innerHTML = "<span><i class='fas fa-info-circle'></i> Solo caracteres alfabéticos</span>"
+    document.getElementById('lastName').addEventListener('focus', () => {
+        if(document.getElementById('lastName').value.trim() === ""){
+            document.getElementById('lastName-js').innerHTML = "<span><i class='fas fa-info-circle'></i> Solo caracteres alfabéticos</span>"
         }
     })
     
-    $('lastName').addEventListener('blur', () => {
+    document.getElementById('lastName').addEventListener('blur', () => {
     
         switch (true) {
-            case !$('lastName').value.trim():
-                $('lastName-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El apellido es obligatorio</span>"
-                $('lastName').classList.add('is-invalid')
+            case !document.getElementById('lastName').value.trim():
+                document.getElementById('lastName-js').innerHTML = "<span><i class='fas fa-exclamation-triangle'></i> El apellido es obligatorio</span>"
+                document.getElementById('lastName').classList.add('is-invalid')
     
                 break;
-            case $('lastName').value.trim().length < 2 || $('name').value.trim().length > 30 :
-                $('lastName-js').innerText = "Entre 2 y 30 caracteres"
-                $('lastName').classList.add('is-invalid')
+            case document.getElementById('lastName').value.trim().length < 2 || $('name').value.trim().length > 30 :
+                document.getElementById('lastName-js').innerText = "Entre 2 y 30 caracteres"
+                document.getElementById('lastName').classList.add('is-invalid')
     
                 break;
             case !regExLetter.test($('lastName').value.trim()):
-                $('lastName-js').innerText = "Solo caracteres alfabéticos"
-                $('lastName').classList.add('is-invalid')
+                document.getElementById('lastName-js').innerText = "Solo caracteres alfabéticos"
+                document.getElementById('lastName').classList.add('is-invalid')
     
                 break;
             default:
-                $('lastName').classList.remove('is-invalid')
-                $('lastName').classList.add('is-valid')
-                $('lastName-js').innerText = null
+                document.getElementById('lastName').classList.remove('is-invalid')
+                document.getElementById('lastName').classList.add('is-valid')
+                document.getElementById('lastName-js').innerText = null
                 break;
         }
     })
-    $('lastName').addEventListener('keydown', () => {
-        $('lastName').classList.remove('is-invalid')
-        $('lastName-js').innerText = null
+    document.getElementById('lastName').addEventListener('keydown', () => {
+        document.getElementById('lastName').classList.remove('is-invalid')
+        document.getElementById('lastName-js').innerText = null
         })
 
 
 
 
-        $('email').addEventListener('blur',() => {
+        document.getElementById('email').addEventListener('blur',() => {
             if(!regExEmail.test($('email').value)){
-                $('email-js').innerText = "Tiene que ser un email válido"
-                $('email').classList.add('is-invalid')
+                document.getElementById('email-js').innerText = "Tiene que ser un email válido"
+                document.getElementById('email').classList.add('is-invalid')
             }else{
-                $('email-js').innerText = null
-                $('email').classList.remove('is-invalid')
-                $('email').classList.add('is-valid')
+                document.getElementById('email-js').innerText = null
+                document.getElementById('email').classList.remove('is-invalid')
+                document.getElementById('email').classList.add('is-valid')
             }
         })
 
 
-        $('password').addEventListener('blur',() => {
+        document.getElementById('password').addEventListener('blur',() => {
             if(!regExPass.test($('password').value)){
-                $('password-js').innerText = "La contraseña debe tener una mayúscula, un número y entre 6 y 12 caracteres"
-                $('password').classList.add('is-invalid')
+                document.getElementById('password-js').innerText = "La contraseña debe tener una mayúscula, un número y entre 6 y 12 caracteres"
+                document.getElementById('password').classList.add('is-invalid')
             }else{
-                $('password-js').innerText = null
-                $('password').classList.remove('is-invalid')
-                $('password').classList.add('is-valid')
+                document.getElementById('password-js').innerText = null
+                document.getElementById('password').classList.remove('is-invalid')
+                document.getElementById('password').classList.add('is-valid')
             }
         })
-        $('password').addEventListener('focus',()=> {
-            $('password').classList.remove('is-invalid')
+        document.getElementById('password').addEventListener('focus',()=> {
+            document.getElementById('password').classList.remove('is-invalid')
     
         })
     
-        $('password2').addEventListener('blur',() => {
-            if($('password').value !== $('password2').value){
-                $('password2-js').innerText = "Las contraseñas no coinciden"
-                $('password2').classList.add('is-invalid')
+        document.getElementById('password2').addEventListener('blur',() => {
+            if(document.getElementById('password').value !== $('password2').value){
+                document.getElementById('password2-js').innerText = "Las contraseñas no coinciden"
+                document.getElementById('password2').classList.add('is-invalid')
             }else if($('password').value == ""){
-                $('password2-js').innerText = "Debes ingresar una contraseña"
-                $('password2').classList.add('is-invalid')
+                document.getElementById('password2-js').innerText = "Debes ingresar una contraseña"
+                document.getElementById('password2').classList.add('is-invalid')
             }else{
-                $('password2-js').innerText = null
-                $('password2').classList.remove('is-invalid')
-                $('password2').classList.add('is-valid')
+                document.getElementById('password2-js').innerText = null
+                document.getElementById('password2').classList.remove('is-invalid')
+                document.getElementById('password2').classList.add('is-valid')
             }
         })
-        $('password2').addEventListener('focus',()=> {
-            $('password2').classList.remove('is-invalid')
+        document.getElementById('password2').addEventListener('focus',()=> {
+            document.getElementById('password2').classList.remove('is-invalid')
     
         })
     
-        $('terms').addEventListener('click', () => {
-            $('terms').classList.toggle('is-valid');
-            $('terms').classList.remove('is-invalid');
-            $('terms-js').innerHTML = null
+        document.getElementById('terms').addEventListener('click', () => {
+            document.getElementById('terms').classList.toggle('is-valid');
+            document.getElementById('terms').classList.remove('is-invalid');
+            document.getElementById('terms-js').innerHTML = null
     
         })
 
-        $('form-register').addEventListener('submit', e =>{
+        document.getElementById('form-register').addEventListener('submit', e =>{
             e.preventDefault();
 
             let elementForm = $('form-register').elements;
@@ -145,15 +145,15 @@ $('name').addEventListener('keydown', () => {
 
                 if(!elementForm[i].value){
                     elementForm[i].classList.add('is-invalid')
-                    $('campo-vacio').innerHTML = "Debes completar todos los campos";
+                    document.getElementById('campo-vacio').innerHTML = "Debes completar todos los campos";
                     errors = true
                 }
             }
 
-            if(!$('terms').checked) {
+            if(!document.getElementById('terms').checked) {
             
-                $('terms').classList.add('is-invalid')
-                $('terms-js').innerText = "Debes aceptar los términos y condiciones";
+                document.getElementById('terms').classList.add('is-invalid')
+                document.getElementById('terms-js').innerText = "Debes aceptar los términos y condiciones";
                 errors = true
             }
 
@@ -165,7 +165,7 @@ $('name').addEventListener('keydown', () => {
             }
 
             if(!errors){
-                $('form-register').submit()
+                document.getElementById('form-register').submit()
             }
         
 

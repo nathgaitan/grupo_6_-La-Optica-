@@ -74,19 +74,21 @@ window.addEventListener('load', () => {
                 <p class="title">
                          ${product.name} 
                 </p> 
-                 if ${(product.discount> 0) }
-                    <p class="discount">
+                <div>
+                  ${product.discount > 0 ? 
+                    ` <p class="discount">
                          ${tothousand(product.price)}
                     </p>
                     <p class="price">
                          ${tothousand(priceFinal(product.price,product.discount).toFixed(0))}
-                    </p>
-                 else
-                    <p class="discount"></p>
+                    </p>`
+                 :
+                 `<p class="discount"></p>
                     <p class="price">
                          ${tothousand(product.price)} 
-                    </p>
-               
+                    </p>`
+                    }
+                </div>
             </div>
             </a>
             <div class="check-like">
