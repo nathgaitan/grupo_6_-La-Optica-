@@ -29,6 +29,9 @@ const vaciarCart = $('vaciar'); // vacia el carrito de compras
 const eliminarItem = $('eliminar-item'); // elimina el producto seleccionado del carrito
 const btnCart = $('btn-cart'); // botón de barra de navegación
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+
 // vista home / listar productos
 
 
@@ -54,7 +57,7 @@ const itemEnCart = (carrito) => {
     }
 
     if (qs('body.cart')) {
-        totalPrice.innerHTML = `$${total}`;
+        totalPrice.innerHTML = `$${toThousand(total)}`;
     }
     quantityCart.innerHTML = q;
 
@@ -105,7 +108,7 @@ const cargarItems = carrito => {
                     <div id="subtotal" class="text-center">
                         <p class="c-gray">Subtotal</p>
                         <div>
-                            <span id="price" class="c-number">$${product.subtotal}</span>
+                            <span id="price" class="c-number">$${toThousand(product.subtotal)}</span>
                         </div>
                     </div>
                 </section>
@@ -116,6 +119,7 @@ const cargarItems = carrito => {
             `;
 
         bodyCart.innerHTML += item
+        
     })
 
     return false
@@ -135,7 +139,7 @@ const getCart = async () => {
     }
 }
 const addItem = async (e, id) => {
-    e.preventDefault()
+    /* e.preventDefault() */
 
     try {
         let response = await fetch('/apis/cart/add/' + id)
@@ -144,6 +148,7 @@ const addItem = async (e, id) => {
         if (qs('body.cart')) {
             cargarItems(result.data)
         }
+
         itemEnCart(result.data)
 
     } catch (error) {
@@ -158,7 +163,9 @@ const removeItem = async (e, id) => {
         let response = await fetch('/apis/cart/delete/' + id)
         let result = await response.json()
 
-        cargarItems(result.data)
+        if (qs('body.cart')) {
+            cargarItems(result.data)
+        }
         itemEnCart(result.data)
 
     } catch (error) {
@@ -166,15 +173,18 @@ const removeItem = async (e, id) => {
     }
 }
 
-const removeProduct = async (e, id) => {
-    e.preventDefault()
+const removeProduct = async function (e, id) {
+    /* e.preventDefault() */
 
     try {
         let response = await fetch('/apis/cart/delete-product/' + id)
         let result = await response.json()
 
-        cargarItems(result.data)
-        itemEnCart(result.data)
+        if (qs('body.cart')) {
+            cargarItems(result.data)
+        }
+
+        itemEnCart(result.data);
 
     } catch (error) {
         console.log(error)
@@ -195,10 +205,6 @@ const remove = async (e, id) => {
         console.log(error)
     }
 }
-
-
-
-
 
 const emptyCart = async () => {
     try {

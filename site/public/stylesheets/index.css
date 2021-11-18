@@ -228,6 +228,12 @@ body.home main section.productos article .check-buy label.plus i {
     font-size: 10px;
 }
 body.home main section.productos article .check-buy label.plus {
+    position: static;
+}
+body.home main section.productos article .check-buy label.plus i.fas.fa-shopping-basket{
+    font-size: 1.3rem
+}
+body.home main section.productos article .check-buy label.plus .fas.fa-plus {
     position:absolute;
     bottom: -5px;
     right: -7px;
@@ -238,6 +244,9 @@ body.home main section.productos article .check-like input:checked ~ label i {
 
 body.home main section.productos article .check-buy input:checked ~ label.plus {
     display: block;
+}
+body.home main section.productos article .check-buy input:checked ~ label.buy {
+    display: none;
 }
 
 /* ------------------ Fin products ------------------ */
