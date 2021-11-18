@@ -84,7 +84,7 @@ const cargarItems = carrito => {
         let item = `
             <article id="item-cart" class="bc-white">
                 <section id="article-info" class="d-flex">
-                    <div id="background-image" style="background-image: url(/images/products/${product.image});"></div>
+                    <div id="background-image" style="background-image: url('/images/products/${product.image}');"></div>
                     <article id="name-desc-color" class="d-flex">
                         <p id="name">${product.name}</p>
                         <p id="descripcion" class="c-gray">${product.detail.substr(0, 33)}...</p>
