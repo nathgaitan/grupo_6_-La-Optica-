@@ -112,19 +112,19 @@ if (qs('body.forms')) {
 
     $('imageEdit').addEventListener('change', function (e) {
         switch (true) {
-            case !regExExt.exec(this.value):
+            case !regExExt.exec($("imageEdit").value):
                 imagenErrorEdit.innerHTML = "Solo imágenes con extensión jpg, png, webp"
-                this.classList.add('is-invalid');
+                $('imageEdit').classList.add('is-invalid');
                 $('preview').innerHTML = null
                 break;
-            case this.files.length > 3:
+            case  $('imageEdit').files.length > 3:
                 imagenErrorEdit.innerHTML = "Solo se permiten 3 imágenes"
-                this.classList.add('is-invalid');
+                $('imageEdit').classList.add('is-invalid');
                 $('preview').innerHTML = null
                 break
             default:
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
+                $('imageEdit').classList.remove('is-invalid');
+                $('imageEdit').classList.add('is-valid');
                 imagenErrorEdit.innerHTML = null;
                 btnImages.innerText = "Cambiar imágenes"
 
