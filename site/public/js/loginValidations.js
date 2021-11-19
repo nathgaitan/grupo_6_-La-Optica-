@@ -1,6 +1,3 @@
-const $ = id => document.getElementById(id);
-
-const qs = q => document.querySelector(q);
 
 // Epresiones regulares 
 let regExEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/; // es email

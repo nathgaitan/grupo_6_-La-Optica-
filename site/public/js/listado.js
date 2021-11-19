@@ -82,26 +82,26 @@ window.addEventListener('load', () => {
                     <p class="price">
                          ${tothousand(priceFinal(product.price,product.discount).toFixed(0))}
                     </p>`
-                 :
-                 `<p class="discount"></p>
+                    :
+                    `<p class="discount"></p>
                     <p class="price">
                          ${tothousand(product.price)} 
                     </p>`
-                    }
+                  }
                 </div>
             </div>
             </a>
             <div class="check-like">
-                <input type="checkbox" id=" ${product.id} ">
-                <label for=" ${product.id}"><i class="far fa-heart"></i></label>
+                <input type="checkbox" id="${product.id}">
+                <label for="${product.id}"><i class="far fa-heart"></i></label>
                 <div class="check-buy">
-                    <input type="checkbox" class="buy" id="buy ${product.id} ">
-                    <label for="buy ${product.id} "><i class="fas fa-shopping-basket"></i></label>
-                    <label class="plus" for="buy"><i class="fas fa-plus"></i></label>
+                    <input type="checkbox" class="buy" id="buy${product.id}">
+                    <label for="buy${product.id}" class="buy" onClick="addItem(event,'${product.id}');"><i class="fas fa-shopping-basket"></i></label>
+                    <label class="plus" for="buy${product.id}" onClick="removeProduct(event,'${product.id}');"><i class="fas fa-shopping-basket"></i><i class="fas fa-plus"></i></label>
                 </div>
             </div>
         </article>
-        `
+        `;
         listado.innerHTML += item;
     }
 
