@@ -105,12 +105,37 @@ if (qs('body.forms')) {
 
 
                 break;
-        }
+        }      
     
 
     })
 
-    /* $('form-create').addEventListener('submit', event => {
+    $('imageEdit').addEventListener('change', function (e) {
+        switch (true) {
+            case !regExExt.exec(this.value):
+                imagenErrorEdit.innerHTML = "Solo imágenes con extensión jpg, png, webp"
+                this.classList.add('is-invalid');
+                $('preview').innerHTML = null
+                break;
+            case this.files.length > 3:
+                imagenErrorEdit.innerHTML = "Solo se permiten 3 imágenes"
+                this.classList.add('is-invalid');
+                $('preview').innerHTML = null
+                break
+            default:
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+                imagenErrorEdit.innerHTML = null;
+                btnImages.innerText = "Cambiar imágenes"
+
+                break;
+        }      
+    
+
+    })
+
+
+     $('form-create').addEventListener('submit', event => {
       event.preventDefault();
 
       let elementsForm = $('form-create').elements;
@@ -127,16 +152,9 @@ if (qs('body.forms')) {
       }    
 
       if(!error){
-          $('form-register').submit()
+          $('form-create').submit()
        
       }
-  })*/
-
-
-
-
-
-
-
+  })
 
 }
