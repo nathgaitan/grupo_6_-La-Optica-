@@ -1,3 +1,51 @@
+.switch {
+    border-radius: 20px;
+    color: white;
+    background-color: white;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    position: relative;
+    cursor: pointer; }
+    .switch::after {
+      content: " ";
+      display: "block";
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      background-color: #F1F1F1;
+      top: 0;
+      left: 0;
+      right: unset;
+      border-radius: 100%;
+      transition: ease all 0.5s;
+      box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+    .switch.active {
+      background-color: white; }
+    .switch.active::after {
+        right: 0;
+        left: unset; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body.list main section.contenedora {
     position: relative;
 }
@@ -88,7 +136,12 @@ body.list main section.contenedora section.filter input:hover {
 
 }
 /* Vista tablet a partir de 425px hereda de index.css  */
-
+@media (min-width: 425px){
+    body.list main section.contenedora section.dosProductos article {
+        width: 70%;
+        display: block;
+    }
+}
 /* Vista Laptop a partir de 768px */
 @media (min-width: 768px) {
     body.list main section.contenedora {
@@ -98,6 +151,10 @@ body.list main section.contenedora section.filter input:hover {
     }
     body.list main section.contenedora section.productos article {
         width: 31.3%;
+        display: block;
+    }
+    body.list main section.contenedora section.dosProductos article {
+        width: 46%;
         display: block;
     }
     body.list main section.contenedora section.category {
@@ -115,4 +172,6 @@ body.list main section.contenedora section.filter input:hover {
     body.list main section.productos article {
         width: 23%;
     }
+
+    
 }
