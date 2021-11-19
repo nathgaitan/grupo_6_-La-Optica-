@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
 
         
 
-    filtradoProducts(0,6)
+    filtradoProducts(0,9)
     
 
     
@@ -161,6 +161,12 @@ window.addEventListener('load', () => {
         }
     }
     */
+
+    $('switch').addEventListener('click', () => {
+        $('switch').classList.toggle('active');
+        listado.classList.toggle('dosProductos');
+
+      })
 })
 
         
