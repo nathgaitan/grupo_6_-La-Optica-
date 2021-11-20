@@ -405,7 +405,7 @@ module.exports = {
 
     detail: (req, res) => {
         db.Product.findByPk(req.params.id,{
-            include : ["category","images","mark"]
+            include : ["category","images","mark","frame","lens","color"]
         })
             .then(product =>{
                 return res.render("admin/productDetail", {
