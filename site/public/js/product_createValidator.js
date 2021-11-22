@@ -67,51 +67,55 @@ if (qs('body.forms')) {
                 $('error-price').innerText = "";
         }
     })
+    if(qs('.crear')){
 
-    $('image').addEventListener('change', function (e) {
-        switch (true) {
-            case !regExExt.exec(this.value):
-                imagenError.innerHTML = "Solo imágenes con extensión jpg, png, webp"
-                this.classList.add('is-invalid');
-                $('preview').innerHTML = null
-                break;
-            case this.files.length > 3:
-                imagenError.innerHTML = "Solo se permiten 3 imágenes"
-                this.classList.add('is-invalid');
-                $('preview').innerHTML = null
-                break
-            default:
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                imagenError.innerHTML = null;
-                btnImages.innerText = "Cambiar imágenes"
-
-                if (this.files) {
-                    [].forEach.call(this.files, readAndPreview)
-                }
-
-                function readAndPreview(file) {
-                    var reader = new FileReader();
-                    $('preview').innerHTML = null;
-                    reader.addEventListener('load', function () {
-                        var image = new Image()
-                        image.height = 100;
-                        image.title = file.name;
-                        image.src = this.result;
-                        $('preview').appendChild(image)
-                    })
-                    reader.readAsDataURL(file)
-                }
-
-
-                break;
-        }      
+        $('image').addEventListener('change', function (e) {
+            switch (true) {
+            
+                case !regExExt.exec(this.value):
+                    imagenError.innerHTML = "Solo imágenes con extensión jpg, png, webp"
+                    this.classList.add('is-invalid');
+                    $('preview').innerHTML = null
+                    break;
+                case this.files.length > 3:
+                    imagenError.innerHTML = "Solo se permiten 3 imágenes"
+                    this.classList.add('is-invalid');
+                    $('preview').innerHTML = null
+                    break
+                default:
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    imagenError.innerHTML = null;
+                    btnImages.innerText = "Cambiar imágenes"
     
+                    if (this.files) {
+                        [].forEach.call(this.files, readAndPreview)
+                    }
+    
+                    function readAndPreview(file) {
+                        var reader = new FileReader();
+                        $('preview').innerHTML = null;
+                        reader.addEventListener('load', function () {
+                            var image = new Image()
+                            image.height = 100;
+                            image.title = file.name;
+                            image.src = this.result;
+                            $('preview').appendChild(image)
+                        })
+                        reader.readAsDataURL(file)
+                    }
+    
+    
+                    break;
+            }      
+        
+    
+        })
+    }
 
-    })
-
-    $('imageEdit').addEventListener('change', function (e) {
-        switch (true) {
+    /*$('imageEdit').addEventListener('change', function (e) {
+        if(!this.value == '') {
+             switch (true) {
             case !regExExt.exec($("imageEdit").value):
                 imagenErrorEdit.innerHTML = "Solo imágenes con extensión jpg, png, webp"
                 $('imageEdit').classList.add('is-invalid');
@@ -130,12 +134,14 @@ if (qs('body.forms')) {
 
                 break;
         }      
+        }
+       
     
 
-    })
+    })*/
 
 
-     $('form-create').addEventListener('submit', event => {
+    /* $('form-create').addEventListener('submit', event => {
       event.preventDefault();
 
       let elementsForm = $('form-create').elements;
@@ -144,7 +150,7 @@ if (qs('body.forms')) {
 
       for (let i = 0; i < elementsForm.length - 1; i++) {
           
-          if(!elementsForm[i].value){
+          if(elementsForm[i].value === ''){
               elementsForm[i].classList.add('is-invalid');
               $('error-empty').innerHTML = "Los campos señalados son obligatorios";
               error = true
@@ -155,6 +161,6 @@ if (qs('body.forms')) {
           $('form-create').submit()
        
       }
-  })
+  })*/
 
 }

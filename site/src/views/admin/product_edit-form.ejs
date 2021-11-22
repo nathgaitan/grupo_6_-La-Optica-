@@ -2,7 +2,7 @@
 <html lang="es">
 <%- include('../partials/head') %>
 
-    <body class="forms">
+    <body class="forms editar">
         <%- include('../partials/headerAdmin') %>
        <main>
                 <div class="container">
@@ -114,8 +114,7 @@
                                 <label for="imageEdit"><a class="btn btn-primary" id="btnImages" >Subir Imagenes</a></label>
                                 <input type="file" name="image" id="imageEdit" value="<%= product.images[0].file %>" hidden multiple required>
                                 <span class="form-error text-danger small"><%= locals.errors && errors.image ? errors.image.msg : null %></span>
-                                <div class="invalid-feedback text-center" id="imagenErrorEdit">
-                                        La imagen del producto es requerido                               
+                                <div class=" text-center" id="imagenErrorEdit">                               
                                        </div> 
                                    
                             
