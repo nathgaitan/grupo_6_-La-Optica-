@@ -7,7 +7,29 @@
 
    <main>
     <section class="container">
-            <img src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %> " alt="">
+        <div class="row" >
+            <div class="col-4">
+                <div class="d-flex flex-column">
+                    <% product.images.forEach(image => { %>
+                        <img width="150" src="/images/products/<%= image.file %> " alt="" onclick="document.getElementById('imgDetail').setAttribute('src','/images/products/<%=image.file%>')">
+                   <% }) %>
+                </div>
+            </div>
+            <div class="col-8 text-center">
+                <img id="imgDetail" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %> " alt="">
+                <small>
+                                                
+                    <%= product.mark.name %> |
+                     <% if (product.code != null) { %>
+                        <%= product.code %> |
+                    <% } %>
+                    <%= product.frame.name != null ? capitalize(product.frame.name) : capitalize(product.category.name) %>
+                    
+                </small>
+            </div>
+            <button class="comprarya fijo" onclick="addItem(event,'<%=product.id%>')"><a>Comprar Ahora</a></button>
+
+        </div>
             <div class="alineacion">
                 <div class="marnye">
                     <span class="marca marca2"><%= product.mark.name %> </span>
@@ -22,6 +44,7 @@
                                 <span><i class="far fa-star"></i></span>
                             
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -33,19 +56,14 @@
                         <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
                         <% } else { %>
                         <p class="discount"></p>
-                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                        <p class="price">$<%= toThousand(product.price) %></p>
                          <% } %>
                 </div>
 
-                <button class="agregar">
-                    <h4>Agregá tus lentes:</h4>
-                    <span><i class="fas fa-plus"></i></span>
-                </button>
+                
                     <div class="receta">
-                        <span>Receta oculista.</span>
-                        <button>SUBIR ARCHIVO</button>
+                        <button>SUBIR RECETA</button>
                     </div>
-                    <button class="comprarya" onclick="addItem(event,'<%=product.id%>')"><a>Comprar Ahora</a></button>
             </div>
         
     </section>
@@ -63,7 +81,7 @@
                     <span>Descripción</span>
                   </button>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                   <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+                   <span><%= product.detail %> </span>
                 </div>
               </div>
               <div class="accordion-item">
@@ -71,15 +89,26 @@
                   <span>Especificaciones</span>
                 </button>
               <div id="especificaciones" class="accordion-collapse collapse" aria-labelledby="especificaciones" data-bs-parent="#accordionExample">
-                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+                 <p>Marca: <%= product.mark.name %></p>
+                 <p>Material del Marco: <%= product.frame.name %></p>
+                 <p>Tipo de Lente: <%= product.lens.name %></p>
+                 <p>Color: <%= product.color.name %></p>
+
+
+
+
               </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed vermas" id="tamaño" type="button" data-bs-toggle="collapse" data-bs-target="#tamaño" aria-expanded="false" aria-controls="tamaño">
-                  <span>Tamaño de marco</span>
+                  <span>Material y Cuidados</span>
                 </button>
               <div id="tamaño" class="accordion-collapse collapse" aria-labelledby="tamaño" data-bs-parent="#accordionExample">
-                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+                 <p>Los productos de La Optica se elaboran a partir de una esmerada selección de materiales. Manipule el producto con cuidado para poder disfrutarlo durante más tiempo.</p>
+
+                 <p> Guarde el producto en su funda suministrada.                </p>
+                 <p>Limpie el producto con un paño suave y seco.                </p>
+                 <p>En caso necesario, emplee un paño húmedo y un detergente suave. No utilice disolventes (por ejemplo, alcohol o acetona) ni detergentes agresivos que pueden alterar las prestaciones del producto. </p>
               </div>
             </div>
             <div class="accordion-item">
@@ -87,7 +116,9 @@
                     <span>Opciones de pago</span>
                 </button>
               <div id="opciones" class="accordion-collapse collapse" aria-labelledby="opciones" data-bs-parent="#accordionExample">
-                 <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis similique quibusdam eaque nostrum? Excepturi quisquam vero tempora unde veniam rem aliquid, cumque accusamus quas non.</span>
+                 <span>La Optica acepta los siguientes métodos de pago para las compras online:
+
+                    Visa,MasterCard,American Express,Mercado Pago,Transferencia Bancaria</span>
               </div>
             </div>
 
@@ -104,9 +135,7 @@
                 </section>
                 
         </div>
-        <div class="botontablet">
-            <button class="fijo comprarya">Comprar Ahora</button>
-        </div>
+        
         <section class="contenedorglider">
             <div class="glider-contain">
                 <div class="glider">
@@ -118,6 +147,7 @@
                                     <span class="marca"><%= product.mark.name %></span>
                                     <div class="nye">
                                         <h2><%= product.name %></h2>
+
                                         <div>
                                             
                                                 <span><i class="fas fa-star"></i></span>
@@ -136,7 +166,7 @@
                                         <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
                                         <% } else { %>
                                         <p class="discount"></p>
-                                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                                        <p class="price">$<%= toThousand(product.price) %></p>
                                          <% } %>
                                 </div>
                         </article>

@@ -30,9 +30,15 @@
                     <% products.forEach(product=> { %>
                         <article>
                             <a href="/products/detalle-de-producto/<%= product.id %>">
-                                <figure class="anteojos">
+                                <figure class="anteojos text-center">
                                     <img class="img-anteojos" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %>"
                                     alt="<%= product.name, product.mark.name %>">
+                                    <small>
+                                                
+                                        <%= product.mark.name %> |
+                                        <%= product.frame.name != null ? capitalize(product.frame.name) : capitalize(product.category.name) %>
+                                        
+                                    </small>
                                 </figure>
 
                             <div class="box-detalle">
@@ -49,7 +55,7 @@
                                 <% } else { %>
                                     <p class="discount"></p>
                                     <p class="price">
-                                        <%= toThousand(product.price.toFixed(0)) %>
+                                        <%= toThousand(product.price) %>
                                     </p>
                                 <% } %>
                             </div>
@@ -72,20 +78,20 @@
                 <section class="coleccion">
                     <div class="contenedor">
                         <figure class="uno">
-                            <img src="/images/coleccion/anteojo-madera.jpg" alt="">
-                            <a href="/images/coleccion/anteojo-madera.jpg">COLECCIÓN MADERA</a>
+                            <img src="/images/coleccion/anteojo-acetato01.png" alt="">
+                            <a href="/search?busqueda=acetato">COLECCIÓN ACETATO</a>
                         </figure>
                     </div>
                     <div class="contenedor">
                         <figure class="tres">
                             <img src="/images/coleccion/lente-plastico.jpg" alt="">
-                            <a href="/images/coleccion/lente-plastico.jpg">COLECCIÓN ACRILICO</a>
+                            <a href="/search?busqueda=plástico">COLECCIÓN PLÁSTICO</a>
                         </figure>
                     </div>
                     <div class="contenedor">
                         <figure class="dos">
                             <img class="lente-coleccion" src="/images/coleccion/lente metalico(1).jpg" alt="">
-                            <a href="/images/coleccion/lente metalico(1).jpg">COLECCIÓN METÁLICO</a>
+                            <a href="/search?busqueda=metal">COLECCIÓN METÁLICO</a>
                         </figure>
                     </div>
                 </section>
@@ -99,32 +105,22 @@
                     </div>
 
                     <section class="galeria-redes">
-                        <div class="icono-flecha-der galeria-flechas"><button><i
-                                    class="fas fa-chevron-right"></i></button></div>
-                        <div class="icono-flecha-izq galeria-flechas"><button><i
-                                    class="fas fa-chevron-left"></i></button></div>
-
-                        <section class="post">
-                            <section class="post-column">
-                                <div class="post-row">
-                                    <img class="uno" src="/images/galeria/anteojo-madera.jpg" alt="">
-                                    <img class="dos" src="/images/galeria/anteojo-plastico.jpg" alt="">
-                                </div>
-
-                                <img class="grande" src="/images/galeria/anteojo-madera (4).jpg" alt="">
-                                <img class="grande" src="/images/galeria/anteojo-madera (6).jpg" alt="">
-                                <div class="post-row">
-                                    <img src="/images/galeria/banner (2).jpg" alt="">
-                                    <img src="/images/galeria/banner (3).jpg" alt="">
-                                </div>
-                                <div class="post-column last-column">
-                                    <img src="/images/galeria/banner (4).jpg" alt="">
-                                    <img src="/images/galeria/banner.jpg" alt="">
-                                    <img src="/images/galeria/anteojo-madera (5).jpg" alt="">
-                                </div>
-                            </section>
+                        <section id="galery" class="post">
+                            
                         </section>
+                        <section id="glider-ig" class="glider-contain">
+                            <div id="g-ig" class="glider">
 
+                            </div>
+                            
+                            <button aria-label="Previous" class="glider-prev">«</button>
+                            <button aria-label="Next" class="glider-next">»</button>
+                            <div role="tablist" class="dots"></div>
+                        </section>
+                        
+        
+                        
+                        
                     </section>
                 </section>
 
@@ -140,7 +136,9 @@
                     </div>
                 </section>
             </main>
+            
             <%- include('./partials/footer') %>
+            <script src="/js/mediaCarrousel.js"></script>
             <%- include('./partials/scripts') %>
                 
     </body>

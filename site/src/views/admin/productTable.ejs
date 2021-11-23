@@ -39,16 +39,15 @@
                                             </p>
                                             <small>
                                                 
-                                                <%= product.mark.name %>|
+                                                <%= product.mark.name %> |
                                                  <% if (product.code != null) { %>
                                                     <%= product.code %> |
                                                 <% } %>
                                                 <%= product.frame.name != null ? capitalize(product.frame.name) : capitalize(product.category.name) %>
                                                 
-                                                
                                             </small>
                                             <p>
-                                                <%= product.detail %>
+                                                <%= product.detail.substr(0, 37) %>...
                                             </p>
                                         </div>
                                     </article>
@@ -94,7 +93,7 @@
 
                     </tbody>
                 </table>
-
+                <button class="btn btn-primary" style=" background-color: rgb(122, 159, 226); color: white; border: none;" type="button"><a id="abajo" href="#subir">Ir arriba</a></button>
             </section>
         </main>
         <script src="/js/confirmDelete.js"></script>
