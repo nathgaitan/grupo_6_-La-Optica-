@@ -15,9 +15,17 @@
                    <% }) %>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-8 text-center">
                 <img id="imgDetail" src="/images/products/<%= product.images[0] ? product.images[0].file : 'producto-sin-foto.png' %> " alt="">
-
+                <small>
+                                                
+                    <%= product.mark.name %> |
+                     <% if (product.code != null) { %>
+                        <%= product.code %> |
+                    <% } %>
+                    <%= product.frame.name != null ? capitalize(product.frame.name) : capitalize(product.category.name) %>
+                    
+                </small>
             </div>
             <button class="comprarya fijo" onclick="addItem(event,'<%=product.id%>')"><a>Comprar Ahora</a></button>
 
@@ -36,6 +44,7 @@
                                 <span><i class="far fa-star"></i></span>
                             
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -47,7 +56,7 @@
                         <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
                         <% } else { %>
                         <p class="discount"></p>
-                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                        <p class="price">$<%= toThousand(product.price) %></p>
                          <% } %>
                 </div>
 
@@ -138,6 +147,7 @@
                                     <span class="marca"><%= product.mark.name %></span>
                                     <div class="nye">
                                         <h2><%= product.name %></h2>
+
                                         <div>
                                             
                                                 <span><i class="fas fa-star"></i></span>
@@ -156,7 +166,7 @@
                                         <p class="price">$<%= toThousand(priceFinal(product.price,product.discount).toFixed(0)) %></p>
                                         <% } else { %>
                                         <p class="discount"></p>
-                                        <p class="price">$<%= toThousand(product.price.toFixed(0)) %></p>
+                                        <p class="price">$<%= toThousand(product.price) %></p>
                                          <% } %>
                                 </div>
                         </article>

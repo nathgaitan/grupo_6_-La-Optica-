@@ -154,7 +154,7 @@ body.tabla .detail{
 
 @media (min-width: 425px) {
     body.tabla table td.static {
-        height: 102px;
+        height: 116px;
     }
     body.tabla table td.acc-but div {
         flex-direction: row;

@@ -50,7 +50,8 @@ module.exports = {
     },
     'search': (req, res) => {
         try {
-            db.Product
+            if(req.query.busqueda.length > 2) {
+                db.Product
                 .findAll({
                     include: [
                         'mark', 'color', 'lens', 'frame', 'graduation', 'category', 'images'
@@ -76,6 +77,8 @@ module.exports = {
                     })
                 })
                 .catch(error => console.log(error))
+            }
+            
         }
         catch (error) {
             return res.status(error.status || 500).json({
