@@ -1,5 +1,5 @@
 /*function verPassword(){
-var ver = document.getElementById("password");
+const ver = document.getElementById("password");
 
 if (ver.type === "password")
 {

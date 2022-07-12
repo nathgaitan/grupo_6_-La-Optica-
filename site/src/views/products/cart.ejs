@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
 <body class="cart">
-    
-    <%- include('../partials/header') %> 
-
-
+    <%- include('../partials/header') %>
     <main class="menu">
         <section id="cart-container" class="">
             <div id="title-optica">La Óptica</div>
             <div id="cuerpo" class="d-flex">
                 <section id="body-cart">
-                    
                 </section>
                 <section id="sugerencias">
                     <article id="lentes-de-sol"></article>
                     <article id="lentes"></article>
                 </section>
-        
                 <aside id="buy-container" class="">
                     <div id="codigo-promocional" class="">
                         <p class="code-p">¿Tenés un cupón de descuento?</p>
@@ -33,9 +29,11 @@
                             <small>El precio total lleva incluido los descuentos</small>
                         </div>
                         <article class="btn-interaction">
-                            <button type="submit" id="next-box"><a href="/products" id="buy-next">Continuar comprando</a></button>
+                            <button type="submit" id="next-box"><a href="/products" id="buy-next">Continuar
+                                    comprando</a></button>
                             <button type="submit" id="buy-box">
-                                <a id="buy-now" href="/products" onclick="alert('¡Gracias por su compra!')">Finalizar compra</a>
+                                <a id="buy-now" href="/products" onclick="alert('¡Gracias por su compra!')">Finalizar
+                                    compra</a>
                             </button>
                         </article>
                     </section>
@@ -44,15 +42,14 @@
             <button type="submit" id="vaciar" class="d-flex f-column" onclick="emptyCart()">
                 <span id="clean-cart">
                     <i class="fa fa-trash vaciar-item" aria-hidden="true"></i>
-                Vaciar
+                    Vaciar
                 </span>
             </button>
         </section>
-
     </main>
 
     <%- include('../partials/footer') %>
-    <%- include('../partials/scripts') %>    
+    <%- include('../partials/scripts') %>
 
 </body>
 

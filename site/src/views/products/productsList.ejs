@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
 <body class="home list">
-    <%- include('../partials/header') %> 
+    <%- include('../partials/header') %>
     <main>
         <%- include('../components/glidejsStart', {clase : 'banner' }) %>
-            <% banners.forEach(banner=> { %>
-                <div class="carousel__item" style="background-image: url('/images/banner/<%= banner.file %>');">
-                </div>
-            <% }) %>
+        <% banners.forEach(banner=> { %>
+        <div class="carousel__item" style="background-image: url('/images/banner/<%= banner.file %>');">
+        </div>
+        <% }) %>
         <%- include('../components/glidejsEnd', {clase : 'banner' , dots : 'b-dots' }) %>
-
-
-
-
         <div class="card-header">
             <div class="row">
                 <div class="col-12 col-md-6"></div>
                 <div class="col-12 col-md-6 my-2 d-flex justify-content-end">
                     <ul class="pagination pagination-sm" id="box-paginator">
-
                     </ul>
                 </div>
             </div>
             <div class="row g-2">
-                
                 <div class="col-12 col-md-2">
                     <select class="form-select filter" id="mark-filter">
                         <option value="" selected hidden>Marcas</option>
                         <% marks.forEach(mark => { %>
-                            <option value="<%= mark.id %>"><%= mark.name %> </option>
-
+                        <option value="<%= mark.id %>"><%= mark.name %> </option>
                         <% }) %>
                         <option value="0">Todas las marcas</option>
-
                     </select>
                 </div>
-
                 <div class="col-12 col-md-2">
                     <select class="form-select" name="" id="select-limit">
                         <option value="9">9</option>
@@ -44,107 +36,84 @@
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <select class="form-select" name="" id="select-filtro">
+                        <option value="" selected hidden> Filtro </option>
+                        <option value="namedes"> Nombre : descendente </option>
+                        <option value="name"> Nombre: ascendente </option>
+                        <option value="pricedes"> Precio : mayor a menor </option>
+                        <option value="price"> Precio : menor a mayor </option>
+                        <option value="markId"> Marca : ascendente </option>
+                        <option value="markIddes"> Marca : descendente </option>
+                        <option value="id">Default</option>
+                    </select>
+                </div>
             </div>
-
-            <div class="col-12 col-md-2">
-                <select class="form-select" name="" id="select-filtro">
-                    <option value="" selected hidden> Filtro </option>
-                    <option value="namedes"> Nombre : descendente </option>
-                    <option value="name"> Nombre: ascendente </option>
-                    <option value="pricedes"> Precio : mayor a menor </option>
-                    <option value="price"> Precio : menor a mayor </option>
-                    <option value="markId"> Marca : ascendente </option>
-                    <option value="markIddes"> Marca : descendente </option>
-                    <option value="id">Default</option>
-                </select>
-        </div>
-                
-            
-
-    </div>
-
-
-
-
-
-
-        <section class="contenedora">
-            
-            <section class="productos" id="listado">
-                
-            </section>
-            
-            <section class="category">
-                
-                    <ul><li>Colección</li>
+            <section class="contenedora">
+                <section class="productos" id="listado">
+                </section>
+                <section class="category">
+                    <ul>
+                        <li>Colección</li>
                         <% frames.forEach( frame => { %>
-                            <li><a href=""><%= frame.name %></a></li>
+                        <li><a href=""><%= frame.name %></a></li>
                         <% }) %>
                     </ul>
                     <ul><a href="">Marcas</a>
                         <% marks.forEach( mark => { %>
-                            <li><a href=""><%= mark.name %></a></li>
+                        <li><a href=""><%= mark.name %></a></li>
                         <% }) %>
                     </ul>
                     <ul><a href="">Lentes</a>
                         <% lenses.forEach( lens => { %>
-                            <li><a href=""><%= lens.name %></a></li>
+                        <li><a href=""><%= lens.name %></a></li>
                         <% }) %>
                     </ul>
                     <ul><a href="">Color</a>
                         <% colors.forEach( color => { %>
-                            <li><a href=""><%= color.name %></a></li>
+                        <li><a href=""><%= color.name %></a></li>
                         <% }) %>
                     </ul>
+                </section>
+                <section class="filter">
+                    <section>
+                        <div class="switch" id="switch">
+                            <span class="switch-cube"><i class="fas fa-cube"></i></span>
+                            <span class="switch-cubes"><i class="fas fa-cubes"></i></span>
+                        </div>
+                    </section>
+                    <form action="/products" method="post">
+                        <select name="filtro" id="filtro">
+                            <option value="none" selected disabled hidden> Filtro </option>
+                            <option value="az"> Nombre : descendente </option>
+                            <option value="za"> Nombre: ascendente </option>
+                            <option value="pmen"> Precio : mayor a menor </option>
+                            <option value="pmay"> Precio : menor a mayor </option>
+                            <option value="masc"> Marca : ascendente </option>
+                            <option value="mdesc"> Marca : descendente </option>
+                            <option value="id">Default</option>
+                        </select>
+                        <input type="submit" value="Filtrar">
+                    </form>
+                </section>
             </section>
-            
-        
-        
-        
-
-
-
-        <section class="filter">
-            <section>
-                <div class="switch" id="switch">
-                    <span class="switch-cube"><i class="fas fa-cube"></i></span>
-                    <span class="switch-cubes"><i class="fas fa-cubes"></i></span>
-                  </div>
+            <section class="whatsapp">
+                <div class="contenedor">
+                    <nav>
+                        <input type="checkbox" id="whatsapp">
+                        <label for="whatsapp"><i class="fab fa-whatsapp"></i></label>
+                        <ul>
+                            <li><a href="">Escribinos por Whats App!</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
-            <form action="/products" method="post">
-                <select name="filtro" id="filtro">
-                    <option value="none" selected disabled hidden> Filtro </option>
-                    <option value="az"> Nombre : descendente </option>
-                    <option value="za"> Nombre: ascendente </option>
-                    <option value="pmen"> Precio : mayor a menor </option>
-                    <option value="pmay"> Precio : menor a mayor </option>
-                    <option value="masc"> Marca : ascendente </option>
-                    <option value="mdesc"> Marca : descendente </option>
-                    <option value="id">Default</option>
-
-                </select>
-                <input type="submit" value="Filtrar">
-            </form>
-            
-        </section>
-        
-    </section>
-    
-        <section class="whatsapp">
-            <div class="contenedor">
-                <nav>
-                    <input type="checkbox" id="whatsapp">
-                    <label for="whatsapp"><i class="fab fa-whatsapp"></i></label>
-                    <ul>
-                        <li><a href="">Escribinos por Whats App!</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
     </main>
     <%- include('../partials/footer') %>
     <%- include('../partials/scripts') %>
 
     <script src="/js/listado.js"></script>
 </body>
+
 </html>

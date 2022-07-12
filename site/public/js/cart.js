@@ -46,8 +46,8 @@ fondoDifuminado.addEventListener('click', function() {
 
 
 const itemEnCart = (carrito) => {
-    var q = 0;
-    var total = 0;
+    const q = 0;
+    const total = 0;
 
     if (carrito) {
         carrito.forEach(item => {

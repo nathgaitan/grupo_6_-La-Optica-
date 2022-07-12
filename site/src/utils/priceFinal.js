@@ -1,1 +1,1 @@
-module.exports = (a,b) => a - (a*b/100);
+module.exports = (a, b) => a - (a * b) / 100;

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head') %>
-<body class="register"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+<%- include('../partials/head') %>
+
+<body class="register">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
     <%- include('../partials/header') %>
 
@@ -12,72 +13,82 @@
                 <div class="titulo">
                     <h1>Crea tu cuenta</h1>
                 </div>
-            <div class="logos">
-                <img class="logo" src="/images/register01.jpg" alt="">
+                <div class="logos">
+                    <img class="logo" src="/images/register01.jpg" alt="">
+                </div>
+
+                <form id="form-register" action="" method="POST">
+                    <p class="text-danger text-center" id="campo-vacio"></p>
+                    <div class="todo2">
+                        <div class=" reg-img">
+                            <div class="box-p">
+                                <div class="reg-box">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" name="name" id="name" placeholder="Ingresá tu Nombre"
+                                        value="<%= locals.old && old.name ? old.name : null  %>">
+                                    <span id="name-js"
+                                        class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
+                                </div>
+                                <div class="reg-box">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" name="lastName" id="lastName" placeholder="Ingresá tu Apellido"
+                                        value="<%= locals.old && old.lastName ? old.lastName : null  %>">
+                                    <span id="lastName-js"
+                                        class="form-error text-danger small"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></span>
+                                </div>
+                                <div class="reg-box">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" name="email" id="email" placeholder="Ingresá tu email"
+                                        value="<%= locals.old && old.email ? old.email : null  %>">
+                                    <span id="email-js"
+                                        class="form-error text-danger small"><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+                                </div>
+                                <div class="reg-box">
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" name="password" id="password"
+                                        placeholder="Ingresá tu contraseña">
+                                    <span id="password-js"
+                                        class="form-error text-danger small"><%= locals.errors && errors.password ? errors.password.msg : null %></span>
+                                </div>
+                                <!-- Esto es un comentario -->
+                                <div class="reg-box rei-box">
+                                    <label class="rei-lab" for="password2">Confirme contraseña</label>
+                                    <input type="password" name="password2" id="password2"
+                                        placeholder="Confirmar contraseña">
+                                    <span id="password2-js"
+                                        class="form-error text-danger small"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></span>
+                                </div>
+
+                            </div>
+                            <div>
+                                <img class="logo3" src="/images/register03.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class=" quehacer">
+                            <img class="logo2" src="/images/register02.png" alt="">
+
+                            <h3>¿Qué vas a poder hacer con tu cuenta?</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i>Consultar el estado de compras.</li>
+                                <li><i class="fas fa-check"></i>Administrar tus productos favoritos.</li>
+                                <li><i class="fas fa-check"></i>Descargar las facturas.</li>
+                                <li><i class="fas fa-check"></i>Consultas manuales de los productos comprados.</li>
+                                <li><i class="fas fa-check"></i>Definir tus preferencias e intereses.</li>
+                                <li><i class="fas fa-check"></i>Acceder al historial de productos.</li>
+                                <li><i class="fas fa-check"></i>Retomar tus compras incompletas.</li>
+                            </ul>
+                        </div>
+
+                    </div>
             </div>
-                
-        <form id="form-register" action="" method="POST">
-            <p class="text-danger text-center" id="campo-vacio"></p>
-            <div class="todo2">
-                <div class=" reg-img">
-            <div class="box-p">
-            
-            <div class="reg-box">
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Ingresá tu Nombre" value="<%= locals.old && old.name ? old.name : null  %>">
-                <span id="name-js" class="form-error text-danger small"><%= locals.errors && errors.name ? errors.name.msg : null %></span>
-            </div>
-            <div class="reg-box">
-                <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Ingresá tu Apellido" value="<%= locals.old && old.lastName ? old.lastName : null  %>">
-                <span id="lastName-js" class="form-error text-danger small"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></span>
-            </div>
-            <div class="reg-box">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" placeholder="Ingresá tu email" value="<%= locals.old && old.email ? old.email : null  %>">
-                <span id="email-js" class="form-error text-danger small"><%= locals.errors && errors.email ? errors.email.msg : null %></span>
-            </div>
-            <div class="reg-box">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Ingresá tu contraseña">
-                <span id="password-js" class="form-error text-danger small"><%= locals.errors && errors.password ? errors.password.msg : null %></span>
-            </div>
-            <!-- Esto es un comentario -->
-           <div class="reg-box rei-box">
-                <label class="rei-lab" for="password2">Confirme contraseña</label>
-                <input type="password" name="password2" id="password2" placeholder="Confirmar contraseña">
-                <span id="password2-js" class="form-error text-danger small"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></span>
-            </div>
-            
-        </div>
-        <div>
-                <img class="logo3" src="/images/register03.png" alt="">
+            <div class="terminos1">
+                <input type="checkbox" name="terms" id="terms">
+                <label class="term-lab" for="terms">Acepto los términos y condiciones</label>
+                <span id="terms-js"
+                    class="form-error text-danger small"><%= locals.errors && errors.terms ? errors.terms.msg : null %></span>
             </div>
 
-        </div>
-        <div class=" quehacer">
-            <img class="logo2" src="/images/register02.png" alt="">
-            
-            <h3>¿Qué vas a poder hacer con tu cuenta?</h3>
-            <ul>
-                <li><i class="fas fa-check"></i>Consultar el estado de compras.</li>
-                <li><i class="fas fa-check"></i>Administrar tus productos favoritos.</li>
-                <li><i class="fas fa-check"></i>Descargar las facturas.</li>
-                <li><i class="fas fa-check"></i>Consultas manuales de los productos comprados.</li>
-                <li><i class="fas fa-check"></i>Definir tus preferencias e intereses.</li>
-                <li><i class="fas fa-check"></i>Acceder al historial de productos.</li>
-                <li><i class="fas fa-check"></i>Retomar tus compras incompletas.</li>
-            </ul>
-        </div>
-       
-    </div>
-</div>
-<div class="terminos1">
-    <input type="checkbox" name="terms" id="terms">
-    <label class="term-lab"  for="terms">Acepto los términos y condiciones</label>
-    <span id="terms-js" class="form-error text-danger small"><%= locals.errors && errors.terms ? errors.terms.msg : null %></span>
-</div>
-        
 
             <div class="but-box">
                 <button type="submit" value="Registrarme">Crear cuenta</button>
@@ -85,11 +96,12 @@
             <div class="google-box">
                 <a href=""><img src="/images/reg google.png" alt=""></a>
             </div>
-            <div class="registrate"><h4>¿Ya tenés una cuenta?</h4>
+            <div class="registrate">
+                <h4>¿Ya tenés una cuenta?</h4>
                 <a class="ingresa" href="/users/login">Ingresá.</a>
             </div>
-        </form>
-    </article>
+            </form>
+        </article>
 
     </main>
 
@@ -97,4 +109,5 @@
     <script src="/js/register.js"></script>
 
 </body>
+
 </html>

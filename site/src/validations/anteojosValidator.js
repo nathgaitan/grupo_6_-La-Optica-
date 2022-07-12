@@ -1,43 +1,31 @@
-const {check, body} = require("express-validator");
-
+const { check } = require("express-validator");
 
 module.exports = [
+  check("name").notEmpty().withMessage("El nombre es obligatorio"),
 
-    check('name')
+  check("code").notEmpty().withMessage("El codigo es obligatorio"),
+
+  check("color").notEmpty().withMessage("El color es obligatorio"),
+
+  check("lens")
     .notEmpty()
-    .withMessage('El nombre es obligatorio'),
+    .withMessage("Debe seleccionar un tipo de lente"),
 
-    check('code')
+  check("mark").notEmpty().withMessage("Debe seleccionar una marca"),
+
+  check("frame")
     .notEmpty()
-    .withMessage('El codigo es obligatorio'),
+    .withMessage("Debe seleccionar un tipo de marco"),
 
-    check('color')
+  check("category")
     .notEmpty()
-    .withMessage('El color es obligatorio'),
+    .withMessage("Debe seleccionar una categoria"),
 
-    check('lens')
+  check("graduation")
     .notEmpty()
-    .withMessage('Debe seleccionar un tipo de lente'),
+    .withMessage("Debe seleccionar una graduación"),
 
-    check('mark')
-    .notEmpty()
-    .withMessage('Debe seleccionar una marca'),
-
-    check('frame')
-    .notEmpty()
-    .withMessage('Debe seleccionar un tipo de marco'),
-
-
-    check('category')
-    .notEmpty()
-    .withMessage('Debe seleccionar una categoria'),
-
-    check('graduation')
-    .notEmpty()
-    .withMessage('Debe seleccionar una graduación'),
-
-   
-   /* body('image')
+  /* body('image')
     .custom((value, {req}) => {
         if(req.files[0]){
             return true
@@ -46,11 +34,16 @@ module.exports = [
         }
     }).withMessage('No ha subido ninguna imagen'),*/
 
-    check('price')
-    .notEmpty().withMessage('Debes indicar el precio').bail()
-    .isDecimal().withMessage('Debe ser un número'),
+  check("price")
+    .notEmpty()
+    .withMessage("Debes indicar el precio")
+    .bail()
+    .isDecimal()
+    .withMessage("Debe ser un número"),
 
-    check('detail')
-    .isLength({ min : 10, max : 500})
-    .withMessage('La descripcion del producto de 10 a 500 caracteres'),
-]
+  check("detail")
+    .isLength({ min: 10, max: 500 })
+    .withMessage(
+      "La descripcion del producto de 10 a 500 caracteres"
+    ),
+];

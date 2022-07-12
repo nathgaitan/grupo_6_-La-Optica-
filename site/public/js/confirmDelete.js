@@ -1,5 +1,5 @@
 function confirmDelete(){
-    var respuesta = confirm("Estás seguro de querer eliminar este producto");
+    const respuesta = confirm("Estás seguro de querer eliminar este producto");
 
     if (respuesta == true)
     {
